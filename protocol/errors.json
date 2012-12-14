@@ -1,0 +1,42 @@
+{
+	/* generic error codes */
+	"10000": "no error",
+
+	/* 400 codes */
+	"40000": "bad request",
+	"40001": "invalid request body",
+	"40002": "invalid parameter name",
+	"40003": "invalid parameter value",
+
+	/* 401 codes */
+	"40100": "unauthorized",
+	"40101": "invalid credentials",
+	"40102": "account disabled",
+	"40103": "account blocked (limits exceeded)",
+	"40104": "application disabled",
+	"40105": "key disabled",
+	"40106": "key revoked",
+	"40107": "token expired",
+	"40120": "connection blocked (limits exceeded)",
+	"40130": "channel operation not permitted",
+
+	/* 403 codes */
+	"40300": "forbidden",
+	"40301": "account does not permit tls connection",
+	"40302": "operation requires tls connection",
+
+	/* 404 codes */
+	"40400": "not found",
+
+	/* 405 codes */
+	"40500": "method not allowed",
+
+	/* 500 codes */
+	"50000": "internal error",
+
+	/* connection-related */
+	"80000": "connection failed",
+	"80001": "connection failed (no compatible transport)",
+	"80002": "connection suspended",
+	"80003": "disconnected",
+}
