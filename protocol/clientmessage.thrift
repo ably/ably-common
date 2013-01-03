@@ -59,7 +59,7 @@ struct TMessage {
   1: optional string                name;
   2: optional string                clientId;
   4: optional i64                   timestamp;
-  5: optional TData                 payload;
+  5: optional TData                 data;
   6: optional list<string>          tags;
 }
 
@@ -76,7 +76,7 @@ struct TChannelMessage {
   8: optional i32                   connectionSerial;
   /* the following fields are expected/valid for channel actions */
   9: required string                channel;
-  10: optional string                channelSerial;
+  10: optional string               channelSerial;
   11: optional string               name;
   12: optional i64                  timestamp;
   13: optional i32                  size;
@@ -87,3 +87,36 @@ struct TChannelMessage {
 struct TMessageSet {
   1: required list<TChannelMessage> items;
 }
+
+struct CTraffic {
+  1: required i32 messageCount;
+  2: optional double messageSize;
+}
+
+struct CConnections {
+  1: optional i32 plain;
+  2: optional i32 tls;
+}
+
+struct CTimelineStats {
+  1: required CTraffic     published;
+  2: required CTraffic     deliveredAll;
+  3: optional CTraffic     deliveredRealtime;
+  4: optional CTraffic     deliveredRest;
+  5: optional CTraffic     deliveredPost;
+  6: optional CTraffic     deliveredHttpStream;
+  7: optional CConnections connections;
+}
+
+struct TMessageArray {
+  1: required list<TMessage> items;
+}
+
+struct TPresenceArray {
+  1: required list<TPresence> items;
+}
+
+struct TStatsArray {
+  1: required list<CTimelineStats> items;
+}
+
