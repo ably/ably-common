@@ -7,23 +7,27 @@
 	"40001": "invalid request body",
 	"40002": "invalid parameter name",
 	"40003": "invalid parameter value",
+	"40004": "invalid header",
+	"40005": "invalid credential",
 
 	/* 401 codes */
 	"40100": "unauthorized",
 	"40101": "invalid credentials",
-	"40102": "account disabled",
-	"40103": "account blocked (limits exceeded)",
-	"40104": "application disabled",
-	"40105": "key disabled",
-	"40106": "key revoked",
-	"40107": "token expired",
-	"40120": "connection blocked (limits exceeded)",
-	"40130": "channel operation not permitted",
+	"40102": "incompatible credentials",
+	"40110": "account disabled",
+	"40111": "account blocked (limits exceeded)",
+	"40120": "application disabled",
+	"40130": "key disabled",
+	"40131": "key revoked",
+	"40140": "token expired",
+	"40150": "connection blocked (limits exceeded)",
+	"40160": "operation not permitted with provided capability",
 
 	/* 403 codes */
 	"40300": "forbidden",
-	"40301": "account does not permit tls connection",
-	"40302": "operation requires tls connection",
+	"40310": "account does not permit tls connection",
+	"40311": "operation requires tls connection",
+	"40320": "application requires authentication",
 
 	/* 404 codes */
 	"40400": "not found",
