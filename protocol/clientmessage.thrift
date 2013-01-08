@@ -52,15 +52,24 @@ struct TData {
 struct TPresence {
   1: required TPresenceState        state;
   2: required string                clientId;
-  3: optional TData                 clientData;
+  3: optional string                connectionId;
+  4: optional TData                 clientData;
+}
+
+struct TPresenceArray {
+  1: required list<TPresence>       items;
 }
 
 struct TMessage {
   1: optional string                name;
   2: optional string                clientId;
-  4: optional i64                   timestamp;
-  5: optional TData                 data;
-  6: optional list<string>          tags;
+  3: optional i64                   timestamp;
+  4: optional TData                 data;
+  5: optional list<string>          tags;
+}
+
+struct TMessageArray {
+  1: required list<TMessage>        items;
 }
 
 struct TChannelMessage {
@@ -88,35 +97,65 @@ struct TMessageSet {
   1: required list<TChannelMessage> items;
 }
 
-struct CTraffic {
-  1: required i32 messageCount;
-  2: optional double messageSize;
+struct SMessageCount {
+  1: required i32 count;
+  2: required double data;
 }
 
-struct CConnections {
-  1: optional i32 plain;
-  2: optional i32 tls;
+struct SMessageTypes {
+  1: required SMessageCount all;
+  2: optional SMessageCount messages;
+  3: optional SMessageCount presence;
 }
 
-struct CTimelineStats {
-  1: required CTraffic     published;
-  2: required CTraffic     deliveredAll;
-  3: optional CTraffic     deliveredRealtime;
-  4: optional CTraffic     deliveredRest;
-  5: optional CTraffic     deliveredPost;
-  6: optional CTraffic     deliveredHttpStream;
-  7: optional CConnections connections;
+struct SConnectionCount {
+  1: optional i32 opened;
+  2: optional i32 peak;
+  3: optional i32 mean;
+  4: optional i32 min;
+  5: optional i32 refused;
 }
 
-struct TMessageArray {
-  1: required list<TMessage> items;
+struct SConnectionTypes {
+  1: required SConnectionCount all;
+  2: optional SConnectionCount plain;
+  3: optional SConnectionCount tls;
 }
 
-struct TPresenceArray {
-  1: required list<TPresence> items;
+struct SMessageTraffic {
+  1: required SMessageTypes all;
+  2: optional SMessageTypes realtime;
+  3: optional SMessageTypes rest;
+  4: optional SMessageTypes post;
+  5: optional SMessageTypes httpStream;
 }
 
-struct TStatsArray {
-  1: required list<CTimelineStats> items;
+struct SChannelCount {
+  1: optional i32 opened;
+  2: optional i32 peak;
+  3: optional i32 mean;
+  4: optional i32 min;
+  5: optional i32 refused;
+}
+
+struct SRequestCount {
+  1: optional i32 succeeded;
+  2: optional i32 failed;
+  3: optional i32 refused;
+}
+
+struct SStats {
+  1: required SMessageTypes    all;
+  2: required SMessageTraffic  inbound;
+  3: required SMessageTraffic  outbound;
+  4: required SMessageTypes    persisted;
+  5: required SConnectionTypes connections;
+  6: optional SChannelCount    channels;
+  7: optional SRequestCount    apiRequests;
+  8: optional SRequestCount    tokenRequests;
+}
+
+struct SStatsArray {
+  1: required list<SStats>     items;
 }
 
