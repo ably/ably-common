@@ -98,7 +98,7 @@ struct TMessageSet {
 }
 
 struct SMessageCount {
-  1: required i32 count;
+  1: required double count;
   2: required double data;
 }
 
@@ -108,18 +108,18 @@ struct SMessageTypes {
   3: optional SMessageCount presence;
 }
 
-struct SConnectionCount {
-  1: optional i32 opened;
-  2: optional i32 peak;
-  3: optional i32 mean;
-  4: optional i32 min;
-  5: optional i32 refused;
+struct SResourceCount {
+  1:  optional double opened;
+  2:  optional double peak;
+  3:  optional double mean;
+  4:  optional double min;
+  5:  optional double refused;
 }
 
 struct SConnectionTypes {
-  1: required SConnectionCount all;
-  2: optional SConnectionCount plain;
-  3: optional SConnectionCount tls;
+  1: required SResourceCount all;
+  2: optional SResourceCount plain;
+  3: optional SResourceCount tls;
 }
 
 struct SMessageTraffic {
@@ -130,18 +130,10 @@ struct SMessageTraffic {
   5: optional SMessageTypes httpStream;
 }
 
-struct SChannelCount {
-  1: optional i32 opened;
-  2: optional i32 peak;
-  3: optional i32 mean;
-  4: optional i32 min;
-  5: optional i32 refused;
-}
-
 struct SRequestCount {
-  1: optional i32 succeeded;
-  2: optional i32 failed;
-  3: optional i32 refused;
+  1: optional double succeeded;
+  2: optional double failed;
+  3: optional double refused;
 }
 
 struct SStats {
@@ -150,7 +142,7 @@ struct SStats {
   3: required SMessageTraffic  outbound;
   4: required SMessageTypes    persisted;
   5: required SConnectionTypes connections;
-  6: optional SChannelCount    channels;
+  6: optional SResourceCount   channels;
   7: optional SRequestCount    apiRequests;
   8: optional SRequestCount    tokenRequests;
 }
