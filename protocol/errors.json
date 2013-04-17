@@ -9,6 +9,10 @@
 	"40003": "invalid parameter value",
 	"40004": "invalid header",
 	"40005": "invalid credential",
+	"40006": "invalid connection id",
+	"40007": "invalid message id",
+	"40008": "invalid content length"
+	"40009": "maximum message length exceeded"
 
 	/* 401 codes */
 	"40100": "unauthorized",
@@ -37,10 +41,23 @@
 
 	/* 500 codes */
 	"50000": "internal error",
+	"50001": "internal channel error",
+	"50002": "internal connection error",
 
 	/* connection-related */
 	"80000": "connection failed",
 	"80001": "connection failed (no compatible transport)",
 	"80002": "connection suspended",
 	"80003": "disconnected",
+	"80004": "already connected",
+	"80005": "invalid connection id (remote not found)",
+	"80006": "unable to recover connection (messages expired)",
+	"80007": "unable to recover connection (message limit exceeded)",
+	"80008": "unable to recover connection (connection expired)",
+	"80009": "connection not established (no transport handle)",
+	"80010": "invalid operation (invalid transport handle)",
+
+	/* channel-related */
+	"90000": "channel operation failed",
+	"90001": "channel operation failed (invalid channel state)",
 }
