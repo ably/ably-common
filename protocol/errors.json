@@ -43,6 +43,7 @@
 	"50000": "internal error",
 	"50001": "internal channel error",
 	"50002": "internal connection error",
+	"50003": "timeout error",
 
 	/* connection-related */
 	"80000": "connection failed",
