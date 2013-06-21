@@ -61,4 +61,5 @@
 	/* channel-related */
 	"90000": "channel operation failed",
 	"90001": "channel operation failed (invalid channel state)",
+	"90002": "channel operation failed (epoch expired)",
 }
