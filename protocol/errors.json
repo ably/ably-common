@@ -57,9 +57,13 @@
 	"80008": "unable to recover connection (connection expired)",
 	"80009": "connection not established (no transport handle)",
 	"80010": "invalid operation (invalid transport handle)",
+	"80011": "unable to recover connection (incompatible auth params)",
+	"80012": "unable to recover connection (invalid unspecified connection serial)",
 
 	/* channel-related */
 	"90000": "channel operation failed",
 	"90001": "channel operation failed (invalid channel state)",
-	"90002": "channel operation failed (epoch expired)",
+	"90002": "channel operation failed (epoch expired or never existed)",
+	"90003": "unable to recover channel (messages expired)",
+	"90004": "unable to recover channel (message limit exceeded)",
 }
