@@ -7,19 +7,19 @@ namespace rb ably
 
 enum TAction {
   HEARTBEAT;
+  ACK;
+  NACK;
   CONNECT;
   CONNECTED;
+  DISCONNECT;
+  DISCONNECTED;
   ERROR;
   ATTACH;
   ATTACHED;
   DETACH;
   DETACHED;
-  SUBSCRIBE;
-  SUBSCRIBED;
-  UNSUBSCRIBE;
-  UNSUBSCRIBED;
   PRESENCE;
-  EVENT;
+  MESSAGE;
 }
 
 enum TType {
@@ -35,9 +35,20 @@ enum TType {
   JSONOBJECT;
 }
 
+enum TFlags {
+  SYNC_TIME;
+}
+
 enum TPresenceState {
   ENTER;
   LEAVE;
+  UPDATE;
+}
+
+struct TError {
+  1: optional i16                   statusCode;
+  2: optional i16                   code;
+  3: optional string                reason;
 }
 
 struct TData {
@@ -52,8 +63,11 @@ struct TData {
 struct TPresence {
   1: required TPresenceState        state;
   2: required string                clientId;
-  3: optional string                connectionId;
-  4: optional TData                 clientData;
+  3: optional TData                 clientData;
+  4: optional string                memberId;
+  5: optional string                inheritMemberId;
+  6: optional string                connectionId;      /* @hidden */
+  7: optional string                instanceId;        /* @hidden */
 }
 
 struct TPresenceArray {
@@ -72,29 +86,26 @@ struct TMessageArray {
   1: required list<TMessage>        items;
 }
 
-struct TChannelMessage {
+struct TProtocolMessage {
   1: required TAction               action;
-  /* the following fields are expected/valid for the ERROR action */
-  2: optional i16                   statusCode;
-  3: optional i16                   code;
-  4: optional string                reason;
+  2: optional byte                  flags;
+  3: optional i32                   count;
+  4: optional TError                error;
   /* the following fields are expected/valid for connection-related and channel actions */
   5: optional string                applicationId;
-  6: optional string                clientId;
-  7: optional string                connectionId;
-  8: optional i32                   connectionSerial;
+  6: optional string                connectionId;
+  7: optional i64                   connectionSerial;
   /* the following fields are expected/valid for channel actions */
-  9: required string                channel;
-  10: optional string               channelSerial;
-  11: optional string               name;
-  12: optional i64                  timestamp;
-  13: optional i32                  size;
-  14: optional list<TMessage>       messages;
-  15: optional set<TPresence>       presence;
+  8: optional string                channel;
+  9: optional string                channelSerial;
+  10: optional i64                  msgSerial;
+  11: optional i64                  timestamp;
+  12: optional list<TMessage>       messages;
+  13: optional list<TPresence>      presence;
 }
 
-struct TMessageSet {
-  1: required list<TChannelMessage> items;
+struct TMessageBundle {
+  1: required list<TProtocolMessage> items;
 }
 
 struct SMessageCount {
@@ -114,6 +125,8 @@ struct SResourceCount {
   3:  optional double mean;
   4:  optional double min;
   5:  optional double refused;
+  10: optional double sample_count; /* @hidden */
+  11: optional double sample_sum;   /* @hidden */
 }
 
 struct SConnectionTypes {
@@ -126,7 +139,7 @@ struct SMessageTraffic {
   1: required SMessageTypes all;
   2: optional SMessageTypes realtime;
   3: optional SMessageTypes rest;
-  4: optional SMessageTypes post;
+  4: optional SMessageTypes push;
   5: optional SMessageTypes httpStream;
 }
 
