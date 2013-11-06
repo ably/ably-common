@@ -60,6 +60,7 @@ struct TData {
   4: optional double                doubleData;
   5: optional string                stringData;
   6: optional binary                binaryData;
+  7: optional binary                cipherData;
 }
 
 struct TPresence {
@@ -152,17 +153,30 @@ struct SRequestCount {
 }
 
 struct SStats {
-  1: required SMessageTypes    all;
-  2: required SMessageTraffic  inbound;
-  3: required SMessageTraffic  outbound;
-  4: required SMessageTypes    persisted;
-  5: required SConnectionTypes connections;
-  6: optional SResourceCount   channels;
-  7: optional SRequestCount    apiRequests;
-  8: optional SRequestCount    tokenRequests;
+  1:  required SMessageTypes    all;
+  2:  required SMessageTraffic  inbound;
+  3:  required SMessageTraffic  outbound;
+  4:  required SMessageTypes    persisted;
+  5:  required SConnectionTypes connections;
+  6:  optional SResourceCount   channels;
+  7:  optional SRequestCount    apiRequests;
+  8:  optional SRequestCount    tokenRequests;
+  10: optional string           inProgress; /* @hidden */
+  11: optional i32              count;      /* @hidden */
 }
 
 struct SStatsArray {
-  1: required list<SStats>     items;
+  1: required list<SStats> items;
 }
 
+struct WWebhookMessage {
+  1: required string name;
+  2: optional string webhookId;
+  3: optional i64    timestamp;
+  4: optional string serial;
+  5: optional TData  data;
+}
+
+struct WWebhookMessageArray {
+  1: required list<WWebhookMessage> items;
+}
