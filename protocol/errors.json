@@ -46,6 +46,14 @@
 	"50002": "internal connection error",
 	"50003": "timeout error",
 
+	/* webhook-related */
+	"70000": "webhook operation failed",
+	"70001": "webhook operation failed (post operation failed)",
+	"70002": "webhook operation failed (post operation returned unexpected code)",
+	"70003": "unable to recover channel (messages expired)",
+	"70004": "unable to recover channel (message limit exceeded)",
+	"70005": "unable to recover channel (history incomplete)",
+
 	/* connection-related */
 	"80000": "connection failed",
 	"80001": "connection failed (no compatible transport)",
@@ -61,6 +69,7 @@
 	"80011": "unable to recover connection (incompatible auth params)",
 	"80012": "unable to recover connection (invalid or unspecified connection serial)",
 	"80013": "protocol error",
+	"80014": "connection timed out",
 
 	/* channel-related */
 	"90000": "channel operation failed",
