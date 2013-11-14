@@ -11,8 +11,9 @@
 	"40005": "invalid credential",
 	"40006": "invalid connection id",
 	"40007": "invalid message id",
-	"40008": "invalid content length"
-	"40009": "maximum message length exceeded"
+	"40008": "invalid content length",
+	"40009": "maximum message length exceeded",
+	"40010": "invalid channel name",
 
 	/* 401 codes */
 	"40100": "unauthorized",
