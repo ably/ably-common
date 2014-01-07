@@ -4,6 +4,7 @@ namespace php ably
 namespace perl ably
 namespace py ably
 namespace rb ably
+namespace cocoa ART
 
 enum TAction {
   HEARTBEAT;
