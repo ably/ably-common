@@ -29,6 +29,7 @@
 	"40140": "token expired",
 	"40150": "connection blocked (limits exceeded)",
 	"40160": "operation not permitted with provided capability",
+	"40170": "error from client token callback",
 
 	/* 403 codes */
 	"40300": "forbidden",
