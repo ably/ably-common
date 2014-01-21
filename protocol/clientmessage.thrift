@@ -50,8 +50,8 @@ enum TPresenceState {
 
 struct TError {
   1: optional i16                   statusCode;
-  2: optional i16                   code;
-  3: optional string                reason;
+  2: optional i32                   code;
+  3: optional string                message;
 }
 
 struct TData {
@@ -178,6 +178,7 @@ struct WWebhookMessage {
   5: optional TData  data;
 }
 
-struct WWebhookMessageArray {
-  1: required list<WWebhookMessage> items;
+struct WWebhookEnvelope {
+  1: optional TError error;
+  2: optional list<WWebhookMessage> items;
 }
