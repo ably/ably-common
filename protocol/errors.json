@@ -75,6 +75,7 @@
 	"80012": "unable to recover connection (invalid or unspecified connection serial)",
 	"80013": "protocol error",
 	"80014": "connection timed out",
+	"80015": "incompatible connection parameters",
 
 	/* channel-related */
 	"90000": "channel operation failed",
