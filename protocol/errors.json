@@ -76,6 +76,7 @@
 	"80013": "protocol error",
 	"80014": "connection timed out",
 	"80015": "incompatible connection parameters",
+	"80016": "operation on superseded transport",
 
 	/* channel-related */
 	"90000": "channel operation failed",
