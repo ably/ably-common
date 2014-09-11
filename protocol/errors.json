@@ -84,7 +84,8 @@
 	"90002": "channel operation failed (epoch expired or never existed)",
 	"90003": "unable to recover channel (messages expired)",
 	"90004": "unable to recover channel (message limit exceeded)",
-	"90005": "unable to recover channel (history incomplete)",
+	"90005": "unable to recover channel (no matching epoch)",
+	"90006": "unable to recover channel (unbounded request)",
 	"91000": "unable to enter presence channel (no clientId)",
 	"91001": "unable to enter presence channel (invalid channel state)",
 }
