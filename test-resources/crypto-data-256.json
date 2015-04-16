@@ -24,7 +24,7 @@
       },
       "encrypted": {
         "name": "example",
-        "data": "NMDl1Acnel8HVdu1cEWdr8UFEi56Ms0zPHszbppM61BC8Yf6ndq+kiCj9xXW97/O",
+        "data": "NMDl1Acnel8HVdu1cEWdrxe4S0kK8Tfj8YCc6M40xtpkkPK1os8j5JhitfAVe4XM",
         "encoding": "cipher+aes-256-cbc/base64"
       }
     },
