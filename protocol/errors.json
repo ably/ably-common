@@ -77,6 +77,7 @@
 	"80014": "connection timed out",
 	"80015": "incompatible connection parameters",
 	"80016": "operation on superseded transport",
+	"80017": "connection closed",
 	"80020": "maximum connection message rate exceeded (publish)",
 	"80021": "maximum connection message rate exceeded (subscribe)",
 
