@@ -1,5 +1,5 @@
 {
-  "post_apps": "/* JSON body using in POST sandbox-rest.ably.io/apps request to set up the Test app */",
+  "_post_apps": "/* JSON body using in POST sandbox-rest.ably.io/apps request to set up the Test app */",
   "post_apps": {
     "keys": [
       {},
@@ -29,7 +29,7 @@
     ]
   },
 
-  "cipher": "/* Cipher configuration for client_encoded presence fixture data used in REST tests */",
+  "_cipher": "/* Cipher configuration for client_encoded presence fixture data used in REST tests */",
   "cipher": {
     "algorithm": "aes",
     "mode": "cbc",
