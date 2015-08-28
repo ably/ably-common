@@ -14,7 +14,8 @@
 	"40008": "invalid content length",
 	"40009": "maximum message length exceeded",
 	"40010": "invalid channel name",
-	"40011": "stale ring state"
+	"40011": "stale ring state",
+	"40012": "invalid client id",
 
 	/* 401 codes */
 	"40100": "unauthorized",
