@@ -14,6 +14,7 @@
 	"40008": "invalid content length",
 	"40009": "maximum message length exceeded",
 	"40010": "invalid channel name",
+	"40011": "stale ring state"
 
 	/* 401 codes */
 	"40100": "unauthorized",
@@ -78,8 +79,10 @@
 	"80015": "incompatible connection parameters",
 	"80016": "operation on superseded transport",
 	"80017": "connection closed",
+	"80018": "invalid connection id (invalid format)",
 	"80020": "maximum connection message rate exceeded (publish)",
 	"80021": "maximum connection message rate exceeded (subscribe)",
+	"80030": "client restriction not satisfied",
 
 	/* channel-related */
 	"90000": "channel operation failed",
