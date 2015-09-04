@@ -18,7 +18,7 @@
           { "clientId": "client_int",     "data": "24" },
           { "clientId": "client_string",  "data": "This is a string clientData payload" },
           { "clientId": "client_json",    "data": "{ \"test\": \"This is a JSONObject clientData payload\"}" },
-          { "clientId": "client_decoded", "data": "{\"example\":{\"json\":\"Object\"}}", "encoding": "json/utf-8" },
+          { "clientId": "client_decoded", "data": "{\"example\":{\"json\":\"Object\"}}", "encoding": "json" },
           {
             "clientId": "client_encoded",
             "data": "HO4cYSP8LybPYBPZPHQOtuD53yrD3YV3NBoTEYBh4U0N1QXHbtkfsDfTspKeLQFt",
