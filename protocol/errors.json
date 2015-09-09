@@ -16,6 +16,7 @@
 	"40010": "invalid channel name",
 	"40011": "stale ring state",
 	"40012": "invalid client id",
+	"40013": "Invalid message data or encoding",
 
 	/* 401 codes */
 	"40100": "unauthorized",
