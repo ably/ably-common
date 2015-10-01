@@ -14,7 +14,8 @@
         "name": "example",
         "data": "NMDl1Acnel8HVdu1cEWdr9CGPYFoBoLgJCzoybbQbnyfwx3UQ8CGuKyP/g56Za/JB3xW6XGkNzrHYvZwad4fvA==",
         "encoding": "utf-8/cipher+aes-256-cbc/base64"
-      }
+      },
+      "msgpack": "g6RuYW1lp2V4YW1wbGWoZW5jb2Rpbme4dXRmLTgvY2lwaGVyK2Flcy0yNTYtY2JjpGRhdGHEQDTA5dQHJ3pfB1XbtXBFna/Qhj2BaAaC4CQs6Mm20G58n8Md1EPAhrisj/4OemWvyQd8VulxpDc6x2L2cGneH7w="
     },
     {
       "encoded": {
@@ -26,7 +27,8 @@
         "name": "example",
         "data": "NMDl1Acnel8HVdu1cEWdr8UFEi56Ms0zPHszbppM61BC8Yf6ndq+kiCj9xXW97/O",
         "encoding": "cipher+aes-256-cbc/base64"
-      }
+      },
+      "msgpack": "g6RuYW1lp2V4YW1wbGWoZW5jb2RpbmeyY2lwaGVyK2Flcy0yNTYtY2JjpGRhdGHEMDTA5dQHJ3pfB1XbtXBFna/FBRIuejLNMzx7M26aTOtQQvGH+p3avpIgo/cV1ve/zg=="
     },
     {
       "encoded": {
@@ -38,7 +40,8 @@
         "name": "example",
         "data": "NMDl1Acnel8HVdu1cEWdr21pS5//hdtQf3QqQzZM/jWAtn09Vh52E6jMdC3mWS98",
         "encoding": "json/utf-8/cipher+aes-256-cbc/base64"
-      }
+      },
+      "msgpack": "g6RuYW1lp2V4YW1wbGWoZW5jb2Rpbme9anNvbi91dGYtOC9jaXBoZXIrYWVzLTI1Ni1jYmOkZGF0YcQwNMDl1Acnel8HVdu1cEWdr21pS5//hdtQf3QqQzZM/jWAtn09Vh52E6jMdC3mWS98"
     },
     {
       "encoded": {
@@ -50,7 +53,8 @@
         "name": "example",
         "data": "NMDl1Acnel8HVdu1cEWdr4J5sVAFpnXsz0fTtsuwOaTRU+6P5GaWlNjePWwiOZCQ",
         "encoding": "json/utf-8/cipher+aes-256-cbc/base64"
-      }
+      },
+      "msgpack": "g6RuYW1lp2V4YW1wbGWoZW5jb2Rpbme9anNvbi91dGYtOC9jaXBoZXIrYWVzLTI1Ni1jYmOkZGF0YcQwNMDl1Acnel8HVdu1cEWdr4J5sVAFpnXsz0fTtsuwOaTRU+6P5GaWlNjePWwiOZCQ"
     }
   ]
 }
