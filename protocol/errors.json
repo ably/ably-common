@@ -17,6 +17,8 @@
 	"40011": "stale ring state",
 	"40012": "invalid client id",
 	"40013": "Invalid message data or encoding",
+	"40014": "Resource disposed",
+	"40020": "Batch error",
 
 	/* 401 codes */
 	"40100": "unauthorized",
@@ -97,5 +99,6 @@
 	"91000": "unable to enter presence channel (no clientId)",
 	"91001": "unable to enter presence channel (invalid channel state)",
 	"91002": "unable to leave presence channel that is not entered",
+	"91003": "unable to enter presence channel (maximum member limit exceeded)",
 	"91100": "member implicitly left presence channel (connection closed)"
 }
