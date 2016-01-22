@@ -17,6 +17,8 @@
 	"40011": "stale ring state",
 	"40012": "invalid client id",
 	"40013": "Invalid message data or encoding",
+	"40014": "Resource disposed",
+	"40020": "Batch error",
 
 	/* 401 codes */
 	"40100": "unauthorized",
@@ -28,10 +30,14 @@
 	"40112": "account blocked (message limits exceeded)",
 	"40113": "account blocked",
 	"40120": "application disabled",
-	"40130": "key disabled",
+	"40130": "key error (unspecified)",
 	"40131": "key revoked",
 	"40132": "key expired",
-	"40140": "token expired",
+	"40133": "key disabled",
+	"40140": "token error (unspecified)",
+	"40141": "token revoked",
+	"40142": "token expired",
+	"40143": "token unrecognised",
 	"40150": "connection blocked (limits exceeded)",
 	"40160": "operation not permitted with provided capability",
 	"40170": "error from client token callback",
@@ -97,5 +103,6 @@
 	"91000": "unable to enter presence channel (no clientId)",
 	"91001": "unable to enter presence channel (invalid channel state)",
 	"91002": "unable to leave presence channel that is not entered",
+	"91003": "unable to enter presence channel (maximum member limit exceeded)",
 	"91100": "member implicitly left presence channel (connection closed)"
 }
