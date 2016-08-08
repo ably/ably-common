@@ -29,7 +29,7 @@
     	"data": "3q2+7w==",
     	"encoding": "base64",
     	"expectedType": "binary",
-    	"expectedValue": "deadbeef"
+    	"expectedHexValue": "deadbeef"
     }
   ]
 }
