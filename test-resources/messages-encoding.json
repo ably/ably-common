@@ -3,7 +3,7 @@
   "messages": [
     {"data": "foo", "encoding": null, "expectedType": "string"},
     {"data": "{\"foo\":42}", "encoding": null, "expectedType": "string"},
-    {"data": "{\"foo\":42}", "encoding": "json",  "expectedType": "map"},
+    {"data": "{\"foo\":42}", "encoding": "json",  "expectedType": "object"},
     {"data": "[{\"foo\":42},\"qux\"]", "encoding": "json",  "expectedType": "array"},
     {"data": "[{\"foo\":42},\"qux\"]", "encoding": "json",  "expectedType": "array"},
     {"data": "3q2+7w==", "encoding": "base64", "expectedType": "binary"}
