@@ -16,13 +16,13 @@
     {
     	"data": "{\"foo\":42}",
     	"encoding": "json",
-    	"expectedType": "object",
+    	"expectedType": "jsonObject",
     	"expectedValue": {"foo":42}
     },
     {
     	"data": "[{\"foo\":42},\"qux\"]",
     	"encoding": "json",
-    	"expectedType": "array",
+    	"expectedType": "jsonArray",
     	"expectedValue": [{"foo":42}, "qux"]
     },
     {
