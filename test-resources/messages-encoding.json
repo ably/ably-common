@@ -14,22 +14,22 @@
     	"expectedValue": "{\"foo\":42}"
     },
     {
-    	"data": "{\"foo\":42}",
+    	"data": "{\"foo\":42,\"bar\":[\"a\",1.2,{\"boo\":\"ha\"}]}",
     	"encoding": "json",
-    	"expectedType": "object",
-    	"expectedValue": {"foo":42}
+    	"expectedType": "jsonObject",
+    	"expectedValue": {"foo":42, "bar":["a", 1.2, {"boo":"ha"}]}
     },
     {
     	"data": "[{\"foo\":42},\"qux\"]",
     	"encoding": "json",
-    	"expectedType": "array",
+    	"expectedType": "jsonArray",
     	"expectedValue": [{"foo":42}, "qux"]
     },
     {
     	"data": "3q2+7w==",
     	"encoding": "base64",
     	"expectedType": "binary",
-    	"expectedValue": "deadbeef"
+    	"expectedHexValue": "deadbeef"
     }
   ]
 }
