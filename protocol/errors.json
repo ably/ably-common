@@ -107,5 +107,6 @@
 	"91001": "unable to enter presence channel (invalid channel state)",
 	"91002": "unable to leave presence channel that is not entered",
 	"91003": "unable to enter presence channel (maximum member limit exceeded)",
+	"91004": "unable to automatically re-enter presence channel",
 	"91100": "member implicitly left presence channel (connection closed)"
 }
