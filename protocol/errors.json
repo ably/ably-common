@@ -61,6 +61,26 @@
 	"50002": "internal connection error",
 	"50003": "timeout error",
 
+	/* frontend connection-related */
+	"55000": "internal error (uncategorised)",
+
+	/* frontend connection-related */
+	"55100": "internal error (generic connection error)",
+
+	/* frontend channel-related */
+	"55200": "internal error (generic channel or attachment error)",
+	"55201": "internal error (channel rpc error)",
+
+	/* core channel-related */
+	"55300": "internal error (generic message processing error)",
+	"55301": "internal error (core rpc error)",
+
+	/* core webhook/reactor-related */
+	"55400": "internal error (generic reactor error)",
+
+	/* persistence-related */
+	"55500": "internal error (generic persistence error)",
+
 	/* webhook-related */
 	"70000": "webhook operation failed",
 	"70001": "webhook operation failed (post operation failed)",
