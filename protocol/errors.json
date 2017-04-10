@@ -60,6 +60,7 @@
 	"50001": "internal channel error",
 	"50002": "internal connection error",
 	"50003": "timeout error",
+	"50004": "Request failed due to overloaded instance",
 
 	/* reactor-related */
 	"70000": "reactor operation failed",
