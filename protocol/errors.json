@@ -61,13 +61,11 @@
 	"50002": "internal connection error",
 	"50003": "timeout error",
 
-	/* webhook-related */
-	"70000": "webhook operation failed",
-	"70001": "webhook operation failed (post operation failed)",
-	"70002": "webhook operation failed (post operation returned unexpected code)",
-	"70003": "unable to recover channel (messages expired)",
-	"70004": "unable to recover channel (message limit exceeded)",
-	"70005": "unable to recover channel (history incomplete)",
+	/* reactor-related */
+	"70000": "reactor operation failed",
+	"70001": "reactor operation failed (post operation failed)",
+	"70002": "reactor operation failed (post operation returned unexpected code)",
+	"70003": "reactor operation failed (maximum number of concurrent in-flight requests exceeded)",
 
 	/* connection-related */
 	"80000": "connection failed",
