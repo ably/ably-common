@@ -25,6 +25,8 @@
 	"40101": "invalid credentials",
 	"40102": "incompatible credentials",
 	"40103": "invalid use of Basic auth over non-TLS transport",
+	"40104": "timestamp not current",
+	"40105": "nonce value replayed",
 	"40110": "account disabled",
 	"40111": "account restricted (connection limits exceeded)",
 	"40112": "account blocked (message limits exceeded)",
