@@ -18,6 +18,7 @@
 	"40012": "invalid client id",
 	"40013": "Invalid message data or encoding",
 	"40014": "Resource disposed",
+	"40015": "Invalid device id",
 	"40020": "Batch error",
 
 	/* 401 codes */
