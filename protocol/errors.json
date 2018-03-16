@@ -59,6 +59,12 @@
 	/* 405 codes */
 	"40500": "method not allowed",
 
+	/* 429 codes */
+	"42910": "rate limit exceeded (nonfatal): request rejected (unspecified)",
+	"42911": "rate limit exceeded (nonfatal): unable to publish message",
+	"42920": "rate limit exceeded (fatal)",
+	"42921": "rate limit exceeded (fatal): closing connection",
+
 	/* 500 codes */
 	"50000": "internal error",
 	"50001": "internal channel error",
