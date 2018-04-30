@@ -78,6 +78,16 @@
 	"70002": "reactor operation failed (post operation returned unexpected code)",
 	"70003": "reactor operation failed (maximum number of concurrent in-flight requests exceeded)",
 
+	/* exchange-related */
+	"71001": "No such publisher",
+	"71002": "No such product",
+	"71003": "Requester has no subscription to this product",
+	"71004": "No such channel in this product",
+	"71005": "Product disabled",
+	"71006": "Subscription disabled",
+	"71007": "Publisher not enabled as an exchange publisher",
+	"71008": "Forced re-attachment due to permissions change",
+
 	/* connection-related */
 	"80000": "connection failed",
 	"80001": "connection failed (no compatible transport)",
