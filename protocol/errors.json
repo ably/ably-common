@@ -79,14 +79,22 @@
 	"70003": "reactor operation failed (maximum number of concurrent in-flight requests exceeded)",
 
 	/* exchange-related */
-	"71001": "No such publisher",
-	"71002": "No such product",
-	"71003": "Requester has no subscription to this product",
-	"71004": "No such channel in this product",
-	"71005": "Product disabled",
-	"71006": "Subscription disabled",
-	"71007": "Publisher not enabled as an exchange publisher",
-	"71008": "Forced re-attachment due to permissions change",
+	/* ↳ general */
+	"71000": "Exchange error (unspecified)",
+	"71001": "Forced re-attachment due to permissions change",
+	/* ↳ publisher */
+	"71100": "Exchange publisher error (unspecified)",
+	"71101": "No such publisher",
+	"71102": "Publisher not enabled as an exchange publisher",
+	/* ↳ product */
+	"71200": "Exchange product error (unspecified)",
+	"71201": "No such product",
+	"71202": "Product disabled",
+	"71203": "No such channel in this product",
+	/* ↳ subscription */
+	"71300": "Exchange subscription error (unspecified)",
+	"71301": "Subscription disabled",
+	"71302": "Requester has no subscription to this product",
 
 	/* connection-related */
 	"80000": "connection failed",
