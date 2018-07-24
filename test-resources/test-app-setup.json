@@ -3,7 +3,7 @@
   "post_apps": {
     "limits": { 
                 "presence": { "maxMembers": 250 },
-                "messages": { "maxMessageSize": 16384}
+                "messages": { "maxSize": 16384}
               }
     "keys": [
       {},
