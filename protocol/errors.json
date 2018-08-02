@@ -20,6 +20,8 @@
 	"40014": "Resource disposed",
 	"40015": "Invalid device id",
 	"40020": "Batch error",
+	"40030": "Invalid publish request (unspecified)",
+	"40031": "Invalid publish request (invalid client-specified id)",
 
 	/* 401 codes */
 	"40100": "unauthorized",
@@ -44,6 +46,7 @@
 	"40142": "token expired",
 	"40143": "token unrecognised",
 	"40144": "invalid JWT format",
+	"40145": "invalid token format",
 	"40150": "connection blocked (limits exceeded)",
 	"40160": "operation not permitted with provided capability",
 	"40170": "error from client token callback",
