@@ -62,9 +62,9 @@
 
 	/* 429 codes */
 	"42910": "rate limit exceeded (nonfatal): request rejected (unspecified)",
-	"42911": "rate limit exceeded (nonfatal): unable to publish message",
+	"42911": "max per-connection publish rate limit exceeded (nonfatal): unable to publish message",
 	"42920": "rate limit exceeded (fatal)",
-	"42921": "rate limit exceeded (fatal): closing connection",
+	"42921": "max per-connection publish rate limit exceeded (fatal); closing connection",
 
 	/* 500 codes */
 	"50000": "internal error",
@@ -118,8 +118,7 @@
 	"80017": "connection closed",
 	"80018": "invalid connection id (invalid format)",
 	"80019": "client configured authentication provider request failed",
-	"80020": "maximum connection message rate exceeded (publish)",
-	"80021": "maximum connection message rate exceeded (subscribe)",
+	"80020": "continuity loss due to maximum subscribe message rate exceeded",
 	"80030": "client restriction not satisfied",
 
 	/* channel-related */
