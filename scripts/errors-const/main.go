@@ -87,6 +87,17 @@ func main() {
 			}
 			return v
 		},
+		"map": func(from, to string, v []string) []string {
+			dest := make([]string, len(v))
+			for k := range v {
+				if v[k] == from {
+					dest = append(dest, to)
+				} else {
+					dest = append(dest, v[k])
+				}
+			}
+			return dest
+		},
 	}).Parse(string(tplData))
 	if err != nil {
 		log.Fatal(err)

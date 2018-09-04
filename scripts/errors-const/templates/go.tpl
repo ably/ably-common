@@ -5,6 +5,6 @@ package ably
 // ably error codes
 const(
 	{{- range .codes}}
-	Err{{key .|normalize|split " "|title|join ""}} = {{.}}
+	Err{{key .|normalize|split " "|map "id" "ID"|map "clientId" "clientID"|map "tls" "TLS"|title|join ""}} = {{.}}
 	{{- end}}
 )
