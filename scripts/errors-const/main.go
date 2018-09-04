@@ -23,27 +23,27 @@ type options struct {
 const version = "0.1.0"
 
 func main() {
-	o := &options{}
-	flag.StringVar(&o.jsonSource, "json", "", `path to the ably-common/protocol/errors.json`)
-	flag.StringVar(&o.template, "t", "", "path to the template file")
-	flag.StringVar(&o.output, "o", "", "file to write output")
+	opts := &options{}
+	flag.StringVar(&opts.jsonSource, "json", "", `path to the ably-common/protocol/errors.json`)
+	flag.StringVar(&opts.template, "t", "", "path to the template file")
+	flag.StringVar(&opts.output, "o", "", "file to write output")
 	flag.Parse()
-	if o.jsonSource == "" {
+	if opts.jsonSource == "" {
 		flag.PrintDefaults()
 		return
 	}
-	if o.template == "" {
+	if opts.template == "" {
 		fmt.Println("[error] missing -t flag")
 		flag.PrintDefaults()
 		os.Exit(1)
 	}
-	tplData, err := ioutil.ReadFile(o.template)
+	tplData, err := ioutil.ReadFile(opts.template)
 	if err != nil {
 		log.Fatal(err)
 	}
 	var out io.Writer
-	if o.output != "" {
-		f, err := os.Open(o.output)
+	if opts.output != "" {
+		f, err := os.Open(opts.output)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -52,27 +52,27 @@ func main() {
 	} else {
 		out = os.Stdout
 	}
-	f, err := ioutil.ReadFile(o.jsonSource)
+	sourceFile, err := ioutil.ReadFile(opts.jsonSource)
 	if err != nil {
 		log.Fatal(err)
 	}
 	re := regexp.MustCompile(`\/\*([\s\S]*?)\*\/`)
 
 	// we remove the multiline comments
-	f = re.ReplaceAll(f, []byte{})
-	m := make(map[int]string)
-	err = json.Unmarshal(f, &m)
+	sourceFile = re.ReplaceAll(sourceFile, []byte{})
+	codeToDesc := make(map[int]string)
+	err = json.Unmarshal(sourceFile, &codeToDesc)
 	if err != nil {
 		log.Fatal(err)
 	}
-	var keys []int
-	for k := range m {
-		keys = append(keys, k)
+	var codes []int
+	for k := range codeToDesc {
+		codes = append(codes, k)
 	}
-	sort.Ints(keys)
+	sort.Ints(codes)
 	tpl, err := template.New("errors").Funcs(template.FuncMap{
 		"key": func(k int) string {
-			return m[k]
+			return codeToDesc[k]
 		},
 		"normalize": normalize,
 		"split": func(a, b string) []string {
@@ -92,7 +92,7 @@ func main() {
 		log.Fatal(err)
 	}
 	err = tpl.Execute(out, map[string]interface{}{
-		"codes":   keys,
+		"codes":   codes,
 		"version": version,
 	})
 	if err != nil {
