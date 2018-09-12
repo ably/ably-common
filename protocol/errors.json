@@ -56,6 +56,9 @@
 	"40310": "account does not permit tls connection",
 	"40311": "operation requires tls connection",
 	"40320": "application requires authentication",
+	"40330": "unable to activate account due to placement constraint (unspecified)",
+	"40331": "unable to activate account due to placement constraint (incompatible environment)",
+	"40332": "unable to activate account due to placement constraint (incompatible site)",
 
 	/* 404 codes */
 	"40400": "not found",
