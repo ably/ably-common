@@ -1,3 +1,17 @@
 {
-  "40103": "https://support.ably.io/solution/articles/3000065731-error-code-40103-invalid-use-of-basic-auth-over-non-tls-transport"
+  "40101": "https://support.ably.io/solution/articles/3000067415-40101-request-mac-does-not-match",
+  "40103": "https://support.ably.io/solution/articles/3000065731-error-code-40103-invalid-use-of-basic-auth-over-non-tls-transport",
+  "40104": "https://support.ably.io/solution/articles/3000068941-40104-timestamp-not-current",
+  "40105": "https://support.ably.io/solution/articles/3000068938-40105-nonce-value-replayed",
+  "40142": "https://support.ably.io/solution/articles/3000081686-error-code-40142-token-expired-code",
+  "40143": "https://support.ably.io/solution/articles/3000081687-error-code-40143-token-unrecognised",
+  "40144": "https://support.ably.io/solution/articles/3000080687-error-code-40144-unexpected-error-decoding-jwt-decode-exception",
+  "40160": "https://support.ably.io/solution/articles/3000081689--error-code-40160-action-not-permitted",
+  "40300": "https://support.ably.io/solution/articles/3000081685--error-code-40300-account-disabled",
+  "40330": "https://support.ably.io/solution/articles/3000081967-error-code-40330-unable-to-activate-account-due-to-placement-constraint-unspecified",
+  "40331": "https://support.ably.io/solution/articles/3000081969-error-code-40331-unable-to-activate-account-due-to-placement-constraint-incompatible-environment",
+  "40332": "https://support.ably.io/solution/articles/3000081968-error-code-40332-unable-to-activate-account-due-to-placement-constraint-incompatible-site",
+  "42911": "https://support.ably.io/solution/articles/3000081684-error-code-42911-maximum-account-wide-instantaneous-messages-rate-exceeded",
+  "80008": "https://support.ably.io/solution/articles/3000081690-error-code-80008-unable-to-recover-connection-connection-expired",
+  "90010": "https://support.ably.io/solution/articles/3000081688-error-code-90010-maximum-number-of-channels-per-connection-exceeded"
 }
