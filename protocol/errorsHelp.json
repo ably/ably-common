@@ -11,6 +11,7 @@
   "40330": "https://support.ably.io/solution/articles/3000081967-error-code-40330-unable-to-activate-account-due-to-placement-constraint-unspecified",
   "40331": "https://support.ably.io/solution/articles/3000081969-error-code-40331-unable-to-activate-account-due-to-placement-constraint-incompatible-environment",
   "40332": "https://support.ably.io/solution/articles/3000081968-error-code-40332-unable-to-activate-account-due-to-placement-constraint-incompatible-site",
+  "42910": "https://support.ably.io/solution/articles/3000082363-error-code-42910-rate-limit-exceeded-request-rejected",
   "42911": "https://support.ably.io/solution/articles/3000081684-error-code-42911-maximum-account-wide-instantaneous-messages-rate-exceeded",
   "80008": "https://support.ably.io/solution/articles/3000081690-error-code-80008-unable-to-recover-connection-connection-expired",
   "90010": "https://support.ably.io/solution/articles/3000081688-error-code-90010-maximum-number-of-channels-per-connection-exceeded"
