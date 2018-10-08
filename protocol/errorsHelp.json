@@ -1,4 +1,5 @@
 {
+  "40000": "https://support.ably.io/solution/articles/3000082819-error-code-40000-bad-request",
   "40101": "https://support.ably.io/solution/articles/3000067415-40101-request-mac-does-not-match",
   "40103": "https://support.ably.io/solution/articles/3000065731-error-code-40103-invalid-use-of-basic-auth-over-non-tls-transport",
   "40104": "https://support.ably.io/solution/articles/3000068941-40104-timestamp-not-current",
