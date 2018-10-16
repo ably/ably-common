@@ -4,6 +4,7 @@
   "40103": "https://support.ably.io/solution/articles/3000065731-error-code-40103-invalid-use-of-basic-auth-over-non-tls-transport",
   "40104": "https://support.ably.io/solution/articles/3000068941-40104-timestamp-not-current",
   "40105": "https://support.ably.io/solution/articles/3000068938-40105-nonce-value-replayed",
+  "40009": "https://support.ably.io/solution/articles/3000083028-error-code-40009-maximum-message-length-exceeded",
   "40115": "https://support.ably.io/solution/articles/3000082891-error-code-40115-account-restricted-request-limit-exceeded-",
   "40142": "https://support.ably.io/solution/articles/3000081686-error-code-40142-token-expired-code",
   "40143": "https://support.ably.io/solution/articles/3000081687-error-code-40143-token-unrecognised",
