@@ -79,10 +79,12 @@
 	"50002": "internal connection error",
 	"50003": "timeout error",
 	"50004": "Request failed due to overloaded instance",
-	"51000": "Ably's edge proxy service has encountered an unknown internal error whilst processing the request",
-	"51002": "Ably's edge proxy service received an invalid (bad gateway) response from the Ably platform",
-	"51003": "Ably's edge proxy service received a service unavailable response code from the Ably platform",
-	"51004": "Ably's edge proxy service timed out waiting for the Ably platform",
+
+	/* Edge cacheing / proxy service error codes */
+	"50010": "Ably's edge proxy service has encountered an unknown internal error whilst processing the request",
+	"50210": "Ably's edge proxy service received an invalid (bad gateway) response from the Ably platform",
+	"50310": "Ably's edge proxy service received a service unavailable response code from the Ably platform",
+	"50410": "Ably's edge proxy service timed out waiting for the Ably platform",
 
 	/* reactor-related */
 	"70000": "reactor operation failed",
