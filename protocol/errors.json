@@ -19,6 +19,7 @@
 	"40013": "Invalid message data or encoding",
 	"40014": "Resource disposed",
 	"40015": "Invalid device id",
+	"40016": "Invalid message name",
 	"40020": "Batch error",
 	"40030": "Invalid publish request (unspecified)",
 	"40031": "Invalid publish request (invalid client-specified id)",
