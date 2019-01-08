@@ -1,5 +1,6 @@
 {
   "40000": "https://support.ably.io/solution/articles/3000082819-error-code-40000-bad-request",
+  "40001": "https://support.ably.io/solution/articles/3000085256-error-code-40001-invalid-request-body",
   "40005": "https://support.ably.io/solution/articles/3000083030-error-code-40005-invalid-credentials",
   "40101": "https://support.ably.io/solution/articles/3000067415-40101-request-mac-does-not-match",
   "40103": "https://support.ably.io/solution/articles/3000065731-error-code-40103-invalid-use-of-basic-auth-over-non-tls-transport",
