@@ -1,5 +1,6 @@
 {
   "40000": "https://support.ably.io/solution/articles/3000082819-error-code-40000-bad-request",
+  "40001": "https://support.ably.io/solution/articles/3000085256-error-code-40001-invalid-request-body",
   "40005": "https://support.ably.io/solution/articles/3000083030-error-code-40005-invalid-credentials",
   "40010": "https://support.ably.io/solution/articles/3000046824-what-restrictions-exist-for-the-name-field-of-a-channel-",
   "40101": "https://support.ably.io/solution/articles/3000067415-40101-request-mac-does-not-match",
@@ -20,6 +21,8 @@
   "40332": "https://support.ably.io/solution/articles/3000081968-error-code-40332-unable-to-activate-account-due-to-placement-constraint-incompatible-site",
   "42910": "https://support.ably.io/solution/articles/3000082363-error-code-42910-rate-limit-exceeded-request-rejected",
   "42911": "https://support.ably.io/solution/articles/3000081684-error-code-42911-maximum-account-wide-instantaneous-messages-rate-exceeded",
+  "50000": "https://support.ably.io/solution/articles/3000083448-error-code-50000-internal-error",
+  "50003": "https://support.ably.io/solution/articles/3000083450-error-code-50003-timeout-error",
   "80008": "https://support.ably.io/solution/articles/3000081690-error-code-80008-unable-to-recover-connection-connection-expired",
   "90010": "https://support.ably.io/solution/articles/3000081688-error-code-90010-maximum-number-of-channels-per-connection-exceeded"
 }
