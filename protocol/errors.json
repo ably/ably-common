@@ -80,12 +80,15 @@
 	"50002": "internal connection error",
 	"50003": "timeout error",
 	"50004": "Request failed due to overloaded instance",
-
+	
 	/* Edge cacheing / proxy service error codes */
 	"50010": "Ably's edge proxy service has encountered an unknown internal error whilst processing the request",
 	"50210": "Ably's edge proxy service received an invalid (bad gateway) response from the Ably platform",
 	"50310": "Ably's edge proxy service received a service unavailable response code from the Ably platform",
 	"50410": "Ably's edge proxy service timed out waiting for the Ably platform",
+	
+	/* Active Traffic Management error code to indicate intentional redirect of traffic to fallback hosts */
+	"51001": "Active Traffic Management: traffic for this cluster is being temporarily redirected to a backup service",
 
 	/* reactor-related */
 	"70000": "reactor operation failed",
