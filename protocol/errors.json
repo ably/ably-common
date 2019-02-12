@@ -92,6 +92,7 @@
 	"70001": "reactor operation failed (post operation failed)",
 	"70002": "reactor operation failed (post operation returned unexpected code)",
 	"70003": "reactor operation failed (maximum number of concurrent in-flight requests exceeded)",
+	"70004": "reactor operation failed (invalid or unaccepted message contents)"
 
 	/* exchange-related */
 	/* ↳ general */
