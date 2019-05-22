@@ -132,7 +132,7 @@
 	"80013": "protocol error",
 	"80014": "connection timed out",
 	"80015": "incompatible connection parameters",
-	"80016": "operation on superseded transport",
+	"80016": "operation on superseded connection",
 	"80017": "connection closed",
 	"80018": "invalid connection id (invalid format)",
 	"80019": "client configured authentication provider request failed",
