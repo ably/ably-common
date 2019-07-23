@@ -115,6 +115,7 @@
 	"71300": "Exchange subscription error (unspecified)",
 	"71301": "Subscription disabled",
 	"71302": "Requester has no subscription to this product",
+	"71303": "Channel does not match the channel filter specified in the subscription to this product",
 
 	/* connection-related */
 	"80000": "connection failed",
