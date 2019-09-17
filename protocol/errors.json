@@ -111,6 +111,7 @@
 	"71201": "No such product",
 	"71202": "Product disabled",
 	"71203": "No such channel in this product",
+	"71204": "Forced re-attachment due to product being remapped to a different namespace",
 	/* ↳ subscription */
 	"71300": "Exchange subscription error (unspecified)",
 	"71301": "Subscription disabled",
