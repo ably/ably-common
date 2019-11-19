@@ -153,7 +153,7 @@
 	"90005": "unable to recover channel (no matching epoch)",
 	"90006": "unable to recover channel (unbounded request)",
 	"90007": "channel operation failed (no response from server)",
-	"90010": "maximum number of channels per connection exceeded",
+	"90010": "maximum number of channels per connection/request exceeded",
 	"91000": "unable to enter presence channel (no clientId)",
 	"91001": "unable to enter presence channel (invalid channel state)",
 	"91002": "unable to leave presence channel that is not entered",
