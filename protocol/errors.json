@@ -93,6 +93,8 @@
 	"50320": "Active Traffic Management: traffic for this cluster is being temporarily redirected to a backup service",
 	"50410": "Ably's edge proxy service timed out waiting for the Ably platform",
 
+	/* 6xxxx: reserved for internal (non-customer-facing) use */
+
 	/* reactor-related */
 	"70000": "reactor operation failed",
 	"70001": "reactor operation failed (post operation failed)",
