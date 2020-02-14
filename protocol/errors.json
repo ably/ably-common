@@ -2,6 +2,10 @@
 	/* generic error codes */
 	"10000": "no error",
 
+	/* 310 codes */
+	"31000": "not here",
+	"32000": "superseded",
+
 	/* 400 codes */
 	"40000": "bad request",
 	"40001": "invalid request body",
@@ -72,12 +76,16 @@
 	/* 405 codes */
 	"40500": "method not allowed",
 
+	/* 410 codes */
+	"41000": "gone",
+	"410010": "connect timeout",
+
 	/* 429 codes */
 	"42910": "rate limit exceeded (nonfatal): request rejected (unspecified)",
 	"42911": "max per-connection publish rate limit exceeded (nonfatal): unable to publish message",
 	"42920": "rate limit exceeded (fatal)",
 	"42921": "max per-connection publish rate limit exceeded (fatal); closing connection",
-
+	
 	/* 500 codes */
 	"50000": "internal error",
 	"50001": "internal channel error",
