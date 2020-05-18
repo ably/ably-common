@@ -72,6 +72,9 @@
 	/* 405 codes */
 	"40500": "method not allowed",
 
+	/* 410 codes */
+	"41001": "push device registration expired",
+
 	/* 429 codes */
 	"42910": "rate limit exceeded (nonfatal): request rejected (unspecified)",
 	"42911": "max per-connection publish rate limit exceeded (nonfatal): unable to publish message",
