@@ -81,6 +81,7 @@
 	/* 429 codes */
 	"42910": "rate limit exceeded (nonfatal): request rejected (unspecified)",
 	"42911": "max per-connection publish rate limit exceeded (nonfatal): unable to publish message",
+	"42912": "there is a channel iteration call already in progress; only 1 active call is permitted to execute at any one time",
 	"42920": "rate limit exceeded (fatal)",
 	"42921": "max per-connection publish rate limit exceeded (fatal); closing connection",
 
