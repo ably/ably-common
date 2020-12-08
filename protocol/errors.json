@@ -152,6 +152,7 @@
 	"80018": "invalid connection id (invalid format)",
 	"80019": "client configured authentication provider request failed",
 	"80020": "continuity loss due to maximum subscribe message rate exceeded",
+	"80021": "exceeded maximum permitted account-wide rate of creating new connections",
 	"80030": "client restriction not satisfied",
 
 	/* channel-related */
@@ -164,6 +165,7 @@
 	"90006": "unable to recover channel (unbounded request)",
 	"90007": "channel operation failed (no response from server)",
 	"90010": "maximum number of channels per connection/request exceeded",
+	"90021": "exceeded maximum permitted account-wide rate of creating new channels",
 	"91000": "unable to enter presence channel (no clientId)",
 	"91001": "unable to enter presence channel (invalid channel state)",
 	"91002": "unable to leave presence channel that is not entered",
