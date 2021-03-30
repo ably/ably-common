@@ -1,0 +1,30 @@
+task default: ["validate"]
+
+desc 'Validate errorsHelp.json URLs'
+task :validate do
+  require 'json'
+  require 'net/http'
+
+  links = JSON.parse(File.read('errorsHelp.json'))
+  failures = links.each_with_object([]) do |(code, url), accumulator|
+    response = Net::HTTP.get_response(URI(url))
+
+    if response.code != '200'
+      accumulator << { code: code, url: url, response: response.code }
+    end
+
+    accumulator
+  end
+
+  if failures.any?
+    puts "Found some help links that weren't 200 responses:"
+    failures.each do |data|
+      puts "- #{data[:code]} - #{data[:url]} -> #{data[:response]}"
+    end
+    exit 1
+
+  else
+    puts "All #{links.count} resolve to 200 status codes"
+
+  end
+end
