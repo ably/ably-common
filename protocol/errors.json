@@ -82,6 +82,9 @@
 	/* 410 codes */
 	"41001": "push device registration expired",
 
+	/* 422 codes */
+	"42200": "Unprocessable entity",
+
 	/* 429 codes */
 	"42910": "rate limit exceeded (nonfatal): request rejected (unspecified)",
 	"42911": "max per-connection publish rate limit exceeded (nonfatal): unable to publish message",
