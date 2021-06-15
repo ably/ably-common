@@ -1,0 +1,85 @@
+{
+    "agents": [
+        {
+            "identifier": "ably-js",
+            "emitters": [
+                "ably-js"
+            ]
+        },
+        {
+            "identifier": "node",
+            "emitters": [
+                "ably-js"
+            ]
+        },
+        {
+            "identifier": "react-native",
+            "versioned": false,
+            "emitters": [
+                "ably-js"
+            ]
+        },
+        {
+            "identifier": "ably-cocoa",
+            "emitters": [
+                "ably-cocoa"
+            ]
+        },
+        {
+            "identifier": "iOS",
+            "emitters": [
+                "ably-cocoa"
+            ]
+        },
+        {
+            "identifier": "tvOS",
+            "emitters": [
+                "ably-cocoa"
+            ]
+        },
+        {
+            "identifier": "watchOS",
+            "emitters": [
+                "ably-cocoa"
+            ]
+        },
+        {
+            "identifier": "macOS",
+            "emitters": [
+                "ably-cocoa"
+            ]
+        },
+        {
+            "identifier": "ably-java",
+            "emitters": [
+                "ably-java"
+            ]
+        },
+        {
+            "identifier": "android",
+            "emitters": [
+                "ably-java"
+            ]
+        },
+        {
+            "identifier": "ably-ruby",
+            "emitters": [
+                "ably-ruby"
+            ]
+        },
+        {
+            "identifier": "ruby",
+            "emitters": [
+                "ably-ruby"
+            ]
+        },
+        {
+            "identifier": "ably-ruby-rest",
+            "versioned": false,
+            "emitters": [
+                "ably-ruby"
+            ]
+        }
+    ]
+}
+
