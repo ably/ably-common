@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # Use the jq tool (included in GitHub runner environments) to simplistically validate JSON files.    
+      # Use the jq tool (included in GitHub runner environments) to simplistically validate JSON files.
       - run: |
         cd protocol
         cat protocol/errors.json | jq empty
