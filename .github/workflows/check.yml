@@ -13,5 +13,5 @@ jobs:
       # Use the jq tool (included in GitHub runner environments) to simplistically validate JSON files.
       - run: |
         cd protocol
-        cat protocol/errors.json | jq empty
-        cat protocol/errorsHelp.json | jq empty
+        jq empty errors.json
+        jq empty errorsHelp.json
