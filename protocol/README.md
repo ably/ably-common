@@ -24,8 +24,10 @@ Codes in [error.json](error.json) fall into these ranges:
 | 42200 | 422 |
 | 42910 | 429 |
 | 50000 | 500 |
-| 50010 | Edge cacheing / proxy service error codes |
+| 50010 | Edge cacheing / proxy service |
 | 50320 | Active Traffic Management error code to indicate intentional redirect of traffic to fallback hosts |
+| 50330 | DNS switch over |
+| 50410 | Edge cacheing / proxy service |
 | 60000 | reserved for internal (non-customer-facing) use |
 | 70000 | reactor-related |
 | 71000 | exchange-related: general |
