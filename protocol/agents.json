@@ -15,6 +15,20 @@
             "type": "runtime"
         },
         {
+            "identifier": "browser",
+            "emitters": [
+                "ably-js"
+            ],
+            "type": "runtime"
+        },
+        {
+            "identifier": "nativescript",
+            "emitters": [
+                "ably-js"
+            ],
+            "type": "wrapper"
+        },
+        {
             "identifier": "react-native",
             "versioned": false,
             "emitters": [
@@ -32,7 +46,8 @@
         {
             "identifier": "iOS",
             "emitters": [
-                "ably-cocoa"
+                "ably-cocoa",
+                "ably-dotnet"
             ],
             "type": "os"
         },
@@ -67,7 +82,8 @@
         {
             "identifier": "android",
             "emitters": [
-                "ably-java"
+                "ably-java",
+                "ably-dotnet"
             ],
             "type": "os"
         },
@@ -92,6 +108,65 @@
                 "ably-ruby"
             ],
             "type": "wrapper"
+        },
+        {
+            "identifier": "ably-dotnet",
+            "emitters": [
+                "ably-dotnet"
+            ],
+            "type": "sdk"
+        },
+        {
+            "identifier": "dotnet-framework",
+            "emitters": [
+                "ably-dotnet"
+            ],
+            "type": "runtime"
+        },
+        {
+            "identifier": "dotnet-standard",
+            "emitters": [
+                "ably-dotnet"
+            ],
+            "type": "runtime"
+        },
+        {
+            "identifier": "uwp",
+            "emitters": [
+                "ably-dotnet"
+            ],
+            "versioned": false,
+            "type": "runtime"
+        },
+        {
+            "identifier": "xamarin",
+            "emitters": [
+                "ably-dotnet"
+            ],
+            "versioned": false,
+            "type": "runtime"
+        },
+        {
+            "identifier": "ably-python",
+            "emitters": [
+                "ably-python"
+            ],
+            "type": "sdk"
+        },
+        {
+            "identifier": "ably-php",
+            "emitters": [
+                "ably-php"
+            ],
+            "type": "sdk"
+        },
+        {
+            "identifier": "laravel",
+            "emitters": [
+                "ably-php"
+            ],
+            "versioned": false,
+            "type": "wrapper"
         }
     ],
     "ablyLibMappings": {
@@ -110,7 +185,7 @@
         "dotnet.uwp": "ably-dotnet/${version} uwp",
         "dotnet.netstandard20": "ably-dotnet/${version} dotnet-standard/0.0.0",
         "dotnet.xamarin-android": "ably-dotnet/${version} xamarin android/0.0.0",
-        "dotnet.xamarin-ios": "ably-dotnet/${version} xamarin ios/0.0.0",
+        "dotnet.xamarin-ios": "ably-dotnet/${version} xamarin iOS/0.0.0",
         "php": "ably-php/${version}",
         "php-laravel": "ably-php/${version} laravel",
         "python": "ably-python/${version}",
