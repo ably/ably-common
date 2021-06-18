@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Ably Agents Definition",
-    "id": "https://schemas.ably.com/json/asset-common/Agetns",
+    "id": "https://schemas.ably.com/json/asset-common/Agents",
     "type": "object",
     "properties": {
         "agents": {
