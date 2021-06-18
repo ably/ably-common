@@ -1,0 +1,17 @@
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # Use the jq tool (included in GitHub runner environments) to simplistically validate JSON files.
+      - run: |
+          cd protocol
+          jq empty errors.json
+          jq empty errorsHelp.json
