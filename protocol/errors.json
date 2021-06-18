@@ -88,6 +88,7 @@
 	"50002": "internal connection error",
 	"50003": "timeout error",
 	"50004": "Request failed due to overloaded instance",
+	"50005": "Service unavailable (service temporarily in lockdown)",
 
 	"50010": "Ably's edge proxy service has encountered an unknown internal error whilst processing the request",
 	"50210": "Ably's edge proxy service received an invalid (bad gateway) response from the Ably platform",
