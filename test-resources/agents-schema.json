@@ -24,6 +24,10 @@
                         "type": "boolean",
                         "default": true,
                         "description": "A boolean indicating whether the identifier will have an associated version"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": ["os", "sdk", "wrapper"]
                     }
                 },
                 "required": ["identifier", "emitters"]

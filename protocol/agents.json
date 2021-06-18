@@ -4,7 +4,8 @@
             "identifier": "ably-js",
             "emitters": [
                 "ably-js"
-            ]
+            ],
+            "type": "sdk"
         },
         {
             "identifier": "node",
@@ -17,55 +18,64 @@
             "versioned": false,
             "emitters": [
                 "ably-js"
-            ]
+            ],
+            "type": "wrapper"
         },
         {
             "identifier": "ably-cocoa",
             "emitters": [
                 "ably-cocoa"
-            ]
+            ],
+            "type": "sdk"
         },
         {
             "identifier": "iOS",
             "emitters": [
                 "ably-cocoa"
-            ]
+            ],
+            "type": "os"
         },
         {
             "identifier": "tvOS",
             "emitters": [
                 "ably-cocoa"
-            ]
+            ],
+            "type": "os"
         },
         {
             "identifier": "watchOS",
             "emitters": [
                 "ably-cocoa"
-            ]
+            ],
+            "type": "os"
         },
         {
             "identifier": "macOS",
             "emitters": [
                 "ably-cocoa"
-            ]
+            ],
+            "type": "os"
         },
         {
             "identifier": "ably-java",
             "emitters": [
                 "ably-java"
-            ]
+            ],
+            "type": "sdk"
         },
         {
             "identifier": "android",
             "emitters": [
                 "ably-java"
-            ]
+            ],
+            "type": "os"
         },
         {
             "identifier": "ably-ruby",
             "emitters": [
                 "ably-ruby"
-            ]
+            ],
+            "type": "sdk"
         },
         {
             "identifier": "ruby",
@@ -78,7 +88,8 @@
             "versioned": false,
             "emitters": [
                 "ably-ruby"
-            ]
+            ],
+            "type": "wrapper"
         }
     ],
     "x-ably-lib-mappings": {
