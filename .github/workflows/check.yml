@@ -16,4 +16,4 @@ jobs:
           cd protocol
           jq empty errors.json
           jq empty errorsHelp.json
-          npm t
+          npm test
