@@ -11,7 +11,8 @@
             "identifier": "node",
             "emitters": [
                 "ably-js"
-            ]
+            ],
+            "type": "runtime"
         },
         {
             "identifier": "react-native",
@@ -81,7 +82,8 @@
             "identifier": "ruby",
             "emitters": [
                 "ably-ruby"
-            ]
+            ],
+            "type": "runtime"
         },
         {
             "identifier": "ably-ruby-rest",
