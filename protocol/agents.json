@@ -147,6 +147,13 @@
             "type": "runtime"
         },
         {
+            "identifier": "unity",
+            "emitters": [
+                "ably-dotnet"
+            ],
+            "type": "runtime"
+        },
+        {
             "identifier": "ably-python",
             "emitters": [
                 "ably-python"
