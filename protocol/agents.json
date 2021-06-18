@@ -92,7 +92,7 @@
             "type": "wrapper"
         }
     ],
-    "x-ably-lib-mappings": {
+    "ablyLibMappings": {
         "js-web": "ably-js/${version} browser",
         "js-node": "ably-js/${version} node/0.0.0",
         "js-ns": "ably-js/${version} nativescript",

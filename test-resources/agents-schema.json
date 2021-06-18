@@ -34,7 +34,7 @@
             },
             "additionalProperties": true
         },
-        "x-ably-lib-mappings": {
+        "ablyLibMappings": {
             "type": "object",
             "patternProperties": {
                 "/.*/": {
@@ -45,5 +45,5 @@
         }
     },
     "additionalProperties": false,
-    "required": ["agents", "x-ably-lib-mappings"]
+    "required": ["agents", "ablyLibMappings"]
 }
