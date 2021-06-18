@@ -1,0 +1,20 @@
+{
+  "name": "ably-common",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ably/ably-common.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ably/ably-common/issues"
+  },
+  "homepage": "https://github.com/ably/ably-common#readme",
+  "devDependencies": {
+    "jest": "^27.0.4",
+    "jsonschema": "^1.4.0"
+  }
+}
