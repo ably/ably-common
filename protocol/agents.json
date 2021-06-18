@@ -80,6 +80,29 @@
                 "ably-ruby"
             ]
         }
-    ]
+    ],
+    "x-ably-lib-mappings": {
+        "js-web": "ably-js/${version} browser",
+        "js-node": "ably-js/${version} node/0.0.0",
+        "js-ns": "ably-js/${version} nativescript",
+        "js-rn": "ably-js/${version} react-native",
+        "go": "ably-go/${version}",
+        "android": "ably-java/${version} android/0.0.0",
+        "java": "ably-java/${version}",
+        "cocoa.ios": "ably-cocoa/${version} iOS/0.0.0",
+        "cocoa.macos": "ably-cocoa/${version} macOS/0.0.0",
+        "cocoa.tvos": "ably-cocoa/${version} tvOS/0.0.0",
+        "dotnet": "ably-dotnet/${version}",
+        "dotnet.framework": "ably-dotnet/${version} dotnet-framework/0.0.0",
+        "dotnet.uwp": "ably-dotnet/${version} uwp",
+        "dotnet.netstandard20": "ably-dotnet/${version} dotnet-standard/0.0.0",
+        "dotnet.xamarin-android": "ably-dotnet/${version} xamarin android/0.0.0",
+        "dotnet.xamarin-ios": "ably-dotnet/${version} xamarin ios/0.0.0",
+        "php": "ably-php/${version}",
+        "php-laravel": "ably-php/${version} laravel",
+        "python": "ably-python/${version}",
+        "ruby": "ably-ruby/${version}",
+        "ruby-rest": "ably-ruby/${version} ably-ruby-rest"
+    }
 }
 
