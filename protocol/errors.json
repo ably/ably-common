@@ -98,6 +98,7 @@
 	"50002": "internal connection error",
 	"50003": "timeout error",
 	"50004": "Request failed due to overloaded instance",
+	"50005": "Service unavailable (service temporarily in lockdown)",
 	"50330": "request reached the wrong cluster; retry (used during dns changes for cluster migrations)",
 
 	/* Edge cacheing / proxy service error codes */
