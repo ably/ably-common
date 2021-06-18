@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Ably Agents Definition",
+    "id": "https://schemas.ably.com/json/asset-common/Agetns",
+    "type": "object",
+    "properties": {
+        "agents": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "identifier": {
+                        "description": "The identifier as it appears in the Ably-Agent string",
+                        "type": "string"
+                    },
+                    "emitters": {
+                        "type": "array",
+                        "description": "An array containing the names of core SDKs which may emit this identifier",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "versioned": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "A boolean indicating whether the identifier will have an associated version"
+                    }
+                },
+                "required": ["identifier", "emitters"]
+            },
+            "additionalProperties": true
+        },
+        "x-ably-lib-mappings": {
+            "type": "object",
+            "patternProperties": {
+                "/.*/": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": true
+        }
+    },
+    "additionalProperties": false,
+    "required": ["agents", "x-ably-lib-mappings"]
+}
