@@ -4,10 +4,7 @@
   "scripts": {
     "test": "jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ably/ably-common.git"
-  },
+  "repository": "ably/ably-common",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/ably/ably-common/issues"
