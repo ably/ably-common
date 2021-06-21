@@ -1,0 +1,202 @@
+{
+    "agents": [
+        {
+            "identifier": "ably-js",
+            "emitters": [
+                "ably-js"
+            ],
+            "type": "sdk"
+        },
+        {
+            "identifier": "node",
+            "emitters": [
+                "ably-js"
+            ],
+            "type": "runtime"
+        },
+        {
+            "identifier": "browser",
+            "emitters": [
+                "ably-js"
+            ],
+            "type": "runtime"
+        },
+        {
+            "identifier": "nativescript",
+            "emitters": [
+                "ably-js"
+            ],
+            "type": "wrapper"
+        },
+        {
+            "identifier": "react-native",
+            "versioned": false,
+            "emitters": [
+                "ably-js"
+            ],
+            "type": "wrapper"
+        },
+        {
+            "identifier": "ably-cocoa",
+            "emitters": [
+                "ably-cocoa"
+            ],
+            "type": "sdk"
+        },
+        {
+            "identifier": "iOS",
+            "emitters": [
+                "ably-cocoa",
+                "ably-dotnet"
+            ],
+            "type": "os"
+        },
+        {
+            "identifier": "tvOS",
+            "emitters": [
+                "ably-cocoa"
+            ],
+            "type": "os"
+        },
+        {
+            "identifier": "watchOS",
+            "emitters": [
+                "ably-cocoa"
+            ],
+            "type": "os"
+        },
+        {
+            "identifier": "macOS",
+            "emitters": [
+                "ably-cocoa"
+            ],
+            "type": "os"
+        },
+        {
+            "identifier": "ably-java",
+            "emitters": [
+                "ably-java"
+            ],
+            "type": "sdk"
+        },
+        {
+            "identifier": "android",
+            "emitters": [
+                "ably-java",
+                "ably-dotnet"
+            ],
+            "type": "os"
+        },
+        {
+            "identifier": "ably-ruby",
+            "emitters": [
+                "ably-ruby"
+            ],
+            "type": "sdk"
+        },
+        {
+            "identifier": "ruby",
+            "emitters": [
+                "ably-ruby"
+            ],
+            "type": "runtime"
+        },
+        {
+            "identifier": "ably-ruby-rest",
+            "versioned": false,
+            "emitters": [
+                "ably-ruby"
+            ],
+            "type": "wrapper"
+        },
+        {
+            "identifier": "ably-dotnet",
+            "emitters": [
+                "ably-dotnet"
+            ],
+            "type": "sdk"
+        },
+        {
+            "identifier": "dotnet-framework",
+            "emitters": [
+                "ably-dotnet"
+            ],
+            "type": "runtime"
+        },
+        {
+            "identifier": "dotnet-standard",
+            "emitters": [
+                "ably-dotnet"
+            ],
+            "type": "runtime"
+        },
+        {
+            "identifier": "uwp",
+            "emitters": [
+                "ably-dotnet"
+            ],
+            "versioned": false,
+            "type": "runtime"
+        },
+        {
+            "identifier": "xamarin",
+            "emitters": [
+                "ably-dotnet"
+            ],
+            "versioned": false,
+            "type": "runtime"
+        },
+        {
+            "identifier": "unity",
+            "emitters": [
+                "ably-dotnet"
+            ],
+            "type": "runtime"
+        },
+        {
+            "identifier": "ably-python",
+            "emitters": [
+                "ably-python"
+            ],
+            "type": "sdk"
+        },
+        {
+            "identifier": "ably-php",
+            "emitters": [
+                "ably-php"
+            ],
+            "type": "sdk"
+        },
+        {
+            "identifier": "laravel",
+            "emitters": [
+                "ably-php"
+            ],
+            "versioned": false,
+            "type": "wrapper"
+        }
+    ],
+    "ablyLibMappings": {
+        "js-web": "ably-js/${version} browser",
+        "js-node": "ably-js/${version} node/0.0.0",
+        "js-ns": "ably-js/${version} nativescript",
+        "js-rn": "ably-js/${version} react-native",
+        "go": "ably-go/${version}",
+        "android": "ably-java/${version} android/0.0.0",
+        "java": "ably-java/${version}",
+        "cocoa.ios": "ably-cocoa/${version} iOS/0.0.0",
+        "cocoa.macos": "ably-cocoa/${version} macOS/0.0.0",
+        "cocoa.tvos": "ably-cocoa/${version} tvOS/0.0.0",
+        "dotnet": "ably-dotnet/${version}",
+        "dotnet.framework": "ably-dotnet/${version} dotnet-framework/0.0.0",
+        "dotnet.uwp": "ably-dotnet/${version} uwp",
+        "dotnet.netstandard20": "ably-dotnet/${version} dotnet-standard/0.0.0",
+        "dotnet.xamarin-android": "ably-dotnet/${version} xamarin android/0.0.0",
+        "dotnet.xamarin-ios": "ably-dotnet/${version} xamarin iOS/0.0.0",
+        "php": "ably-php/${version}",
+        "php-laravel": "ably-php/${version} laravel",
+        "python": "ably-python/${version}",
+        "ruby": "ably-ruby/${version}",
+        "ruby-rest": "ably-ruby/${version} ably-ruby-rest"
+    }
+}

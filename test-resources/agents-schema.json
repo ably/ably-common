@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Ably Agents Definition",
+    "id": "https://schemas.ably.com/json/asset-common/Agents",
+    "type": "object",
+    "properties": {
+        "agents": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "identifier": {
+                        "description": "The identifier as it appears in the Ably-Agent string",
+                        "type": "string"
+                    },
+                    "emitters": {
+                        "type": "array",
+                        "description": "An array containing the names of core SDKs which may emit this identifier",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "versioned": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "A boolean indicating whether the identifier will have an associated version"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": ["os", "sdk", "wrapper", "runtime"]
+                    }
+                },
+                "required": ["identifier", "emitters", "type"]
+            }
+        },
+        "ablyLibMappings": {
+            "type": "object",
+            "description": "An explicit mapping from x-ably-lib library and variant identifiers to ably-agent strings",
+            "patternProperties": {
+                "/.*/": {
+                    "description": "A format string which defines how the associated x-ably-lib prefix should be translated to an ably-agent string, for example 'ably-js/${version}'",
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": ["agents", "ablyLibMappings"]
+}
