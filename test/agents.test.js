@@ -10,7 +10,7 @@ const agents = require(agentsPath);
 const jsonschema = new Validator();
 jsonschema.addSchema(
     schema,
-    'https://schemas.ably.com/json/asset-common/Agents'
+    'https://schemas.ably.com/json/ably-common/Agents'
 );
 
 describe("agents.json", () => {
