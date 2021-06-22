@@ -1,5 +1,7 @@
 # Ably - Common Resources
 
+[![.github/workflows/check.yml](https://github.com/ably/ably-common/actions/workflows/check.yml/badge.svg)](https://github.com/ably/ably-common/actions/workflows/check.yml)
+
 ## Overview
 
 This repository contains files shared across [Ably](https://www.ably.com),
