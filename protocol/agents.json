@@ -2,6 +2,7 @@
     "agents": [
         {
             "identifier": "ably-js",
+            "versioned": true,
             "emitters": [
                 "ably-js"
             ],
@@ -9,6 +10,7 @@
         },
         {
             "identifier": "node",
+            "versioned": true,
             "emitters": [
                 "ably-js"
             ],
@@ -16,6 +18,7 @@
         },
         {
             "identifier": "browser",
+            "versioned": true,
             "emitters": [
                 "ably-js"
             ],
@@ -23,6 +26,7 @@
         },
         {
             "identifier": "nativescript",
+            "versioned": true,
             "emitters": [
                 "ably-js"
             ],
@@ -38,6 +42,7 @@
         },
         {
             "identifier": "ably-cocoa",
+            "versioned": true,
             "emitters": [
                 "ably-cocoa"
             ],
@@ -45,6 +50,7 @@
         },
         {
             "identifier": "iOS",
+            "versioned": true,
             "emitters": [
                 "ably-cocoa",
                 "ably-dotnet"
@@ -53,6 +59,7 @@
         },
         {
             "identifier": "tvOS",
+            "versioned": true,
             "emitters": [
                 "ably-cocoa"
             ],
@@ -60,6 +67,7 @@
         },
         {
             "identifier": "watchOS",
+            "versioned": true,
             "emitters": [
                 "ably-cocoa"
             ],
@@ -67,6 +75,7 @@
         },
         {
             "identifier": "macOS",
+            "versioned": true,
             "emitters": [
                 "ably-cocoa"
             ],
@@ -74,6 +83,7 @@
         },
         {
             "identifier": "ably-java",
+            "versioned": true,
             "emitters": [
                 "ably-java"
             ],
@@ -81,6 +91,7 @@
         },
         {
             "identifier": "android",
+            "versioned": true,
             "emitters": [
                 "ably-java",
                 "ably-dotnet"
@@ -89,6 +100,7 @@
         },
         {
             "identifier": "ably-ruby",
+            "versioned": true,
             "emitters": [
                 "ably-ruby"
             ],
@@ -96,6 +108,7 @@
         },
         {
             "identifier": "ruby",
+            "versioned": true,
             "emitters": [
                 "ably-ruby"
             ],
@@ -111,6 +124,7 @@
         },
         {
             "identifier": "ably-dotnet",
+            "versioned": true,
             "emitters": [
                 "ably-dotnet"
             ],
@@ -118,6 +132,7 @@
         },
         {
             "identifier": "dotnet-framework",
+            "versioned": true,
             "emitters": [
                 "ably-dotnet"
             ],
@@ -125,6 +140,7 @@
         },
         {
             "identifier": "dotnet-standard",
+            "versioned": true,
             "emitters": [
                 "ably-dotnet"
             ],
@@ -132,22 +148,23 @@
         },
         {
             "identifier": "uwp",
+            "versioned": false,
             "emitters": [
                 "ably-dotnet"
             ],
-            "versioned": false,
             "type": "runtime"
         },
         {
             "identifier": "xamarin",
+            "versioned": false,
             "emitters": [
                 "ably-dotnet"
             ],
-            "versioned": false,
             "type": "runtime"
         },
         {
             "identifier": "unity",
+            "versioned": true,
             "emitters": [
                 "ably-dotnet"
             ],
@@ -155,6 +172,7 @@
         },
         {
             "identifier": "ably-python",
+            "versioned": true,
             "emitters": [
                 "ably-python"
             ],
@@ -162,6 +180,7 @@
         },
         {
             "identifier": "ably-php",
+            "versioned": true,
             "emitters": [
                 "ably-php"
             ],
@@ -169,10 +188,10 @@
         },
         {
             "identifier": "laravel",
+            "versioned": false,
             "emitters": [
                 "ably-php"
             ],
-            "versioned": false,
             "type": "wrapper"
         }
     ],
