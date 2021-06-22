@@ -13,7 +13,7 @@ jobs:
       # Using git grep to fail the build if any tab characters are found in source files - we use spaces for whitespace.
       # Using the jq tool (included in GitHub runner environments) to simplistically validate JSON files.
       - run: |
-          ! git --no-pager grep $'\t'
+          ! git --no-pager grep $'\t' || { echo 'ERROR: Lint failed! Source files must use spaces for whitespace.'; false; }
           npm ci
           cd protocol
           jq empty errors.json
