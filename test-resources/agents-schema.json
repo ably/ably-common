@@ -22,7 +22,6 @@
                     },
                     "versioned": {
                         "type": "boolean",
-                        "default": true,
                         "description": "A boolean indicating whether the identifier will have an associated version"
                     },
                     "type": {
@@ -30,7 +29,7 @@
                         "enum": ["os", "sdk", "wrapper", "runtime"]
                     }
                 },
-                "required": ["identifier", "emitters", "type"]
+                "required": ["identifier", "emitters", "versioned", "type"]
             }
         },
         "ablyLibMappings": {
