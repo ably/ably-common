@@ -10,7 +10,7 @@ If you need help understanding any error codes, or need technical support, pleas
 
 ## Error Code Ranges
 
-Codes in [error.json](error.json) fall into these ranges:
+Codes in [errors.json](errors.json) fall into these ranges:
 
 | From  | Title |
 | ----- | ----- |
