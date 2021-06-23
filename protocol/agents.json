@@ -193,6 +193,14 @@
                 "ably-php"
             ],
             "type": "wrapper"
+        },
+        {
+            "identifier": "ably-go",
+            "versioned": true,
+            "emitters": [
+                "ably-go"
+            ],
+            "type": "sdk"
         }
     ],
     "ablyLibMappings": {
