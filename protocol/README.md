@@ -1,6 +1,6 @@
-# Ably Realtime Error Codes
+# Ably Realtime Protocol
 
-## Overview
+## Error Codes
 
 Ably's [client library SDKs](https://www.ably.io/download), and the [core realtime platform](https://www.ably.io/platform), use common error codes. These error codes are stored and maintained in the shared public JSON file [errors.json](./errors.json).
 
@@ -8,7 +8,7 @@ In addition, a list of error codes and corresponding support articles to help un
 
 If you need help understanding any error codes, or need technical support, please visit the [Ably support desk](https://www.ably.io/support).
 
-## Error Code Ranges
+### Ranges
 
 Codes in [errors.json](errors.json) fall into these ranges:
 
