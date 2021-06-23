@@ -18,7 +18,7 @@
         },
         {
             "identifier": "browser",
-            "versioned": true,
+            "versioned": false,
             "emitters": [
                 "ably-js"
             ],
