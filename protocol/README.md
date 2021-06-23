@@ -36,3 +36,10 @@ Codes in [errors.json](errors.json) fall into these ranges:
 | 71300 | exchange-related: subscription |
 | 80000 | connection-related |
 | 90000 | channel-related |
+
+## Agents
+
+A list of agents announced by Ably client libraries can be found in [agents.json](agents.json).
+The schema for this file is defined in [agents-schema.json](../test-resources/agents-schema.json).
+
+See [RSC7d](https://docs.ably.com/client-lib-development-guide/features/#RSC7d) for more information on the `Agent` library identifier and the `Ably-Agent` HTTP header.
