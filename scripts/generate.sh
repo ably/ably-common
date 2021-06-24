@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 #
 # A script to generate language specific code from source protocol files.
+#
+# If the --check flag is set, then the script will fail if any generated files
+# differ from what is committed (used in CI to make sure files are up-to-date).
 
 # exit if any command returns a non-zero exit status
 set -e
@@ -11,6 +14,10 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 # main runs the main logic of the program
 main() {
   generate_go
+
+  if [[ "$1" = "--check" ]]; then
+    check_files
+  fi
 
   info "Done!"
 }
@@ -31,6 +38,24 @@ generate_go() {
 
   # return to the previous working directory
   popd >/dev/null
+}
+
+# check_files checks that generated files are up-to-date by running
+# 'git status --porcelain' and failing if it produces any output.
+check_files() {
+  local status="$(git status --porcelain)"
+
+  if [[ -n "${status}" ]]; then
+    cat >&2 <<EOF
+
+ERROR: The following files are out-of-date:
+
+${status}
+
+Please run scripts/generate.sh and commit the result.
+EOF
+    exit 1
+  fi
 }
 
 # info prints an informational message to stdout

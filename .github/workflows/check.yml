@@ -9,13 +9,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '1.16.5'
 
-      # Using git grep to fail the build if any tab characters are found in source files - we use spaces for whitespace.
+      # Using git grep to fail the build if any tab characters are found in source files (except Go files) - we use spaces for whitespace.
       # Using the jq tool (included in GitHub runner environments) to simplistically validate JSON files.
+      # Running scripts/generate.sh to make sure auto-generated files are up to date
       - run: |
-          ! git --no-pager grep $'\t' || { echo 'ERROR: Lint failed! Source files must use spaces for whitespace.'; false; }
+          ! git --no-pager grep $'\t' -- './*' ':!./go' || { echo 'ERROR: Lint failed! Source files must use spaces for whitespace.'; false; }
           npm ci
           cd protocol
           jq empty errors.json
           jq empty errorsHelp.json
           npm test
+          cd ..
+          scripts/generate.sh --check
