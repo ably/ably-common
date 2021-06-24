@@ -13,3 +13,7 @@ max_line_length = off
 
 [*.md]
 trim_trailing_whitespace = false
+
+[{go.mod,go.sum,*.go}]
+indent_style = tab
+indent_size = 4
