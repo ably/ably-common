@@ -1,6 +1,6 @@
-# Ably Realtime Error Codes
+# Ably Realtime Protocol
 
-## Overview
+## Error Codes
 
 Ably's [client library SDKs](https://www.ably.io/download), and the [core realtime platform](https://www.ably.io/platform), use common error codes. These error codes are stored and maintained in the shared public JSON file [errors.json](./errors.json).
 
@@ -8,9 +8,9 @@ In addition, a list of error codes and corresponding support articles to help un
 
 If you need help understanding any error codes, or need technical support, please visit the [Ably support desk](https://www.ably.io/support).
 
-## Error Code Ranges
+### Ranges
 
-Codes in [error.json](error.json) fall into these ranges:
+Codes in [errors.json](errors.json) fall into these ranges:
 
 | From  | Title |
 | ----- | ----- |
@@ -36,3 +36,10 @@ Codes in [error.json](error.json) fall into these ranges:
 | 71300 | exchange-related: subscription |
 | 80000 | connection-related |
 | 90000 | channel-related |
+
+## Agents
+
+A list of agents announced by Ably client libraries can be found in [agents.json](agents.json).
+The schema for this file is defined in [agents-schema.json](../test-resources/agents-schema.json).
+
+See [RSC7d](https://docs.ably.com/client-lib-development-guide/features/#RSC7d) for more information on the `Agent` library identifier and the `Ably-Agent` HTTP header.
