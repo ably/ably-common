@@ -1,0 +1,26 @@
+# This is a manually triggered workflow (hence on: workflow_dispatch).
+# See: https://docs.github.com/en/actions/reference/events-that-trigger-workflows#manual-events
+
+on: workflow_dispatch
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.16.5'
+
+      - name: Setup SSH access
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.ABLY_COMMON_GO_SSH_KEY }}
+
+      - name: Publish to Repositories
+        run: |
+          git config user.name "ably-common-publish-action"
+          git config user.email "ably-common-publish-action@ably.com"
+          scripts/publish.sh
