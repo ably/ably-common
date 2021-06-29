@@ -14,6 +14,23 @@ Status badges for GitHub workflows should appear here, under the initial H1.
 
 A one sentence summary of what this SDK does.
 
+## Running the Example [optional]
+
+Not all repositories will have this, but if there is an example app then this is often a good entry point for developers wishing to gain familiarity before attempting to integrate it into their own application codebase.
+
+Example:
+[ably-flutter](https://github.com/ably/ably-flutter#running-the-example)
+
+## Installation
+
+How to install this SDK into an application project (whether a new or existing codebase), covering all supported package management and distribution systems.
+
+Provide a link to [Requirements](#requirements).
+
+## Usage
+
+These are generally pretty basic but should show all code required to get something up and running with this SDK.
+
 ## Resources
 
 Links out to the core documentation relating to this SDK.
@@ -27,7 +44,9 @@ Examples:
 [ably-flutter](https://github.com/ably/ably-flutter#resources),
 [ably-asset-tracking-android](https://github.com/ably/ably-asset-tracking-android/blob/main/README.md#useful-resources)
 
-## Supported Platforms
+## Requirements
+
+What is required to build a project using this SDK. Typically a list of prerequisites.
 
 Detail on what target runtimes are supported by this SDK. May also include detail around what platforms are tested on, though preference should be towards referring those who are interested in testing to consult workflow files directly (e.g. to inspect [strategy matrix configuration](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstrategymatrix) for jobs).
 
@@ -39,27 +58,6 @@ This should be formatted as a bulleted list and each feature should link to an i
 
 Example:
 [ably-flutter](https://github.com/ably/ably-flutter#known-limitations)
-
-## Requirements
-
-What is required to build a project using this SDK. Typically a list of prerequisites.
-
-May also include runtime requirements specific to particular platforms, expanding on what's detailed at a higher level under [Supported Platforms](#supported-platforms).
-
-## Running the Example [optional]
-
-Not all repositories will have this, but if there is an example app then this is often a good entry point for developers wishing to gain familiarity before attempting to integrate it into their own application codebase.
-
-Example:
-[ably-flutter](https://github.com/ably/ably-flutter#running-the-example)
-
-## Installation
-
-How to install this SDK into an application project (whether a new or existing codebase), covering all supported package management and distribution systems.
-
-## Usage Examples
-
-These are generally pretty basic but should show all code required to get something up and running with this SDK.
 
 ## Support, Feedback and Troubleshooting
 
