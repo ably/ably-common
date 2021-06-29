@@ -2,6 +2,8 @@
 
 Status badges for GitHub workflows should appear here, under the initial H1.
 
+## [GUIDANCE]
+
 - A manually maintained TOC (table of contents) should not be included. GitHub have been providing built-in, automatic support for the creation of README TOC [since March 2021](https://twitter.com/github/status/1376636651963842562?lang=en).
 - Headings with the `[optional]` suffix in this document are not required for all SDKs.
 - There will be some SDKs where additional headings may be required, where those headings need not necessarily be added to this template if they're clearly one-off requirements for the context of that particular SDK.
@@ -10,16 +12,16 @@ Status badges for GitHub workflows should appear here, under the initial H1.
 
 ## Overview
 
-### Documentation
+A one sentence summary of what this SDK does.
+
+## Resources
 
 Links out to the core documentation relating to this SDK.
 
 Example:
 [ably-asset-tracking-android](https://github.com/ably/ably-asset-tracking-android/blob/main/README.md#documentation)
 
-### Resources
-
-Links out to other locations, typically hosted by Ably, where more useful detail can be found about this SDK and how it fits into the wider ecosystem. These links tend to fall outside the immediate linear reference provided by links provided under [Documentation](#documentation) - e.g. tutorials, demo repositories, blog posts, etc..
+Also, links out to other locations, typically hosted by Ably, where more useful detail can be found about this SDK and how it fits into the wider ecosystem. These links tend to fall outside the immediate linear reference provided by links provided under [Documentation](#documentation) - e.g. tutorials, demo repositories, blog posts, etc..
 
 Examples:
 [ably-flutter](https://github.com/ably/ably-flutter#resources),
