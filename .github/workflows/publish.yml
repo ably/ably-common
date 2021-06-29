@@ -21,6 +21,6 @@ jobs:
 
       - name: Publish to Repositories
         run: |
-          git config user.name "ably-common-publish-action"
-          git config user.email "ably-common-publish-action@ably.com"
+          git config --global user.name "ably-common-publish-action"
+          git config --global user.email "ably-common-publish-action@ably.com"
           scripts/publish.sh
