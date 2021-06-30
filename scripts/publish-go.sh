@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
-# A script to generate language specific code from source protocol files and
-# publish them to downstream GitHub repositories.
+# A script to publish generate language specific code to downstream GitHub repositories.
+# The build-go.sh script will need to have been run first.
 #
 # The script assumes there's an SSH key available with read/write permissions
 # to the downstream repositories, and thus uses SSH URLs.
@@ -28,12 +28,8 @@ publish_go() {
   info "Cloning ably-common-go into ${repo}"
   git clone git@github.com:ably/ably-common-go "${repo}"
 
-  info "Building Go generator programs"
-  go build -o bin/ ./go/cmd/...
-
-  info "Generating Go code"
-  mkdir -p "${repo}/ablyagent"
-  bin/ablyagent --out "${repo}/ablyagent/ablyagent.go"
+  info "Copying generated Go code to repository clone"
+  cp generated/ablyagent.go "${repo}/ablyagent"
 
   # check there are some changes to publish
   cd "${repo}"
