@@ -21,6 +21,6 @@ jobs:
 
       - name: Publish to Downstream Repository for Go users
         run: |
-          git config --global user.name "ably-common-publish-action"
-          git config --global user.email "ably-common-publish-action@ably.com"
+          git config --global user.name "ably-common-publish-workflow"
+          git config --global user.email "ably-common-publish-workflow@ably.com"
           scripts/publish-go.sh
