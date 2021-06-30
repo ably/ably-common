@@ -23,4 +23,4 @@ jobs:
         run: |
           git config --global user.name "ably-common-publish-action"
           git config --global user.email "ably-common-publish-action@ably.com"
-          scripts/publish.sh
+          scripts/publish-go.sh
