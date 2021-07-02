@@ -4,7 +4,7 @@
 on: workflow_dispatch
 
 jobs:
-  publish:
+  publish-go:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,8 +19,9 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.ABLY_COMMON_GO_SSH_KEY }}
 
-      - name: Publish to Repositories
+      - name: Build and then Publish to Downstream Repository for Go users
         run: |
-          git config --global user.name "ably-common-publish-action"
-          git config --global user.email "ably-common-publish-action@ably.com"
-          scripts/publish.sh
+          scripts/build-go.sh
+          git config --global user.name "ably-common-publish-workflow"
+          git config --global user.email "ably-common-publish-workflow@ably.com"
+          scripts/publish-go.sh
