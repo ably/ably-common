@@ -13,7 +13,7 @@ main() {
 }
 
 # build builds the Go generator programs in go/cmd, then uses them to generate
-# Go code - ready to be pushed to the ably-common-go repository (see pubish-go.sh).
+# Go code - ready to be pushed to the ably-common-go repository (see publish-go.sh).
 build() {
   info "Building Go generator programs"
   go build -o bin/ ./go/cmd/...
