@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# A script to publish generate language specific code to downstream GitHub repositories.
+# A script to publish generated code to downstream GitHub repositories.
 # The build-go.sh script will need to have been run first.
 #
 # The script assumes there's an SSH key available with read/write permissions
