@@ -40,6 +40,31 @@ Codes in [errors.json](errors.json) fall into these ranges:
 ## Agents
 
 A list of agents announced by Ably client libraries can be found in [agents.json](agents.json).
-The schema for this file is defined in [agents-schema.json](../test-resources/agents-schema.json).
 
 See [RSC7d](https://docs.ably.com/client-lib-development-guide/features/#RSC7d) for more information on the `Agent` library identifier and the `Ably-Agent` HTTP header.
+
+### Adding New Agents
+
+When a new agent is added to a client library, add a corresponding entry to [agents.json](agents.json)
+using the schema defined in [agents-schema.json](../test-resources/agents-schema.json), and open a pull
+request against the `main` branch with those changes.
+
+Once the pull request is merged into `main`, open an internal ticket requesting that the realtime team
+follow the "Publishing Changes" steps below.
+
+### Publishing Changes
+
+After changes to [agents.json](agents.json) have been merged into `main`, update the generated Go code
+in the [ably-common-go](https://github.com/ably/ably-common-go) repository by manually triggering the
+[publish workflow](../.github/workflows/publish.yml) (see [here](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow)
+for instructions on how to do that).
+
+Once the generated Go code has been updated, update the `ably-common-go` module in the
+internal [go-services](https://github.com/ably/go-services) repository by running:
+
+```
+go get -u github.com/ably/ably-common-go
+```
+
+Open a pull request with the resulting changes to `go.mod` and `go.sum`, and once merged deploy the router
+so that it's aware of the newly added agent identifiers.
