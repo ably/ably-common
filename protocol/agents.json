@@ -77,7 +77,24 @@
             "identifier": "macOS",
             "versioned": true,
             "emitters": [
-                "ably-cocoa"
+                "ably-cocoa",
+                "ably-dotnet"
+            ],
+            "type": "os"
+        },
+        {
+            "identifier": "windows",
+            "versioned": true,
+            "emitters": [
+                "ably-dotnet"
+            ],
+            "type": "os"
+        },
+        {
+            "identifier": "linux",
+            "versioned": true,
+            "emitters": [
+                "ably-dotnet"
             ],
             "type": "os"
         },
