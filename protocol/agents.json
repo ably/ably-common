@@ -92,7 +92,7 @@
         },
         {
             "identifier": "linux",
-            "versioned": false,
+            "versioned": true,
             "emitters": [
                 "ably-dotnet"
             ],
