@@ -95,7 +95,7 @@
             "emitters": [
                 "ably-java"
             ],
-            "type": "sdk"
+            "type": "runtime"
         },
         {
             "identifier": "android",
