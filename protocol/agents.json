@@ -171,20 +171,20 @@
             "type": "runtime"
         },
         {
+          "identifier": "python",
+          "versioned": true,
+          "emitters": [
+            "ably-python"
+          ],
+          "type": "runtime"
+        },
+        {
             "identifier": "ably-python",
             "versioned": true,
             "emitters": [
                 "ably-python"
             ],
             "type": "sdk"
-        },
-        {
-          "identifier": "ably-python-rest",
-          "versioned": true,
-          "emitters": [
-              "ably-python"
-          ],
-          "type": "wrapper"
         },
         {
             "identifier": "ably-php",
@@ -231,7 +231,6 @@
         "php": "ably-php/${version}",
         "php-laravel": "ably-php/${version} laravel",
         "python": "ably-python/${version}",
-        "python-rest": "ably-python/${version} ably-python-rest",
         "ruby": "ably-ruby/${version}",
         "ruby-rest": "ably-ruby/${version} ably-ruby-rest"
     }
