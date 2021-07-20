@@ -107,6 +107,14 @@
             "type": "sdk"
         },
         {
+            "identifier": "jre",
+            "versioned": true,
+            "emitters": [
+                "ably-java"
+            ],
+            "type": "runtime"
+        },
+        {
             "identifier": "android",
             "versioned": true,
             "emitters": [
