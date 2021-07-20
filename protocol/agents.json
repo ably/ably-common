@@ -171,6 +171,14 @@
             "type": "runtime"
         },
         {
+          "identifier": "python",
+          "versioned": true,
+          "emitters": [
+            "ably-python"
+          ],
+          "type": "runtime"
+        },
+        {
             "identifier": "ably-python",
             "versioned": true,
             "emitters": [
