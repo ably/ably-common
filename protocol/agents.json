@@ -239,7 +239,7 @@
             "identifier": "go",
             "versioned": true,
             "emitters": [
-              "ably-go"
+                "ably-go"
             ],
             "type": "runtime"
         }
