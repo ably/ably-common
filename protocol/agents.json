@@ -234,6 +234,14 @@
                 "ably-go"
             ],
             "type": "sdk"
+        },
+        {
+            "identifier": "go",
+            "versioned": true,
+            "emitters": [
+                "ably-go"
+            ],
+            "type": "runtime"
         }
     ],
     "ablyLibMappings": {
