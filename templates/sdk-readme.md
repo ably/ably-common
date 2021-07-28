@@ -44,6 +44,9 @@ Examples:
 [ably-flutter](https://github.com/ably/ably-flutter#resources),
 [ably-asset-tracking-android](https://github.com/ably/ably-asset-tracking-android/blob/main/README.md#useful-resources)
 
+Demo repositories are mostly hosted in our [ably-labs](https://github.com/ably-labs) GitHub org.
+New demos should be indexed from the SDK repositories upon which they depend, under this heading.
+
 ## Requirements
 
 What is required to build a project using this SDK. Typically a list of prerequisites.
