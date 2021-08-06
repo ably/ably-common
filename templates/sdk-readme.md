@@ -16,7 +16,7 @@ _[Ably](https://ably.com) is the platform that powers synchronized digital exper
 
 ## Overview
 
-A one sentence summary of what this SDK does.
+A one sentence summary of what this SDK does. Link to [supported features](#feature-support) and [known limitations](#known-limitations) sections below.
 
 ## Running the Example [optional]
 
@@ -57,9 +57,13 @@ What is required to build a project using this SDK. Typically a list of prerequi
 
 Detail on what target runtimes are supported by this SDK. May also include detail around what platforms are tested on, though preference should be towards referring those who are interested in testing to consult workflow files directly (e.g. to inspect [strategy matrix configuration](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstrategymatrix) for jobs).
 
+## Feature Support
+
+Specify the version of the spec that this SDK targets and link to the [feature support matrix](https://www.ably.io/download/sdk-feature-support-matrix).
+
 ## Known Limitations
 
-A list of features that we do not currently support, but we do plan to add in the future.
+A list of features that we do not currently support, but we do plan to add in the future. If all features are supported, then specify that here.
 
 This should be formatted as a bulleted list and each feature should link to an issue in this repository under which the work will be done when we come to implement it. This allows people to comment on or watch the issue if they are interested.
 
