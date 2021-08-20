@@ -124,6 +124,14 @@
             "type": "os"
         },
         {
+            "identifier": "ably-asset-tracking-android",
+            "versioned": true,
+            "emitters": [
+                "ably-java"
+            ],
+            "type": "sdk"
+        },
+        {
             "identifier": "ably-ruby",
             "versioned": true,
             "emitters": [
