@@ -1,0 +1,649 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Ably Application Statistics Message",
+	"type": "object",
+	"properties": {
+		"intervalId": {
+			"type": "string",
+			"description": "time period for stats in date-time format defined by RFC 3339, section 5.6"
+		},
+		"unit": {
+			"type": "string",
+			"description": "unit of time for these stats from the intervalId forwards",
+			"pattern": "^minute$"
+		},
+		"schema": {
+			"type": "string",
+			"description": "URI to this schema"
+		},
+		"entries": {
+			"type": "object",
+			"description": "stats entries",
+			"properties": {
+				"messages.all.all.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.all.all.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.all.all.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.all.messages.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.all.messages.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.all.messages.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.all.presence.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.all.presence.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.all.presence.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.realtime.all.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.realtime.all.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.realtime.all.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.realtime.messages.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.realtime.messages.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.realtime.messages.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.realtime.presence.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.realtime.presence.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.realtime.presence.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.rest.all.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.rest.all.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.rest.all.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.rest.messages.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.rest.messages.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.rest.messages.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.rest.presence.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.rest.presence.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.rest.presence.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.all.all.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.all.all.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.all.all.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.all.messages.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.all.messages.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.all.messages.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.all.presence.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.all.presence.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.inbound.all.presence.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.realtime.all.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.realtime.all.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.realtime.all.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.realtime.messages.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.realtime.messages.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.realtime.messages.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.realtime.presence.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.realtime.presence.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.realtime.presence.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.rest.all.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.rest.all.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.rest.all.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.rest.messages.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.rest.messages.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.rest.messages.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.rest.presence.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.rest.presence.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.rest.presence.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.webhook.all.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.webhook.all.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.webhook.all.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.webhook.messages.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.webhook.messages.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.webhook.messages.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.webhook.presence.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.webhook.presence.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.webhook.presence.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.sharedQueue.all.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.sharedQueue.all.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.sharedQueue.all.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.sharedQueue.messages.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.sharedQueue.messages.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.sharedQueue.messages.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.sharedQueue.presence.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.sharedQueue.presence.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.sharedQueue.presence.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.externalQueue.all.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.externalQueue.all.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.externalQueue.all.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.externalQueue.messages.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.externalQueue.messages.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.externalQueue.messages.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.externalQueue.presence.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.externalQueue.presence.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.externalQueue.presence.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.httpEvent.all.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.httpEvent.all.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.httpEvent.all.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.httpEvent.messages.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.httpEvent.messages.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.httpEvent.messages.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.httpEvent.presence.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.httpEvent.presence.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.httpEvent.presence.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.push.all.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.push.all.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.push.all.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.push.messages.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.push.messages.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.push.messages.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.push.presence.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.push.presence.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.push.presence.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.all.all.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.all.all.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.all.all.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.all.messages.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.all.messages.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.all.messages.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.all.presence.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.all.presence.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.outbound.all.presence.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.persisted.all.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.persisted.all.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.persisted.all.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.persisted.messages.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.persisted.messages.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.persisted.messages.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.persisted.presence.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.persisted.presence.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.persisted.presence.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.processed.all.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.processed.all.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.processed.all.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.processed.messages.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.processed.messages.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.processed.messages.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.processed.presence.count": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.processed.presence.data": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"messages.processed.presence.uncompressedData": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"connections.all.peak": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"connections.all.min": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"connections.all.mean": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"connections.all.opened": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"connections.all.refused": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"channels.peak": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"channels.min": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"channels.mean": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"channels.opened": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"channels.refused": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"apiRequests.all.succeeded": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"apiRequests.all.failed": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"apiRequests.all.refused": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"apiRequests.tokenRequests.succeeded": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"apiRequests.tokenRequests.failed": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"apiRequests.tokenRequests.refused": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"apiRequests.push.succeeded": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"apiRequests.push.failed": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"apiRequests.push.refused": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"apiRequests.other.succeeded": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"apiRequests.other.failed": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"apiRequests.other.refused": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"push.channelMessages": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"push.notifications.delivered": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"push.notifications.failed": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"push.notifications.refused": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"push.notifications.all": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				},
+				"push.directPublishes": {
+					"type": "number",
+					"inclusiveMinimum": 0
+				}
+			}
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"intervalId",
+		"unit",
+		"schema",
+		"entries"
+	]
+}
