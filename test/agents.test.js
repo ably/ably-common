@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { Validator } = require('jsonschema');
 
-const schemaPath = path.resolve(__dirname, '..', 'test-resources', 'agents-schema.json');
+const schemaPath = path.resolve(__dirname, '..', 'json-schemas', 'src', 'agents.json');
 const agentsPath = path.resolve(__dirname, '..', 'protocol', 'agents.json');
 const schema = require(schemaPath);
 const agents = require(agentsPath);
