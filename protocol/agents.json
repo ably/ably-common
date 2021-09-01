@@ -83,7 +83,7 @@
             "type": "os"
         },
         {
-            "identifier": "macOS-iOS",
+            "identifier": "darwin",
             "versioned": true,
             "emitters": [
                 "ably-go"
