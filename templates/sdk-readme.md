@@ -63,7 +63,7 @@ Specify the version of the spec that this SDK targets and link to the [feature s
 
 ## Known Limitations
 
-A list of features that we do not currently support, but we do plan to add in the future. If all features are supported, then specify that here.
+A list of features that we do not currently support, but we do plan to add in the future.
 
 This should be formatted as a bulleted list and each feature should link to an issue in this repository under which the work will be done when we come to implement it. This allows people to comment on or watch the issue if they are interested.
 
