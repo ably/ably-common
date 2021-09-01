@@ -2,6 +2,7 @@
   "name": "ably-common",
   "version": "1.2.0",
   "scripts": {
+    "publish:json-schemas": "node json-schemas/publish.js",
     "test": "jest"
   },
   "repository": "ably/ably-common",
@@ -11,6 +12,7 @@
   },
   "homepage": "https://github.com/ably/ably-common#readme",
   "devDependencies": {
+    "@aws-sdk/client-s3": "^3.28.0",
     "jest": "^27.0.4",
     "jsonschema": "^1.4.0"
   }
