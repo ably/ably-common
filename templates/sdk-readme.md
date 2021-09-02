@@ -70,6 +70,9 @@ This should be formatted as a bulleted list and each feature should link to an i
 Example:
 [ably-flutter](https://github.com/ably/ably-flutter#known-limitations)
 
+If there are no known limitations for this repository then this section, including heading, should be omitted.
+When removing this section from a readme then be careful to ensure that any links to it from that document, or other documents in the repository, are removed at the same time.
+
 ## Support, Feedback and Troubleshooting
 
 Example:
