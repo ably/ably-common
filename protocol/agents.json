@@ -9,7 +9,7 @@
             "type": "sdk"
         },
         {
-            "identifier": "node",
+            "identifier": "nodejs",
             "versioned": true,
             "emitters": [
                 "ably-js"
@@ -134,6 +134,14 @@
             "type": "os"
         },
         {
+            "identifier": "ably-asset-tracking-android",
+            "versioned": true,
+            "emitters": [
+                "ably-java"
+            ],
+            "type": "wrapper"
+        },
+        {
             "identifier": "ably-ruby",
             "versioned": true,
             "emitters": [
@@ -256,7 +264,7 @@
     ],
     "ablyLibMappings": {
         "js-web": "ably-js/${version} browser",
-        "js-node": "ably-js/${version} node/0.0.0",
+        "js-node": "ably-js/${version} nodejs/0.0.0",
         "js-ns": "ably-js/${version} nativescript",
         "js-rn": "ably-js/${version} react-native",
         "go": "ably-go/${version}",

@@ -68,3 +68,16 @@ go get -u github.com/ably/ably-common-go
 
 Open a pull request with the resulting changes to `go.mod` and `go.sum`, and once merged deploy the router
 so that it's aware of the newly added agent identifiers.
+
+### `ablyLibMappings`
+
+The `ablyLibMappings` field in [agents.json](agents.json) provides continuity for SDKs that continue to send the
+deprecated `X-Ably-Lib` header, which was not capable of sending the extra information we now send in the `Ably-Agent`
+header. Each entry in `ablyLibMappings` is used server-side to map an old `X-Ably-Lib` value to its equivalent new
+`Ably-Agent` value.
+
+For example, an old client that sends the header `X-Ably-Lib: js-web-1.1.0` will be mapped to `Ably-Agent: ably-js/1.1.0 browser`
+based on the `js-web` entry, and then handled as if it sent that `Ably-Agent` header directly.
+
+It is not expected that any new mappings will be added, since we shouldn't be sending any new types of values using the deprecated
+`X-Ably-Lib` header, any newly released code should be sending the `Ably-Agent` header instead.
