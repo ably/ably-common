@@ -46,7 +46,7 @@ See [RSC7d](https://docs.ably.com/client-lib-development-guide/features/#RSC7d) 
 ### Adding New Agents
 
 When a new agent is added to a client library, add a corresponding entry to [agents.json](agents.json)
-using the schema defined in [agents-schema.json](../test-resources/agents-schema.json), and open a pull
+using the schema defined in [agents-schema.json](../json-schemas/src/agents.json), and open a pull
 request against the `main` branch with those changes.
 
 Once the pull request is merged into `main`, open an internal ticket requesting that the realtime team
