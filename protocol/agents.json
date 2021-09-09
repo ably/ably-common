@@ -137,7 +137,7 @@
             "identifier": "ably-asset-tracking-android",
             "versioned": true,
             "emitters": [
-                "ably-java"
+                "ably-asset-tracking-android"
             ],
             "type": "wrapper"
         },
