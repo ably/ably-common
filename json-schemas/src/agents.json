@@ -5,26 +5,28 @@
     "properties": {
         "agents": {
             "type": "array",
+            "description": "An array containing all Ably agent identifiers and their properties.",
             "items": {
                 "type": "object",
                 "properties": {
                     "identifier": {
-                        "description": "The identifier as it appears in the Ably-Agent string",
+                        "description": "The identifier (product name) as it appears in the Ably-Agent string. See RSC7d in the Ably Features spec for more information.",
                         "type": "string"
                     },
                     "emitters": {
                         "type": "array",
-                        "description": "An array containing the names of core SDKs which may emit this identifier",
+                        "description": "An array containing the names of Ably SDKs which directly emit this identifier. SDK names must match the repository name we use in GitHub (i.e. the component that appears after ably org in the URL).",
                         "items": {
                             "type": "string"
                         }
                     },
                     "versioned": {
                         "type": "boolean",
-                        "description": "A boolean indicating whether the identifier will have an associated version"
+                        "description": "If true, indicates that the identifier will have an associated version."
                     },
                     "type": {
                         "type": "string",
+                        "description": "The software layer where the identifier is located.",
                         "enum": ["os", "sdk", "wrapper", "runtime"]
                     }
                 },
