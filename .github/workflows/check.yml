@@ -11,13 +11,11 @@ jobs:
       - uses: actions/checkout@v2
 
       # Using git grep to fail the build if any tab characters are found in source files (except Go files) - we use spaces for whitespace.
-      # Using the jq tool (included in GitHub runner environments) to simplistically validate JSON files.
+      # Using prettier to ensure JSON files have consistent formatting.
       - run: |
           ! git --no-pager grep $'\t' -- './*' ':!./go' || { echo 'ERROR: Lint failed! Source files must use spaces for whitespace.'; false; }
           npm ci
-          cd protocol
-          jq empty errors.json
-          jq empty errorsHelp.json
+          npx prettier --check "**/*.json"
           npm test
 
   check-go:

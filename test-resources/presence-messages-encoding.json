@@ -4,35 +4,35 @@
     {
       "data": "foo",
       "encoding": null,
-        "action": 0,
+      "action": 0,
       "expectedType": "string",
       "expectedValue": "foo"
     },
     {
       "data": "{\"foo\":42}",
       "encoding": null,
-        "action": 1,
+      "action": 1,
       "expectedType": "string",
       "expectedValue": "{\"foo\":42}"
     },
     {
       "data": "{\"foo\":42,\"bar\":[\"a\",1.2,{\"boo\":\"ha\"}]}",
       "encoding": "json",
-        "action": 2,
+      "action": 2,
       "expectedType": "jsonObject",
-      "expectedValue": {"foo":42, "bar":["a", 1.2, {"boo":"ha"}]}
+      "expectedValue": { "foo": 42, "bar": ["a", 1.2, { "boo": "ha" }] }
     },
     {
       "data": "[{\"foo\":42},\"qux\"]",
       "encoding": "json",
-        "action": 3,
+      "action": 3,
       "expectedType": "jsonArray",
-      "expectedValue": [{"foo":42}, "qux"]
+      "expectedValue": [{ "foo": 42 }, "qux"]
     },
     {
       "data": "3q2+7w==",
       "encoding": "base64",
-        "action": 4,
+      "action": 4,
       "expectedType": "binary",
       "expectedHexValue": "deadbeef"
     }

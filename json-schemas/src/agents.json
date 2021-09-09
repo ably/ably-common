@@ -1,49 +1,49 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Ably Agents Definition",
-    "type": "object",
-    "properties": {
-        "agents": {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Ably Agents Definition",
+  "type": "object",
+  "properties": {
+    "agents": {
+      "type": "array",
+      "description": "An array containing all Ably agent identifiers and their properties.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "identifier": {
+            "description": "The identifier (product name) as it appears in the Ably-Agent string. See RSC7d in the Ably Features spec for more information.",
+            "type": "string"
+          },
+          "emitters": {
             "type": "array",
-            "description": "An array containing all Ably agent identifiers and their properties.",
+            "description": "An array containing the names of Ably SDKs which directly emit this identifier. SDK names must match the repository name we use in GitHub (i.e. the component that appears after ably org in the URL).",
             "items": {
-                "type": "object",
-                "properties": {
-                    "identifier": {
-                        "description": "The identifier (product name) as it appears in the Ably-Agent string. See RSC7d in the Ably Features spec for more information.",
-                        "type": "string"
-                    },
-                    "emitters": {
-                        "type": "array",
-                        "description": "An array containing the names of Ably SDKs which directly emit this identifier. SDK names must match the repository name we use in GitHub (i.e. the component that appears after ably org in the URL).",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "versioned": {
-                        "type": "boolean",
-                        "description": "If true, indicates that the identifier will have an associated version."
-                    },
-                    "type": {
-                        "type": "string",
-                        "description": "The software layer where the identifier is located.",
-                        "enum": ["os", "sdk", "wrapper", "runtime"]
-                    }
-                },
-                "required": ["identifier", "emitters", "versioned", "type"]
+              "type": "string"
             }
+          },
+          "versioned": {
+            "type": "boolean",
+            "description": "If true, indicates that the identifier will have an associated version."
+          },
+          "type": {
+            "type": "string",
+            "description": "The software layer where the identifier is located.",
+            "enum": ["os", "sdk", "wrapper", "runtime"]
+          }
         },
-        "ablyLibMappings": {
-            "type": "object",
-            "description": "An explicit mapping from x-ably-lib library and variant identifiers to ably-agent strings",
-            "patternProperties": {
-                "/.*/": {
-                    "description": "A format string which defines how the associated x-ably-lib prefix should be translated to an ably-agent string, for example 'ably-js/${version}'",
-                    "type": "string"
-                }
-            }
-        }
+        "required": ["identifier", "emitters", "versioned", "type"]
+      }
     },
-    "additionalProperties": false,
-    "required": ["agents", "ablyLibMappings"]
+    "ablyLibMappings": {
+      "type": "object",
+      "description": "An explicit mapping from x-ably-lib library and variant identifiers to ably-agent strings",
+      "patternProperties": {
+        "/.*/": {
+          "description": "A format string which defines how the associated x-ably-lib prefix should be translated to an ably-agent string, for example 'ably-js/${version}'",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": ["agents", "ablyLibMappings"]
 }
