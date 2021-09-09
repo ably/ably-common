@@ -17,13 +17,13 @@
       "data": "{\"foo\":42,\"bar\":[\"a\",1.2,{\"boo\":\"ha\"}]}",
       "encoding": "json",
       "expectedType": "jsonObject",
-      "expectedValue": {"foo":42, "bar":["a", 1.2, {"boo":"ha"}]}
+      "expectedValue": { "foo": 42, "bar": ["a", 1.2, { "boo": "ha" }] }
     },
     {
       "data": "[{\"foo\":42},\"qux\"]",
       "encoding": "json",
       "expectedType": "jsonArray",
-      "expectedValue": [{"foo":42}, "qux"]
+      "expectedValue": [{ "foo": 42 }, "qux"]
     },
     {
       "data": "3q2+7w==",

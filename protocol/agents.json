@@ -1,288 +1,219 @@
 {
-    "agents": [
-        {
-            "identifier": "ably-js",
-            "versioned": true,
-            "emitters": [
-                "ably-js"
-            ],
-            "type": "sdk"
-        },
-        {
-            "identifier": "nodejs",
-            "versioned": true,
-            "emitters": [
-                "ably-js"
-            ],
-            "type": "runtime"
-        },
-        {
-            "identifier": "browser",
-            "versioned": false,
-            "emitters": [
-                "ably-js"
-            ],
-            "type": "runtime"
-        },
-        {
-            "identifier": "nativescript",
-            "versioned": true,
-            "emitters": [
-                "ably-js"
-            ],
-            "type": "wrapper"
-        },
-        {
-            "identifier": "react-native",
-            "versioned": false,
-            "emitters": [
-                "ably-js"
-            ],
-            "type": "wrapper"
-        },
-        {
-            "identifier": "ably-cocoa",
-            "versioned": true,
-            "emitters": [
-                "ably-cocoa"
-            ],
-            "type": "sdk"
-        },
-        {
-            "identifier": "iOS",
-            "versioned": true,
-            "emitters": [
-                "ably-cocoa",
-                "ably-dotnet"
-            ],
-            "type": "os"
-        },
-        {
-            "identifier": "tvOS",
-            "versioned": true,
-            "emitters": [
-                "ably-cocoa"
-            ],
-            "type": "os"
-        },
-        {
-            "identifier": "watchOS",
-            "versioned": true,
-            "emitters": [
-                "ably-cocoa"
-            ],
-            "type": "os"
-        },
-        {
-            "identifier": "macOS",
-            "versioned": true,
-            "emitters": [
-                "ably-cocoa",
-                "ably-dotnet"
-            ],
-            "type": "os"
-        },
-        {
-            "identifier": "darwin",
-            "versioned": true,
-            "emitters": [
-                "ably-go"
-            ],
-            "type": "os"
-        },
-        {
-            "identifier": "windows",
-            "versioned": true,
-            "emitters": [
-                "ably-dotnet",
-                "ably-go"
-            ],
-            "type": "os"
-        },
-        {
-            "identifier": "linux",
-            "versioned": true,
-            "emitters": [
-                "ably-dotnet",
-                "ably-go"
-            ],
-            "type": "os"
-        },
-        {
-            "identifier": "ably-java",
-            "versioned": true,
-            "emitters": [
-                "ably-java"
-            ],
-            "type": "sdk"
-        },
-        {
-            "identifier": "jre",
-            "versioned": true,
-            "emitters": [
-                "ably-java"
-            ],
-            "type": "runtime"
-        },
-        {
-            "identifier": "android",
-            "versioned": true,
-            "emitters": [
-                "ably-java",
-                "ably-dotnet"
-            ],
-            "type": "os"
-        },
-        {
-            "identifier": "ably-asset-tracking-android",
-            "versioned": true,
-            "emitters": [
-                "ably-asset-tracking-android"
-            ],
-            "type": "wrapper"
-        },
-        {
-            "identifier": "ably-ruby",
-            "versioned": true,
-            "emitters": [
-                "ably-ruby"
-            ],
-            "type": "sdk"
-        },
-        {
-            "identifier": "ruby",
-            "versioned": true,
-            "emitters": [
-                "ably-ruby"
-            ],
-            "type": "runtime"
-        },
-        {
-            "identifier": "ably-ruby-rest",
-            "versioned": false,
-            "emitters": [
-                "ably-ruby"
-            ],
-            "type": "wrapper"
-        },
-        {
-            "identifier": "ably-dotnet",
-            "versioned": true,
-            "emitters": [
-                "ably-dotnet"
-            ],
-            "type": "sdk"
-        },
-        {
-            "identifier": "dotnet-framework",
-            "versioned": true,
-            "emitters": [
-                "ably-dotnet"
-            ],
-            "type": "runtime"
-        },
-        {
-            "identifier": "dotnet-standard",
-            "versioned": true,
-            "emitters": [
-                "ably-dotnet"
-            ],
-            "type": "runtime"
-        },
-        {
-            "identifier": "uwp",
-            "versioned": false,
-            "emitters": [
-                "ably-dotnet"
-            ],
-            "type": "runtime"
-        },
-        {
-            "identifier": "xamarin",
-            "versioned": false,
-            "emitters": [
-                "ably-dotnet"
-            ],
-            "type": "runtime"
-        },
-        {
-            "identifier": "unity",
-            "versioned": true,
-            "emitters": [
-                "ably-dotnet"
-            ],
-            "type": "runtime"
-        },
-        {
-          "identifier": "python",
-          "versioned": true,
-          "emitters": [
-            "ably-python"
-          ],
-          "type": "runtime"
-        },
-        {
-            "identifier": "ably-python",
-            "versioned": true,
-            "emitters": [
-                "ably-python"
-            ],
-            "type": "sdk"
-        },
-        {
-            "identifier": "ably-php",
-            "versioned": true,
-            "emitters": [
-                "ably-php"
-            ],
-            "type": "sdk"
-        },
-        {
-            "identifier": "laravel",
-            "versioned": false,
-            "emitters": [
-                "ably-php"
-            ],
-            "type": "wrapper"
-        },
-        {
-            "identifier": "ably-go",
-            "versioned": true,
-            "emitters": [
-                "ably-go"
-            ],
-            "type": "sdk"
-        },
-        {
-            "identifier": "go",
-            "versioned": true,
-            "emitters": [
-                "ably-go"
-            ],
-            "type": "runtime"
-        }
-    ],
-    "ablyLibMappings": {
-        "js-web": "ably-js/${version} browser",
-        "js-node": "ably-js/${version} nodejs/0.0.0",
-        "js-ns": "ably-js/${version} nativescript",
-        "js-rn": "ably-js/${version} react-native",
-        "go": "ably-go/${version}",
-        "android": "ably-java/${version} android/0.0.0",
-        "java": "ably-java/${version}",
-        "cocoa.ios": "ably-cocoa/${version} iOS/0.0.0",
-        "cocoa.macos": "ably-cocoa/${version} macOS/0.0.0",
-        "cocoa.tvos": "ably-cocoa/${version} tvOS/0.0.0",
-        "dotnet": "ably-dotnet/${version}",
-        "dotnet.framework": "ably-dotnet/${version} dotnet-framework/0.0.0",
-        "dotnet.uwp": "ably-dotnet/${version} uwp",
-        "dotnet.netstandard20": "ably-dotnet/${version} dotnet-standard/0.0.0",
-        "dotnet.xamarin-android": "ably-dotnet/${version} xamarin android/0.0.0",
-        "dotnet.xamarin-ios": "ably-dotnet/${version} xamarin iOS/0.0.0",
-        "php": "ably-php/${version}",
-        "php-laravel": "ably-php/${version} laravel",
-        "python": "ably-python/${version}",
-        "ruby": "ably-ruby/${version}",
-        "ruby-rest": "ably-ruby/${version} ably-ruby-rest"
+  "agents": [
+    {
+      "identifier": "ably-js",
+      "versioned": true,
+      "emitters": ["ably-js"],
+      "type": "sdk"
+    },
+    {
+      "identifier": "nodejs",
+      "versioned": true,
+      "emitters": ["ably-js"],
+      "type": "runtime"
+    },
+    {
+      "identifier": "browser",
+      "versioned": false,
+      "emitters": ["ably-js"],
+      "type": "runtime"
+    },
+    {
+      "identifier": "nativescript",
+      "versioned": true,
+      "emitters": ["ably-js"],
+      "type": "wrapper"
+    },
+    {
+      "identifier": "react-native",
+      "versioned": false,
+      "emitters": ["ably-js"],
+      "type": "wrapper"
+    },
+    {
+      "identifier": "ably-cocoa",
+      "versioned": true,
+      "emitters": ["ably-cocoa"],
+      "type": "sdk"
+    },
+    {
+      "identifier": "iOS",
+      "versioned": true,
+      "emitters": ["ably-cocoa", "ably-dotnet"],
+      "type": "os"
+    },
+    {
+      "identifier": "tvOS",
+      "versioned": true,
+      "emitters": ["ably-cocoa"],
+      "type": "os"
+    },
+    {
+      "identifier": "watchOS",
+      "versioned": true,
+      "emitters": ["ably-cocoa"],
+      "type": "os"
+    },
+    {
+      "identifier": "macOS",
+      "versioned": true,
+      "emitters": ["ably-cocoa", "ably-dotnet"],
+      "type": "os"
+    },
+    {
+      "identifier": "darwin",
+      "versioned": true,
+      "emitters": ["ably-go"],
+      "type": "os"
+    },
+    {
+      "identifier": "windows",
+      "versioned": true,
+      "emitters": ["ably-dotnet", "ably-go"],
+      "type": "os"
+    },
+    {
+      "identifier": "linux",
+      "versioned": true,
+      "emitters": ["ably-dotnet", "ably-go"],
+      "type": "os"
+    },
+    {
+      "identifier": "ably-java",
+      "versioned": true,
+      "emitters": ["ably-java"],
+      "type": "sdk"
+    },
+    {
+      "identifier": "jre",
+      "versioned": true,
+      "emitters": ["ably-java"],
+      "type": "runtime"
+    },
+    {
+      "identifier": "android",
+      "versioned": true,
+      "emitters": ["ably-java", "ably-dotnet"],
+      "type": "os"
+    },
+    {
+      "identifier": "ably-asset-tracking-android",
+      "versioned": true,
+      "emitters": ["ably-asset-tracking-android"],
+      "type": "wrapper"
+    },
+    {
+      "identifier": "ably-ruby",
+      "versioned": true,
+      "emitters": ["ably-ruby"],
+      "type": "sdk"
+    },
+    {
+      "identifier": "ruby",
+      "versioned": true,
+      "emitters": ["ably-ruby"],
+      "type": "runtime"
+    },
+    {
+      "identifier": "ably-ruby-rest",
+      "versioned": false,
+      "emitters": ["ably-ruby"],
+      "type": "wrapper"
+    },
+    {
+      "identifier": "ably-dotnet",
+      "versioned": true,
+      "emitters": ["ably-dotnet"],
+      "type": "sdk"
+    },
+    {
+      "identifier": "dotnet-framework",
+      "versioned": true,
+      "emitters": ["ably-dotnet"],
+      "type": "runtime"
+    },
+    {
+      "identifier": "dotnet-standard",
+      "versioned": true,
+      "emitters": ["ably-dotnet"],
+      "type": "runtime"
+    },
+    {
+      "identifier": "uwp",
+      "versioned": false,
+      "emitters": ["ably-dotnet"],
+      "type": "runtime"
+    },
+    {
+      "identifier": "xamarin",
+      "versioned": false,
+      "emitters": ["ably-dotnet"],
+      "type": "runtime"
+    },
+    {
+      "identifier": "unity",
+      "versioned": true,
+      "emitters": ["ably-dotnet"],
+      "type": "runtime"
+    },
+    {
+      "identifier": "python",
+      "versioned": true,
+      "emitters": ["ably-python"],
+      "type": "runtime"
+    },
+    {
+      "identifier": "ably-python",
+      "versioned": true,
+      "emitters": ["ably-python"],
+      "type": "sdk"
+    },
+    {
+      "identifier": "ably-php",
+      "versioned": true,
+      "emitters": ["ably-php"],
+      "type": "sdk"
+    },
+    {
+      "identifier": "laravel",
+      "versioned": false,
+      "emitters": ["ably-php"],
+      "type": "wrapper"
+    },
+    {
+      "identifier": "ably-go",
+      "versioned": true,
+      "emitters": ["ably-go"],
+      "type": "sdk"
+    },
+    {
+      "identifier": "go",
+      "versioned": true,
+      "emitters": ["ably-go"],
+      "type": "runtime"
     }
+  ],
+  "ablyLibMappings": {
+    "js-web": "ably-js/${version} browser",
+    "js-node": "ably-js/${version} nodejs/0.0.0",
+    "js-ns": "ably-js/${version} nativescript",
+    "js-rn": "ably-js/${version} react-native",
+    "go": "ably-go/${version}",
+    "android": "ably-java/${version} android/0.0.0",
+    "java": "ably-java/${version}",
+    "cocoa.ios": "ably-cocoa/${version} iOS/0.0.0",
+    "cocoa.macos": "ably-cocoa/${version} macOS/0.0.0",
+    "cocoa.tvos": "ably-cocoa/${version} tvOS/0.0.0",
+    "dotnet": "ably-dotnet/${version}",
+    "dotnet.framework": "ably-dotnet/${version} dotnet-framework/0.0.0",
+    "dotnet.uwp": "ably-dotnet/${version} uwp",
+    "dotnet.netstandard20": "ably-dotnet/${version} dotnet-standard/0.0.0",
+    "dotnet.xamarin-android": "ably-dotnet/${version} xamarin android/0.0.0",
+    "dotnet.xamarin-ios": "ably-dotnet/${version} xamarin iOS/0.0.0",
+    "php": "ably-php/${version}",
+    "php-laravel": "ably-php/${version} laravel",
+    "python": "ably-python/${version}",
+    "ruby": "ably-ruby/${version}",
+    "ruby-rest": "ably-ruby/${version} ably-ruby-rest"
+  }
 }
