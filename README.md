@@ -14,3 +14,7 @@ We are including the entire contents of this repository in the working copies of
 
 In the future we may well consider pushing out some of the artifacts contained (or perhaps generated) here out to package repositories.
 See [#70](https://github.com/ably/ably-common/issues/70) for more detail.
+
+## Contributing
+
+For guidance on how to contribute to this project, see [CONTRIBUTING.md](CONTRIBUTING.md).
