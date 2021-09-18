@@ -18,6 +18,18 @@ If you want to be sure that changes you make to JSON files will not fail CI then
 
     npx prettier --write "**/*.json"
 
+### YAML Files
+
+As for JSON files (see above) we also use Prettier to ensure YAML is conformed.
+
+You can ask Prettier to rewrite incorrectly formatted YAML files with this command:
+
+    npx prettier --write "**/*.yml"
+
+**Note**:
+This invocation, matching what we do in the CI workflow, naturally includes our [GitHub workflow source files](.github/workflows) too.
+That is intentional.
+
 ## Release Process
 
 The outputs from this repository are not yet versioned, though this is planned ([#70](https://github.com/ably/ably-common/issues/70)).
