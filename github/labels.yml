@@ -1,0 +1,30 @@
+api:
+  description: Something that will change or improve the public API.
+  color: ec4b42
+bug:
+  description: Something isn't working. It's clear that this does need to be fixed.
+  color: d73a4a
+clarification-required:
+  description: This issue needs more detail.
+  color: e3d79b
+code-quality:
+  description: Affects the developer experience when working in our codebase.
+  color: ff88cc
+consistency:
+  description: Relates to ecosystem-level compatibility across implementations.
+  color: f4c45c
+documentation:
+  description: Improvements or additions to public interface documentation (API reference or readme).
+  color: 0075ca
+enhancement:
+  description: New feature or request.
+  color: a2eeef
+example-app:
+  description: Relates to the example apps included in this repository.
+  color: 70fc6b
+failing-test:
+  description: Where a test is failing either locally or in CI. Perhaps flakey (badly written), wrong or bug.
+  color: ff8888
+important:
+  description: We should try not to overuse this label, but it's a quick way to lightly mark as higher priority.
+  color: b60205
