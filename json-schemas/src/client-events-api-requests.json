@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ably API Requests Client Event",
+  "type": "object",
+  "properties": {
+    "host": {
+      "type": "string",
+      "description": "the host the request was made to"
+    },
+    "requestId": {
+      "type": "string",
+      "description": "the unique ID of the request that Ably can use to correlate a request event with internal logs, if necessary"
+    },
+    "region": {
+      "type": "string",
+      "description": "the region the request was made in"
+    },
+    "headers": {
+      "type": "object",
+      "description": "the headers sent with the request"
+    },
+    "query": {
+      "type": "object",
+      "description": "the details of the parsed request query, including information such as the request format"
+    },
+    "path": {
+      "type": "string",
+      "description": "the path of the endpoint called in the request, for example /channels/{channel-name}/messages"
+    },
+    "channels": {
+      "type": "array",
+      "description": "a list of channels the request was made against"
+    },
+    "error": {
+      "type": "object",
+      "description": "the details of any error encountered whilst making the request. It includes an error message, error code and HTTP status code"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["host", "region", "headers", "query", "path"]
+}
