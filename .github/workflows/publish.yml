@@ -30,6 +30,6 @@ jobs:
           chmod 400 ssh-private-key.pem
           eval $(ssh-agent -s)
           ssh-add ssh-private-key.pem
-          git config --global user.name "Ably Common Publish Workflow"
+          git config --global user.name "Ably Common Publish Workflow [bot]"
           git config --global user.email "ably-common-publish-workflow[bot]@noreply.ably.com"
           scripts/publish-go.sh
