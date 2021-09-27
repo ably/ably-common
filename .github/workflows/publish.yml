@@ -19,6 +19,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.ABLY_COMMON_GO_SSH_KEY }}
         run: |
           echo "$SSH_PRIVATE_KEY" > ssh-private-key.pem
+          chmod 400 ssh-private-key.pem
           eval $(ssh-agent -s)
           ssh-add ssh-private-key.pem
 
