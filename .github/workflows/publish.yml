@@ -15,9 +15,12 @@ jobs:
           go-version: "1.16.5"
 
       - name: Setup SSH access
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.ABLY_COMMON_GO_SSH_KEY }}
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.ABLY_COMMON_GO_SSH_KEY }}
+        run: |
+          echo "$SSH_PRIVATE_KEY" > ssh-private-key.pem
+          eval $(ssh-agent -s)
+          ssh-add ssh-private-key.pem
 
       - name: Build and then Publish to Downstream Repository for Go users
         run: |
