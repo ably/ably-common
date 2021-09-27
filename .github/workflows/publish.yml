@@ -14,7 +14,13 @@ jobs:
         with:
           go-version: "1.16.5"
 
-      - name: Setup SSH access
+      - name: Generate code for Go users
+        run: |
+          scripts/build-go.sh
+
+      # The eval on ssh-agent creates some environment variables.
+      # Those environment variables exist for the duration of this step only.
+      - name: Publish
         env:
           SSH_PRIVATE_KEY: ${{ secrets.ABLY_COMMON_GO_SSH_KEY }}
         run: |
@@ -22,10 +28,6 @@ jobs:
           chmod 400 ssh-private-key.pem
           eval $(ssh-agent -s)
           ssh-add ssh-private-key.pem
-
-      - name: Build and then Publish to Downstream Repository for Go users
-        run: |
-          scripts/build-go.sh
           git config --global user.name "ably-common-publish-workflow"
           git config --global user.email "ably-common-publish-workflow@ably.com"
           scripts/publish-go.sh
