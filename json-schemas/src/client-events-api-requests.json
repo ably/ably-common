@@ -2,40 +2,41 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Ably API Requests Client Event",
   "type": "object",
+  "description": "A message sent on the clientEvents:apiRequests metachannel describing a sampled client api request.",
   "properties": {
     "host": {
       "type": "string",
-      "description": "the host the request was made to"
+      "description": "The HTTP Host header of the API request."
     },
     "requestId": {
       "type": "string",
-      "description": "the unique ID of the request that Ably can use to correlate a request event with internal logs, if necessary"
+      "description": "The unique ID of the request that Ably can use to correlate a request event with internal logs, if necessary."
     },
-    "region": {
+    "site": {
       "type": "string",
-      "description": "the region the request was made in"
+      "description": "The site the request was processed in."
     },
     "headers": {
       "type": "object",
-      "description": "the headers sent with the request"
+      "description": "The HTTP headers sent with the request. Keys should be lower case."
     },
     "query": {
       "type": "object",
-      "description": "the details of the parsed request query, including information such as the request format"
+      "description": "The details of the parsed request query, including information such as the request format."
     },
     "path": {
       "type": "string",
-      "description": "the path of the endpoint called in the request, for example /channels/{channel-name}/messages"
+      "description": "The path of the endpoint called in the request, for example /channels/{channel-name}/messages."
     },
     "channels": {
       "type": "array",
-      "description": "a list of channels the request was made against"
+      "description": "A list of channels the request was made against."
     },
     "error": {
       "type": "object",
-      "description": "the details of any error encountered whilst making the request. It includes an error message, error code and HTTP status code"
+      "description": "The details of any error encountered whilst making the request. It includes an error message, error code and HTTP status code."
     }
   },
   "additionalProperties": false,
-  "required": ["host", "region", "headers", "query", "path"]
+  "required": ["host", "site", "headers", "query", "path"]
 }

@@ -2,48 +2,49 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Ably Connections Client Event",
   "type": "object",
+  "description": "A message sent on the clientEvents:connections metachannel describing a sampled client connection.",
   "properties": {
     "host": {
       "type": "string",
-      "description": "the host the connection was made to"
+      "description": "The host the connection was made to."
     },
     "requestId": {
       "type": "string",
-      "description": "the unique ID of the request that Ably can use to correlate a connection event with internal logs, if necessary"
+      "description": "The unique ID of the request that Ably can use to correlate a connection event with internal logs, if necessary."
     },
-    "region": {
+    "site": {
       "type": "string",
-      "description": "the region the connection was made from"
+      "description": "The site the connection was made to."
     },
     "headers": {
       "type": "object",
-      "description": "the headers sent with the connection"
+      "description": "The HTTP headers sent with the connection. Keys should be lower case."
     },
     "query": {
       "type": "object",
-      "description": "the parsed query string of the connection request, excluding authentication parameters. It contains connection information such as the client library version and any custom transport parameters"
+      "description": "The parsed query string of the connection request, excluding authentication parameters. It contains connection information such as the client library version and any custom transport parameters."
     },
     "connectionId": {
       "type": "string",
-      "description": "the unique ID of the connection"
+      "description": "The unique ID of the connection."
     },
     "clientId": {
       "type": ["string", "null"],
-      "description": "the ID of the client that attempted the connection"
+      "description": "The ID of the client that attempted the connection."
     },
     "channels": {
       "type": "array",
-      "description": "a list of channels included in the request. This is only relevant where channels are supported as part of the connection request, such as with SSE"
+      "description": "A list of channels included in the request. This is only relevant where channels are supported as part of the connection request, such as with SSE."
     },
     "duration": {
       "type": "integer",
-      "description": "the duration the connection was open for"
+      "description": "The duration the connection was open for."
     },
     "error": {
       "type": "object",
-      "description": "the details of any error encountered whilst making the connection request. It includes an error message, error code and HTTP status code"
+      "description": "The details of any error encountered whilst making the connection request. It includes an error message, error code and HTTP status code."
     }
   },
   "additionalProperties": false,
-  "required": ["host", "region", "headers", "query", "clientId"]
+  "required": ["host", "site", "headers", "query"]
 }
