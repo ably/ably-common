@@ -6,23 +6,23 @@
   "properties": {
     "host": {
       "type": "string",
-      "description": "The HTTP Host header used when establishing the connection."
+      "description": "The HTTP Host header of the connection request."
     },
     "requestId": {
       "type": "string",
-      "description": "The unique ID of the request that Ably can use to correlate a connection event with internal logs, if necessary."
+      "description": "The unique ID of the connection request that Ably can use to correlate a connection event with internal logs, if necessary."
     },
     "site": {
       "type": "string",
-      "description": "The site the request was processed in."
+      "description": "The site the connection was established to."
     },
     "headers": {
       "type": "object",
-      "description": "The HTTP headers sent with the connection. Header names are lower case (e.g. 'accept', 'content-type', 'user-agent', etc.)."
+      "description": "The HTTP headers of the connection request. Header names are lower case (e.g. 'accept', 'content-type', 'user-agent', etc.)."
     },
     "query": {
       "type": "object",
-      "description": "The parsed query string of the connection request, excluding authentication parameters. It contains connection information such as the client library version and any custom transport parameters."
+      "description": "The parsed query component of the connection request, excluding authentication parameters. The query contains connection information such as the client library version and any custom transport parameters."
     },
     "connectionId": {
       "type": "string",
@@ -34,7 +34,7 @@
     },
     "channels": {
       "type": "array",
-      "description": "A list of channels included in the request. This is only relevant where channels are supported as part of the connection request, such as with SSE."
+      "description": "The list of channels referenced in the connection request. This is only relevant where channels are supported as part of the connection request, such as with SSE."
     },
     "duration": {
       "type": "integer",
@@ -42,7 +42,7 @@
     },
     "error": {
       "type": "object",
-      "description": "The details of any error encountered whilst establishing the connection.",
+      "description": "The details of any error encountered whilst processing the connection.",
       "properties": {
         "message": {
           "type": "string",
@@ -54,7 +54,7 @@
         },
         "statusCode": {
           "type": "integer",
-          "description": "The error status code. See https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html."
+          "description": "The HTTP status code. See https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html."
         }
       },
       "required": ["message", "code", "statusCode"]
