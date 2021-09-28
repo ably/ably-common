@@ -54,10 +54,17 @@ follow the "Publishing Changes" steps below.
 
 ### Publishing Changes
 
+#### Step 1: Public
+
 After changes to [agents.json](agents.json) have been merged into `main`, update the generated Go code
 in the [ably-common-go](https://github.com/ably/ably-common-go) repository by manually triggering the
 [publish workflow](../.github/workflows/publish.yml) (see [here](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow)
 for instructions on how to do that).
+
+There is no further, immediate downstream impact of publishing to `ably-common-go` like this.
+Therefore it is safe to publish without consulting others because they have an explicit step required to update the submodule in their codebase (see [Step 2: Internal](#step-2-internal)).
+
+#### Step 2: Internal
 
 Once the generated Go code has been updated, update the `ably-common-go` module in the
 internal [go-services](https://github.com/ably/go-services) repository by running:
