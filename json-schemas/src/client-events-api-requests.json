@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ably API Requests Client Event",
+  "type": "object",
+  "description": "A message sent on the clientEvents:apiRequests metachannel describing a sampled client API request.",
+  "properties": {
+    "host": {
+      "type": "string",
+      "description": "The HTTP Host header of the API request."
+    },
+    "requestId": {
+      "type": "string",
+      "description": "The unique ID of the API request that Ably can use to correlate a request event with internal logs, if necessary."
+    },
+    "site": {
+      "type": "string",
+      "description": "The site the API request was processed in."
+    },
+    "headers": {
+      "type": "object",
+      "description": "The HTTP headers of the API request. Header names are lower case (e.g. 'accept', 'content-type', 'user-agent', etc.)."
+    },
+    "query": {
+      "type": "object",
+      "description": "The parsed query component of the API request URL (e.g. {\"format\":\"msgpack\"})."
+    },
+    "path": {
+      "type": "string",
+      "description": "The path component of the API request URL (e.g. /channels/{channel-name}/messages)."
+    },
+    "channels": {
+      "type": "array",
+      "description": "The list of channels the API request references."
+    },
+    "error": {
+      "type": "object",
+      "description": "The details of any error encountered whilst processing the API request.",
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "The error message."
+        },
+        "code": {
+          "type": "integer",
+          "description": "The error code. See https://knowledge.ably.com/ably-error-codes."
+        },
+        "statusCode": {
+          "type": "integer",
+          "description": "The HTTP status code. See https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html."
+        }
+      },
+      "required": ["message", "code", "statusCode"]
+    }
+  },
+  "additionalProperties": false,
+  "required": ["host", "site", "headers", "query", "path"]
+}
