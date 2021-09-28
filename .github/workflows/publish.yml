@@ -18,6 +18,8 @@ jobs:
         run: |
           scripts/build-go.sh
 
+      # ABLY_COMMON_GO_SSH_KEY is a deploy key, created on the ably-common-go repository.
+      # see: https://docs.github.com/en/developers/overview/managing-deploy-keys#deploy-keys
       # The eval on ssh-agent creates some environment variables.
       # Those environment variables exist for the duration of this step only.
       - name: Publish
@@ -28,6 +30,6 @@ jobs:
           chmod 400 ssh-private-key.pem
           eval $(ssh-agent -s)
           ssh-add ssh-private-key.pem
-          git config --global user.name "ably-common-publish-workflow"
-          git config --global user.email "ably-common-publish-workflow@ably.com"
+          git config --global user.name "Ably Common Publish Workflow [bot]"
+          git config --global user.email "ably-common-publish-workflow[bot]@noreply.ably.com"
           scripts/publish-go.sh
