@@ -103,6 +103,12 @@
       "type": "wrapper"
     },
     {
+      "identifier": "ably-asset-tracking-swift",
+      "versioned": true,
+      "emitters": ["ably-asset-tracking-swift"],
+      "type": "wrapper"
+    },
+    {
       "identifier": "ably-ruby",
       "versioned": true,
       "emitters": ["ably-ruby"],
