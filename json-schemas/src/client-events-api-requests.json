@@ -18,23 +18,38 @@
     },
     "headers": {
       "type": "object",
-      "description": "The HTTP headers sent with the request. Keys should be lower case."
+      "description": "The HTTP headers sent with the request. Header names are lower case (e.g. 'accept', 'content-type', 'user-agent', etc.)."
     },
     "query": {
       "type": "object",
-      "description": "The details of the parsed request query, including information such as the request format."
+      "description": "The parsed query component of the API request URL (e.g. {\"format\":\"msgpack\"})."
     },
     "path": {
       "type": "string",
-      "description": "The path of the endpoint called in the request, for example /channels/{channel-name}/messages."
+      "description": "The path component of the API request URL (e.g. /channels/{channel-name}/messages)."
     },
     "channels": {
       "type": "array",
-      "description": "A list of channels the request was made against."
+      "description": "The list of channels the API request references."
     },
     "error": {
       "type": "object",
-      "description": "The details of any error encountered whilst making the request. It includes an error message, error code and HTTP status code."
+      "description": "The details of any error encountered whilst making the API request.",
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "The error message."
+        },
+        "code": {
+          "type": "integer",
+          "description": "The error code. See https://knowledge.ably.com/ably-error-codes."
+        },
+        "statusCode": {
+          "type": "integer",
+          "description": "The error status code. See https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html."
+        }
+      },
+      "required": ["message", "code", "statusCode"]
     }
   },
   "additionalProperties": false,

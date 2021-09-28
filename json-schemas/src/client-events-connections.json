@@ -6,7 +6,7 @@
   "properties": {
     "host": {
       "type": "string",
-      "description": "The host the connection was made to."
+      "description": "The HTTP Host header sent with the connection."
     },
     "requestId": {
       "type": "string",
@@ -18,7 +18,7 @@
     },
     "headers": {
       "type": "object",
-      "description": "The HTTP headers sent with the connection. Keys should be lower case."
+      "description": "The HTTP headers sent with the connection. Header names are lower case (e.g. 'accept', 'content-type', 'user-agent', etc.)."
     },
     "query": {
       "type": "object",
@@ -29,7 +29,7 @@
       "description": "The unique ID of the connection."
     },
     "clientId": {
-      "type": ["string", "null"],
+      "type": "string",
       "description": "The ID of the client that attempted the connection."
     },
     "channels": {
@@ -42,7 +42,22 @@
     },
     "error": {
       "type": "object",
-      "description": "The details of any error encountered whilst making the connection request. It includes an error message, error code and HTTP status code."
+      "description": "The details of any error encountered whilst making the connection request.",
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "The error message."
+        },
+        "code": {
+          "type": "integer",
+          "description": "The error code. See https://knowledge.ably.com/ably-error-codes."
+        },
+        "statusCode": {
+          "type": "integer",
+          "description": "The error status code. See https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html."
+        }
+      },
+      "required": ["message", "code", "statusCode"]
     }
   },
   "additionalProperties": false,
