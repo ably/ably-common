@@ -6,7 +6,7 @@
   "properties": {
     "host": {
       "type": "string",
-      "description": "The HTTP Host header sent with the connection."
+      "description": "The HTTP Host header used when establishing the connection."
     },
     "requestId": {
       "type": "string",
@@ -14,7 +14,7 @@
     },
     "site": {
       "type": "string",
-      "description": "The site the connection was made to."
+      "description": "The site the request was processed in."
     },
     "headers": {
       "type": "object",
@@ -42,7 +42,7 @@
     },
     "error": {
       "type": "object",
-      "description": "The details of any error encountered whilst making the connection request.",
+      "description": "The details of any error encountered whilst establishing the connection.",
       "properties": {
         "message": {
           "type": "string",
