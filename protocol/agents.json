@@ -109,6 +109,12 @@
       "type": "wrapper"
     },
     {
+      "identifier": "kafka-connect-ably",
+      "versioned": true,
+      "emitters": ["kafka-connect-ably"],
+      "type": "wrapper"
+    },
+    {
       "identifier": "ably-ruby",
       "versioned": true,
       "emitters": ["ably-ruby"],
