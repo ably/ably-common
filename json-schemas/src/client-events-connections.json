@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ably Connections Client Event",
+  "type": "object",
+  "description": "A message sent on the clientEvents:connections metachannel describing a sampled client connection.",
+  "properties": {
+    "host": {
+      "type": "string",
+      "description": "The HTTP Host header of the connection request."
+    },
+    "requestId": {
+      "type": "string",
+      "description": "The unique ID of the connection request that Ably can use to correlate a connection event with internal logs, if necessary."
+    },
+    "site": {
+      "type": "string",
+      "description": "The site the connection was established to."
+    },
+    "headers": {
+      "type": "object",
+      "description": "The HTTP headers of the connection request. Header names are lower case (e.g. 'accept', 'content-type', 'user-agent', etc.)."
+    },
+    "query": {
+      "type": "object",
+      "description": "The parsed query component of the connection request, excluding authentication parameters. The query contains connection information such as the client library version and any custom transport parameters."
+    },
+    "connectionId": {
+      "type": "string",
+      "description": "The unique ID of the connection."
+    },
+    "clientId": {
+      "type": "string",
+      "description": "The ID of the client that attempted the connection."
+    },
+    "channels": {
+      "type": "array",
+      "description": "The list of channels referenced in the connection request. This is only relevant where channels are supported as part of the connection request, such as with SSE."
+    },
+    "duration": {
+      "type": "integer",
+      "description": "The duration the connection was open for."
+    },
+    "error": {
+      "type": "object",
+      "description": "The details of any error encountered whilst processing the connection.",
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "The error message."
+        },
+        "code": {
+          "type": "integer",
+          "description": "The error code. See https://knowledge.ably.com/ably-error-codes."
+        },
+        "statusCode": {
+          "type": "integer",
+          "description": "The HTTP status code. See https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html."
+        }
+      },
+      "required": ["message", "code", "statusCode"]
+    }
+  },
+  "additionalProperties": false,
+  "required": ["host", "site", "headers", "query"]
+}
