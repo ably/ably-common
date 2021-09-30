@@ -20,6 +20,17 @@ publish time (see below).
 
 ## Publish
 
+Set the `SDK_S3_ACCESS_KEY_ID` and `SDK_S3_ACCESS_KEY` environment variables to
+an AWS access key and secret that has write permissions to the `schemas.ably.com`
+S3 bucket in the SDK AWS account. If you are a SuperAdmin in the SDK AWS account,
+then run the following:
+
+```
+source <(ably-env secrets print-aws --account sdk --role SuperAdmin)
+export SDK_S3_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}"
+export SDK_S3_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}"
+```
+
 Run `npm run publish:json-schemas`.
 
 See `publish.js` for more information.
