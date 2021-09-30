@@ -50,7 +50,7 @@
         },
         "code": {
           "type": "integer",
-          "description": "The error code. See https://knowledge.ably.com/ably-error-codes."
+          "description": "The error code. See https://faqs.ably.com/ably-error-codes."
         },
         "statusCode": {
           "type": "integer",
