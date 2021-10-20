@@ -109,6 +109,12 @@
       "type": "wrapper"
     },
     {
+      "identifier": "ably-flutter",
+      "versioned": true,
+      "emitters": ["ably-flutter"],
+      "type": "wrapper"
+    },
+    {
       "identifier": "kafka-connect-ably",
       "versioned": true,
       "emitters": ["kafka-connect-ably"],
