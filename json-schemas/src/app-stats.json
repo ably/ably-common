@@ -5,7 +5,7 @@
   "properties": {
     "intervalId": {
       "type": "string",
-      "description": "time period for stats in date-time format defined by RFC 3339, section 5.6"
+      "description": "time period for stats in date-time format yyyy-mm-dd:hh:mm:ss"
     },
     "unit": {
       "type": "string",
