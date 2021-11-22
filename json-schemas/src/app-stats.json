@@ -498,7 +498,7 @@
         "messages.outbound.push.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Push message count (pushed to devices via a Push Notifications transport such as FCM or APNS), excluding presence messages."
+          "description": "Total uncompressed Push message size (pushed to devices via a Push Notifications transport such as FCM or APNS), excluding presence messages."
         },
         "messages.outbound.push.presence.count": {
           "type": "number",
