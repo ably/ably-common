@@ -232,6 +232,8 @@
     "php-laravel": "ably-php/${version} laravel",
     "python": "ably-python/${version}",
     "ruby": "ably-ruby/${version}",
-    "ruby-rest": "ably-ruby/${version} ably-ruby-rest"
+    "ruby-rest": "ably-ruby/${version} ably-ruby-rest",
+    "flutter": "ably-flutter/${version}",
+    "kafka-connect": "kafka-connect-ably/${version}"
   }
 }
