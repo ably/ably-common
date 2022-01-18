@@ -28,3 +28,6 @@ failing-test:
 important:
   description: We should try not to overuse this label, but it's a quick way to lightly mark as higher priority.
   color: b60205
+test-infrastructure:
+  description: Relates to the way that we run tests.
+  color: ff8888
