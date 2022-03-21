@@ -193,6 +193,12 @@
       "type": "sdk"
     },
     {
+      "identifier": "php",
+      "versioned": true,
+      "emitters": ["ably-php"],
+      "type": "runtime"
+    },
+    {
       "identifier": "laravel",
       "versioned": false,
       "emitters": ["ably-php"],
