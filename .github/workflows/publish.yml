@@ -9,10 +9,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - id: tool-versions
+        run: |
+          run: echo "::set-output name=golang::$(grep golang .tool-versions | cut -d ' ' -f 2)"
+
       - name: Setup Go
         uses: actions/setup-go@v2
         with:
-          go-version: "1.16.5"
+          go-version: ${{ steps.tool-versions.outputs.golang }}
 
       - name: Generate code for Go users
         run: |

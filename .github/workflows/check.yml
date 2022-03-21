@@ -10,6 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - id: tool-versions
+        run: |
+          run: echo "::set-output name=nodejs::$(grep nodejs .tool-versions | cut -d ' ' -f 2)"
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ steps.tool-versions.outputs.nodejs }}
+
       # Using git grep to fail the build if any tab characters are found in source files (except Go files) - we use spaces for whitespace.
       # Using prettier to ensure JSON and YAML files have consistent formatting.
       - run: |
@@ -24,10 +32,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - id: tool-versions
+        run: |
+          run: echo "::set-output name=golang::$(grep golang .tool-versions | cut -d ' ' -f 2)"
+
       - name: Setup Go
         uses: actions/setup-go@v2
         with:
-          go-version: "1.16.5"
+          go-version: ${{ steps.tool-versions.outputs.golang }}
 
       - name: Build for Go users
         run: |
