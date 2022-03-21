@@ -12,7 +12,7 @@ jobs:
 
       - id: tool-versions
         run: |
-          run: echo "::set-output name=nodejs::$(grep nodejs .tool-versions | cut -d ' ' -f 2)"
+          run: echo "::set-output name=nodejs::$(sed -nr 's/nodejs ([0-9]+)/\1/p' .tool-versions)"
 
       - uses: actions/setup-node@v2
         with:
@@ -34,7 +34,7 @@ jobs:
 
       - id: tool-versions
         run: |
-          run: echo "::set-output name=golang::$(grep golang .tool-versions | cut -d ' ' -f 2)"
+          run: echo "::set-output name=golang::$(sed -nr 's/golang ([0-9]+)/\1/p' .tool-versions)"
 
       - name: Setup Go
         uses: actions/setup-go@v2
