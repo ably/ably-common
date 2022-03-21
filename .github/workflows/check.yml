@@ -10,7 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - id: tool-versions
+      - name: Read Tool Versions
+        id: tool-versions
         run: echo "::set-output name=nodejs::$(sed -nr 's/nodejs ([0-9]+)/\1/p' .tool-versions)"
 
       - uses: actions/setup-node@v2
@@ -31,7 +32,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - id: tool-versions
+      - name: Read Tool Versions
+        id: tool-versions
         run: echo "::set-output name=golang::$(sed -nr 's/golang ([0-9]+)/\1/p' .tool-versions)"
 
       - name: Setup Go
