@@ -9,14 +9,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Read Tool Versions
+        id: tool-versions
+        run: echo "::set-output name=golang::$(sed -nr 's/golang ([0-9]+)/\1/p' .tool-versions)"
+
       - name: Setup Go
         uses: actions/setup-go@v2
         with:
-          go-version: "1.16.5"
+          go-version: ${{ steps.tool-versions.outputs.golang }}
 
       - name: Generate code for Go users
-        run: |
-          scripts/build-go.sh
+        run: scripts/build-go.sh
 
       # ABLY_COMMON_GO_SSH_KEY is a deploy key, created on the ably-common-go repository.
       # see: https://docs.github.com/en/developers/overview/managing-deploy-keys#deploy-keys
