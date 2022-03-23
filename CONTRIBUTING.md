@@ -26,6 +26,14 @@ Or you can simply ask Prettier to rewrite incorrectly formatted data files with 
 These invocations naturally includes our [GitHub workflow source files](.github/workflows) too.
 That is intentional.
 
+### Markdown Files
+
+Our [CI check workflow](.github/workflows/check.yml) runs [markdownlint-cli2](https://www.npmjs.com/package/markdownlint-cli2) over all markdown files in this repository.
+
+You can run this tool locally before pushing commits with:
+
+    npm run format:documentation:check
+
 ## Release Process
 
 The outputs from this repository are not yet versioned, though this is planned ([#70](https://github.com/ably/ably-common/issues/70)).
