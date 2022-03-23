@@ -23,7 +23,7 @@ jobs:
       - run: |
           ! git --no-pager grep $'\t' -- './*' ':!./go' || { echo 'ERROR: Lint failed! Source files must use spaces for whitespace.'; false; }
           npm ci
-          npm run lint:data
+          npm run format:data:check
           npm test
 
   check-go:
