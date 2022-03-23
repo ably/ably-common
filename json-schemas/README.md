@@ -4,7 +4,7 @@ This directory contains the Ably JSON schemas.
 
 Each schema lives in its own file in the `src` directory.
 
-Schemas are published to https://schemas.ably.com.
+Schemas are published to `https://schemas.ably.com`.
 
 ## Versioning
 
@@ -25,7 +25,7 @@ an AWS access key and secret that has write permissions to the `schemas.ably.com
 S3 bucket in the SDK AWS account. If you are a SuperAdmin in the SDK AWS account,
 then run the following:
 
-```
+```bash
 source <(ably-env secrets print-aws --account sdk --role SuperAdmin)
 export SDK_S3_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}"
 export SDK_S3_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}"

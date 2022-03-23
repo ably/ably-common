@@ -69,7 +69,7 @@ Therefore it is safe to publish without consulting others because they have an e
 Once the generated Go code has been updated, update the `ably-common-go` module in the
 internal [go-services](https://github.com/ably/go-services) repository by running:
 
-```
+```bash
 go get -u github.com/ably/ably-common-go
 ```
 
