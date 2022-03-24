@@ -5,8 +5,8 @@
     "publish:json-schemas": "node json-schemas/publish.js",
     "lint": "npm-run-all format:*:check",
     "format:js-code:check": "eslint --max-warnings=0 .",
-    "format:data": "prettier --write **/*.{json,yml}",
-    "format:data:check": "prettier --check **/*.{json,yml}",
+    "format:data": "prettier --write **/*.{json,yml,yaml}",
+    "format:data:check": "prettier --check **/*.{json,yml,yaml}",
     "format:documentation:check": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
     "test": "jest"
   },
