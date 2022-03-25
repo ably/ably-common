@@ -1,0 +1,38 @@
+%YAML 1.2
+---
+
+Client:
+  Options:
+  REST:
+    Authentication:
+      .specification: RSC5
+      Get Client Identifier:
+        .specification: [RSA7, RSC17, RSA12]
+      Authorize:
+        .specification: RSA10
+      Create Token Request:
+        .specification: RSA9
+      Request Token:
+        .specification: RSA8e
+    Push Notifications:
+    Create:
+      .specification: RSC1
+      with API Key:
+      with Token String:
+      with Client Options:
+    Channel:
+      Presence:
+        Get Member List:
+          .documentation: https://ably.com/documentation/realtime/presence#member-list
+        Retrieve Event History:
+    Device:
+  Realtime:
+    .inherit: [Client, REST]
+    Create:
+      .specification: []
+      with API Key:
+      with Token String:
+      with Client Options:
+    Presence:
+      Subscription:
+        .specification: [RTP6, RTP7]
