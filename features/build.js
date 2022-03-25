@@ -10,9 +10,15 @@ const object = YAML.parse(yamlSource, parserOptions);
 
 emit(0, object);
 
+/**
+ * Log a node to the console.
+ *
+ * @param {number} level The depth of this node. Root is 0.
+ * @param {*} node The node.
+ */
 function emit(level, node) {
   if (level > 10) {
-    throw new Error(`Arbitrary depth limit exceeded.`);
+    throw new Error('Arbitrary depth limit exceeded.');
   }
 
   const indent = ' '.repeat(2).repeat(level);
