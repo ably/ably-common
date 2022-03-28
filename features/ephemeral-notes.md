@@ -693,3 +693,57 @@ class DeltaExtras
   from: String // the id of the message the delta was generated from
   format: String //the delta format. Only vcdiff is supported as at API version 1.2
 ```
+
+## Client Library Features Specification Groupings
+
+| Prefix | H2 | H3 |
+| ------ | -- | -- |
+| `G` | Test guidelines | - |
+| `RSC` | **REST** | `RestClient` |
+| `RSA` | \|- | `Auth` |
+| `RSN` | \|- | `Channels` |
+| `RSL` | \|- | `Channel` (`RestChannel`) |
+| `PC` | \|- | Plugins |
+| `RSP` | \|- | Presence |
+| `RSE` | \|- | Encryption (`Crypto`) |
+| `RSF` | \|- | Forwards compatibility |
+| `RTC` | **Realtime** | `RealtimeClient` |
+| `RTN` | \|- | `Connection` |
+| `RTS` | \|- | `Channels` |
+| `RTL` | \|- | `Channel` (`RealtimeChannel`) |
+| `RTP` | \|- | `Presence` and `PresenceMap` |
+| `RTE` | \|- | `EventEmitter` mixin / interface |
+| `RTF` | \|- | Forwards compatibility |
+| `RSH1` | **Push Notifications** | `Push#admin`: publish, device registrations, channel subscriptions |
+| `RSH2` | \|- | Rules around activate and deactivate methods |
+| `RSH3` | \|- | Activation State Machine |
+| `RSH4` | \|- | \| |
+| `RSH5` | \|- | \| |
+| `RSH6` | \|- | Push device authentication |
+| `RSH7` | \|- | Push channels |
+| `RSH8` | \|- | `LocalDevice` |
+| `TM` | **Types** | `Message` |
+| `TP` | \|- | `PresenceMessage` |
+| `TR` | \|- | `ProtocolMessage` |
+| `TG` | \|- | `PaginatedResult` |
+| `HP` | \|- | `HttpPaginatedResponse` // RSC19b |
+| `TE` | \|- | `TokenRequest` |
+| `TD` | \|- | `TokenDetails` |
+| `TN` | \|- | Token string (`TokenString`) |
+| `AD` | \|- | `AuthDetails` |
+| `TS` | \|- | `Stats` |
+| `TI` | \|- | `ErrorInfo` |
+| `TA` | \|- | `ConnectionStateChange` |
+| `TH` | \|- | `ChannelStateChange` |
+| `TC` | \|- | Capability - API not defined yet |
+| `CD` | \|- | `ConnectionDetails` |
+| `CP` | \|- | `ChannelProperties` |
+| `TO` | **Option types** | `ClientOptions` |
+| `TK` | \|- | `TokenParams` |
+| `AO` | \|- | `AuthOptions` |
+| `TB` | \|- | `ChannelOptions` |
+| `TE` | \|- | `CipherParams` |
+| `PCS` | Push notifications [types] | `PushChannelSubscription` |
+| `PCD` | \|- | `DeviceDetails` |
+| `PCP` | \|- | `DevicePushDetails` |
+| `DF` | Client Library defaults | Realtime defaults |
