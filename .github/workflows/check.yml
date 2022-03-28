@@ -18,11 +18,6 @@ jobs:
         with:
           node-version: ${{ steps.tool-versions.outputs.nodejs }}
 
-      # Investigating why `npm run format:data:check` fails in CI (Linux) but not locally (macOS).
-      # It's failing on .markdownlint-cli2.yaml
-      - name: Temporary Debug
-        run: ls -al **/*.yaml
-
       # Using git grep to fail the build if any tab characters are found in source files (except Go files) - we use spaces for whitespace.
       # Using prettier (format:data:check) to ensure JSON and YAML files have consistent formatting.
       - run: |
