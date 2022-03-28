@@ -23,7 +23,7 @@ Or you can simply ask Prettier to rewrite incorrectly formatted data files with 
     npm run format:data
 
 **Note**:
-These invocations naturally includes our [GitHub workflow source files](.github/workflows) too.
+These invocations naturally include our [GitHub workflow source files](.github/workflows) too.
 That is intentional.
 
 ### Markdown Files

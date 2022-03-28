@@ -19,7 +19,7 @@ jobs:
           node-version: ${{ steps.tool-versions.outputs.nodejs }}
 
       # Using git grep to fail the build if any tab characters are found in source files (except Go files) - we use spaces for whitespace.
-      # Using prettier (lint:data) to ensure JSON and YAML files have consistent formatting.
+      # Using prettier (format:data:check) to ensure JSON and YAML files have consistent formatting.
       - run: |
           ! git --no-pager grep $'\t' -- './*' ':!./go' || { echo 'ERROR: Lint failed! Source files must use spaces for whitespace.'; false; }
           npm ci
