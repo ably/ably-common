@@ -160,7 +160,7 @@ class Rest:
   # constructor(tokenStr: String) // RSC1
   # constructor(ClientOptions) // RSC1
   # auth: Auth // RSC5
-  push: Push
+  # push: Push
   device() => io LocalDevice
   channels: Channels<RestChannel> // RSN1
   request(
@@ -184,7 +184,7 @@ class Realtime:
   # constructor(tokenStr: String) // RSC1
   # constructor(ClientOptions) // RSC1
   auth: Auth // RTC4
-  push: Push
+  # push: Push
   device() => io LocalDevice
   channels: Channels<RealtimeChannel> // RTC3, RTS1
   clientId: String? // proxy for RSA7
@@ -578,8 +578,8 @@ class LocalDevice extends DeviceDetails:
   deviceIdentityToken: String
   deviceSecret: String
 
-class Push:
-  admin: PushAdmin // RSH1
+# class Push:
+  # admin: PushAdmin // RSH1
 
   // Only on platforms that support receiving notifications:
 
@@ -593,10 +593,10 @@ class Push:
     deregisterCallback: ((ErrorInfo?, deviceId: String?) -> io)?
   ) => io ErrorInfo? // RSH2b
 
-class PushAdmin:
-  publish(recipient: JsonObject, data: JsonObject) => io // RSH1a
-  deviceRegistrations: PushDeviceRegistrations // RSH1b
-  channelSubscriptions: PushChannelSubscriptions // RSH1c
+# class PushAdmin:
+  # publish(recipient: JsonObject, data: JsonObject) => io // RSH1a
+  # deviceRegistrations: PushDeviceRegistrations // RSH1b
+  # channelSubscriptions: PushChannelSubscriptions // RSH1c
 
 class JsonObject:
   // Platform-dependent, typically a Dict-like object

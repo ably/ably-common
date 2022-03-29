@@ -14,6 +14,42 @@ Client:
       Request Token:
         .specification: RSA8e
     Push Notifications:
+      Administration:
+        .specification: RSH1
+        .documentation: https://ably.com/documentation/rest/push#push-admin
+        Publish:
+          .specification: RSH1a
+          .documentation:
+            - https://ably.com/documentation/rest/push#publish
+            - https://ably.com/documentation/rest-api#push-publish
+            - https://ably.com/documentation/general/push/publish#direct-publishing
+          .synopsis: |
+            Deliver a push notification to devices, addressing recipient(s):
+            - registered to Ably by device ID
+            - by their associated client ID
+            - directly using the underlying notifications service (FCM, APNs, etc.), thus bypassing registrations to Ably altogether
+        Device Registration:
+          .specification: RSH1b
+          Get:
+            .specification: RSH1b1
+          List:
+            .specification: RSH1b2
+          Save:
+            .specification: RSH1b3
+          Remove:
+            .specification: [RSH1b4, RSH1b4]
+        Channel Subscription:
+          .specification: RSH1c
+          List:
+            .specification: RSH1c1
+          List Channels:
+            .specification: RSH1c2
+          Save:
+            .specification: RSH1c3
+          Remove:
+            .specification: [RSH1c4, RSH1c5]
+      Activation:
+        .specifications: [RSH2, RSH3, RSH4, RSH5, RSH6, RSH7, RSH8]
     Create:
       .specification: RSC1
       with API Key:
