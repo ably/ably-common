@@ -2,6 +2,7 @@
   "name": "ably-common",
   "version": "1.2.0",
   "scripts": {
+    "build:features": "node features/build.js",
     "publish:json-schemas": "node json-schemas/publish.js",
     "lint": "npm-run-all format:*:check",
     "format:js-code:check": "eslint --max-warnings=0 .",
