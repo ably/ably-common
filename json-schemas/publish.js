@@ -21,8 +21,7 @@ const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 
 const srcDir = path.resolve(__dirname, 'src');
 
-// eslint-disable-next-line import/no-dynamic-require
-const versions = require(path.resolve(__dirname, 'versions.json'));
+const versions = require('./versions.json');
 
 const baseUrl = 'https://schemas.ably.com/json';
 const s3Bucket = 'schemas.ably.com';
