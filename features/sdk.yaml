@@ -27,11 +27,6 @@ Client:
     Device:
   Realtime:
     .inherit: [Client, REST]
-    Create:
-      .specification: []
-      with API Key:
-      with Token String:
-      with Client Options:
     Presence:
       Subscription:
         .specification: [RTP6, RTP7]
