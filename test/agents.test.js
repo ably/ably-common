@@ -1,18 +1,8 @@
-const path = require('path');
 const { Validator } = require('jsonschema');
 
-const schemaPath = path.resolve(__dirname, '..', 'json-schemas', 'src', 'agents.json');
-const agentsPath = path.resolve(__dirname, '..', 'protocol', 'agents.json');
-const versionsPath = path.resolve(__dirname, '..', 'json-schemas', 'versions.json');
-
-// eslint-disable-next-line import/no-dynamic-require
-const schema = require(schemaPath);
-
-// eslint-disable-next-line import/no-dynamic-require
-const agents = require(agentsPath);
-
-// eslint-disable-next-line import/no-dynamic-require
-const versions = require(versionsPath);
+const schema = require('../json-schemas/src/agents.json');
+const agents = require('../protocol/agents.json');
+const versions = require('../json-schemas/versions.json');
 
 const jsonschema = new Validator();
 jsonschema.addSchema(
