@@ -1,0 +1,33 @@
+name: Assemble
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Read Tool Versions
+        id: tool-versions
+        run: echo "::set-output name=nodejs::$(sed -nr 's/nodejs ([0-9]+)/\1/p' .tool-versions)"
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ steps.tool-versions.outputs.nodejs }}
+
+      - run: |
+          npm ci
+          npm run build:features
+
+      - uses: ably/sdk-upload-action@v1
+        with:
+          s3AccessKeyId: ${{ secrets.SDK_S3_ACCESS_KEY_ID }}
+          s3AccessKey: ${{ secrets.SDK_S3_ACCESS_KEY }}
+          sourcePath: output/features
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          artifactName: sdk-features
