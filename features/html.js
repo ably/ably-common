@@ -41,6 +41,10 @@ class Writer {
     this.writeStream = writeStream;
   }
 
+  class(classNames) {
+    this.classAttributeValue = classNames;
+  }
+
   /**
    * Write raw HTML.
    *
@@ -103,6 +107,9 @@ class DocumentWriter extends ContentWriter {
       <!DOCTYPE html>
       <html lang="en">
       <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="tailwind.css" rel="stylesheet">
         <title>${this.properties.title || 'Document'}</title>
       </head>
     `);
@@ -135,12 +142,19 @@ class TableRowWriter extends Writer {
    * @param {ContentGenerator} generator Code to populate the table cell. Called synchronously.
    */
   cell(generator) {
-    const attributes = this.columnSpanAttributeValue
-      ? `colspan=${this.columnSpanAttributeValue}`
-      : '';
-    this.columnSpanAttributeValue = undefined;
+    const attributes = [
+      this.columnSpanAttributeValue
+        ? `colspan=${this.columnSpanAttributeValue}`
+        : '',
+      this.classAttributeValue
+        ? `class="${this.classAttributeValue}"`
+        : '',
+    ];
 
-    this.write(`<td ${attributes}>`);
+    this.columnSpanAttributeValue = undefined;
+    this.classAttributeValue = undefined;
+
+    this.write(`<td ${attributes.join(' ')}>`);
     generator(new ContentWriter(this.writeStream));
     this.write('</td>');
   }

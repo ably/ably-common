@@ -60,6 +60,7 @@ function generateTableRows(writer, maximumLevel, level, node) {
           writer.row((rowWriter) => {
             // Indent using empty cells
             for (let i = 1; i <= level; i += 1) {
+              rowWriter.class('px-3');
               rowWriter.cell((cellContentWriter) => {
                 cellContentWriter.write('&nbsp;');
               });
