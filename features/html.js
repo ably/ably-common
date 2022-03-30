@@ -106,15 +106,21 @@ class DocumentWriter extends ContentWriter {
     this.write(`
       <!DOCTYPE html>
       <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="tailwind.css" rel="stylesheet">
-        <title>${this.properties.title || 'Document'}</title>
-      </head>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link href="tailwind.css" rel="stylesheet">
+          <title>${this.properties.title || 'Document'}</title>
+        </head>
+        <body>
+          <div class="my-1 mx-2">
     `);
     generator(new ContentWriter(this.writeStream));
-    this.write('</html>');
+    this.write(`
+          </div>
+        </body>
+      </html>
+    `);
   }
 }
 
