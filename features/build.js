@@ -5,6 +5,10 @@ const {
   DocumentWriter,
   TableWriter,
 } = require('./html');
+const {
+  isPropertyKey,
+  Properties,
+} = require('./sdk-node-properties');
 
 const yamlSource = fs.readFileSync(path.resolve(__dirname, 'sdk.yaml')).toString();
 const parserOptions = {
@@ -54,8 +58,10 @@ function generateTableRows(writer, maximumLevel, level, node) {
   let maximumDepth = 0;
   if (node instanceof Map) {
     node.forEach((value, key) => {
-      if (!key.startsWith('.')) {
+      if (!isPropertyKey(key)) {
         if (writer) {
+          const { specificationPoints, documentationUrls } = new Properties(value);
+
           console.log(`${consoleIndent}${key}:`);
           writer.row((rowWriter) => {
             // Indent using empty cells
@@ -71,8 +77,27 @@ function generateTableRows(writer, maximumLevel, level, node) {
             if (cellCount > 1) {
               rowWriter.columnSpan(cellCount);
             }
+            rowWriter.class('px-1');
             rowWriter.cell((cellContentWriter) => {
               cellContentWriter.text(key);
+            });
+
+            // Specification Points
+            rowWriter.cell((cellContentWriter) => {
+              cellContentWriter.write(specificationPoints
+                ? specificationPoints
+                  .map((element) => element.toHtmlLink())
+                  .join(', ')
+                : '&nbsp;');
+            });
+
+            // Documentation Links
+            rowWriter.cell((cellContentWriter) => {
+              cellContentWriter.write(documentationUrls
+                ? documentationUrls
+                  .map((element) => `<a href="${element}" target="_blank" rel="noopener">docs</a>`)
+                  .join(', ')
+                : '&nbsp;');
             });
           });
         }
