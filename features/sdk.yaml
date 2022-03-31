@@ -49,7 +49,7 @@ Client:
           Remove:
             .specification: [RSH1c4, RSH1c5]
       Activation:
-        .specifications: [RSH2, RSH3, RSH4, RSH5, RSH6, RSH7, RSH8]
+        .specification: [RSH2, RSH3, RSH4, RSH5, RSH6, RSH7, RSH8]
     Create:
       .specification: RSC1
       with API Key:
