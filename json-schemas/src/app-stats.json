@@ -3,6 +3,10 @@
   "title": "Ably Application Statistics Message",
   "type": "object",
   "properties": {
+    "appId": {
+      "type": "string",
+      "description": "The ID of the Ably application the statistics are for."
+    },
     "intervalId": {
       "type": "string",
       "description": "time period for statistics in date-time format yyyy-mm-dd:hh:mm:ss"
