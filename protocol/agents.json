@@ -234,7 +234,6 @@
     "cocoa.ios": "ably-cocoa/${version} iOS/0.0.0",
     "cocoa.macos": "ably-cocoa/${version} macOS/0.0.0",
     "cocoa.tvos": "ably-cocoa/${version} tvOS/0.0.0",
-    "dart": "dart/${version}",
     "dotnet": "ably-dotnet/${version}",
     "dotnet.framework": "ably-dotnet/${version} dotnet-framework/0.0.0",
     "dotnet.uwp": "ably-dotnet/${version} uwp",
