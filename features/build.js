@@ -57,7 +57,9 @@ function generateTableRows(writer, maximumLevel, level, node) {
   const consoleIndent = ' '.repeat(2).repeat(level);
   let maximumDepth = 0;
   if (node instanceof Map) {
-    node.forEach((value, key) => {
+    const sortedKeys = Array.from(node.keys()).sort();
+    sortedKeys.forEach((key) => {
+      const value = node.get(key);
       if (!isPropertyKey(key)) {
         if (writer) {
           const { specificationPoints, documentationUrls } = new Properties(value);
