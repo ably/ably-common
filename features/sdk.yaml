@@ -4,6 +4,9 @@ Client:
   Authentication Options:
     Key:
       .specification: [RSA11, TO3j1, AO2a]
+      .synopsis: |
+        Authenticate using a full Ably key string, as obtained from the dashboard,
+        featuring a key name and key secret.
     Token String:
       .specification: [RSA4a, RSA4, TO3j2]
     Token Details:
