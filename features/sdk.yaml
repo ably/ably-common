@@ -16,13 +16,13 @@ Client:
     Push Notifications:
       Administration:
         .specification: RSH1
-        .documentation: https://ably.com/documentation/rest/push#push-admin
+        .documentation: https://ably.com/docs/rest/push#push-admin
         Publish:
           .specification: RSH1a
           .documentation:
-            - https://ably.com/documentation/rest/push#publish
-            - https://ably.com/documentation/rest-api#push-publish
-            - https://ably.com/documentation/general/push/publish#direct-publishing
+            - https://ably.com/docs/rest/push#publish
+            - https://ably.com/docs/rest-api#push-publish
+            - https://ably.com/docs/general/push/publish#direct-publishing
           .synopsis: |
             Deliver a push notification to devices, addressing recipient(s):
             - registered to Ably by device ID
@@ -58,7 +58,7 @@ Client:
     Channel:
       Presence:
         Get Member List:
-          .documentation: https://ably.com/documentation/realtime/presence#member-list
+          .documentation: https://ably.com/docs/realtime/presence#member-list
         Retrieve Event History:
     Device:
   Realtime:
