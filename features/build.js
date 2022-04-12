@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { marked } = require('marked');
 const path = require('path');
 const YAML = require('yaml');
 const {
@@ -62,7 +63,11 @@ function generateTableRows(writer, maximumLevel, level, node) {
       const value = node.get(key);
       if (!isPropertyKey(key)) {
         if (writer) {
-          const { specificationPoints, documentationUrls } = new Properties(value);
+          const {
+            specificationPoints,
+            documentationUrls,
+            synopsis,
+          } = new Properties(value);
 
           console.log(`${consoleIndent}${key}:`);
           writer.row((rowWriter) => {
@@ -99,6 +104,13 @@ function generateTableRows(writer, maximumLevel, level, node) {
                 ? documentationUrls
                   .map((element) => `<a href="${element}" target="_blank" rel="noopener">docs</a>`)
                   .join(', ')
+                : '&nbsp;');
+            });
+
+            // Synopsis
+            rowWriter.cell((cellContentWriter) => {
+              cellContentWriter.write(synopsis
+                ? marked.parse(synopsis)
                 : '&nbsp;');
             });
           });
