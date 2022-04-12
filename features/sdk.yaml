@@ -1,7 +1,19 @@
 %YAML 1.2
 ---
 Client:
+  Authentication Options:
+    Key:
+      .specification: [RSA11, TO3j1, AO2a]
+    Token String:
+      .specification: [RSA4a, RSA4, TO3j2]
+    Token Details:
+      .specification: [RSA4a, RSA4, TO3j3]
+    Token Request:
+      .specification: [TO3j2]
+    Callback:
+      .specification: [RSA4a, RSA4, TO3j5, AO2b]
   Options:
+    .inherit: [Client, Authentication Options]
   REST:
     Authentication:
       .specification: RSC5

@@ -237,15 +237,15 @@ class ClientOptions:
   agents: [String: String?]? // RSC7d6 - interface only offered by some libraries
 
 class AuthOptions: // RSA8e
-  authCallback: ((TokenParams) -> io (String | TokenDetails | TokenRequest | JsonObject))? // RSA4a, RSA4, TO3j5, AO2b
+#  authCallback: ((TokenParams) -> io (String | TokenDetails | TokenRequest | JsonObject))? // RSA4a, RSA4, TO3j5, AO2b
   authHeaders: [String: Stringifiable]? // RSA8c3, TO3j8, AO2e
   authMethod: .GET | .POST default .GET // RSA8c, TO3j7, AO2d
   authParams: [String: Stringifiable]? // RSA8c3, RSA8c1, TO3j9, AO2f
   authUrl: String? // RSA4a, RSA4, RSA8c, TO3j6, AO2c
-  key: String? // RSA11, RSA14, TO3j1, AO2a
+#  key: String? // RSA11, RSA14, TO3j1, AO2a
   queryTime: Bool default false // RSA9d, TO3j10, AO2a
-  token: String? | TokenDetails? | TokenRequest? // RSA4a, RSA4, TO3j2
-  tokenDetails: TokenDetails? // RSA4a, RSA4, TO3j3
+#  token: String? | TokenDetails? | TokenRequest? // RSA4a, RSA4, TO3j2
+#  tokenDetails: TokenDetails? // RSA4a, RSA4, TO3j3
   useTokenAuth: Bool? // RSA4, RSA14, TO3j4
 
 class TokenParams: // RSAA8e
