@@ -46,6 +46,18 @@ class Writer {
   }
 
   /**
+   * Consumes the attribute value(s) and then resets them to undefined.
+   * The idea is that this method is called when the next element is generated.
+   *
+   * @returns {string[]} Zero or more attribute strings in `key=value` form.
+   */
+  useAttributes() {
+    const classValue = this.classAttributeValue;
+    this.classAttributeValue = undefined;
+    return classValue ? [`class="${classValue}"`] : [];
+  }
+
+  /**
    * Write raw HTML.
    *
    * @param {string} chunk The raw contents to write.
@@ -66,7 +78,8 @@ class Writer {
 
 class ContentWriter extends Writer {
   h(depth, text) {
-    this.write(`<h${depth}>${escape(text)}</h${depth}>`);
+    const attributes = this.useAttributes();
+    this.write(`<h${depth} ${attributes.join(' ')}>${escape(text)}</h${depth}>`);
   }
 
   /**
@@ -75,7 +88,8 @@ class ContentWriter extends Writer {
    * @param {TableGenerator} generator Code to populate the table. Called synchronously.
    */
   table(generator) {
-    this.write('<table>');
+    const attributes = this.useAttributes();
+    this.write(`<table ${attributes.join(' ')}>`);
     generator(new TableWriter(this.writeStream));
     this.write('</table>');
   }
@@ -131,7 +145,8 @@ class TableWriter extends Writer {
    * @param {TableRowGenerator} generator Code to populate the table row. Called synchronously.
    */
   row(generator) {
-    this.write('<tr>');
+    const attributes = this.useAttributes();
+    this.write(`<tr ${attributes.join(' ')}>`);
     generator(new TableRowWriter(this.writeStream));
     this.write('</tr>');
   }
@@ -142,24 +157,20 @@ class TableRowWriter extends Writer {
     this.columnSpanAttributeValue = count;
   }
 
+  useAttributes() {
+    const attributes = super.useAttributes();
+    const columnSpanValue = this.columnSpanAttributeValue;
+    this.columnSpanAttributeValue = undefined;
+    return columnSpanValue ? [`colspan=${columnSpanValue}`, ...attributes] : attributes;
+  }
+
   /**
    * Create a table cell.
    *
    * @param {ContentGenerator} generator Code to populate the table cell. Called synchronously.
    */
   cell(generator) {
-    const attributes = [
-      this.columnSpanAttributeValue
-        ? `colspan=${this.columnSpanAttributeValue}`
-        : '',
-      this.classAttributeValue
-        ? `class="${this.classAttributeValue}"`
-        : '',
-    ];
-
-    this.columnSpanAttributeValue = undefined;
-    this.classAttributeValue = undefined;
-
+    const attributes = this.useAttributes();
     this.write(`<td ${attributes.join(' ')}>`);
     generator(new ContentWriter(this.writeStream));
     this.write('</td>');
