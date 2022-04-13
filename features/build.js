@@ -27,14 +27,15 @@ console.log(`levelCount = ${levelCount}`);
 const outputDirectoryPath = path.join('output', 'features');
 createDirectory(outputDirectoryPath);
 
-const title = 'SDK Features';
+const title = 'Ably';
+const subTitle = 'SDK Features';
 const documentWriter = new DocumentWriter(
-  { title },
+  { title: `${subTitle} | ${title}` },
   fs.createWriteStream(path.join(outputDirectoryPath, 'index.html')),
 );
 
 documentWriter.document((contentWriter) => {
-  contentWriter.h(1, title);
+  contentWriter.h(1, `${title} ${subTitle}`);
   contentWriter.class('border-collapse');
   contentWriter.table((tableWriter) => {
     // Second pass: Render rows.
