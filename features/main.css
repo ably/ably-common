@@ -6,4 +6,7 @@
   h1 {
     @apply text-2xl font-bold;
   }
+  ul {
+    @apply list-disc pl-5;
+  }
 }
