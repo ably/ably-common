@@ -35,6 +35,7 @@ const documentWriter = new DocumentWriter(
 
 documentWriter.document((contentWriter) => {
   contentWriter.h(1, title);
+  contentWriter.class('border-collapse');
   contentWriter.table((tableWriter) => {
     // Second pass: Render rows.
     generateTableRows(tableWriter, levelCount, 0, object);
@@ -70,6 +71,7 @@ function generateTableRows(writer, maximumLevel, level, node) {
           } = new Properties(value);
 
           console.log(`${consoleIndent}${key}:`);
+          writer.class('border-slate-300 border-t-2 border-b-2 align-top');
           writer.row((rowWriter) => {
             // Indent using empty cells
             for (let i = 1; i <= level; i += 1) {
@@ -84,12 +86,13 @@ function generateTableRows(writer, maximumLevel, level, node) {
             if (cellCount > 1) {
               rowWriter.columnSpan(cellCount);
             }
-            rowWriter.class('px-1');
+            rowWriter.class('pr-1');
             rowWriter.cell((cellContentWriter) => {
               cellContentWriter.text(key);
             });
 
             // Specification Points
+            rowWriter.class('border-l px-1');
             rowWriter.cell((cellContentWriter) => {
               cellContentWriter.write(specificationPoints
                 ? specificationPoints
@@ -98,20 +101,23 @@ function generateTableRows(writer, maximumLevel, level, node) {
                 : '&nbsp;');
             });
 
-            // Documentation Links
+            // Documentation Links and Synopsis
+            rowWriter.class('border-l px-1');
             rowWriter.cell((cellContentWriter) => {
-              cellContentWriter.write(documentationUrls
-                ? documentationUrls
+              let empty = true;
+              if (documentationUrls) {
+                cellContentWriter.write(documentationUrls
                   .map((element) => `<a href="${element}" target="_blank" rel="noopener">docs</a>`)
-                  .join(', ')
-                : '&nbsp;');
-            });
-
-            // Synopsis
-            rowWriter.cell((cellContentWriter) => {
-              cellContentWriter.write(synopsis
-                ? marked.parse(synopsis)
-                : '&nbsp;');
+                  .join(', '));
+                empty = false;
+              }
+              if (synopsis) {
+                cellContentWriter.write(marked.parse(synopsis));
+                empty = false;
+              }
+              if (empty) {
+                cellContentWriter.write('&nbsp;');
+              }
             });
           });
         }
