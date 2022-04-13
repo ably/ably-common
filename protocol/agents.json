@@ -200,7 +200,7 @@
     },
     {
       "identifier": "laravel",
-      "versioned": false,
+      "versioned": true,
       "emitters": ["ably-php"],
       "type": "wrapper"
     },
