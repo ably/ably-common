@@ -2,82 +2,82 @@
 ---
 Client:
   Authentication Options:
+    Callback:
+      .specification: [RSA4a, RSA4, TO3j5, AO2b]
     Key:
       .specification: [RSA11, TO3j1, AO2a]
       .synopsis: |
         Authenticate using a full Ably key string, as obtained from the dashboard,
         featuring a key name and key secret.
-    Token String:
-      .specification: [RSA4a, RSA4, TO3j2]
     Token Details:
       .specification: [RSA4a, RSA4, TO3j3]
     Token Request:
       .specification: [TO3j2]
-    Callback:
-      .specification: [RSA4a, RSA4, TO3j5, AO2b]
+    Token String:
+      .specification: [RSA4a, RSA4, TO3j2]
   Options:
     .inherit: [Client, Authentication Options]
+  Realtime:
+    .inherit: [Client, REST]
+    Presence:
+      Subscription:
+        .specification: [RTP6, RTP7]
   REST:
     Authentication:
       .specification: RSC5
-      Get Client Identifier:
-        .specification: [RSA7, RSC17, RSA12]
       Authorize:
         .specification: RSA10
       Create Token Request:
         .specification: RSA9
+      Get Client Identifier:
+        .specification: [RSA7, RSC17, RSA12]
       Request Token:
         .specification: RSA8e
+    Channel:
+      Presence:
+        Get Member List:
+          .documentation: https://ably.com/docs/realtime/presence#member-list
+        Retrieve Event History:
+    Create:
+      .specification: RSC1
+      with API Key:
+      with Client Options:
+      with Token String:
+    Device:
     Push Notifications:
+      Activation:
+        .specification: [RSH2, RSH3, RSH4, RSH5, RSH6, RSH7, RSH8]
       Administration:
-        .specification: RSH1
         .documentation: https://ably.com/docs/rest/push#push-admin
-        Publish:
-          .specification: RSH1a
-          .documentation:
-            - https://ably.com/docs/rest/push#publish
-            - https://ably.com/docs/rest-api#push-publish
-            - https://ably.com/docs/general/push/publish#direct-publishing
-          .synopsis: |
-            Deliver a push notification to devices, addressing recipient(s):
-            - registered to Ably by device ID
-            - by their associated client ID
-            - directly using the underlying notifications service (FCM, APNs, etc.), thus bypassing registrations to Ably altogether
-        Device Registration:
-          .specification: RSH1b
-          Get:
-            .specification: RSH1b1
-          List:
-            .specification: RSH1b2
-          Save:
-            .specification: RSH1b3
-          Remove:
-            .specification: [RSH1b4, RSH1b4]
+        .specification: RSH1
         Channel Subscription:
           .specification: RSH1c
           List:
             .specification: RSH1c1
           List Channels:
             .specification: RSH1c2
-          Save:
-            .specification: RSH1c3
           Remove:
             .specification: [RSH1c4, RSH1c5]
-      Activation:
-        .specification: [RSH2, RSH3, RSH4, RSH5, RSH6, RSH7, RSH8]
-    Create:
-      .specification: RSC1
-      with API Key:
-      with Token String:
-      with Client Options:
-    Channel:
-      Presence:
-        Get Member List:
-          .documentation: https://ably.com/docs/realtime/presence#member-list
-        Retrieve Event History:
-    Device:
-  Realtime:
-    .inherit: [Client, REST]
-    Presence:
-      Subscription:
-        .specification: [RTP6, RTP7]
+          Save:
+            .specification: RSH1c3
+        Device Registration:
+          .specification: RSH1b
+          Get:
+            .specification: RSH1b1
+          List:
+            .specification: RSH1b2
+          Remove:
+            .specification: [RSH1b4, RSH1b4]
+          Save:
+            .specification: RSH1b3
+        Publish:
+          .documentation:
+            - https://ably.com/docs/rest/push#publish
+            - https://ably.com/docs/rest-api#push-publish
+            - https://ably.com/docs/general/push/publish#direct-publishing
+          .specification: RSH1a
+          .synopsis: |
+            Deliver a push notification to devices, addressing recipient(s):
+            - registered to Ably by device ID
+            - by their associated client ID
+            - directly using the underlying notifications service (FCM, APNs, etc.), thus bypassing registrations to Ably altogether

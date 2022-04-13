@@ -12,12 +12,17 @@ const {
 } = require('./sdk-node-properties');
 
 const yamlSource = fs.readFileSync(path.resolve(__dirname, 'sdk.yaml')).toString();
+
+// First Parse: using YAML's mid-level API, rendering a graph of the YAML structure
+validateStructure(YAML.parseDocument(yamlSource).contents);
+
+// Second Parse: using YAML's simplest API, rendering pure JS entities representing our data model
 const parserOptions = {
   mapAsMap: true,
 };
 const object = YAML.parse(yamlSource, parserOptions);
 
-// First pass: Measure depth.
+// First Pass: Measure depth.
 const arbitraryMaximumDepth = 10;
 const levelCount = generateTableRows(null, arbitraryMaximumDepth, 0, object);
 console.log(`levelCount = ${levelCount}`);
@@ -38,7 +43,7 @@ documentWriter.document((contentWriter) => {
   contentWriter.h(1, `${title} ${subTitle}`);
   contentWriter.class('border-collapse');
   contentWriter.table((tableWriter) => {
-    // Second pass: Render rows.
+    // Second Pass: Render rows.
     generateTableRows(tableWriter, levelCount, 0, object);
   });
 });
@@ -156,4 +161,68 @@ function createDirectory(directoryPath) {
   if (!fs.existsSync(directoryPath)) {
     fs.mkdirSync(directoryPath, { recursive: true });
   }
+}
+
+/**
+ * Inspects YAML AST to ensure source constraints are met (e.g. ordered keys).
+ *
+ * @param {*} astNode The YAML AST node.
+ * @param {number} level The depth, for recursion depth protection.
+ */
+function validateStructure(astNode, level = 0) {
+  if (astNode === null) {
+    return;
+  }
+  if (level > 20) {
+    throw new Error('Recursion depth exceeded arbitrary limit.');
+  }
+
+  const nodeType = astNode.type;
+  switch (nodeType) {
+    case 'MAP':
+      validateMapItems(astNode.items, level + 1);
+      break;
+
+    case 'FLOW_SEQ':
+    case 'SEQ':
+      astNode.items.forEach((item) => {
+        validateStructure(item, level + 1);
+      });
+      break;
+
+    case 'PLAIN':
+    case 'BLOCK_LITERAL':
+      break;
+
+    default:
+      throw new Error(`Unhandled YAML AST node type "${nodeType}".`);
+  }
+}
+
+/**
+ * Inspects items of YAML AST map to ensure source constraints are met.
+ *
+ * @param {*[]} items The YAML AST 'MAP' node items.
+ * @param {number} level The depth, for recursion depth protection.
+ */
+function validateMapItems(items, level) {
+  let previousKeyValue;
+  items.forEach((item) => {
+    if (item.type !== 'PAIR') {
+      throw new Error('Map items should be pairs.');
+    }
+
+    const { key, value } = item;
+    if (key.type !== 'PLAIN') {
+      throw new Error('Map keys must be plain scalars.');
+    }
+    const keyValue = key.value;
+
+    if (previousKeyValue && keyValue.localeCompare(previousKeyValue) < 0) {
+      throw new Error(`Keys not sorted ("${keyValue}" should not be after "${previousKeyValue}").`);
+    }
+    previousKeyValue = keyValue;
+
+    validateStructure(value, level + 1);
+  });
 }
