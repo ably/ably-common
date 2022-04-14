@@ -115,6 +115,12 @@
       "type": "wrapper"
     },
     {
+      "identifier": "dart",
+      "versioned": true,
+      "emitters": ["ably-flutter"],
+      "type": "runtime"
+    },
+    {
       "identifier": "kafka-connect-ably",
       "versioned": true,
       "emitters": ["kafka-connect-ably"],

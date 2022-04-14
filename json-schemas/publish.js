@@ -17,21 +17,22 @@
 
 const { readdir } = require('fs/promises');
 const path = require('path');
-const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
+const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 
 const srcDir = path.resolve(__dirname, 'src');
-const versions = require(path.resolve(__dirname, 'versions.json'));
 
-const baseUrl = 'https://schemas.ably.com/json'
+const versions = require('./versions.json');
+
+const baseUrl = 'https://schemas.ably.com/json';
 const s3Bucket = 'schemas.ably.com';
 
 const awsAccessKeyId = process.env.SDK_S3_ACCESS_KEY_ID;
-if(typeof awsAccessKeyId !== 'string') {
+if (typeof awsAccessKeyId !== 'string') {
   throw new Error('Missing SDK_S3_ACCESS_KEY_ID');
 }
 
 const awsSecretAccessKey = process.env.SDK_S3_ACCESS_KEY;
-if(typeof awsSecretAccessKey !== 'string') {
+if (typeof awsSecretAccessKey !== 'string') {
   throw new Error('Missing SDK_S3_ACCESS_KEY');
 }
 
@@ -46,34 +47,35 @@ const s3 = new S3Client({
 (async () => {
   const files = await readdir(srcDir);
 
-  await Promise.all(files.map(file => {
+  await Promise.all(files.map((file) => {
     console.log(`Checking JSON schema ${file}`);
 
     // check the schema has a version in versions.json
     const name = path.basename(file, '.json');
-    if(!versions.hasOwnProperty(name)) {
+    if (!Object.prototype.hasOwnProperty.call(versions, name)) {
       throw new Error(`Missing version for JSON schema ${name}, please add ${name} to versions.json`);
     }
     const version = versions[name];
 
     // read the schema, and check it doesn't have an $id field
+    // eslint-disable-next-line import/no-dynamic-require, global-require
     let schema = require(path.resolve(srcDir, file));
-    if(schema.hasOwnProperty('$id')) {
+    if (Object.prototype.hasOwnProperty.call(schema, '$id')) {
       throw new Error(`Unexpected $id property in JSON schema ${name}, please remove`);
     }
 
     // generate the $id field and prepend it to the schema
     const id = `${baseUrl}/${name}-${version}.json`;
-    schema = { '$id': id, ...schema }
+    schema = { $id: id, ...schema };
 
     // upload to the S3 bucket
     console.log(`Uploading JSON schema: ${id}...`);
     return s3.send(new PutObjectCommand({
-      Bucket:      s3Bucket,
-      Key:         `json/${path.basename(id)}`,
-      Body:        JSON.stringify(schema, null, 2),
+      Bucket: s3Bucket,
+      Key: `json/${path.basename(id)}`,
+      Body: JSON.stringify(schema, null, 2),
       ContentType: 'application/json',
-      ACL:         'public-read',
+      ACL: 'public-read',
     }));
   }));
 

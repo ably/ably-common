@@ -1,0 +1,7 @@
+config:
+
+  # Limiting line length is too restrictive in many cases - in particular in respect of laying out markdown to be Git diff friendly.
+  line-length: false
+
+  # This prevents use of "..." and "!" at the end of headings, where they are useful and expressive.
+  no-trailing-punctuation: false

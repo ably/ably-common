@@ -10,25 +10,29 @@ See [Ably Realtime Protocol](protocol) for details on maintaining:
 - Error Help (support article links)
 - Agents
 
-### JSON Files
+### Data Files (JSON and YAML)
 
-Our [CI check workflow](.github/workflows/check.yml) runs [Prettier](https://prettier.io/) over all JSON files in this repository.
+Our [CI check workflow](.github/workflows/check.yml) runs [Prettier](https://prettier.io/) over data files in this repository.
 
-If you want to be sure that changes you make to JSON files will not fail CI then you can either use Prettier's `--check` switch as implemented in the aforementioned check workflow, or you can simply ask Prettier to rewrite incorrectly formatted JSON files with this command:
+If you want to be sure that changes you make to data files will not fail CI then you can either use Prettier's `--check` switch as implemented in the aforementioned check workflow:
 
-    npx prettier --write "**/*.json"
+    npm run format:data:check
 
-### YAML Files
+Or you can simply ask Prettier to rewrite incorrectly formatted data files with this command:
 
-As for JSON files (see above) we also use Prettier to ensure YAML is conformed.
-
-You can ask Prettier to rewrite incorrectly formatted YAML files with this command:
-
-    npx prettier --write "**/*.yml"
+    npm run format:data
 
 **Note**:
-This invocation, matching what we do in the CI workflow, naturally includes our [GitHub workflow source files](.github/workflows) too.
+These invocations naturally include our [GitHub workflow source files](.github/workflows) too.
 That is intentional.
+
+### Markdown Files
+
+Our [CI check workflow](.github/workflows/check.yml) runs [markdownlint-cli2](https://www.npmjs.com/package/markdownlint-cli2) over all markdown files in this repository.
+
+You can run this tool locally before pushing commits with:
+
+    npm run format:documentation:check
 
 ## Release Process
 

@@ -10,13 +10,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Read Tool Versions
+        id: tool-versions
+        run: echo "::set-output name=nodejs::$(sed -nr 's/nodejs ([0-9]+)/\1/p' .tool-versions)"
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ steps.tool-versions.outputs.nodejs }}
+
       # Using git grep to fail the build if any tab characters are found in source files (except Go files) - we use spaces for whitespace.
-      # Using prettier to ensure JSON and YAML files have consistent formatting.
+      # Using prettier (format:data:check) to ensure JSON and YAML files have consistent formatting.
       - run: |
           ! git --no-pager grep $'\t' -- './*' ':!./go' || { echo 'ERROR: Lint failed! Source files must use spaces for whitespace.'; false; }
           npm ci
-          npx prettier --check "**/*.json"
-          npx prettier --check "**/*.yml"
+          npm run lint
           npm test
 
   check-go:
@@ -24,11 +31,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Read Tool Versions
+        id: tool-versions
+        run: echo "::set-output name=golang::$(sed -nr 's/golang ([0-9]+)/\1/p' .tool-versions)"
+
       - name: Setup Go
         uses: actions/setup-go@v2
         with:
-          go-version: "1.16.5"
+          go-version: ${{ steps.tool-versions.outputs.golang }}
 
       - name: Build for Go users
-        run: |
-          scripts/build-go.sh
+        run: scripts/build-go.sh
