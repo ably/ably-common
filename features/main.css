@@ -9,4 +9,10 @@
   ul {
     @apply list-disc pl-5;
   }
+  code {
+    @apply text-slate-600 bg-amber-100;
+  }
+  a code {
+    @apply bg-inherit hover:underline hover:text-amber-700 hover:font-semibold;
+  }
 }
