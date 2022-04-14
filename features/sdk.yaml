@@ -4,17 +4,34 @@ Client:
   Authentication Options:
     Callback:
       .specification: [RSA4a, RSA4, TO3j5, AO2b]
+      .synopsis: |
+        Service `Auth#requestToken` calls by invoking a callback (`authCallback`).
     Key:
       .specification: [RSA11, TO3j1, AO2a]
       .synopsis: |
         Authenticate using a full Ably key string, as obtained from the dashboard,
         featuring a key name and key secret.
+    Query Time:
+      .specification: [TO3j10, RSA9d, RSA10k, AO2g]
+      .synopsis: |
+        Query the Ably system for the current time when making token requests.
     Token Details:
       .specification: [RSA4a, RSA4, TO3j3]
     Token Request:
       .specification: [TO3j2]
     Token String:
       .specification: [RSA4a, RSA4, TO3j2]
+    URL:
+      .specification:
+        [RSA8c, TO3j6, TO3j7, TO3j8, TO3j9, AO2c, AO2d, AO2e, AO2f, RSA4]
+      .synopsis: |
+        Service `Auth#requestToken` calls by querying a provided URL (`authURL`) to obtain a token request,
+        or the token itself. Supports specification of other HTTP request properties including
+        `authMethod`, `authHeaders` and `authParams`.
+    Use Token Authentication:
+      .specification: [RSA4, RSA14, TO3j4]
+      .synopsis: |
+        Specifies that Token Auth, not Basic Auth, must be used.
   Options:
     .inherit: [Client, Authentication Options]
   Realtime:
