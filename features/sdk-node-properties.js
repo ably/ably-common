@@ -19,7 +19,7 @@ class SpecificationPoint {
 
   toHtmlLink() {
     const url = `https://docs.ably.com/client-lib-development-guide/features/#${this.value}`;
-    return `<a href="${url}" target="_blank" rel="noopener">${escape(this.value)}</a>`;
+    return `<a href="${url}" target="_blank" rel="noopener"><code>${escape(this.value)}</code></a>`;
   }
 }
 
