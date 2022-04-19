@@ -162,7 +162,7 @@ class Rest:
   # auth: Auth // RSC5
   # push: Push
   device() => io LocalDevice
-  channels: Channels<RestChannel> // RSN1
+#  channels: Channels<RestChannel> // RSN1
   request(
     String method,
     String path,
@@ -186,7 +186,7 @@ class Realtime:
   auth: Auth // RTC4
   # push: Push
   device() => io LocalDevice
-  channels: Channels<RealtimeChannel> // RTC3, RTS1
+#  channels: Channels<RealtimeChannel> // RTC3, RTS1
   clientId: String? // proxy for RSA7
   connection: Connection // RTC2
   request(
@@ -279,12 +279,12 @@ class TokenRequest:
   timestamp: Time? // TE5
   ttl: Duration? api-default 60min // TE4
 
-class Channels<ChannelType>:
-  exists(String) -> Bool // RSN2, RTS2
-  get(String) -> ChannelType // RSN3a, RTS3a
-  get(String, ChannelOptions) -> ChannelType // RSN3c, RTS3c
-  iterate() -> Iterator<ChannelType> // RSN2, RTS2
-  release(String) // RSN4, RTS4
+#class Channels<ChannelType>:
+#  exists(String) -> Bool // RSN2, RTS2
+#  get(String) -> ChannelType // RSN3a, RTS3a
+#  get(String, ChannelOptions) -> ChannelType // RSN3c, RTS3c
+#  iterate() -> Iterator<ChannelType> // RSN2, RTS2
+#  release(String) // RSN4, RTS4
 
 class RestChannel:
   name: String?

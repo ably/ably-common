@@ -36,10 +36,14 @@ Client:
     .inherit: [Client, Authentication Options]
   Realtime:
     .inherit: [Client, REST]
+    .synopsis: |
+      Additional functionality offered by Ably client instances that offer Realtime connectivity.
     Presence:
       Subscription:
         .specification: [RTP6, RTP7]
   REST:
+    .synopsis: |
+      Baseline functionality offered by all Ably client instances.
     Authentication:
       .specification: RSC5
       Authorize:
@@ -51,10 +55,26 @@ Client:
       Request Token:
         .specification: RSA8e
     Channel:
+      .specification: [RSN1, RTC3]
+      existence check:
+        .specification: [RSN2, RTS2]
+        .synopsis: Discover if a channel exists with a given name.
+      get:
+        .specification: [RSN3a, RTS3a]
+        .synopsis: Get or create a channel instance with a given name.
+      get with Channel Options:
+        .specification: [RSN3c, RTS3c]
+        .synopsis: Soft-deprecated.
+      iterate:
+        .specification: [RSN2, RTS2]
+        .synopsis: Enumerate local channel instances.
       Presence:
         Get Member List:
           .documentation: https://ably.com/docs/realtime/presence#member-list
         Retrieve Event History:
+      release:
+        .specification: [RSN4, RTS4]
+        .synopsis: Free up resources consumed by a local channel instance.
     Create:
       .specification: RSC1
       with API Key:
