@@ -1,120 +1,119 @@
 %YAML 1.2
 ---
-Client:
-  Authentication Options:
-    Callback:
-      .specification: [RSA4a, RSA4, TO3j5, AO2b]
-      .synopsis: |
-        Service `Auth#requestToken` calls by invoking a callback (`authCallback`).
-    Key:
-      .specification: [RSA11, TO3j1, AO2a]
-      .synopsis: |
-        Authenticate using a full Ably key string, as obtained from the dashboard,
-        featuring a key name and key secret.
-    Query Time:
-      .specification: [TO3j10, RSA9d, RSA10k, AO2g]
-      .synopsis: |
-        Query the Ably system for the current time when making token requests.
-    Token Details:
-      .specification: [RSA4a, RSA4, TO3j3]
-    Token Request:
-      .specification: [TO3j2]
-    Token String:
-      .specification: [RSA4a, RSA4, TO3j2]
-    URL:
-      .specification:
-        [RSA8c, TO3j6, TO3j7, TO3j8, TO3j9, AO2c, AO2d, AO2e, AO2f, RSA4]
-      .synopsis: |
-        Service `Auth#requestToken` calls by querying a provided URL (`authURL`) to obtain a token request,
-        or the token itself. Supports specification of other HTTP request properties including
-        `authMethod`, `authHeaders` and `authParams`.
-    Use Token Authentication:
-      .specification: [RSA4, RSA14, TO3j4]
-      .synopsis: |
-        Specifies that Token Auth, not Basic Auth, must be used.
-  Options:
-    .inherit: [Client, Authentication Options]
-  Realtime:
-    .inherit: [Client, REST]
+Authentication Options:
+  Callback:
+    .specification: [RSA4a, RSA4, TO3j5, AO2b]
     .synopsis: |
-      Additional functionality offered by Ably client instances that offer Realtime connectivity.
+      Service `Auth#requestToken` calls by invoking a callback (`authCallback`).
+  Key:
+    .specification: [RSA11, TO3j1, AO2a]
+    .synopsis: |
+      Authenticate using a full Ably key string, as obtained from the dashboard,
+      featuring a key name and key secret.
+  Query Time:
+    .specification: [TO3j10, RSA9d, RSA10k, AO2g]
+    .synopsis: |
+      Query the Ably system for the current time when making token requests.
+  Token Details:
+    .specification: [RSA4a, RSA4, TO3j3]
+  Token Request:
+    .specification: [TO3j2]
+  Token String:
+    .specification: [RSA4a, RSA4, TO3j2]
+  URL:
+    .specification:
+      [RSA8c, TO3j6, TO3j7, TO3j8, TO3j9, AO2c, AO2d, AO2e, AO2f, RSA4]
+    .synopsis: |
+      Service `Auth#requestToken` calls by querying a provided URL (`authURL`) to obtain a token request,
+      or the token itself. Supports specification of other HTTP request properties including
+      `authMethod`, `authHeaders` and `authParams`.
+  Use Token Authentication:
+    .specification: [RSA4, RSA14, TO3j4]
+    .synopsis: |
+      Specifies that Token Auth, not Basic Auth, must be used.
+Client Options:
+  .inherit: [Client, Authentication Options]
+Realtime Client:
+  .inherit: [Client, REST]
+  .synopsis: |
+    Additional functionality offered by Ably client instances that offer Realtime connectivity.
+  Presence:
+    Subscription:
+      .specification: [RTP6, RTP7]
+REST Client:
+  .synopsis: |
+    Baseline functionality offered by all Ably client instances.
+  Authentication:
+    .specification: RSC5
+    Authorize:
+      .specification: RSA10
+    Create Token Request:
+      .specification: RSA9
+    Get Client Identifier:
+      .specification: [RSA7, RSC17, RSA12]
+    Request Token:
+      .specification: RSA8e
+  Channel:
+    .specification: [RSN1, RTC3]
+    existence check:
+      .specification: [RSN2, RTS2]
+      .synopsis: Discover if a channel exists with a given name.
+    get:
+      .specification: [RSN3a, RTS3a]
+      .synopsis: Get or create a channel instance with a given name.
+    get with Channel Options:
+      .specification: [RSN3c, RTS3c]
+      .synopsis: Soft-deprecated.
+    iterate:
+      .specification: [RSN2, RTS2]
+      .synopsis: Enumerate local channel instances.
     Presence:
-      Subscription:
-        .specification: [RTP6, RTP7]
-  REST:
-    .synopsis: |
-      Baseline functionality offered by all Ably client instances.
-    Authentication:
-      .specification: RSC5
-      Authorize:
-        .specification: RSA10
-      Create Token Request:
-        .specification: RSA9
-      Get Client Identifier:
-        .specification: [RSA7, RSC17, RSA12]
-      Request Token:
-        .specification: RSA8e
-    Channel:
-      .specification: [RSN1, RTC3]
-      existence check:
-        .specification: [RSN2, RTS2]
-        .synopsis: Discover if a channel exists with a given name.
-      get:
-        .specification: [RSN3a, RTS3a]
-        .synopsis: Get or create a channel instance with a given name.
-      get with Channel Options:
-        .specification: [RSN3c, RTS3c]
-        .synopsis: Soft-deprecated.
-      iterate:
-        .specification: [RSN2, RTS2]
-        .synopsis: Enumerate local channel instances.
-      Presence:
-        Get Member List:
-          .documentation: https://ably.com/docs/realtime/presence#member-list
-        Retrieve Event History:
-      release:
-        .specification: [RSN4, RTS4]
-        .synopsis: Free up resources consumed by a local channel instance.
-    Create:
-      .specification: RSC1
-      with API Key:
-      with Client Options:
-      with Token String:
-    Device:
-    Push Notifications:
-      Activation:
-        .specification: [RSH2, RSH3, RSH4, RSH5, RSH6, RSH7, RSH8]
-      Administration:
-        .documentation: https://ably.com/docs/rest/push#push-admin
-        .specification: RSH1
-        Channel Subscription:
-          .specification: RSH1c
-          List:
-            .specification: RSH1c1
-          List Channels:
-            .specification: RSH1c2
-          Remove:
-            .specification: [RSH1c4, RSH1c5]
-          Save:
-            .specification: RSH1c3
-        Device Registration:
-          .specification: RSH1b
-          Get:
-            .specification: RSH1b1
-          List:
-            .specification: RSH1b2
-          Remove:
-            .specification: [RSH1b4, RSH1b4]
-          Save:
-            .specification: RSH1b3
-        Publish:
-          .documentation:
-            - https://ably.com/docs/rest/push#publish
-            - https://ably.com/docs/rest-api#push-publish
-            - https://ably.com/docs/general/push/publish#direct-publishing
-          .specification: RSH1a
-          .synopsis: |
-            Deliver a push notification to devices, addressing recipient(s):
-            - registered to Ably by device ID
-            - by their associated client ID
-            - directly using the underlying notifications service (FCM, APNs, etc.), thus bypassing registrations to Ably altogether
+      Get Member List:
+        .documentation: https://ably.com/docs/realtime/presence#member-list
+      Retrieve Event History:
+    release:
+      .specification: [RSN4, RTS4]
+      .synopsis: Free up resources consumed by a local channel instance.
+  Create:
+    .specification: RSC1
+    with API Key:
+    with Client Options:
+    with Token String:
+  Device:
+  Push Notifications:
+    Activation:
+      .specification: [RSH2, RSH3, RSH4, RSH5, RSH6, RSH7, RSH8]
+    Administration:
+      .documentation: https://ably.com/docs/rest/push#push-admin
+      .specification: RSH1
+      Channel Subscription:
+        .specification: RSH1c
+        List:
+          .specification: RSH1c1
+        List Channels:
+          .specification: RSH1c2
+        Remove:
+          .specification: [RSH1c4, RSH1c5]
+        Save:
+          .specification: RSH1c3
+      Device Registration:
+        .specification: RSH1b
+        Get:
+          .specification: RSH1b1
+        List:
+          .specification: RSH1b2
+        Remove:
+          .specification: [RSH1b4, RSH1b4]
+        Save:
+          .specification: RSH1b3
+      Publish:
+        .documentation:
+          - https://ably.com/docs/rest/push#publish
+          - https://ably.com/docs/rest-api#push-publish
+          - https://ably.com/docs/general/push/publish#direct-publishing
+        .specification: RSH1a
+        .synopsis: |
+          Deliver a push notification to devices, addressing recipient(s):
+          - registered to Ably by device ID
+          - by their associated client ID
+          - directly using the underlying notifications service (FCM, APNs, etc.), thus bypassing registrations to Ably altogether
