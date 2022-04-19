@@ -13,6 +13,9 @@
     @apply text-slate-600 bg-amber-100;
   }
   a code {
-    @apply bg-inherit hover:underline hover:text-amber-700 hover:font-semibold;
+    @apply bg-inherit hover:text-amber-700 hover:font-semibold;
+  }
+  a {
+    @apply hover:underline hover:text-amber-700;
   }
 }
