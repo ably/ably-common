@@ -92,7 +92,7 @@ function generateTableRows(writer, maximumLevel, level, node) {
             if (cellCount > 1) {
               rowWriter.columnSpan(cellCount);
             }
-            rowWriter.class('pr-1');
+            rowWriter.class('pr-3 whitespace-nowrap');
             rowWriter.cell((cellContentWriter) => {
               cellContentWriter.text(key);
             });
