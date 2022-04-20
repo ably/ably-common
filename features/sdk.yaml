@@ -31,12 +31,11 @@ Authentication Options:
     .specification: [RSA4, RSA14, TO3j4]
     .synopsis: |
       Specifies that Token Auth, not Basic Auth, must be used.
-Client Options:
-  .inherit: [Client, Authentication Options]
 Realtime Client:
   .inherit: [Client, REST]
   .synopsis: |
     Additional functionality offered by Ably client instances that offer Realtime connectivity.
+  Options:
   Presence:
     Subscription:
       .specification: [RTP6, RTP7]
@@ -80,6 +79,8 @@ REST Client:
     with Client Options:
     with Token String:
   Device:
+  Options:
+    .inherit: [Client, Authentication Options]
   Push Notifications:
     Activation:
       .specification: [RSH2, RSH3, RSH4, RSH5, RSH6, RSH7, RSH8]
