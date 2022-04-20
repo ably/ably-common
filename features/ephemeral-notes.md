@@ -203,35 +203,35 @@ class Realtime:
 
 class ClientOptions:
 #  embeds AuthOptions // TO3j
-  autoConnect: Bool default true // RTC1b, TO3e
+#  autoConnect: Bool default true // RTC1b, TO3e
   clientId: String? // RSC17, RSA4, RSA15, TO3a
   defaultTokenParams: TokenParams? // TO3j11
-  echoMessages: Bool default true // RTC1a, TO3h
-  environment: String? // RSC15b, TO3k1
+#  echoMessages: Bool default true // RTC1a, TO3h
+#  environment: String? // RSC15b, TO3k1
   logHandler: // platform specific - TO3c
   logLevel: // platform specific - TO3b
   logExceptionReportingUrl: String default "[library specific]" // TO3c
   port: Int default 80 // TO3k4
   queueMessages: Bool default true // RTP16b, TO3g
   restHost: String default "rest.ably.io" // RSC12, TO3k2
-  realtimeHost: String default "realtime.ably.io" // RTC1d, TO3k3
+#  realtimeHost: String default "realtime.ably.io" // RTC1d, TO3k3
   fallbackHosts: String[] default nil // RSC15b, RSC15a, TO3k6
-  recover: String? // RTC1c, TO3i
+#  recover: String? // RTC1c, TO3i
   tls: Bool default true // RSC18, TO3d
   tlsPort: Int default 443 // TO3k5
   useBinaryProtocol: Bool default true // TO3f
-  transportParams: [String: Stringifiable]? // RTC1f
+#  transportParams: [String: Stringifiable]? // RTC1f
   addRequestIds: Bool default false // TO3p
   // configurable retry and failure defaults
-  disconnectedRetryTimeout: Duration default 15s // TO3l1
-  suspendedRetryTimeout: Duration default 30s // RTN14d, TO3l2
-  channelRetryTimeout: Duration default 15s // RTL13b, TO3l7
-  httpOpenTimeout: Duration default 4s // TO3l3
-  httpRequestTimeout: Duration default 10s // TO3l4
-  httpMaxRetryCount: Int default 3 // TO3l5
-  httpMaxRetryDuration: Duration default 15s // TO3l6
-  maxMessageSize: Int default 65536 // TO3l8
-  maxFrameSize: Int default 524288 // TO3l8
+#  disconnectedRetryTimeout: Duration default 15s // TO3l1
+#  suspendedRetryTimeout: Duration default 30s // RTN14d, TO3l2
+#  channelRetryTimeout: Duration default 15s // RTL13b, TO3l7
+#  httpOpenTimeout: Duration default 4s // TO3l3
+#  httpRequestTimeout: Duration default 10s // TO3l4
+#  httpMaxRetryCount: Int default 3 // TO3l5
+#  httpMaxRetryDuration: Duration default 15s // TO3l6
+#  maxMessageSize: Int default 65536 // TO3l8
+#  maxFrameSize: Int default 524288 // TO3l8
   plugins: Dict<PluginType, Plugin> // TO3o
   idempotentRestPublishing: bool default true // RSL1k1, RTL6a1, TO3n
   agents: [String: String?]? // RSC7d6 - interface only offered by some libraries

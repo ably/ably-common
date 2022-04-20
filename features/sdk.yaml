@@ -36,12 +36,56 @@ Realtime Client:
   .synopsis: |
     Additional functionality offered by Ably client instances that offer Realtime connectivity.
   Options:
+    Auto Connect:
+      .specification: [RTC1b, TO3e]
+    Channel Retry Timeout:
+      .specification: [RTL13b, TO3l7]
+      .synopsis: |
+        Channel reattachement is attempted after this amount of time in the `SUSPENDED` connection state,
+        following a server-initiated channel detach, if the connection state is `CONNECTED`.
+    Connection Recovery String:
+      .specification: [RTC1c, TO3i]
+      .synopsis: |
+        Attempt to recover/inherit the state of a previous connection.
+    Disconnected Retry Timeout:
+      .specification: [RO3l1, RTN14d]
+      .synopsis: |
+        Reconnection is attempted after this amount of time in the `DISCONNECTED` connection state.
+    Echo Messages:
+      .specification: [RTC1a, TO3h]
+    Fallback Retry Timeout:
+      .specification: [TO3l10, RSC15f]
+    Host:
+      .specification: [RTC1d, TO3k3]
+      .synopsis: |
+        Override the Realtime endpoint, for development environments only.
+    HTTP Connection Open Timeout:
+      .specification: TO3l3
+    HTTP Request Timeout:
+      .specification: TO3l4
+    Maximum Frame Size:
+      .specification: [TO3l9, CD2d]
+    Maximum HTTP Retry Count:
+      .specification: [TO3l5, RSC15a]
+    Maximum HTTP Retry Duration:
+      .specification: TO3l6
+    Maximum Message Size:
+      .specification: [TO3l8, RSL1i, RTL6d1, CD2c]
+      .synopsis: |
+        The maximum size of messages that may be published in one go.
+    Suspended Retry Timeout:
+      .specification: [TO3l2, RTN14e]
+      .synopsis: |
+        Reconnection is attempted after this amount of time in the `SUSPENDED` connection state.
+    Transport Parameters:
+      .specification: RTC1f
+      .synopsis: Sent in query string when initiating the Realtime connection.
   Presence:
     Subscription:
       .specification: [RTP6, RTP7]
 REST Client:
   .synopsis: |
-    Baseline functionality offered by all Ably client instances.
+    Functionality offered by all Ably client instances (REST and Realtime).
   Authentication:
     .specification: RSC5
     Authorize:
@@ -81,6 +125,13 @@ REST Client:
   Device:
   Options:
     .inherit: [Client, Authentication Options]
+    .synopsis: |
+      Options offered by all Ably client instances (REST and Realtime).
+    Environment:
+      .specification: [RSC11b, RSC15g, RTC1e, RTN17a, TO3k1]
+      .synopsis: |
+        Override environment for REST and Realtime connections, for example to `sandbox`.
+        For development environments only.
   Push Notifications:
     Activation:
       .specification: [RSH2, RSH3, RSH4, RSH5, RSH6, RSH7, RSH8]
