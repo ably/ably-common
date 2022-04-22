@@ -210,7 +210,7 @@ class ClientOptions:
 #  environment: String? // RSC15b, TO3k1
 #  logHandler: // platform specific - TO3c
 #  logLevel: // platform specific - TO3b
-  logExceptionReportingUrl: String default "[library specific]" // TO3c
+#  logExceptionReportingUrl: String default "[library specific]" // TO3c
   port: Int default 80 // TO3k4
   queueMessages: Bool default true // RTP16b, TO3g
   restHost: String default "rest.ably.io" // RSC12, TO3k2
