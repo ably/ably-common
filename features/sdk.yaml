@@ -139,6 +139,9 @@ REST Client:
     Default Token Parameters:
       .specification: [TO3j11, RSA7a4]
       .synopsis: Overrides client library defaults for `TokenParams`.
+    Disable Transport Layer Security:
+      .specification: [TO3d, RSC18]
+      .synopsis: Disable TLS, for development environments only.
     Environment:
       .specification: [RSC11b, RSC15g, RTC1e, RTN17a, TO3k1]
       .synopsis: |
