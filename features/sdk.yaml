@@ -41,8 +41,6 @@ Realtime Client:
   # here to indicate that because we already have the Realtime Client node inheriting from
   # the REST Client node.
   Options:
-    Auto Connect:
-      .specification: [RTC1b, TO3e]
     Channel Retry Timeout:
       .specification: [RTL13b, TO3l7]
       .synopsis: |
@@ -52,6 +50,10 @@ Realtime Client:
       .specification: [RTC1c, TO3i]
       .synopsis: |
         Attempt to recover/inherit the state of a previous connection.
+    Disable Automatic Connection:
+      .specification: [RTC1b, RTN3, RTL4b1, TO3e]
+      .synopsis: |
+        Disable the automatic initiation of a connection when a client instance is instantiated.
     Disconnected Retry Timeout:
       .specification: [RO3l1, RTN14d]
       .synopsis: |
