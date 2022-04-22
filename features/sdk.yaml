@@ -136,6 +136,9 @@ REST Client:
       .specification: [RSC17, RSA7, RSA15, RTN2d, TO3a]
       .synopsis: |
         The id of the client represented by the client instance create using these options.
+    Default Token Parameters:
+      .specification: [TO3j11, RSA7a4]
+      .synopsis: Overrides client library defaults for `TokenParams`.
     Environment:
       .specification: [RSC11b, RSC15g, RTC1e, RTN17a, TO3k1]
       .synopsis: |
