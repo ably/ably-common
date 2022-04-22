@@ -158,6 +158,15 @@ REST Client:
         Typically a `logHandler` and a `logLevel`, but some logging systems may express
         this differently for idiomatic reasons that make sense for the language, framework
         or runtime platform.
+    Port:
+      .specification: [TO3k4, RSC15b1, RTN17b1]
+      .synopsis: |
+        Overrides the TCP port to be used for insecure connections, where TLS has been disabled,
+        for development environments only.
+    TLS Port:
+      .specification: [TO3k5, RSC15b1, RTN17b1]
+      .synopsis: |
+        Overrides the TCP port to be used for secure connections, for development environments only.
   Push Notifications:
     Activation:
       .specification: [RSH2, RSH3, RSH4, RSH5, RSH6, RSH7, RSH8]
