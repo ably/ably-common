@@ -144,6 +144,13 @@ REST Client:
       .synopsis: |
         Override environment for REST and Realtime connections, for example to `sandbox`.
         For development environments only.
+    Log Handling:
+      .specification: [TO3b, TO3c]
+      .synopsis: |
+        What level of log messages to generate and where to send them.
+        Typically a `logHandler` and a `logLevel`, but some logging systems may express
+        this differently for idiomatic reasons that make sense for the language, framework
+        or runtime platform.
   Push Notifications:
     Activation:
       .specification: [RSH2, RSH3, RSH4, RSH5, RSH6, RSH7, RSH8]
