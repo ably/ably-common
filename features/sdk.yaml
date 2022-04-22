@@ -54,12 +54,14 @@ Realtime Client:
       .specification: [RTC1b, RTN3, RTL4b1, TO3e]
       .synopsis: |
         Disable the automatic initiation of a connection when a client instance is instantiated.
+    Disable Message Echoes:
+      .specification: [RTC1a, RTL7f, TO3h]
+      .synopsis: |
+        Suppress messages originating from this connection from being echoed back on the same connection.
     Disconnected Retry Timeout:
       .specification: [RO3l1, RTN14d]
       .synopsis: |
         Reconnection is attempted after this amount of time in the `DISCONNECTED` connection state.
-    Echo Messages:
-      .specification: [RTC1a, TO3h]
     Fallback Retry Timeout:
       .specification: [TO3l10, RSC15f]
     Host:
