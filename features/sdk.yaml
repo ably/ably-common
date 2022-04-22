@@ -132,6 +132,10 @@ REST Client:
     .inherit: [Authentication Options]
     .synopsis: |
       Options offered by all Ably client instances (REST and Realtime).
+    Client Identifier:
+      .specification: [RSC17, RSA7, RSA15, RTN2d, TO3a]
+      .synopsis: |
+        The id of the client represented by the client instance create using these options.
     Environment:
       .specification: [RSC11b, RSC15g, RTC1e, RTN17a, TO3k1]
       .synopsis: |

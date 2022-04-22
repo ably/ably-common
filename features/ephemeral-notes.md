@@ -204,7 +204,7 @@ class Realtime:
 class ClientOptions:
 #  embeds AuthOptions // TO3j
 #  autoConnect: Bool default true // RTC1b, TO3e
-  clientId: String? // RSC17, RSA4, RSA15, TO3a
+#  clientId: String? // RSC17, RSA4, RSA15, TO3a
   defaultTokenParams: TokenParams? // TO3j11
 #  echoMessages: Bool default true // RTC1a, TO3h
 #  environment: String? // RSC15b, TO3k1
