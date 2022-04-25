@@ -155,6 +155,10 @@ REST Client:
       .synopsis: |
         Override environment for REST and Realtime connections, for example to `sandbox`.
         For development environments only.
+    Host:
+      .specification: [RSC11, RSC12, RSC15b1, RSC15e, RSC15f, TO3k2]
+      .synopsis: |
+        Override the REST endpoint, for development environments only.
     Log Handling:
       .specification: [TO3b, TO3c]
       .synopsis: |
