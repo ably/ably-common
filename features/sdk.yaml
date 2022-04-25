@@ -58,6 +58,10 @@ Realtime Client:
       .specification: [RTC1a, RTL7f, TO3h]
       .synopsis: |
         Suppress messages originating from this connection from being echoed back on the same connection.
+    Disable Message Queuing:
+      .specification: [RTL6c2, RTP16, TO3g]
+      .synopsis: |
+        Suppress queuing of messages when connection state antipates imminent connection.
     Disconnected Retry Timeout:
       .specification: [RO3l1, RTN14d]
       .synopsis: |

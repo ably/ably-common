@@ -212,7 +212,7 @@ class ClientOptions:
 #  logLevel: // platform specific - TO3b
 #  logExceptionReportingUrl: String default "[library specific]" // TO3c
 #  port: Int default 80 // TO3k4
-  queueMessages: Bool default true // RTP16b, TO3g
+#  queueMessages: Bool default true // RTP16b, TO3g
   restHost: String default "rest.ably.io" // RSC12, TO3k2
 #  realtimeHost: String default "realtime.ably.io" // RTC1d, TO3k3
   fallbackHosts: String[] default nil // RSC15b, RSC15a, TO3k6
