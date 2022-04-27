@@ -66,26 +66,10 @@ Realtime Client:
       .specification: [RO3l1, RTN14d]
       .synopsis: |
         Reconnection is attempted after this amount of time in the `DISCONNECTED` connection state.
-    Fallback Retry Timeout:
-      .specification: [TO3l10, RSC15f]
     Host:
       .specification: [RTC1d, TO3k3]
       .synopsis: |
         Override the Realtime endpoint, for development environments only.
-    HTTP Connection Open Timeout:
-      .specification: TO3l3
-    HTTP Request Timeout:
-      .specification: TO3l4
-    Maximum Frame Size:
-      .specification: [TO3l9, CD2d]
-    Maximum HTTP Retry Count:
-      .specification: [TO3l5, RSC15a]
-    Maximum HTTP Retry Duration:
-      .specification: TO3l6
-    Maximum Message Size:
-      .specification: [TO3l8, RSL1i, RTL6d1, CD2c]
-      .synopsis: |
-        The maximum size of messages that may be published in one go.
     Suspended Retry Timeout:
       .specification: [TO3l2, RTN14e]
       .synopsis: |
@@ -155,10 +139,16 @@ REST Client:
       .synopsis: |
         Override environment for REST and Realtime connections, for example to `sandbox`.
         For development environments only.
+    Fallback Retry Timeout:
+      .specification: [TO3l10, RSC15f]
     Host:
       .specification: [RSC11, RSC12, RSC15b1, RSC15e, RSC15f, TO3k2]
       .synopsis: |
         Override the REST endpoint, for development environments only.
+    HTTP Connection Open Timeout:
+      .specification: TO3l3
+    HTTP Request Timeout:
+      .specification: TO3l4
     Log Handling:
       .specification: [TO3b, TO3c]
       .synopsis: |
@@ -166,6 +156,18 @@ REST Client:
         Typically a `logHandler` and a `logLevel`, but some logging systems may express
         this differently for idiomatic reasons that make sense for the language, framework
         or runtime platform.
+    Maximum Frame Size:
+      .specification: [TO3l9, CD2d]
+      .synopsis: |
+        Override the default for the maximum size of a single REST POST body or Realtime Websocket frame.
+    Maximum HTTP Retry Count:
+      .specification: [TO3l5, RSC15a]
+    Maximum HTTP Retry Duration:
+      .specification: TO3l6
+    Maximum Message Size:
+      .specification: [TO3l8, RSL1i, RTL6d1, CD2c]
+      .synopsis: |
+        The maximum size of messages that may be published in one go.
     Port:
       .specification: [TO3k4, RSC15b1, RTN17b1]
       .synopsis: |
