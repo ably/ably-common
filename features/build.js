@@ -1,3 +1,4 @@
+const escape = require('escape-html');
 const fs = require('fs');
 const { marked } = require('marked');
 const path = require('path');
@@ -24,7 +25,7 @@ const object = YAML.parse(yamlSource, parserOptions);
 
 // First Pass: Measure depth.
 const arbitraryMaximumDepth = 10;
-const levelCount = generateTableRows(null, arbitraryMaximumDepth, 0, object);
+const levelCount = generateTableRows(null, arbitraryMaximumDepth, [], object);
 console.log(`levelCount = ${levelCount}`);
 
 // Create output directory in standard location within working directory.
@@ -44,7 +45,7 @@ documentWriter.document((contentWriter) => {
   contentWriter.class('border-collapse');
   contentWriter.table((tableWriter) => {
     // Second Pass: Render rows.
-    generateTableRows(tableWriter, levelCount, 0, object);
+    generateTableRows(tableWriter, levelCount, [], object);
   });
 });
 
@@ -53,11 +54,12 @@ documentWriter.document((contentWriter) => {
  *
  * @param {TableWriter} [writer] The HTML table writer to use, or `null` to use this function purely to measure depth.
  * @param {number} maximumLevel The maximum depth, previously measured or arbitrary.
- * @param {number} level The depth of this node. Root is 0.
+ * @param {string[]} parentKeys Parent keys, also indicating the depth of this node. Nodes at root have an empty array.
  * @param {*} node The node.
  * @returns {number} The number of levels, including this node and its children.
  */
-function generateTableRows(writer, maximumLevel, level, node) {
+function generateTableRows(writer, maximumLevel, parentKeys, node) {
+  const level = parentKeys.length;
   if (level > maximumLevel) {
     throw new Error(`Maximum depth limit exceeded (${maximumLevel}).`);
   }
@@ -92,8 +94,12 @@ function generateTableRows(writer, maximumLevel, level, node) {
             if (cellCount > 1) {
               rowWriter.columnSpan(cellCount);
             }
-            rowWriter.class('pr-3 whitespace-nowrap');
+            rowWriter.class('pr-3 whitespace-nowrap tooltip-container');
             rowWriter.cell((cellContentWriter) => {
+              if (level > 0) {
+                const tip = `<strong>${escape(parentKeys.join(': '))}</strong>: ${escape(key)}`;
+                cellContentWriter.write(`<span class="tooltip-contents">${tip}</span>`);
+              }
               cellContentWriter.text(key);
             });
 
@@ -128,13 +134,13 @@ function generateTableRows(writer, maximumLevel, level, node) {
           });
         }
 
-        const depth = generateTableRows(writer, maximumLevel, level + 1, value);
+        const depth = generateTableRows(writer, maximumLevel, [...parentKeys, key], value);
         maximumDepth = Math.max(maximumDepth, 1 + depth);
       }
     });
   } else if (Array.isArray(node)) {
     node.forEach((element) => {
-      const depth = generateTableRows(writer, maximumLevel, level, element);
+      const depth = generateTableRows(writer, maximumLevel, parentKeys, element);
       maximumDepth = Math.max(maximumDepth, depth);
     });
   } else if (node instanceof String || typeof node === 'string') {

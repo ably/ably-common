@@ -18,4 +18,16 @@
   a {
     @apply hover:underline hover:text-amber-700;
   }
+  .tooltip-contents {
+    @apply invisible rounded-md shadow-lg py-1 px-2 bg-gray-200 border-2 border-amber-500 absolute -mt-9 -ml-2;
+  }
+  .tooltip-container {
+    @apply cursor-default;
+  }
+  .tooltip-container:hover .tooltip-contents {
+    @apply visible z-50;
+  }
+  .tooltip-container:hover {
+    @apply bg-amber-100;
+  }
 }
