@@ -148,6 +148,13 @@ Things being highlighted as important to them:
 - Connect state and automatic connection recovery
 - Authentication: basic, tokens, JWT, capabilities
 
+## Things not in the spec or IDL
+
+- Batch Operations:
+  - Publish
+  - Retrieve Presence
+- Revoke Tokens
+
 ## The existing IDL
 
 I'm including this here as, after my discussion with Owen (referenced earlier), it became clear that I should reduce the complexity of what I was attempting by sticking as closely as I can to the existing structure outlined by [the existing interface definition](https://docs.ably.com/client-lib-development-guide/features/#idl).
