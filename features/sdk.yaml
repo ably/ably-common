@@ -36,6 +36,13 @@ Realtime Client:
   .synopsis: |
     Additional functionality offered by Ably client instances that offer Realtime connectivity.
 
+  Channel:
+    Subscription:
+      Deltas:
+        .specification: [RTL18, RTL19, RTL20, TM2i]
+        .synopsis: |
+          Support for VCDiff-encoded delta streams.
+
   # TODO Work out how to express what's going on here. This set of Options for the Realtime
   # Client inherit the set of Options for the REST Client. I've not used an `.inherit` node
   # here to indicate that because we already have the Realtime Client node inheriting from
