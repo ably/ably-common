@@ -150,10 +150,19 @@ Things being highlighted as important to them:
 
 ## Things not in the spec or IDL
 
-- Batch Operations:
+- Batch Operations (internal ticket: [SDK-1792](https://ably.atlassian.net/browse/SDK-1792)):
   - Publish
   - Retrieve Presence
-- Revoke Tokens
+- Revoke Tokens (internal ticket: [SDK-1793](https://ably.atlassian.net/browse/SDK-1793))
+- Request channel lifecycle status (internal ticket: [SDK-1790](https://ably.atlassian.net/browse/SDK-1790))
+- Enumerating channels (internal ticket: [SDK-1791](https://ably.atlassian.net/browse/SDK-1791))
+- [HTTP/2](https://http2.github.io/) support
+- Subscription to meta-channel for lifecycle events (see [tutorial on Subscribing to Channel Lifecycle Events](https://ably.com/tutorials/channel-lifecycle-events#subscribing-to-channel-lifecycle-events)).
+
+## Things coming soon
+
+- Incremental backoff strategy with jitter ([ably/docs#832](https://github.com/ably/docs/issues/832))
+- Lightweight channel publish methods ([ably/docs#468](https://github.com/ably/docs/issues/468))
 
 ## The existing IDL
 
