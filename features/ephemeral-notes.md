@@ -231,7 +231,7 @@ class ClientOptions:
 #  queueMessages: Bool default true // RTP16b, TO3g
 #  restHost: String default "rest.ably.io" // RSC12, TO3k2
 #  realtimeHost: String default "realtime.ably.io" // RTC1d, TO3k3
-  fallbackHosts: String[] default nil // RSC15b, RSC15a, TO3k6
+#  fallbackHosts: String[] default nil // RSC15b, RSC15a, TO3k6
 #  recover: String? // RTC1c, TO3i
 #  tls: Bool default true // RSC18, TO3d
 #  tlsPort: Int default 443 // TO3k5
