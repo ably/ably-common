@@ -140,6 +140,10 @@ REST Client:
     Disable Transport Layer Security:
       .specification: [TO3d, RSC18]
       .synopsis: Disable TLS, for development environments only.
+    Enable Request Identifiers:
+      .specification: [RSC7c, TO3p]
+      .synopsis: |
+        Adds a query string parameter, based on a source of randomnes, to all REST requests.
     Environment:
       .specification: [RSC11b, RSC15g, RTC1e, RTN17a, TO3k1]
       .synopsis: |

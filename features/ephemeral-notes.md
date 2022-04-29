@@ -237,7 +237,7 @@ class ClientOptions:
 #  tlsPort: Int default 443 // TO3k5
 #  useBinaryProtocol: Bool default true // TO3f
 #  transportParams: [String: Stringifiable]? // RTC1f
-  addRequestIds: Bool default false // TO3p
+#  addRequestIds: Bool default false // TO3p
   // configurable retry and failure defaults
 #  disconnectedRetryTimeout: Duration default 15s // TO3l1
 #  suspendedRetryTimeout: Duration default 30s // RTN14d, TO3l2
