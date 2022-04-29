@@ -131,6 +131,12 @@ REST Client:
     Default Token Parameters:
       .specification: [TO3j11, RSA7a4]
       .synopsis: Overrides client library defaults for `TokenParams`.
+    Disable Binary Protocol:
+      .specification: [RSC8b, TO3f]
+      .synopsis: |
+        Use JSON protocol, overriding the default MessagePack binary protocol.
+        MessagePack is the default for runtime environments that have a suitable level of support
+        for binary data.
     Disable Transport Layer Security:
       .specification: [TO3d, RSC18]
       .synopsis: Disable TLS, for development environments only.

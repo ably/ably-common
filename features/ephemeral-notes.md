@@ -235,7 +235,7 @@ class ClientOptions:
 #  recover: String? // RTC1c, TO3i
 #  tls: Bool default true // RSC18, TO3d
 #  tlsPort: Int default 443 // TO3k5
-  useBinaryProtocol: Bool default true // TO3f
+#  useBinaryProtocol: Bool default true // TO3f
 #  transportParams: [String: Stringifiable]? // RTC1f
   addRequestIds: Bool default false // TO3p
   // configurable retry and failure defaults
