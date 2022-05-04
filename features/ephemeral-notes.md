@@ -249,7 +249,7 @@ class ClientOptions:
 #  maxMessageSize: Int default 65536 // TO3l8
 #  maxFrameSize: Int default 524288 // TO3l8
   plugins: Dict<PluginType, Plugin> // TO3o
-  idempotentRestPublishing: bool default true // RSL1k1, RTL6a1, TO3n
+#  idempotentRestPublishing: bool default true // RSL1k1, RTL6a1, TO3n
   agents: [String: String?]? // RSC7d6 - interface only offered by some libraries
 
 #class AuthOptions: // RSA8e

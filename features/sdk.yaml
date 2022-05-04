@@ -144,6 +144,11 @@ REST Client:
         Use JSON protocol, overriding the default MessagePack binary protocol.
         MessagePack is the default for runtime environments that have a suitable level of support
         for binary data.
+    Disable Idempotent Publishing:
+      .specification: [RSL1k, RTL6a1, TO3n]
+      .synopsis: |
+        Overrides the client library default, from version 1.2 of the features specification,
+        that makes REST publish operations idempotent.
     Disable Transport Layer Security:
       .specification: [TO3d, RSC18]
       .synopsis: Disable TLS, for development environments only.
