@@ -119,6 +119,9 @@ REST Client:
     iterate:
       .specification: [RSN2, RTS2]
       .synopsis: Enumerate local channel instances.
+    Name:
+      # to be formally specified: https://github.com/ably/docs/issues/1416
+      .synopsis: Read-only property containing the channel name.
     Presence:
       Get Member List:
         .documentation: https://ably.com/docs/realtime/presence#member-list
