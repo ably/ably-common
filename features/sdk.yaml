@@ -110,13 +110,13 @@ REST Client:
       .specification: RSA8e
   Channel:
     .specification: [RSN1, RTC3]
-    existence check:
+    Existence Check:
       .specification: [RSN2, RTS2]
       .synopsis: Discover if a channel exists with a given name.
-    get:
+    Get:
       .specification: [RSN3a, RTS3a]
       .synopsis: Get or create a channel instance with a given name.
-    iterate:
+    Iterate:
       .specification: [RSN2, RTS2]
       .synopsis: Enumerate local channel instances.
     Name:
@@ -130,7 +130,7 @@ REST Client:
       Member List:
         .documentation: https://ably.com/docs/rest/presence#member-list
         .specification: RSP3
-    release:
+    Release:
       .specification: [RSN4, RTS4]
       .synopsis: Free up resources consumed by a local channel instance.
   Create:
