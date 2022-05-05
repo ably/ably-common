@@ -177,6 +177,10 @@ REST Client:
       .specification: TO3l3
     HTTP Request Timeout:
       .specification: TO3l4
+    Inject Agents:
+      .specification: RSC7d6
+      .synopsis: |
+        For use only by other Ably-authored SDKs, on a need-to-have basis.
     Log Handling:
       .specification: [TO3b, TO3c]
       .synopsis: |
