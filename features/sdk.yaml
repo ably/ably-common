@@ -90,6 +90,12 @@ Realtime Client:
 REST Client:
   .synopsis: |
     Functionality offered by all Ably client instances (REST and Realtime).
+  Agent Identifier:
+    .specification: RSC7d
+    .synopsis: |
+      Sends an `Ably-Agent` HTTP header for REST and Realtime Websocket connections,
+      identifying the library version,
+      as well as relevant information describing any underlying layers and the client platform.
   Authentication:
     .specification: RSC5
     Authorize:
