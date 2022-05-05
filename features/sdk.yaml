@@ -116,6 +116,11 @@ REST Client:
     Get:
       .specification: [RSN3a, RTS3a]
       .synopsis: Get or create a channel instance with a given name.
+    History:
+      .documentation:
+        - https://ably.com/docs/rest/history
+        - https://ably.com/docs/core-features/history
+      .specification: RSL2
     Iterate:
       .specification: [RSN2, RTS2]
       .synopsis: Enumerate local channel instances.

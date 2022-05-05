@@ -305,12 +305,12 @@ class TokenRequest:
 class RestChannel:
 #  name: String?
 #  presence: RestPresence // RSL3
-  history(
-    start: Time, // RSL2b1
-    end: Time api-default now(), // RSL2b1
-    direction: .Backwards | .Forwards api-default .Backwards, // RSL2b2
-    limit: int api-default 100 // RSL2b3
-  ) => io PaginatedResult<Message> // RSL2a
+# history(
+#   start: Time, // RSL2b1
+#   end: Time api-default now(), // RSL2b1
+#   direction: .Backwards | .Forwards api-default .Backwards, // RSL2b2
+#   limit: int api-default 100 // RSL2b3
+# ) => io PaginatedResult<Message> // RSL2a
   publish(Message, params?: Dict<String, Stringifiable>) => io // RSL1
   publish([Message], params?: Dict<String, Stringifiable>) => io // RSL1
   publish(name: String?, data: Data?) => io // RSL1
