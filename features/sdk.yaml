@@ -39,9 +39,11 @@ Realtime Client:
   Channel:
     Subscription:
       Deltas:
-        .specification: [RTL18, RTL19, RTL20, TM2i]
+        .specification: [RTL18, RTL19, RTL20, PC3, TM2i]
         .synopsis: |
           Support for VCDiff-encoded delta streams.
+          SDKs may choose to offer this only if a plugin is supplied via client options
+          (optional functionality).
 
   # TODO Work out how to express what's going on here. This set of Options for the Realtime
   # Client inherit the set of Options for the REST Client. I've not used an `.inherit` node
