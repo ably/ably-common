@@ -123,9 +123,13 @@ REST Client:
       # to be formally specified: https://github.com/ably/docs/issues/1416
       .synopsis: Read-only property containing the channel name.
     Presence:
-      Get Member List:
-        .documentation: https://ably.com/docs/realtime/presence#member-list
-      Retrieve Event History:
+      .specification: [RSL3, RSP1, RSP2]
+      History:
+        .documentation: https://ably.com/docs/rest/presence#presence-history
+        .specification: RSP4
+      Member List:
+        .documentation: https://ably.com/docs/rest/presence#member-list
+        .specification: RSP3
     release:
       .specification: [RSN4, RTS4]
       .synopsis: Free up resources consumed by a local channel instance.

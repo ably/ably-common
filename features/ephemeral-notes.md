@@ -304,7 +304,7 @@ class TokenRequest:
 
 class RestChannel:
 #  name: String?
-  presence: RestPresence // RSL3
+#  presence: RestPresence // RSL3
   history(
     start: Time, // RSL2b1
     end: Time api-default now(), // RSL2b1
@@ -397,18 +397,18 @@ class Crypto:
   +getDefaultParams(Params) -> CipherParams // RSE1
   +generateRandomKey(keyLength: Int?) => io Binary // RSE2
 
-class RestPresence:
-  get(
-    limit: int api-default 100, // RSP3a
-    clientId: String?, // RSP3a2
-    connectionId: String?, // RSP3a3
-  ) => io PaginatedResult<PresenceMessage> // RSPa
-  history(
-    start: Time, // RSP4b1
-    end: Time api-default now(), // RSP4b1
-    direction: .Backwards | .Forwards api-default .Backwards, // RSP4b2
-    limit: int api-default 100, // RSP4b3
-  ) => io PaginatedResult<PresenceMessage> // RSP4a
+# class RestPresence:
+#   get(
+#     limit: int api-default 100, // RSP3a
+#     clientId: String?, // RSP3a2
+#     connectionId: String?, // RSP3a3
+#   ) => io PaginatedResult<PresenceMessage> // RSPa
+#   history(
+#     start: Time, // RSP4b1
+#     end: Time api-default now(), // RSP4b1
+#     direction: .Backwards | .Forwards api-default .Backwards, // RSP4b2
+#     limit: int api-default 100, // RSP4b3
+#   ) => io PaginatedResult<PresenceMessage> // RSP4a
 
 class RealtimePresence:
   syncComplete: Bool // RTP13
