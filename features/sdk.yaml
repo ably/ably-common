@@ -116,9 +116,6 @@ REST Client:
     get:
       .specification: [RSN3a, RTS3a]
       .synopsis: Get or create a channel instance with a given name.
-    get with Channel Options:
-      .specification: [RSN3c, RTS3c]
-      .synopsis: Soft-deprecated.
     iterate:
       .specification: [RSN2, RTS2]
       .synopsis: Enumerate local channel instances.
