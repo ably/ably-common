@@ -206,6 +206,11 @@ REST Client:
       .specification: [TO3l8, RSL1i, RTL6d1, CD2c]
       .synopsis: |
         The maximum size of messages that may be published in one go.
+    Plugins:
+      .specification: [PC1, PC2, TO3o]
+      .synopsis: |
+        Defines a mechanism that SDKs may use to allow users to specify optional functionality
+        at runtime.
     Port:
       .specification: [TO3k4, RSC15b1, RTN17b1]
       .synopsis: |

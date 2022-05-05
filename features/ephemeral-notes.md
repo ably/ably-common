@@ -248,7 +248,7 @@ class ClientOptions:
 #  httpMaxRetryDuration: Duration default 15s // TO3l6
 #  maxMessageSize: Int default 65536 // TO3l8
 #  maxFrameSize: Int default 524288 // TO3l8
-  plugins: Dict<PluginType, Plugin> // TO3o
+#  plugins: Dict<PluginType, Plugin> // TO3o
 #  idempotentRestPublishing: bool default true // RSL1k1, RTL6a1, TO3n
 #  agents: [String: String?]? // RSC7d6 - interface only offered by some libraries
 
@@ -695,9 +695,9 @@ class HttpPaginatedResponse // RSC19b
   errorMessage: String // HP7
   headers: Dict<String, String> // HP8
 
-class Plugin // PC2
-  // Empty class/interface. Plugins are not expected to share any common interface.
-  // An opaque base interface type for plugins is defined for type-safety in statically-typed languages.
+#class Plugin // PC2
+#  // Empty class/interface. Plugins are not expected to share any common interface.
+#  // An opaque base interface type for plugins is defined for type-safety in statically-typed languages.
 
 enum PluginType
   "vcdiff"
