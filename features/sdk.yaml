@@ -227,6 +227,9 @@ REST Client:
       .synopsis: |
         Overrides the TCP port to be used for insecure connections, where TLS has been disabled,
         for development environments only.
+    Proxy:
+      .synopsis: |
+        Support for specify HTTP proxy server.
     TLS Port:
       .specification: [TO3k5, RSC15b1, RTN17b1]
       .synopsis: |
