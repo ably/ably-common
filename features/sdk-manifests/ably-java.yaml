@@ -1,0 +1,80 @@
+%YAML 1.2
+---
+Authentication Options:
+  .api: io.ably.lib.rest.Auth.AuthOptions
+  Callback:
+    .api: .authCallback
+  Key:
+    .api: .key
+  Query Time:
+    .api: .queryTime
+  Token Details:
+    .api: .tokenDetails
+  Token String:
+    .api: .token
+  URL:
+    .api:
+      - .authUrl
+      - .authMethod
+      - .authHeaders
+      - .authParams
+  Use Token Authentication:
+    .api: .useTokenAuth
+Realtime Client:
+  Options:
+    .api: io.ably.lib.types.ClientOptions
+    Channel Retry Timeout:
+      .api: .channelRetryTimeout
+    Connection Recovery String:
+      .api: .recover
+    Disable Automatic Connection:
+      .api: .autoConnect
+    Disable Message Echoes:
+      .api: .echoMessages
+    Disable Message Queuing:
+      .api: .queueMessages
+    Host:
+      .api: .realtimeHost
+    Transport Parameters:
+      .api: .transportParams
+REST Client:
+  Options:
+    .api: io.ably.lib.types.ClientOptions
+    Client Identifier:
+      .api: .clientId
+    Default Token Parameters:
+      .api: .defaultTokenParams
+    Disable Binary Protocol:
+      .api: .useBinaryProtocol
+    Disable Idempotent Publishing:
+      .api: .idempotentRestPublishing
+    Disable Transport Layer Security:
+      .api: .tls
+    Enable Request Identifiers:
+      .api: .addRequestIds
+    Environment:
+      .api: .environment
+    Fallback Hosts:
+      .api: .fallbackHosts
+    Fallback Retry Timeout:
+      .api: .fallbackRetryTimeout
+    Host:
+      .api: .restHost
+    HTTP Connection Open Timeout:
+      .api: .httpOpenTimeout
+    HTTP Request Timeout:
+      .api: .httpRequestTimeout
+    Inject Agents:
+      .api: .agents
+    Log Handling:
+      .api:
+        - .logLevel
+        - .logHandler
+    Maximum HTTP Retry Count:
+      .api: .httpMaxRetryCount
+    Port:
+      .api: .port
+    Proxy:
+      .api: .proxy
+    TLS Port:
+      .api: .tlsPort
