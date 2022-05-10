@@ -72,7 +72,7 @@ Realtime Client:
       .synopsis: |
         Suppress queuing of messages when connection state antipates imminent connection.
     Disconnected Retry Timeout:
-      .specification: [RO3l1, RTN14d]
+      .specification: [TO3l1, RTN14d]
       .synopsis: |
         Reconnection is attempted after this amount of time in the `DISCONNECTED` connection state.
     Host:
