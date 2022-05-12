@@ -31,6 +31,43 @@ Authentication Options:
     .specification: [RSA4, RSA14, TO3j4]
     .synopsis: |
       Specifies that Token Auth, not Basic Auth, must be used.
+Push Notifications:
+  Activation:
+    .specification: [RSH2, RSH3, RSH4, RSH5, RSH6, RSH7, RSH8]
+  Administration:
+    .documentation: https://ably.com/docs/rest/push#push-admin
+    .specification: RSH1
+    Channel Subscription:
+      .specification: RSH1c
+      List:
+        .specification: RSH1c1
+      List Channels:
+        .specification: RSH1c2
+      Remove:
+        .specification: [RSH1c4, RSH1c5]
+      Save:
+        .specification: RSH1c3
+    Device Registration:
+      .specification: RSH1b
+      Get:
+        .specification: RSH1b1
+      List:
+        .specification: RSH1b2
+      Remove:
+        .specification: [RSH1b4, RSH1b4]
+      Save:
+        .specification: RSH1b3
+    Publish:
+      .documentation:
+        - https://ably.com/docs/rest/push#publish
+        - https://ably.com/docs/rest-api#push-publish
+        - https://ably.com/docs/general/push/publish#direct-publishing
+      .specification: RSH1a
+      .synopsis: |
+        Deliver a push notification to devices, addressing recipient(s):
+        - registered to Ably by device ID
+        - by their associated client ID
+        - directly using the underlying notifications service (FCM, APNs, etc.), thus bypassing registrations to Ably altogether
 Realtime:
   .synopsis: |
     Additional functionality offered by Ably client instances that offer Realtime connectivity.
@@ -235,40 +272,3 @@ REST:
       .specification: [TO3k5, RSC15b1, RTN17b1]
       .synopsis: |
         Overrides the TCP port to be used for secure connections, for development environments only.
-  Push Notifications:
-    Activation:
-      .specification: [RSH2, RSH3, RSH4, RSH5, RSH6, RSH7, RSH8]
-    Administration:
-      .documentation: https://ably.com/docs/rest/push#push-admin
-      .specification: RSH1
-      Channel Subscription:
-        .specification: RSH1c
-        List:
-          .specification: RSH1c1
-        List Channels:
-          .specification: RSH1c2
-        Remove:
-          .specification: [RSH1c4, RSH1c5]
-        Save:
-          .specification: RSH1c3
-      Device Registration:
-        .specification: RSH1b
-        Get:
-          .specification: RSH1b1
-        List:
-          .specification: RSH1b2
-        Remove:
-          .specification: [RSH1b4, RSH1b4]
-        Save:
-          .specification: RSH1b3
-      Publish:
-        .documentation:
-          - https://ably.com/docs/rest/push#publish
-          - https://ably.com/docs/rest-api#push-publish
-          - https://ably.com/docs/general/push/publish#direct-publishing
-        .specification: RSH1a
-        .synopsis: |
-          Deliver a push notification to devices, addressing recipient(s):
-          - registered to Ably by device ID
-          - by their associated client ID
-          - directly using the underlying notifications service (FCM, APNs, etc.), thus bypassing registrations to Ably altogether
