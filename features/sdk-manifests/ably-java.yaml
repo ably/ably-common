@@ -20,7 +20,7 @@ Authentication Options:
       - .authParams
   Use Token Authentication:
     .api: .useTokenAuth
-Realtime Client:
+Realtime:
   Options:
     .api: io.ably.lib.types.ClientOptions
     Channel Retry Timeout:
@@ -37,7 +37,7 @@ Realtime Client:
       .api: .realtimeHost
     Transport Parameters:
       .api: .transportParams
-REST Client:
+REST:
   Options:
     .api: io.ably.lib.types.ClientOptions
     Client Identifier:
