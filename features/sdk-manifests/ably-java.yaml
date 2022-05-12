@@ -1,5 +1,8 @@
 %YAML 1.2
 ---
+# TODO This codebase publishes two artifacts, ably-java and ably-android, which
+# have different capabilities to one another. Is that something we can express in
+# this single manifest file?
 Authentication Options:
   .api: io.ably.lib.rest.Auth.AuthOptions
   Callback:
