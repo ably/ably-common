@@ -1,5 +1,13 @@
 %YAML 1.2
 ---
+Client Instance Creation:
+  .specification: RSC1
+  .synopsis: |
+    An SDK announcing support for any of these construction inputs must support those
+    inputs for all client types it offers.
+  With API Key:
+  With Client Options:
+  With Token String:
 Options:
   .synopsis: |
     `ClientOptions` that apply to both client types (REST and Realtime).
@@ -182,11 +190,6 @@ REST:
     Release:
       .specification: [RSN4, RTS4]
       .synopsis: Free up resources consumed by a local channel instance.
-  Create:
-    .specification: RSC1
-    with API Key:
-    with Client Options:
-    with Token String:
   Device:
   Options:
     .synopsis: |
