@@ -23,16 +23,6 @@ class SpecificationPoint {
   }
 }
 
-class NodePointer {
-  constructor(value) {
-    this.keys = transformStrings(value, (stringValue) => stringValue);
-  }
-
-  toString() {
-    return this.keys.join(': ');
-  }
-}
-
 class Properties {
   constructor(node) {
     if (!(node instanceof Map)) {
@@ -44,10 +34,6 @@ class Properties {
         switch (name) {
           case 'documentation':
             this.documentationUrls = transformStrings(value, (stringValue) => new URL(stringValue));
-            break;
-
-          case 'inherit':
-            this.parentPointer = new NodePointer(value);
             break;
 
           case 'specification':
@@ -68,7 +54,6 @@ class Properties {
 
 module.exports = {
   isPropertyKey,
-  NodePointer,
   Properties,
   SpecificationPoint,
 };
