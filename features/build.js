@@ -12,10 +12,24 @@ const {
   Properties,
 } = require('./sdk-node-properties');
 
-const yamlSource = fs.readFileSync(path.resolve(__dirname, 'sdk.yaml')).toString();
+const sdkManifestSuffixes = [
+  'java',
+];
 
-// First Parse: using YAML's mid-level API, rendering a graph of the YAML structure
+// Load YAML sources up-front, both for the canonical features list and the SDK manifests.
+const loadSource = (fileName) => fs.readFileSync(path.resolve(__dirname, fileName)).toString();
+const yamlSource = loadSource('sdk.yaml');
+const sdkManifestSources = new Map();
+sdkManifestSuffixes.forEach((sdkManifestSuffix) => {
+  sdkManifestSources.set(sdkManifestSuffix, loadSource(`sdk-manifests/ably-${sdkManifestSuffix}.yaml`));
+});
+
+// First Parse: using YAML's mid-level API, rendering a graph of the YAML structure,
+// and then running some of our checks over that structure to check foundational requirements.
 validateStructure(YAML.parseDocument(yamlSource).contents);
+sdkManifestSources.forEach((sdkManifestSource) => {
+  validateStructure(YAML.parseDocument(sdkManifestSource).contents);
+});
 
 // Second Parse: using YAML's simplest API, rendering pure JS entities representing our data model
 const parserOptions = {
