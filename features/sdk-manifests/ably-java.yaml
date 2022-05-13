@@ -24,6 +24,32 @@ Options:
         - .authParams
     Use Token Authentication:
       .api: .useTokenAuth
+  Client Identifier:
+    .api: .clientId
+  Default Token Parameters:
+    .api: .defaultTokenParams
+  Disable Binary Protocol:
+    .api: .useBinaryProtocol
+  Disable Transport Layer Security:
+    .api: .tls
+  Environment:
+    .api: .environment
+  Fallback Hosts:
+    .api: .fallbackHosts
+  HTTP Connection Open Timeout:
+    .api: .httpOpenTimeout
+  Inject Agents:
+    .api: .agents
+  Log Handling:
+    .api:
+      - .logLevel
+      - .logHandler
+  Port:
+    .api: .port
+  Proxy:
+    .api: .proxy
+  TLS Port:
+    .api: .tlsPort
 Realtime:
   Options:
     .api: io.ably.lib.types.ClientOptions
@@ -44,41 +70,15 @@ Realtime:
 REST:
   Options:
     .api: io.ably.lib.types.ClientOptions
-    Client Identifier:
-      .api: .clientId
-    Default Token Parameters:
-      .api: .defaultTokenParams
-    Disable Binary Protocol:
-      .api: .useBinaryProtocol
     Disable Idempotent Publishing:
       .api: .idempotentRestPublishing
-    Disable Transport Layer Security:
-      .api: .tls
     Enable Request Identifiers:
       .api: .addRequestIds
-    Environment:
-      .api: .environment
-    Fallback Hosts:
-      .api: .fallbackHosts
     Fallback Retry Timeout:
       .api: .fallbackRetryTimeout
     Host:
       .api: .restHost
-    HTTP Connection Open Timeout:
-      .api: .httpOpenTimeout
     HTTP Request Timeout:
       .api: .httpRequestTimeout
-    Inject Agents:
-      .api: .agents
-    Log Handling:
-      .api:
-        - .logLevel
-        - .logHandler
     Maximum HTTP Retry Count:
       .api: .httpMaxRetryCount
-    Port:
-      .api: .port
-    Proxy:
-      .api: .proxy
-    TLS Port:
-      .api: .tlsPort
