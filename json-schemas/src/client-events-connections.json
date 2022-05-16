@@ -74,7 +74,7 @@
     },
     "duration": {
       "type": "integer",
-      "description": "The duration the connection was open for."
+      "description": "The duration the connection was open for in milliseconds."
     },
     "error": {
       "type": "object",
