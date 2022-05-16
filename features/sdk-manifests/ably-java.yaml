@@ -1,84 +1,93 @@
 %YAML 1.2
 ---
 # TODO This codebase publishes two artifacts, ably-java and ably-android, which
-# have different capabilities to one another. Is that something we can express in
-# this single manifest file?
-Options:
-  Authentication:
-    .api: io.ably.lib.rest.Auth.AuthOptions
-    Callback:
-      .api: .authCallback
-    Key:
-      .api: .key
-    Query Time:
-      .api: .queryTime
-    Token Details:
-      .api: .tokenDetails
-    Token String:
-      .api: .token
-    URL:
+# have different capabilities to one another. These are represented under the root
+# `variants` node in this document, but how should they be carried through into the
+# compliance tree?
+compliance:
+  Options:
+    Authentication:
+      .api: io.ably.lib.rest.Auth.AuthOptions
+      Callback:
+        .api: .authCallback
+      Key:
+        .api: .key
+      Query Time:
+        .api: .queryTime
+      Token Details:
+        .api: .tokenDetails
+      Token String:
+        .api: .token
+      URL:
+        .api:
+          - .authUrl
+          - .authMethod
+          - .authHeaders
+          - .authParams
+      Use Token Authentication:
+        .api: .useTokenAuth
+    Client Identifier:
+      .api: .clientId
+    Default Token Parameters:
+      .api: .defaultTokenParams
+    Disable Binary Protocol:
+      .api: .useBinaryProtocol
+    Disable Transport Layer Security:
+      .api: .tls
+    Environment:
+      .api: .environment
+    Fallback Hosts:
+      .api: .fallbackHosts
+    HTTP Connection Open Timeout:
+      .api: .httpOpenTimeout
+    Inject Agents:
+      .api: .agents
+    Log Handling:
       .api:
-        - .authUrl
-        - .authMethod
-        - .authHeaders
-        - .authParams
-    Use Token Authentication:
-      .api: .useTokenAuth
-  Client Identifier:
-    .api: .clientId
-  Default Token Parameters:
-    .api: .defaultTokenParams
-  Disable Binary Protocol:
-    .api: .useBinaryProtocol
-  Disable Transport Layer Security:
-    .api: .tls
-  Environment:
-    .api: .environment
-  Fallback Hosts:
-    .api: .fallbackHosts
-  HTTP Connection Open Timeout:
-    .api: .httpOpenTimeout
-  Inject Agents:
-    .api: .agents
-  Log Handling:
-    .api:
-      - .logLevel
-      - .logHandler
-  Port:
-    .api: .port
-  Proxy:
-    .api: .proxy
-  TLS Port:
-    .api: .tlsPort
-Realtime:
-  Options:
-    .api: io.ably.lib.types.ClientOptions
-    Channel Retry Timeout:
-      .api: .channelRetryTimeout
-    Connection Recovery String:
-      .api: .recover
-    Disable Automatic Connection:
-      .api: .autoConnect
-    Disable Message Echoes:
-      .api: .echoMessages
-    Disable Message Queuing:
-      .api: .queueMessages
-    Host:
-      .api: .realtimeHost
-    Transport Parameters:
-      .api: .transportParams
-REST:
-  Options:
-    .api: io.ably.lib.types.ClientOptions
-    Disable Idempotent Publishing:
-      .api: .idempotentRestPublishing
-    Enable Request Identifiers:
-      .api: .addRequestIds
-    Fallback Retry Timeout:
-      .api: .fallbackRetryTimeout
-    Host:
-      .api: .restHost
-    HTTP Request Timeout:
-      .api: .httpRequestTimeout
-    Maximum HTTP Retry Count:
-      .api: .httpMaxRetryCount
+        - .logLevel
+        - .logHandler
+    Port:
+      .api: .port
+    Proxy:
+      .api: .proxy
+    TLS Port:
+      .api: .tlsPort
+  Realtime:
+    Options:
+      .api: io.ably.lib.types.ClientOptions
+      Channel Retry Timeout:
+        .api: .channelRetryTimeout
+      Connection Recovery String:
+        .api: .recover
+      Disable Automatic Connection:
+        .api: .autoConnect
+      Disable Message Echoes:
+        .api: .echoMessages
+      Disable Message Queuing:
+        .api: .queueMessages
+      Host:
+        .api: .realtimeHost
+      Transport Parameters:
+        .api: .transportParams
+  REST:
+    Options:
+      .api: io.ably.lib.types.ClientOptions
+      Disable Idempotent Publishing:
+        .api: .idempotentRestPublishing
+      Enable Request Identifiers:
+        .api: .addRequestIds
+      Fallback Retry Timeout:
+        .api: .fallbackRetryTimeout
+      Host:
+        .api: .restHost
+      HTTP Request Timeout:
+        .api: .httpRequestTimeout
+      Maximum HTTP Retry Count:
+        .api: .httpMaxRetryCount
+variants:
+  Android:
+    .synopsis: |
+      Builds `aar` artifact(s) for use by applications running on the Android operating system.
+  JRE:
+    .synopsis: |
+      Builds `jar` artifact(s) for use by applications running in a Java Runtime Environment (JRE).
