@@ -11,6 +11,12 @@ const {
   isPropertyKey,
   Properties,
 } = require('./sdk-node-properties');
+const { Manifest } = require('./manifest');
+
+// from Google Fonts' Icons (originally called 'Close' and 'Done').
+// https://fonts.google.com/icons
+const crossSvg = '<div><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M12.45 37.65 10.35 35.55 21.9 24 10.35 12.45 12.45 10.35 24 21.9 35.55 10.35 37.65 12.45 26.1 24 37.65 35.55 35.55 37.65 24 26.1Z"/></svg></div>';
+const tickSvg = '<div><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M18.9 35.7 7.7 24.5 9.85 22.35 18.9 31.4 38.1 12.2 40.25 14.35Z"/></svg></div>';
 
 const sdkManifestSuffixes = [
   'java',
@@ -36,6 +42,13 @@ const parserOptions = {
   mapAsMap: true,
 };
 const object = YAML.parse(yamlSource, parserOptions);
+const sdkManifests = new Map();
+sdkManifestSources.forEach((sdkManifestSource, sdkManifestSuffix) => {
+  sdkManifests.set(
+    sdkManifestSuffix,
+    new Manifest(YAML.parse(sdkManifestSource, parserOptions)),
+  );
+});
 
 // First Pass: Measure depth.
 const arbitraryMaximumDepth = 10;
@@ -108,7 +121,7 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
             if (cellCount > 1) {
               rowWriter.columnSpan(cellCount);
             }
-            rowWriter.class('pr-3 whitespace-nowrap tooltip-container');
+            rowWriter.class('pr-3 whitespace-nowrap tooltip-container align-middle');
             rowWriter.cell((cellContentWriter) => {
               if (level > 0) {
                 const tip = `<strong>${escape(parentKeys.join(': '))}</strong>: ${escape(key)}`;
@@ -118,7 +131,7 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
             });
 
             // Specification Points
-            rowWriter.class('border-l px-1');
+            rowWriter.class('border-l px-1 align-middle');
             rowWriter.cell((cellContentWriter) => {
               cellContentWriter.write(specificationPoints
                 ? specificationPoints
@@ -128,7 +141,7 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
             });
 
             // Documentation Links and Synopsis
-            rowWriter.class('border-l px-1');
+            rowWriter.class('border-l px-1 align-middle');
             rowWriter.cell((cellContentWriter) => {
               let empty = true;
               if (documentationUrls) {
@@ -144,6 +157,15 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
               if (empty) {
                 cellContentWriter.write('&nbsp;');
               }
+            });
+
+            // SDK columns
+            sdkManifests.forEach((manifest) => {
+              const compliance = manifest.find([...parentKeys, key]);
+              rowWriter.class(`border-l px-1 ${compliance ? 'bg-green-400' : 'bg-red-400'} align-middle`);
+              rowWriter.cell((cellContentWriter) => {
+                cellContentWriter.write(compliance ? tickSvg : crossSvg);
+              });
             });
           });
         }

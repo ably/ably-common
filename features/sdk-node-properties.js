@@ -33,15 +33,23 @@ class Properties {
         const name = propertyKeyName(key);
         switch (name) {
           case 'documentation':
+            // used in the canonical features list
             this.documentationUrls = transformStrings(value, (stringValue) => new URL(stringValue));
             break;
 
           case 'specification':
+            // used in the canonical features list
             this.specificationPoints = transformStrings(value, (stringValue) => new SpecificationPoint(stringValue));
             break;
 
           case 'synopsis':
+            // used in the canonical features list
             this.synopsis = transformString(value, (stringValue) => stringValue);
+            break;
+
+          case 'api':
+            // used in the SDK manifests
+            this.api = transformStrings(value, (stringValue) => stringValue);
             break;
 
           default:
