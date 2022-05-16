@@ -103,6 +103,7 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
             specificationPoints,
             documentationUrls,
             synopsis,
+            apiDocumentation,
           } = new Properties(value);
 
           console.log(`${consoleIndent}${key}:`);
@@ -140,7 +141,7 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
                 : '&nbsp;');
             });
 
-            // Documentation Links and Synopsis
+            // Conceptual Documentation Links and Synopsis
             rowWriter.class('border-l px-1 align-middle');
             rowWriter.cell((cellContentWriter) => {
               let empty = true;
@@ -157,6 +158,12 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
               if (empty) {
                 cellContentWriter.write('&nbsp;');
               }
+            });
+
+            // API Documentation
+            rowWriter.class('border-l px-1 align-middle');
+            rowWriter.cell((cellContentWriter) => {
+              cellContentWriter.write(apiDocumentation ? marked.parse(apiDocumentation) : '&nbsp;');
             });
 
             // SDK columns
