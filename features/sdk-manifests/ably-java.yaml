@@ -6,85 +6,96 @@
 # compliance tree?
 common-version: 1.2.0
 compliance:
+  Client Instance Creation:
+    .api:
+      - io.ably.lib.realtime#AblyRealtime
+      - io.ably.lib.rest#AblyRest
+    With API Key:
+      .api:
+        .constructor: [java.lang.String]
+    With Client Options:
+      .api:
+        .constructor: [io.ably.lib.types.ClientOptions]
+    With Token String:
   Options:
     Authentication:
-      .api: io.ably.lib.rest.Auth.AuthOptions
+      .api: io.ably.lib.rest.Auth#AuthOptions
       Callback:
-        .api: .authCallback
+        .api: $authCallback
       Key:
-        .api: .key
+        .api: $key
       Query Time:
-        .api: .queryTime
+        .api: $queryTime
       Token Details:
-        .api: .tokenDetails
+        .api: $tokenDetails
       Token String:
-        .api: .token
+        .api: $token
       URL:
         .api:
-          - .authUrl
-          - .authMethod
-          - .authHeaders
-          - .authParams
+          - $authUrl
+          - $authMethod
+          - $authHeaders
+          - $authParams
       Use Token Authentication:
-        .api: .useTokenAuth
+        .api: $useTokenAuth
     Client Identifier:
-      .api: .clientId
+      .api: $clientId
     Default Token Parameters:
-      .api: .defaultTokenParams
+      .api: $defaultTokenParams
     Disable Binary Protocol:
-      .api: .useBinaryProtocol
+      .api: $useBinaryProtocol
     Disable Transport Layer Security:
-      .api: .tls
+      .api: $tls
     Environment:
-      .api: .environment
+      .api: $environment
     Fallback Hosts:
-      .api: .fallbackHosts
+      .api: $fallbackHosts
     HTTP Connection Open Timeout:
-      .api: .httpOpenTimeout
+      .api: $httpOpenTimeout
     Inject Agents:
-      .api: .agents
+      .api: $agents
     Log Handling:
       .api:
-        - .logLevel
-        - .logHandler
+        - $logLevel
+        - $logHandler
     Port:
-      .api: .port
+      .api: $port
     Proxy:
-      .api: .proxy
+      .api: $proxy
     TLS Port:
-      .api: .tlsPort
+      .api: $tlsPort
   Realtime:
     Options:
-      .api: io.ably.lib.types.ClientOptions
+      .api: io.ably.lib.types#ClientOptions
       Channel Retry Timeout:
-        .api: .channelRetryTimeout
+        .api: $channelRetryTimeout
       Connection Recovery String:
-        .api: .recover
+        .api: $recover
       Disable Automatic Connection:
-        .api: .autoConnect
+        .api: $autoConnect
       Disable Message Echoes:
-        .api: .echoMessages
+        .api: $echoMessages
       Disable Message Queuing:
-        .api: .queueMessages
+        .api: $queueMessages
       Host:
-        .api: .realtimeHost
+        .api: $realtimeHost
       Transport Parameters:
-        .api: .transportParams
+        .api: $transportParams
   REST:
     Options:
-      .api: io.ably.lib.types.ClientOptions
+      .api: io.ably.lib.types#ClientOptions
       Disable Idempotent Publishing:
-        .api: .idempotentRestPublishing
+        .api: $idempotentRestPublishing
       Enable Request Identifiers:
-        .api: .addRequestIds
+        .api: $addRequestIds
       Fallback Retry Timeout:
-        .api: .fallbackRetryTimeout
+        .api: $fallbackRetryTimeout
       Host:
-        .api: .restHost
+        .api: $restHost
       HTTP Request Timeout:
-        .api: .httpRequestTimeout
+        .api: $httpRequestTimeout
       Maximum HTTP Retry Count:
-        .api: .httpMaxRetryCount
+        .api: $httpMaxRetryCount
 variants:
   Android:
     .synopsis: |

@@ -23,6 +23,84 @@ class SpecificationPoint {
   }
 }
 
+const smithyShapeIdentifiers = createMapOfSmithyShapeIdentifiers();
+
+/**
+ * Creates a map of Smithy shape identifiers.
+ *
+ * @returns {Map} Smithy shape identifiers and the regular expressions to be used to qualify
+ * that strings match them, where entry keys are Smithy shape identifiers as a `string` and the
+ * values are `RegExp` instances.
+ * @see https://awslabs.github.io/smithy/1.0/spec/core/model.html#shape-id
+ */
+function createMapOfSmithyShapeIdentifiers() {
+  const identifierStart = '(_*[A-Za-z])';
+  const identifierChars = '[A-Za-z\\d_]';
+  const identifier = `(${identifierStart}${identifierChars}*)`;
+  const namespace = `(${identifier}+(\\.${identifier})*)`;
+  return new Map([
+    ['shape_id_member', new RegExp(`^\\$${identifier}$`)],
+    ['absolute_root_shape_id', new RegExp(`^${namespace}#${identifier}$`)],
+  ]);
+}
+
+/**
+ * Look up and return the Smithy identifier matching the form of the given value.
+ *
+ * @param {string} value The value to be inspected and matched to a shape identifier.
+ * @returns {string} The shape idenfier that matches the value.
+ * @throws When a shape identifier could not be matched to the value.
+ */
+function matchSmithyShapeIdentifier(value) {
+  let found = false;
+  smithyShapeIdentifiers.forEach((regExp, shapeIdentifier) => {
+    if (value.match(regExp)) {
+      found = shapeIdentifier;
+    }
+  });
+  if (!found) {
+    throw new Error(`Smithy shape identifier not found for value "${value}".`);
+  }
+  return found;
+}
+
+class ApiDefinition {
+  constructor(node) {
+    if (node instanceof String || typeof node === 'string') {
+      this.shapeIdentifier = matchSmithyShapeIdentifier(node);
+      return; // Success constructing from a node of type string
+    }
+
+    if (node instanceof Map) {
+      let found = false;
+      node.forEach((value, key) => {
+        if (isPropertyKey(key)) {
+          const name = propertyKeyName(key);
+          switch (name) {
+            case 'constructor':
+              // TODO work on the naming here, as 'constructor' is not a concept in the Smithy model.
+              this.shapeIdentifier = 'constructor';
+              this.arguments = transformStrings(value, (stringValue) => stringValue);
+              found = true;
+              break;
+
+            default:
+              throw new Error(`Property key '${name}' is not recognised.`);
+          }
+        }
+      });
+      if (!found) {
+        // In future we'll probably expand this map to support other properties.
+        // But, for now, it's only used to describe constructors.
+        throw new Error('Propery describing constructor not found.');
+      }
+      return; // Success constructing from a node of type Map
+    }
+
+    throw new Error(`node of type ${typeof node} could not be handled.`);
+  }
+}
+
 class Properties {
   constructor(node) {
     if (!(node instanceof Map)) {
@@ -54,7 +132,7 @@ class Properties {
 
           case 'api':
             // used in the SDK manifests
-            this.api = transformStrings(value, (stringValue) => stringValue);
+            this.apiDefinitions = parseApiDefinitions(value);
             break;
 
           default:
@@ -112,4 +190,24 @@ function transformString(value, transformer) {
     return transformer(value);
   }
   throw new Error(`Encountered '${typeof value}' (${value}) when expecting a string.`);
+}
+
+/**
+ * Returns an array of one or more ApiDefinition instances, as extracted from the given value.
+ *
+ * @param {*} value The value from an `.api` key in a manifest Map.
+ * @returns {*[]} The ApiDefinition instances. Will never be empty.
+ * @throws If value type not accept, no values to parse (if array) or cannot be mapped
+ * to a Smithy shape identifier.
+ */
+function parseApiDefinitions(value) {
+  if (Array.isArray(value)) {
+    if (value.length < 1) {
+      throw new Error('No values to parse.');
+    }
+    return value.map((element) => new ApiDefinition(element));
+  }
+
+  // assumed to be a string or Map, both understood by the ApiDefinition constructor
+  return [new ApiDefinition(value)];
 }
