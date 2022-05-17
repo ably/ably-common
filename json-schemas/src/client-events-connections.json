@@ -18,11 +18,47 @@
     },
     "headers": {
       "type": "object",
-      "description": "The HTTP headers of the connection request. Header names are lower case (e.g. 'accept', 'content-type', 'user-agent', etc.)."
+      "description": "The HTTP headers of the connection request. Header names are lower case (e.g. 'accept', 'content-type', 'user-agent', etc.).",
+      "properties": {
+        "ably-agent": {
+          "type": "string",
+          "description": "The Ably-Agent header describing the SDK and runtime environment of the client."
+        },
+        "x-ably-version": {
+          "type": "string",
+          "description": "The Ably API protocol version expected by the client."
+        },
+        "x-geoip": {
+          "type": "string",
+          "description": "Geographic information related to the detected IP address of the client formatted as '<country-code>,<region>,<latitude>,<longitude>'"
+        },
+        "x-request-start": {
+          "type": "string",
+          "description": "The time the request was received by Ably's routing layer, represented as the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC"
+        }
+      }
     },
     "query": {
       "type": "object",
-      "description": "The parsed query component of the connection request, excluding authentication parameters. The query contains connection information such as the client library version and any custom transport parameters."
+      "description": "The parsed query component of the connection request, excluding authentication parameters. The query contains connection information such as the client library version and any custom transport parameters.",
+      "properties": {
+        "agent": {
+          "type": "string",
+          "description": "The Ably-Agent header describing the SDK and runtime environment of the client."
+        },
+        "format": {
+          "type": "string",
+          "description": "The format used to encode protocol messages. Either 'json' or 'msgpack'."
+        },
+        "heartbeats": {
+          "type": "boolean",
+          "description": "The type of heartbeats to send on the connection. True for Ably protocol heartbeats, false for transport specific heartbeats."
+        },
+        "v": {
+          "type": "string",
+          "description": "The Ably API protocol version expected by the client."
+        }
+      }
     },
     "connectionId": {
       "type": "string",
@@ -38,7 +74,7 @@
     },
     "duration": {
       "type": "integer",
-      "description": "The duration the connection was open for."
+      "description": "The duration the connection was open for in milliseconds."
     },
     "error": {
       "type": "object",
