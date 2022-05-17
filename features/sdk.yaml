@@ -155,6 +155,8 @@ Options:
 Push Notifications:
   Activation:
     .specification: [RSH2, RSH3, RSH4, RSH5, RSH6, RSH7, RSH8]
+    .synopsis: |
+      Only available on platforms that support receiving push notifications.
   Administration:
     .documentation: https://ably.com/docs/rest/push#push-admin
     .specification: RSH1

@@ -64,6 +64,13 @@ compliance:
       .api: $proxy
     TLS Port:
       .api: $tlsPort
+  Push Notifications:
+    .api: io.ably.lib.push#Push
+    Activation:
+      .api:
+        - $activate
+        - $deactivate
+      .variants: Android
   Realtime:
     Options:
       .api: io.ably.lib.types#ClientOptions

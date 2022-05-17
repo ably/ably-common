@@ -15,8 +15,9 @@ const { Manifest } = require('./manifest');
 
 // from Google Fonts' Icons (originally called 'Close' and 'Done').
 // https://fonts.google.com/icons
-const crossSvg = '<div><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M12.45 37.65 10.35 35.55 21.9 24 10.35 12.45 12.45 10.35 24 21.9 35.55 10.35 37.65 12.45 26.1 24 37.65 35.55 35.55 37.65 24 26.1Z"/></svg></div>';
-const tickSvg = '<div><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M18.9 35.7 7.7 24.5 9.85 22.35 18.9 31.4 38.1 12.2 40.25 14.35Z"/></svg></div>';
+const crossSvg = '<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M12.45 37.65 10.35 35.55 21.9 24 10.35 12.45 12.45 10.35 24 21.9 35.55 10.35 37.65 12.45 26.1 24 37.65 35.55 35.55 37.65 24 26.1Z"/></svg>';
+const tickSvg = '<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M18.9 35.7 7.7 24.5 9.85 22.35 18.9 31.4 38.1 12.2 40.25 14.35Z"/></svg>';
+const partialSvg = '<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M10.4 26.4Q9.4 26.4 8.7 25.7Q8 25 8 24Q8 23 8.7 22.3Q9.4 21.6 10.4 21.6Q11.4 21.6 12.1 22.3Q12.8 23 12.8 24Q12.8 25 12.1 25.7Q11.4 26.4 10.4 26.4ZM24 26.4Q23 26.4 22.3 25.7Q21.6 25 21.6 24Q21.6 23 22.3 22.3Q23 21.6 24 21.6Q25 21.6 25.7 22.3Q26.4 23 26.4 24Q26.4 25 25.7 25.7Q25 26.4 24 26.4ZM37.6 26.4Q36.6 26.4 35.9 25.7Q35.2 25 35.2 24Q35.2 23 35.9 22.3Q36.6 21.6 37.6 21.6Q38.6 21.6 39.3 22.3Q40 23 40 24Q40 25 39.3 25.7Q38.6 26.4 37.6 26.4Z"/></svg>';
 
 const sdkManifestSuffixes = [
   'java',
@@ -222,9 +223,23 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
             // SDK columns
             sdkManifests.forEach((manifest) => {
               const compliance = manifest.find([...parentKeys, key]);
-              rowWriter.class(`px-1 ${compliance ? 'bg-green-400' : 'bg-red-400'} ${commonCellStyle}`);
+
+              let colourClass = 'bg-red-400';
+              let svg = crossSvg;
+              if (compliance) {
+                const { variants } = compliance;
+                if (variants && manifest.isPartialVariantsCoverage(variants)) {
+                  colourClass = 'bg-amber-400';
+                  svg = partialSvg;
+                } else {
+                  colourClass = 'bg-green-400';
+                  svg = tickSvg;
+                }
+              }
+
+              rowWriter.class(`px-1 ${colourClass} ${commonCellStyle}`);
               rowWriter.cell((cellContentWriter) => {
-                cellContentWriter.write(compliance ? tickSvg : crossSvg);
+                cellContentWriter.write(svg);
               });
             });
           });

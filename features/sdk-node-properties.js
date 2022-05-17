@@ -135,6 +135,11 @@ class Properties {
             this.apiDefinitions = parseApiDefinitions(value);
             break;
 
+          case 'variants':
+            // used in the SDK manifests
+            this.variants = transformStrings(value, (stringValue) => stringValue);
+            break;
+
           default:
             throw new Error(`Property key '${name}' is not recognised.`);
         }
