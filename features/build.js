@@ -69,12 +69,63 @@ const documentWriter = new DocumentWriter(
 
 documentWriter.document((contentWriter) => {
   contentWriter.h(1, `${title} ${subTitle}`);
-  contentWriter.class('border-collapse');
+
+  // Our convention, for this table, is borders to the right and bottom of cells.
+  // (only exception being the top row, where there's also a border to the top)
+  contentWriter.class('border-separate zero-border-spacing');
+
   contentWriter.table((tableWriter) => {
+    renderTableHeaderRow(tableWriter, levelCount);
+
     // Second Pass: Render rows.
     generateTableRows(tableWriter, levelCount, [], object);
   });
 });
+
+/**
+ * Render column headings to a table row.
+ *
+ * @param {TableWriter} writer The HTML table writer to use.
+ * @param {number} maximumLevel The maximum depth, previously measured.
+ */
+function renderTableHeaderRow(writer, maximumLevel) {
+  writer.class('align-top sticky top-0 bg-blue-700 text-white font-bold');
+  const commonCellStyle = 'pt-1 pb-2 border-y-4 border-white border-r-4 sticky top-0';
+  writer.row((rowWriter) => {
+    rowWriter.columnSpan(maximumLevel);
+    rowWriter.class(`pr-1 text-center ${commonCellStyle}`);
+    rowWriter.cell((cellContentWriter) => {
+      cellContentWriter.text('Feature');
+    });
+
+    // Specification Points
+    rowWriter.class(`px-1 ${commonCellStyle}`);
+    rowWriter.cell((cellContentWriter) => {
+      cellContentWriter.text('Specification');
+    });
+
+    // Conceptual Documentation Links and Synopsis
+    rowWriter.class(`px-1 ${commonCellStyle}`);
+    rowWriter.cell((cellContentWriter) => {
+      cellContentWriter.text('Synopsis and Links to Conceptual Documentation');
+    });
+
+    // API Documentation
+    rowWriter.class(`px-1 ${commonCellStyle}`);
+    rowWriter.cell((cellContentWriter) => {
+      cellContentWriter.text('Generic API Documentation');
+    });
+
+    // SDK columns
+    // eslint-disable-next-line no-restricted-syntax
+    for (const sdkManifestSuffix of sdkManifests.keys()) {
+      rowWriter.class(`px-1 text-center ${commonCellStyle}`);
+      rowWriter.cell((cellContentWriter) => {
+        cellContentWriter.text(sdkManifestSuffix);
+      });
+    }
+  });
+}
 
 /**
  * Inspect a node, and it's children, optionally rendering to table rows.
@@ -107,11 +158,13 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
           } = new Properties(value);
 
           console.log(`${consoleIndent}${key}:`);
-          writer.class('border-slate-300 border-t-2 border-b-2 align-top');
+          const verticalBordersStyle = 'border-slate-300 border-b-2';
+          const commonCellStyle = `${verticalBordersStyle} border-r-2`;
+          writer.class('align-middle');
           writer.row((rowWriter) => {
             // Indent using empty cells
             for (let i = 1; i <= level; i += 1) {
-              rowWriter.class('px-3');
+              rowWriter.class(`px-3 ${verticalBordersStyle}`);
               rowWriter.cell((cellContentWriter) => {
                 cellContentWriter.write('&nbsp;');
               });
@@ -122,7 +175,7 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
             if (cellCount > 1) {
               rowWriter.columnSpan(cellCount);
             }
-            rowWriter.class('pr-3 whitespace-nowrap tooltip-container align-middle');
+            rowWriter.class(`pr-3 whitespace-nowrap tooltip-container ${commonCellStyle}`);
             rowWriter.cell((cellContentWriter) => {
               if (level > 0) {
                 const tip = `<strong>${escape(parentKeys.join(': '))}</strong>: ${escape(key)}`;
@@ -132,7 +185,7 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
             });
 
             // Specification Points
-            rowWriter.class('border-l px-1 align-middle');
+            rowWriter.class(`px-1 ${commonCellStyle}`);
             rowWriter.cell((cellContentWriter) => {
               cellContentWriter.write(specificationPoints
                 ? specificationPoints
@@ -142,7 +195,7 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
             });
 
             // Conceptual Documentation Links and Synopsis
-            rowWriter.class('border-l px-1 align-middle');
+            rowWriter.class(`px-1 ${commonCellStyle}`);
             rowWriter.cell((cellContentWriter) => {
               let empty = true;
               if (documentationUrls) {
@@ -161,7 +214,7 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
             });
 
             // API Documentation
-            rowWriter.class('border-l px-1 align-middle');
+            rowWriter.class(`px-1 ${commonCellStyle}`);
             rowWriter.cell((cellContentWriter) => {
               cellContentWriter.write(apiDocumentation ? marked.parse(apiDocumentation) : '&nbsp;');
             });
@@ -169,7 +222,7 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
             // SDK columns
             sdkManifests.forEach((manifest) => {
               const compliance = manifest.find([...parentKeys, key]);
-              rowWriter.class(`border-l px-1 ${compliance ? 'bg-green-400' : 'bg-red-400'} align-middle`);
+              rowWriter.class(`px-1 ${compliance ? 'bg-green-400' : 'bg-red-400'} ${commonCellStyle}`);
               rowWriter.cell((cellContentWriter) => {
                 cellContentWriter.write(compliance ? tickSvg : crossSvg);
               });

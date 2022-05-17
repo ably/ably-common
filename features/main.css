@@ -31,3 +31,15 @@
     @apply bg-amber-100;
   }
 }
+
+@layer components {
+  /*
+   * We need this to combine with border-seperate, in order not to have gaps between
+   * borders of cells within a table.
+   * It's seemingly not a utility offered, out-of-the-box, by Tailwind - see:
+   * https://stackoverflow.com/a/70326229/392847
+   */
+  .zero-border-spacing {
+    border-spacing: 0;
+  }
+}
