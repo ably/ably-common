@@ -4,6 +4,7 @@
 # have different capabilities to one another. These are represented under the root
 # `variants` node in this document, but how should they be carried through into the
 # compliance tree?
+common-version: 1.2.0
 compliance:
   Options:
     Authentication:
