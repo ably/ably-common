@@ -12,10 +12,10 @@ compliance:
       - io.ably.lib.rest#AblyRest
     With API Key:
       .api:
-        .constructor: [java.lang.String]
+        constructor: [java.lang.String]
     With Client Options:
       .api:
-        .constructor: [io.ably.lib.types.ClientOptions]
+        constructor: [io.ably.lib.types.ClientOptions]
     With Token String:
   Options:
     Authentication:

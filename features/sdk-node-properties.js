@@ -65,28 +65,25 @@ function matchSmithyShapeIdentifier(value) {
 }
 
 class ApiDefinition {
-  constructor(node) {
-    if (node instanceof String || typeof node === 'string') {
-      this.shapeIdentifier = matchSmithyShapeIdentifier(node);
-      return; // Success constructing from a node of type string
+  constructor(value) {
+    if (value instanceof String || typeof value === 'string') {
+      this.shapeIdentifier = matchSmithyShapeIdentifier(value);
+      return; // Success constructing from a value of type string
     }
 
-    if (node instanceof Map) {
+    if (value instanceof Map) {
       let found = false;
-      node.forEach((value, key) => {
-        if (isPropertyKey(key)) {
-          const name = propertyKeyName(key);
-          switch (name) {
-            case 'constructor':
-              // TODO work on the naming here, as 'constructor' is not a concept in the Smithy model.
-              this.shapeIdentifier = 'constructor';
-              this.arguments = transformStrings(value, (stringValue) => stringValue);
-              found = true;
-              break;
+      value.forEach((mapValue, mapKey) => {
+        switch (mapKey) {
+          case 'constructor':
+            // TODO work on the naming here, as 'constructor' is not a concept in the Smithy model.
+            this.shapeIdentifier = 'constructor';
+            this.arguments = transformStrings(mapValue, (stringValue) => stringValue);
+            found = true;
+            break;
 
-            default:
-              throw new Error(`Property key '${name}' is not recognised.`);
-          }
+          default:
+            throw new Error(`Property key '${mapKey}' is not recognised.`);
         }
       });
       if (!found) {
@@ -97,7 +94,7 @@ class ApiDefinition {
       return; // Success constructing from a node of type Map
     }
 
-    throw new Error(`node of type ${typeof node} could not be handled.`);
+    throw new Error(`node of type ${typeof value} could not be handled.`);
   }
 }
 
