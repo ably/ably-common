@@ -11,9 +11,9 @@
 //
 // This URL is also set as the $id field in the published schema.
 //
-// The SDK_S3_ACCESS_KEY_ID and SDK_S3_ACCESS_KEY environment variables must be
-// set that have access to upload to the schemas.ably.com S3 bucket in the Ably
-// SDK AWS account.
+// It's expected that the surrounding environment is configured with AWS
+// credentials which permit uploads to the schemas.ably.com S3 bucket in
+// the Ably SDK AWS account.
 
 const { readdir } = require('fs/promises');
 const path = require('path');
@@ -26,22 +26,8 @@ const versions = require('./versions.json');
 const baseUrl = 'https://schemas.ably.com/json';
 const s3Bucket = 'schemas.ably.com';
 
-const awsAccessKeyId = process.env.SDK_S3_ACCESS_KEY_ID;
-if (typeof awsAccessKeyId !== 'string') {
-  throw new Error('Missing SDK_S3_ACCESS_KEY_ID');
-}
-
-const awsSecretAccessKey = process.env.SDK_S3_ACCESS_KEY;
-if (typeof awsSecretAccessKey !== 'string') {
-  throw new Error('Missing SDK_S3_ACCESS_KEY');
-}
-
 const s3 = new S3Client({
   region: 'eu-west-2',
-  credentials: {
-    accessKeyId: awsAccessKeyId,
-    secretAccessKey: awsSecretAccessKey,
-  },
 });
 
 (async () => {
