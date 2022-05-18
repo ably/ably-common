@@ -1,5 +1,9 @@
 # Ably Features
 
+## Feature Node Names
+
+- Should not start with a verb
+
 ## Specification Point Adherence Tracking
 
 We have

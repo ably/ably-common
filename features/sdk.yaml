@@ -11,6 +11,11 @@ Client Instance Creation:
 Options:
   .synopsis: |
     `ClientOptions` that apply to both client types (REST and Realtime).
+  Agents:
+    .specification: RSC7d6
+    .synopsis: |
+      `agents`:
+      For use only by other Ably-authored SDKs, on a need-to-have basis.
   Authentication:
     .synopsis: |
       `AuthOptions`
@@ -67,6 +72,13 @@ Options:
       .synopsis: |
         `useTokenAuth`:
         Specifies that Token Auth, not Basic Auth, must be used.
+  Binary Protocol:
+    .specification: [RSC8b, TO3f]
+    .synopsis: |
+      `useBinaryProtocol`:
+      Use JSON protocol for REST and Realtime operations, overriding the default MessagePack binary protocol.
+      MessagePack is the default for runtime environments that have a suitable level of support
+      for binary data.
   Client Identifier:
     .specification: [RSC17, RSA7, RSA15, RTN2d, TO3a]
     .synopsis: |
@@ -77,18 +89,6 @@ Options:
     .synopsis: |
       `defaultTokenParams`:
       Overrides client library defaults for `TokenParams`.
-  Disable Binary Protocol:
-    .specification: [RSC8b, TO3f]
-    .synopsis: |
-      `useBinaryProtocol`:
-      Use JSON protocol for REST and Realtime operations, overriding the default MessagePack binary protocol.
-      MessagePack is the default for runtime environments that have a suitable level of support
-      for binary data.
-  Disable Transport Layer Security:
-    .specification: [TO3d, RSC18]
-    .synopsis: |
-      `tls`:
-      Disable TLS, for development environments only.
   Environment:
     .specification: [RSC11b, RSC15g, RTC1e, RTN17a, TO3k1]
     .synopsis: |
@@ -106,11 +106,6 @@ Options:
     .specification: TO3l3
     .synopsis: |
       `httpOpenTimeout`
-  Inject Agents:
-    .specification: RSC7d6
-    .synopsis: |
-      `agents`:
-      For use only by other Ably-authored SDKs, on a need-to-have basis.
   Log Handling:
     .specification: [TO3b, TO3c]
     .synopsis: |
@@ -152,6 +147,11 @@ Options:
     .synopsis: |
       `tlsPort`:
       Overrides the TCP port to be used for secure connections, for development environments only.
+  Transport Layer Security:
+    .specification: [TO3d, RSC18]
+    .synopsis: |
+      `tls`:
+      Disable TLS, for development environments only.
 Push Notifications:
   Activation:
     .specification: [RSH2, RSH3, RSH4, RSH5, RSH6, RSH7, RSH8]
@@ -214,6 +214,11 @@ Realtime:
   Options:
     .synopsis: |
       `ClientOptions` that only apply to Realtime clients.
+    Automatic Connection:
+      .specification: [RTC1b, RTN3, RTL4b1, TO3e]
+      .synopsis: |
+        `autoConnect`:
+        Disable the automatic initiation of a connection when a client instance is instantiated.
     Channel Retry Timeout:
       .specification: [RTL13b, TO3l7]
       .synopsis: |
@@ -225,21 +230,6 @@ Realtime:
       .synopsis: |
         `recover`:
         Attempt to recover/inherit the state of a previous connection.
-    Disable Automatic Connection:
-      .specification: [RTC1b, RTN3, RTL4b1, TO3e]
-      .synopsis: |
-        `autoConnect`:
-        Disable the automatic initiation of a connection when a client instance is instantiated.
-    Disable Message Echoes:
-      .specification: [RTC1a, RTL7f, TO3h]
-      .synopsis: |
-        `echoMessages`:
-        Suppress messages originating from this connection from being echoed back on the same connection.
-    Disable Message Queuing:
-      .specification: [RTL6c2, RTP16, TO3g]
-      .synopsis: |
-        `queueMessages`:
-        Suppress queuing of messages when connection state antipates imminent connection.
     Disconnected Retry Timeout:
       .specification: [TO3l1, RTN14d]
       .synopsis: |
@@ -250,6 +240,16 @@ Realtime:
       .synopsis: |
         `realtimeHost`:
         Override the Realtime endpoint, for development environments only.
+    Message Echoes:
+      .specification: [RTC1a, RTL7f, TO3h]
+      .synopsis: |
+        `echoMessages`:
+        Suppress messages originating from this connection from being echoed back on the same connection.
+    Message Queuing:
+      .specification: [RTL6c2, RTP16, TO3g]
+      .synopsis: |
+        `queueMessages`:
+        Suppress queuing of messages when connection state antipates imminent connection.
     Suspended Retry Timeout:
       .specification: [TO3l2, RTN14e]
       .synopsis: |
@@ -316,17 +316,6 @@ REST:
   Options:
     .synopsis: |
       `ClientOptions` that only apply to REST clients.
-    Disable Idempotent Publishing:
-      .specification: [RSL1k, RTL6a1, TO3n]
-      .synopsis: |
-        `idempotentRestPublishing`:
-        Overrides the client library default, from version 1.2 of the features specification,
-        that makes REST publish operations idempotent.
-    Enable Request Identifiers:
-      .specification: [RSC7c, TO3p]
-      .synopsis: |
-        `addRequestIds`:
-        Adds a query string parameter, based on a source of randomnes, to all REST requests.
     Fallback Retry Timeout:
       .specification: [TO3l10, RSC15f]
       .synopsis: |
@@ -340,6 +329,12 @@ REST:
       .specification: TO3l4
       .synopsis: |
         `httpRequestTimeout`
+    Idempotent Publishing:
+      .specification: [RSL1k, RTL6a1, TO3n]
+      .synopsis: |
+        `idempotentRestPublishing`:
+        Overrides the client library default, from version 1.2 of the features specification,
+        that makes REST publish operations idempotent.
     Maximum HTTP Retry Count:
       .specification: [TO3l5, RSC15a]
       .synopsis: |
@@ -348,3 +343,8 @@ REST:
       .specification: TO3l6
       .synopsis: |
         `httpMaxRetryDuration`
+    Request Identifiers:
+      .specification: [RSC7c, TO3p]
+      .synopsis: |
+        `addRequestIds`:
+        Adds a query string parameter, based on a source of randomnes, to all REST requests.

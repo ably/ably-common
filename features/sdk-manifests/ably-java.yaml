@@ -18,6 +18,8 @@ compliance:
         constructor: [io.ably.lib.types.ClientOptions]
     With Token String:
   Options:
+    Agents:
+      .api: $agents
     Authentication:
       .api: io.ably.lib.rest.Auth#AuthOptions
       Callback:
@@ -38,22 +40,18 @@ compliance:
           - $authParams
       Use Token Authentication:
         .api: $useTokenAuth
+    Binary Protocol:
+      .api: $useBinaryProtocol
     Client Identifier:
       .api: $clientId
     Default Token Parameters:
       .api: $defaultTokenParams
-    Disable Binary Protocol:
-      .api: $useBinaryProtocol
-    Disable Transport Layer Security:
-      .api: $tls
     Environment:
       .api: $environment
     Fallback Hosts:
       .api: $fallbackHosts
     HTTP Connection Open Timeout:
       .api: $httpOpenTimeout
-    Inject Agents:
-      .api: $agents
     Log Handling:
       .api:
         - $logLevel
@@ -64,6 +62,8 @@ compliance:
       .api: $proxy
     TLS Port:
       .api: $tlsPort
+    Transport Layer Security:
+      .api: $tls
   Push Notifications:
     .api: io.ably.lib.push#Push
     Activation:
@@ -87,35 +87,35 @@ compliance:
   Realtime:
     Options:
       .api: io.ably.lib.types#ClientOptions
+      Automatic Connection:
+        .api: $autoConnect
       Channel Retry Timeout:
         .api: $channelRetryTimeout
       Connection Recovery String:
         .api: $recover
-      Disable Automatic Connection:
-        .api: $autoConnect
-      Disable Message Echoes:
-        .api: $echoMessages
-      Disable Message Queuing:
-        .api: $queueMessages
       Host:
         .api: $realtimeHost
+      Message Echoes:
+        .api: $echoMessages
+      Message Queuing:
+        .api: $queueMessages
       Transport Parameters:
         .api: $transportParams
   REST:
     Options:
       .api: io.ably.lib.types#ClientOptions
-      Disable Idempotent Publishing:
-        .api: $idempotentRestPublishing
-      Enable Request Identifiers:
-        .api: $addRequestIds
       Fallback Retry Timeout:
         .api: $fallbackRetryTimeout
       Host:
         .api: $restHost
       HTTP Request Timeout:
         .api: $httpRequestTimeout
+      Idempotent Publishing:
+        .api: $idempotentRestPublishing
       Maximum HTTP Retry Count:
         .api: $httpMaxRetryCount
+      Request Identifiers:
+        .api: $addRequestIds
 variants:
   Android:
     .synopsis: |
