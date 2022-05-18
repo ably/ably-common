@@ -96,7 +96,7 @@ function assertFeatures(canonicalNode, path, manifestNode) {
         throw new Error(`Canonical node is not a Map at path "${path}". Type is "${typeof canonicalNode}", Stringified Value is "${canonicalNode}".`);
       }
       const canonicalValue = canonicalNode.get(key);
-      if (!canonicalNode) {
+      if (canonicalValue === undefined) {
         throw new Error(`Canonical node not found for manifest node at path "${fullPath}".`);
       }
 
