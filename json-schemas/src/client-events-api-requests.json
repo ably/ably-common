@@ -18,11 +18,35 @@
     },
     "headers": {
       "type": "object",
-      "description": "The HTTP headers of the API request. Header names are lower case (e.g. 'accept', 'content-type', 'user-agent', etc.)."
+      "description": "The HTTP headers of the API request. Header names are lower case (e.g. 'accept', 'content-type', 'user-agent', etc.).",
+      "properties": {
+        "ably-agent": {
+          "type": "string",
+          "description": "The Ably-Agent header describing the SDK and runtime environment of the client."
+        },
+        "x-ably-version": {
+          "type": "string",
+          "description": "The Ably API protocol version expected by the client."
+        },
+        "x-geoip": {
+          "type": "string",
+          "description": "Geographic information related to the detected IP address of the client formatted as '<country-code>,<region>,<latitude>,<longitude>'"
+        },
+        "x-request-start": {
+          "type": "string",
+          "description": "The time the request was received by Ably's routing layer, represented as the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC"
+        }
+      }
     },
     "query": {
       "type": "object",
-      "description": "The parsed query component of the API request URL (e.g. {\"format\":\"msgpack\"})."
+      "description": "The parsed query component of the API request URL (e.g. {\"format\":\"msgpack\"}).",
+      "properties": {
+        "format": {
+          "type": "string",
+          "description": "The format used to encode protocol messages. Either 'json' or 'msgpack'."
+        }
+      }
     },
     "path": {
       "type": "string",
