@@ -71,6 +71,19 @@ compliance:
         - $activate
         - $deactivate
       .variants: Android
+    Administration:
+      .api: io.ably.lib.push.PushBase#Admin
+      Publish:
+        .api:
+          - arguments:
+              - io.ably.lib.types.Param[]
+              - com.google.gson.JsonObject
+            identifier: $publish
+          - arguments:
+              - io.ably.lib.types.Param[]
+              - com.google.gson.JsonObject
+              - io.ably.lib.realtime.CompletionListener
+            identifier: $publishAsync
   Realtime:
     Options:
       .api: io.ably.lib.types#ClientOptions

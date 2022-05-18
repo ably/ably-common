@@ -64,32 +64,40 @@ function matchSmithyShapeIdentifier(value) {
   return found;
 }
 
+const CONSTRUCTOR_KEY = 'constructor';
+const IDENTIFIER_KEY = 'identifier';
+const ARGUMENTS_KEY = 'arguments';
+const IDENTITY_TRANSFORM = (value) => value;
+
 class ApiDefinition {
   constructor(value) {
     if (value instanceof String || typeof value === 'string') {
+      // shorter form of the longer form (a single IDENTIFIER_KEY)
       this.shapeIdentifier = matchSmithyShapeIdentifier(value);
       return; // Success constructing from a value of type string
     }
 
     if (value instanceof Map) {
-      let found = false;
-      value.forEach((mapValue, mapKey) => {
-        switch (mapKey) {
-          case 'constructor':
-            // TODO work on the naming here, as 'constructor' is not a concept in the Smithy model.
-            this.shapeIdentifier = 'constructor';
-            this.arguments = transformStrings(mapValue, (stringValue) => stringValue);
-            found = true;
-            break;
+      if (value.size < 1) {
+        throw new Error('Expected a map with at least one entry.');
+      }
+      const conformedKeySet = Array.from(value.keys()).sort().join(',');
+      switch (conformedKeySet) {
+        case CONSTRUCTOR_KEY:
+          // TODO work on the naming here, as 'constructor' is not a concept in the Smithy model.
+          this.shapeIdentifier = 'constructor';
+          this.arguments = transformStrings(value.get(CONSTRUCTOR_KEY), IDENTITY_TRANSFORM);
+          break;
 
-          default:
-            throw new Error(`Property key '${mapKey}' is not recognised.`);
-        }
-      });
-      if (!found) {
-        // In future we'll probably expand this map to support other properties.
-        // But, for now, it's only used to describe constructors.
-        throw new Error('Propery describing constructor not found.');
+        case `${ARGUMENTS_KEY},${IDENTIFIER_KEY}`:
+          this.arguments = transformStrings(value.get(ARGUMENTS_KEY), IDENTITY_TRANSFORM);
+        // eslint-disable-next-line no-fallthrough
+        case IDENTIFIER_KEY:
+          this.shapeIdentifier = matchSmithyShapeIdentifier(value.get(IDENTIFIER_KEY));
+          break;
+
+        default:
+          throw new Error(`Conformed key set pattern "${conformedKeySet}" not recognised.`);
       }
       return; // Success constructing from a node of type Map
     }
@@ -109,7 +117,7 @@ class Properties {
         switch (name) {
           case 'api_documentation':
             // used in the canonical features list
-            this.apiDocumentation = transformString(value, (stringValue) => stringValue);
+            this.apiDocumentation = transformString(value, IDENTITY_TRANSFORM);
             break;
 
           case 'documentation':
@@ -124,7 +132,7 @@ class Properties {
 
           case 'synopsis':
             // used in the canonical features list
-            this.synopsis = transformString(value, (stringValue) => stringValue);
+            this.synopsis = transformString(value, IDENTITY_TRANSFORM);
             break;
 
           case 'api':
@@ -134,7 +142,7 @@ class Properties {
 
           case 'variants':
             // used in the SDK manifests
-            this.variants = transformStrings(value, (stringValue) => stringValue);
+            this.variants = transformStrings(value, IDENTITY_TRANSFORM);
             break;
 
           default:
