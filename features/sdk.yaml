@@ -19,9 +19,12 @@ Client Instance Creation:
   .synopsis: |
     An SDK announcing support for any of these construction inputs must support those
     inputs for all client types it offers.
-  With API Key:
   With Client Options:
-  With Token String:
+  With String:
+    .specification: RSC1a
+    .synopsis: |
+      Where that string is treated as an API key if it includes a ':' (colon) delimiter,
+      otherwise it is treated as a token string.
 Options:
   .synopsis: |
     `ClientOptions` that apply to both client types (REST and Realtime).
