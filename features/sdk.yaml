@@ -323,7 +323,6 @@ REST:
     Release:
       .specification: [RSN4, RTS4]
       .synopsis: Free up resources consumed by a local channel instance.
-  Device:
   Options:
     .synopsis: |
       `ClientOptions` that only apply to REST clients.
