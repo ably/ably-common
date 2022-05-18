@@ -45,10 +45,8 @@ const parserOptions = {
 const object = YAML.parse(yamlSource, parserOptions);
 const sdkManifests = new Map();
 sdkManifestSources.forEach((sdkManifestSource, sdkManifestSuffix) => {
-  sdkManifests.set(
-    sdkManifestSuffix,
-    new Manifest(YAML.parse(sdkManifestSource, parserOptions)),
-  );
+  const manifest = new Manifest(YAML.parse(sdkManifestSource, parserOptions), object);
+  sdkManifests.set(sdkManifestSuffix, manifest);
 });
 
 // First Pass: Measure depth.
