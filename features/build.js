@@ -225,8 +225,10 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
               let colourClass = 'bg-red-400';
               let svg = crossSvg;
               if (compliance) {
-                const { variants } = compliance;
-                if (variants && manifest.isPartialVariantsCoverage(variants)) {
+                const { variants, notes } = compliance;
+                const hasPartialSupportForVariants = variants && manifest.isPartialVariantsCoverage(variants);
+                const hasPartialSupportNotes = !!notes;
+                if (hasPartialSupportForVariants || hasPartialSupportNotes) {
                   colourClass = 'bg-amber-400';
                   svg = partialSvg;
                 } else {

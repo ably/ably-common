@@ -1,5 +1,19 @@
 %YAML 1.2
 ---
+Agent Identifier:
+  .specification: RSC7d
+  .synopsis: |
+    Sends an `Ably-Agent` HTTP header for REST and Realtime Websocket connections,
+    identifying the library version,
+    as well as relevant information describing any underlying layers and the client platform.
+  Operating System:
+    .synopsis: |
+      Includes a product component indicating the runtime OS type and version.
+  Runtime:
+    .synopsis: |
+      Includes a product component indicating the type of runtime, as discrete from the OS type.
+      This does not always include a version (e.g. for `browser` runtime emitted by `ably-js`
+      and the `uwp` runtime emitted by `ably-dotnet`).
 Client Instance Creation:
   .specification: RSC1
   .synopsis: |
@@ -266,12 +280,6 @@ Realtime:
 REST:
   .synopsis: |
     Functionality offered by all Ably client instances (REST and Realtime).
-  Agent Identifier:
-    .specification: RSC7d
-    .synopsis: |
-      Sends an `Ably-Agent` HTTP header for REST and Realtime Websocket connections,
-      identifying the library version,
-      as well as relevant information describing any underlying layers and the client platform.
   Authentication:
     .specification: RSC5
     Authorize:
