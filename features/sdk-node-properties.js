@@ -41,6 +41,15 @@ function createMapOfSmithyShapeIdentifiers() {
   return new Map([
     ['shape_id_member', new RegExp(`^\\$${identifier}$`)],
     ['absolute_root_shape_id', new RegExp(`^${namespace}#${identifier}$`)],
+
+    // Our 'shape_id' is intentionally less inclusive than that defined in
+    // Smithy's version 1.0 Shape ID ABNF. We have ignored the intermediate
+    // 'root_shape_id', ignoring the fact that it can be either an
+    // 'absolute_root_shape_id' or an 'identifier', insisting that we expect
+    // to see a namespace. We can always consider opening this up in future
+    // if we find that some SDK manifests need to have identifiers at root
+    // which don't have a namespace component.
+    ['shape_id', new RegExp(`^${namespace}#${identifier}\\$${identifier}$`)],
   ]);
 }
 

@@ -104,6 +104,8 @@ compliance:
       Transport Parameters:
         .api: $transportParams
   REST:
+    Authentication:
+      .api: io.ably.lib.rest#AblyBase$auth
     Options:
       .api: io.ably.lib.types#ClientOptions
       Fallback Retry Timeout:
