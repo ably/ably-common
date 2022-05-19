@@ -17,7 +17,7 @@ The goal is to capture API shape, within a given SDK's API surface area, which m
   - class/interface name
   - method/function or property/field name
   - method/function argument types
-- Excluding information which is superfluous to this goal - that means information which describe details which are not required to navigate to the access point for the implemented feature - e.g.:
+- Excluding information which is superfluous to this goal - that means information which describes details which are not required to navigate to the access point for the implemented feature - e.g.:
   - method/function return types
   - method/function argument names
   - property/field types
