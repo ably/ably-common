@@ -75,6 +75,51 @@ compliance:
       .variants: Android
     Administration:
       .api: io.ably.lib.push.PushBase#Admin
+      Channel Subscription:
+        .api: $channelSubscriptions
+        List:
+          .api:
+            - arguments:
+                - io.ably.lib.types.Param[]
+              identifier: $list
+            - arguments:
+                - io.ably.lib.types.Param[]
+                - io.ably.lib.types.Callback<io.ably.lib.types.AsyncPaginatedResult<io.ably.lib.push.PushBase.ChannelSubscription>>
+              identifier: $listAsync
+        List Channels:
+          .api:
+            - arguments:
+                - io.ably.lib.types.Param[]
+              identifier: $listChannels
+            - arguments:
+                - io.ably.lib.types.Param[]
+                - io.ably.lib.types.Callback<io.ably.lib.types.AsyncPaginatedResult<java.lang.String>>
+              identifier: $listChannelsAsync
+        Remove:
+          .api:
+            - arguments:
+                - io.ably.lib.push.PushBase.ChannelSubscription
+              identifier: $remove
+            - arguments:
+                - io.ably.lib.push.PushBase.ChannelSubscription
+                - io.ably.lib.realtime.CompletionListener
+              identifier: $removeAsync
+            - arguments:
+                - io.ably.lib.types.Param[]
+              identifier: $removeWhere
+            - arguments:
+                - io.ably.lib.types.Param[]
+                - io.ably.lib.realtime.CompletionListener
+              identifier: $removeWhereAsync
+        Save:
+          .api:
+            - arguments:
+                - io.ably.lib.push.PushBase.ChannelSubscription
+              identifier: $save
+            - arguments:
+                - io.ably.lib.push.PushBase.ChannelSubscription
+                - io.ably.lib.types.Callback<io.ably.lib.push.PushBase.ChannelSubscription>
+              identifier: $saveAsync
       Device Registration:
         .api: $deviceRegistrations
         Get:
