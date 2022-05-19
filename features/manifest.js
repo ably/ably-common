@@ -29,12 +29,14 @@ class Manifest {
     featurePath.forEach((featurePathComponent) => {
       if (node) {
         node = node.get(featurePathComponent);
-        if (node && !(node instanceof Map)) {
-          throw new Error(`manifest node with key '${featurePathComponent}' should be a Map but it is of type '${typeof node}'.`);
+        if (node !== undefined) {
+          if (node !== null && !(node instanceof Map)) {
+            throw new Error(`manifest node with key '${featurePathComponent}' should be a Map but it is of type '${typeof node}'.`);
+          }
         }
       }
     });
-    if (!node) {
+    if (node === undefined) {
       return null; // not found
     }
     return new Properties(node);

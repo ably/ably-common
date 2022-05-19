@@ -184,6 +184,9 @@ compliance:
               - io.ably.lib.realtime.CompletionListener
             identifier: $publishAsync
   Realtime:
+    Channel:
+      Subscription:
+        Deltas:
     Options:
       .api: io.ably.lib.types#ClientOptions
       Automatic Connection:
