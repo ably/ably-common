@@ -15,10 +15,10 @@ compliance:
       - io.ably.lib.rest#AblyRest
     With Client Options:
       .api:
-        constructor: [io.ably.lib.types.ClientOptions]
+        constructor: io.ably.lib.types.ClientOptions
     With String:
       .api:
-        constructor: [java.lang.String]
+        constructor: java.lang.String
   Options:
     Agents:
       .api: $agents
@@ -79,8 +79,7 @@ compliance:
         .api: $channelSubscriptions
         List:
           .api:
-            - arguments:
-                - io.ably.lib.types.Param[]
+            - arguments: io.ably.lib.types.Param[]
               identifier: $list
             - arguments:
                 - io.ably.lib.types.Param[]
@@ -88,8 +87,7 @@ compliance:
               identifier: $listAsync
         List Channels:
           .api:
-            - arguments:
-                - io.ably.lib.types.Param[]
+            - arguments: io.ably.lib.types.Param[]
               identifier: $listChannels
             - arguments:
                 - io.ably.lib.types.Param[]
@@ -97,15 +95,13 @@ compliance:
               identifier: $listChannelsAsync
         Remove:
           .api:
-            - arguments:
-                - io.ably.lib.push.PushBase.ChannelSubscription
+            - arguments: io.ably.lib.push.PushBase.ChannelSubscription
               identifier: $remove
             - arguments:
                 - io.ably.lib.push.PushBase.ChannelSubscription
                 - io.ably.lib.realtime.CompletionListener
               identifier: $removeAsync
-            - arguments:
-                - io.ably.lib.types.Param[]
+            - arguments: io.ably.lib.types.Param[]
               identifier: $removeWhere
             - arguments:
                 - io.ably.lib.types.Param[]
@@ -113,8 +109,7 @@ compliance:
               identifier: $removeWhereAsync
         Save:
           .api:
-            - arguments:
-                - io.ably.lib.push.PushBase.ChannelSubscription
+            - arguments: io.ably.lib.push.PushBase.ChannelSubscription
               identifier: $save
             - arguments:
                 - io.ably.lib.push.PushBase.ChannelSubscription
@@ -124,8 +119,7 @@ compliance:
         .api: $deviceRegistrations
         Get:
           .api:
-            - arguments:
-                - java.lang.String
+            - arguments: java.lang.String
               identifier: $get
             - arguments:
                 - java.lang.String
@@ -133,8 +127,7 @@ compliance:
               identifier: $getAsync
         List:
           .api:
-            - arguments:
-                - io.ably.lib.types.Param[]
+            - arguments: io.ably.lib.types.Param[]
               identifier: $list
             - arguments:
                 - io.ably.lib.types.Param[]
@@ -142,11 +135,9 @@ compliance:
               identifier: $listAsync
         Remove:
           .api:
-            - arguments:
-                - io.ably.lib.rest.DeviceDetails
+            - arguments: io.ably.lib.rest.DeviceDetails
               identifier: $remove
-            - arguments:
-                - java.lang.String
+            - arguments: java.lang.String
               identifier: $remove
             - arguments:
                 - io.ably.lib.rest.DeviceDetails
@@ -156,8 +147,7 @@ compliance:
                 - java.lang.String
                 - io.ably.lib.realtime.CompletionListener
               identifier: $removeAsync
-            - arguments:
-                - io.ably.lib.types.Param[]
+            - arguments: io.ably.lib.types.Param[]
               identifier: $removeWhere
             - arguments:
                 - io.ably.lib.types.Param[]
@@ -165,8 +155,7 @@ compliance:
               identifier: $removeWhereAsync
         Save:
           .api:
-            - arguments:
-                - io.ably.lib.rest.DeviceDetails
+            - arguments: io.ably.lib.rest.DeviceDetails
               identifier: $save
             - arguments:
                 - io.ably.lib.rest.DeviceDetails
