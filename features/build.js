@@ -159,7 +159,7 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
           console.log(`${consoleIndent}${key}:`);
           const verticalBordersStyle = 'border-slate-300 border-b-2';
           const commonCellStyle = `${verticalBordersStyle} border-r-2`;
-          writer.class('align-middle');
+          writer.class('align-middle tooltip-container');
           writer.row((rowWriter) => {
             // Indent using empty cells
             for (let i = 1; i <= level; i += 1) {
@@ -174,7 +174,7 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
             if (cellCount > 1) {
               rowWriter.columnSpan(cellCount);
             }
-            rowWriter.class(`pr-3 whitespace-nowrap tooltip-container ${commonCellStyle}`);
+            rowWriter.class(`pr-3 whitespace-nowrap ${commonCellStyle}`);
             rowWriter.cell((cellContentWriter) => {
               if (level > 0) {
                 const tip = `<strong>${escape(parentKeys.join(': '))}</strong>: ${escape(key)}`;
