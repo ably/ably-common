@@ -244,7 +244,40 @@ Realtime:
     Additional functionality offered by Ably client instances that offer Realtime connectivity.
 
   Channel:
-    Subscription:
+    Attach:
+      .specification: [RTL4, RTL5]
+      .synopsis: |
+        Methods to attach and detach channels.
+    Presence:
+      Enter:
+        .specification: [RTP8, RTP10]
+        .synopsis: |
+          Methods to enter and leave presence on channels for this client.
+        Client:
+          .synopsis: |
+            Methods to enter and leave presence for a given `clientId`,
+            not necessarily the id for this client.
+      Get:
+        .specification: RTP11
+        .synopsis: |
+          Obtain a list of the current members of the channel, as a callback.
+          Optional parameters include `waitForSync` (defaults to `true`), `clientId` and `connectionId`.
+      History:
+        .specification: RTP12
+      Subscribe:
+        .specification: [RTP6, RTP7]
+        .synopsis: |
+          Methods to subscribe and unsubscribe for presence events on channels for this client.
+      Update:
+        .specification: RTP9
+        Client:
+          .synopsis: |
+            Method to update presence data and/or extras for a `clientId`,
+            not necessarily the id for this client.
+    Publish:
+      .specification: RTL6
+    Subscribe:
+      .specification: [RTL7, RTL8]
       Deltas:
         .specification: [RTL18, RTL19, RTL20, PC3, TM2i]
         .synopsis: |
@@ -308,9 +341,6 @@ Realtime:
       .synopsis: |
         `transportParams`:
         Sent in query string when initiating the Realtime connection.
-  Presence:
-    Subscription:
-      .specification: [RTP6, RTP7]
 REST:
   .synopsis: |
     Functionality offered by all Ably client instances (REST and Realtime).

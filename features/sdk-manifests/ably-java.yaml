@@ -174,7 +174,52 @@ compliance:
             identifier: $publishAsync
   Realtime:
     Channel:
-      Subscription:
+      .api: io.ably.lib.realtime#Channel
+      Attach:
+      Presence:
+        .api: io.ably.lib.realtime#Presence
+        Get:
+          .api:
+            - arguments: io.ably.lib.types.Param...
+              identifier: $get
+            - arguments: boolean
+              identifier: $get
+            - arguments: [java.lang.String, boolean]
+              identifier: $get
+        Subscribe:
+          .api:
+            - arguments: io.ably.lib.realtime.Presence.PresenceListener
+              identifier: $subscribe
+            - arguments:
+                - io.ably.lib.realtime.Presence.PresenceListener
+                - io.ably.lib.realtime.CompletionListener
+              identifier: $subscribe
+            - arguments:
+                - io.ably.lib.types.PresenceMessage.Action
+                - io.ably.lib.realtime.Presence.PresenceListener
+                - io.ably.lib.realtime.CompletionListener
+              identifier: $subscribe
+            - arguments:
+                - java.util.EnumSet<io.ably.lib.types.PresenceMessage.Action>
+                - io.ably.lib.realtime.Presence.PresenceListener
+                - io.ably.lib.realtime.CompletionListener
+              identifier: $subscribe
+            - arguments:
+                - java.util.EnumSet<io.ably.lib.types.PresenceMessage.Action>
+                - io.ably.lib.realtime.Presence.PresenceListener
+              identifier: $subscribe
+            - arguments: io.ably.lib.realtime.Presence.PresenceListener
+              identifier: $unsubscribe
+            - arguments:
+                - io.ably.lib.types.PresenceMessage.Action
+                - io.ably.lib.realtime.Presence.PresenceListener
+              identifier: $unsubscribe
+            - arguments:
+                - java.util.EnumSet<io.ably.lib.types.PresenceMessage.Action>
+                - io.ably.lib.realtime.Presence.PresenceListener
+              identifier: $unsubscribe
+            - $unsubscribe
+      Subscribe:
         Deltas:
     Options:
       .api: io.ably.lib.types#ClientOptions
