@@ -199,8 +199,8 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
               let empty = true;
               if (documentationUrls) {
                 cellContentWriter.write(documentationUrls
-                  .map((element) => `<a href="${element}" target="_blank" rel="noopener">docs</a>`)
-                  .join(', '));
+                  .map((element) => `<a class="btn btn-blue" href="${element}" target="_blank" rel="noopener">docs</a>`)
+                  .join(' '));
                 empty = false;
               }
               if (synopsis) {
