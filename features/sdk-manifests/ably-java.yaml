@@ -75,6 +75,58 @@ compliance:
       .variants: Android
     Administration:
       .api: io.ably.lib.push.PushBase#Admin
+      Device Registration:
+        .api: $deviceRegistrations
+        Get:
+          .api:
+            - arguments:
+                - java.lang.String
+              identifier: $get
+            - arguments:
+                - java.lang.String
+                - io.ably.lib.types.Callback<io.ably.lib.rest.DeviceDetails>
+              identifier: $getAsync
+        List:
+          .api:
+            - arguments:
+                - io.ably.lib.types.Param[]
+              identifier: $list
+            - arguments:
+                - io.ably.lib.types.Param[]
+                - io.ably.lib.types.Callback<io.ably.lib.types.AsyncPaginatedResult<io.ably.lib.rest.DeviceDetails>>
+              identifier: $listAsync
+        Remove:
+          .api:
+            - arguments:
+                - io.ably.lib.rest.DeviceDetails
+              identifier: $remove
+            - arguments:
+                - java.lang.String
+              identifier: $remove
+            - arguments:
+                - io.ably.lib.rest.DeviceDetails
+                - io.ably.lib.realtime.CompletionListener
+              identifier: $removeAsync
+            - arguments:
+                - java.lang.String
+                - io.ably.lib.realtime.CompletionListener
+              identifier: $removeAsync
+            - arguments:
+                - io.ably.lib.types.Param[]
+              identifier: $removeWhere
+            - arguments:
+                - io.ably.lib.types.Param[]
+                - io.ably.lib.realtime.CompletionListener
+              identifier: $removeWhereAsync
+        Save:
+          .api:
+            - arguments:
+                - io.ably.lib.rest.DeviceDetails
+              identifier: $save
+            - arguments:
+                - io.ably.lib.rest.DeviceDetails
+                - io.ably.lib.types.Callback<io.ably.lib.rest.DeviceDetails>
+              identifier: $saveAsync
       Publish:
         .api:
           - arguments:

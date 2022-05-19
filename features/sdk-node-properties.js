@@ -68,7 +68,7 @@ function matchSmithyShapeIdentifier(value) {
     }
   });
   if (!found) {
-    throw new Error(`Smithy shape identifier not found for value "${value}".`);
+    throw new Error(`Smithy shape identifier form not found for value "${value}".`);
   }
   return found;
 }

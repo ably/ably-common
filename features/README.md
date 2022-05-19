@@ -3,6 +3,25 @@
 ## Feature Node Names
 
 - Should not start with a verb
+- Should use plural form only if it's strictly necessary - i.e.:
+  - use plural form when the concept being captured is _always_ dealing with many things - e.g. `Options` and `Options: Agents`
+  - use plural form when the plurarily is utterly baked into the naming of the primary type involved - e.g. `Options: Token Details`
+  - do not use plural form when the feature links to a primary type and includes methods or properties that involve with that type in both singular and plural contexts - e.g. `Push Notifications: Administration: Device Registration`
+
+## Scope of SDK Manifest Coverage
+
+The goal is to capture API shape, within a given SDK's API surface area, which means:
+
+- Capturing all of the information needed to navigate to the class, interface, method/function or property/field which provides access to the implemented feature - i.e.:
+  - namespace
+  - class/interface name
+  - method/function or property/field name
+  - method/function argument types
+- Excluding information which is superfluous to this goal - that means information which describe details which are not required to navigate to the access point for the implemented feature - e.g.:
+  - method/function return types
+  - method/function argument names
+  - property/field types
+  - thrown error/exception type(s)
 
 ## Specification Point Adherence Tracking
 
