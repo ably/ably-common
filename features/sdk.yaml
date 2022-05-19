@@ -205,12 +205,29 @@ Push Notifications:
       .specification: RSH1b
       Get:
         .specification: RSH1b1
+        .synopsis: |
+          Get details from a registered device.
+          Obtain the details for a device registered for receiving push registrations,
+          using REST API `/push/deviceRegistrations/<deviceId>` (`GET`).
       List:
         .specification: RSH1b2
+        .synopsis: |
+          List registered devices.
+          Obtain the details for devices registered for receiving push registrations,
+          using REST API `/push/deviceRegistrations` (`GET`).
       Remove:
-        .specification: [RSH1b4, RSH1b4]
+        .specification: [RSH1b4, RSH1b5]
+        .synopsis: |
+          Unregister one or more devices for push notifications,
+          using REST API `/push/deviceRegistrations` (`DELETE`).
+          For a single device the REST API endpoint is suffixed `/<deviceId>` (`remove`).
+          Alternatively query parameters are used to find a device or devices
+          by `clientId` (`removeWhere`).
       Save:
         .specification: RSH1b3
+        .synopsis: |
+          Update a device registration, as an upsert,
+          using REST API `/push/deviceRegistrations/<deviceId>` (`PUT`).
     Publish:
       .documentation:
         - https://ably.com/docs/rest/push#publish
