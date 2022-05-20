@@ -17,6 +17,25 @@ It does, however, aim to expand on concepts and append context - with the hope t
 
 ## Future Direction
 
+### Future Direction for the SDK Manifests
+
+As mentioned in [the Introduction to this document](#introduction),
+[the manifest source files]((sdk-manifests/))
+are only in this repository right now on a temporary basis while we incubate this prototype.
+
+They will be moved to the SDK repositories to which they pertain, to be managed as source code in that location, allowing for them to be atomically evolved alongside the interface and implementation source code that they document. At that point, it is anticipated that the real magic can start...
+
+#### Per-SDK Magic
+
+- **Key Information, Front and Centre**: standard Git tools will help us to understand the evolution of the SDK from a customer-focussed perspective, by simply `diff`'ing this single file
+- **Validation Against Source Code Interfaces**: either using runtime-build reflection or source-code annotation we can evolve language-specific tools that validate the Smithy-formatted `.api` nodes against what we're actually delivering to customers
+
+#### Estate-wide Magic
+
+- **Customer Facing Feature Matrix**: We have the information to be able to contribute, with automation, to the contents of the [Ably Feature Support Matrix](https://ably.com/download/sdk-feature-support-matrix):
+  - built using a GitHub workflow hosted in a brand new intermediary repository, generating an artifact that can be consumed by the tools used by our developer education and documentation team (probably a public [npm](https://www.npmjs.com/) package)
+- **Full Feature Compliance Matrix**: Primarily for use by the Ably SDK Team, but (as with everything we do, [open for all](https://ably.com/blog/ably-values)) available to be viewed in the public domain. Likely to be an evolution of what you see assembled by [`build.js`](build.js) and uploaded by [the assemble workflow](../workflows/assemble.yml) to `sdk.ably.com`. Providing complete visibility over what features each SDK implements at an appropriate level of granularity.
+
 ### Future Direction for the Client Library Features Specification
 
 This single source file will remain our reference for:
