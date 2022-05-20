@@ -76,6 +76,23 @@ This will start with a **well-defined release procedure**:
 - Stop using the entire contents of this repository downstreeam via a Git submodule in SDK repositories for test fixture purposes (e.g. [see `ably/ably-java`](https://github.com/ably/ably-java/blob/main/.gitmodules)), instead move to a model where SDKs consume those test fixtures from a 'proper' package management / distribution point (to which this repository will need to start publishing as part of this new release procedure).
 - Publish the canonical feature list to one or more package management / distribution points, for downstream consumption by SDK repositories as well as other systems at Ably (i.e. developer education / documentation), as part of this new release procedure.
 
+## Future Direction for Specification Point Adherence Tracking
+
+We have
+[this Google Sheets document](https://docs.google.com/spreadsheets/d/1ZbAfImxRLRKZNe4KPX7b_0BVVI-qyqnvbAco5TFWSQU/edit?usp=sharing)
+which has been used at Ably, by client library SDK developers,
+to indicate adherence to individual
+[feature specification points](https://docs.ably.com/client-lib-development-guide/features/)
+by their
+SDK source codebase.
+_Request permission from your Manager if you would like access to this spreadsheet._
+
+The detail captured in that spreadsheet is an important source of information which should be able to help us understand the level of features specification compliance across our SDKs. As such, it should be considered a valuable source of truth when it comes to working out what features are implemented across our SDKs.
+
+Additionally, it is very likely that we will continue to want to track feature specification point adherence, at that level of fine granularity, going forwards.
+
+What is clear, however, is that a Google Sheets document is probably not the appropriate venue to continue tracking this information. Instead, the currently anticipated solution is that we export the information per-SDK from that spreadsheet and represent it in a simple format as a 'feature specification point adherence checklist' (/ manifest) in each SDK source code repository (CSV, YAML or some other logical textual data format). This would be instantiated via an initial snapshot process, after which it could be evolved atomically as an additional part of the source code of that SDK, with the spreadsheet becoming obsolete once all SDKs have been exported.
+
 ## Feature Node Names
 
 The names of feature nodes (those not prefixed with a dot '`.`' to denote them as properties) in [the canonical feature list](sdk.yaml) should conform to the following requirements:
@@ -103,23 +120,6 @@ The goal is to capture API shape, within a given SDK's API surface area, which m
   - method/function argument names
   - property/field types
   - thrown error/exception type(s)
-
-## Specification Point Adherence Tracking
-
-We have
-[this Google Sheets document](https://docs.google.com/spreadsheets/d/1ZbAfImxRLRKZNe4KPX7b_0BVVI-qyqnvbAco5TFWSQU/edit?usp=sharing)
-which has been used at Ably, by client library SDK developers,
-to indicate adherence to individual
-[feature specification points](https://docs.ably.com/client-lib-development-guide/features/)
-by their
-SDK source codebase.
-_Request permission from your Manager if you would like access to this spreadsheet._
-
-The detail captured in that spreadsheet is an important source of information which should be able to help us understand the level of features specification compliance across our SDKs. As such, it should be considered a valuable source of truth when it comes to working out what features are implemented across our SDKs.
-
-Additionally, it is very likely that we will continue to want to track feature specification point adherence, at that level of fine granularity, going forwards.
-
-What is clear, however, is that a Google Sheets document is probably not the appropriate venue to continue tracking this information. Instead, the currently anticipated solution is that we export the information per-SDK from that spreadsheet and represent it in a simple format as a 'feature specification point adherence checklist' (/ manifest) in each SDK source code repository (CSV, YAML or some other logical textual data format). This would be instantiated via an initial snapshot process, after which it could be evolved atomically as an additional part of the source code of that SDK, with the spreadsheet becoming obsolete once all SDKs have been exported.
 
 ## Disincluded Features
 
