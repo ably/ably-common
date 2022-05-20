@@ -285,8 +285,6 @@ Realtime:
           SDKs may choose to offer this only if a plugin is supplied via client options
           (optional functionality).
 
-  # TODO Work out how to express what's going on here. This set of Options for Realtime
-  # inherit the set of Options for REST.
   # TODO (DF1a) connectionStateTtl [ably-java]
   # TODO (DF1b) realtimeRequestTimeout [ably-java]
   # TODO asyncHttpThreadpoolSize [ably-java]
