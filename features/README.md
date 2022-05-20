@@ -1,5 +1,17 @@
 # Ably Features
 
+## Introduction
+
+The data and code files in this folder are incubating as a prototype, hopefully the eventually-accepted foundations, of Ably's approach to SDK feature tracking.
+
+These are the pivotal components:
+
+| Component | Purpose |
+| ---- | ------- |
+| [`sdk.yaml`](sdk.yaml) | The canonical list of features that Ably SDKs can support, represented as a tree. |
+| [`sdk-manifests/`](features/) | Temporary location (while we prototype) for manifests, per SDK source code repository, declaring what features that SDK supports. These files will ultimately be moved to be managed as peer-level source code in each SDK's source code repository. |
+| [`build.js`](build.js) | Proof-of-concept build tool. The primary purposes of this program, for the time being, are to: (1) validate the structure of data files - canonical feature list and SDK manifest(s); and (2) render a view of the data to enhance understanding and demonstrate utility, both present and potential. |
+
 ## Feature Node Names
 
 - Should not start with a verb
