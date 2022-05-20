@@ -15,6 +15,27 @@ These are the pivotal components:
 This document aims to not duplicate information that readers/reviewers can gain for themselves by inspecting the source code of the components described in the table above.
 It does, however, aim to expand on concepts and append context - with the hope that this will help readers/reviewers understand the reasons behind design choices made.
 
+## Future Direction
+
+### Future Direction for the Client Library Features Specification
+
+This single source file will remain our reference for:
+
+- protocol details, including interactions with SDK state and behaviours
+- SDK implementation details
+- conformed naming for types and their members
+- testing requirements
+
+Currently:
+
+- Source location: [`features.textile` in `ably/docs`](https://github.com/ably/docs/blob/main/content/client-lib-development-guide/features.textile)
+- Backlog of tasks: [issues in `ably/docs`](https://github.com/ably/docs/issues?q=is%3Aopen+is%3Aissue+label%3Aclient-lib-spec)
+- Rendered views:
+  - Preview: [docs.ably.com](https://docs.ably.com/client-lib-development-guide/features/)
+  - Published: [ably.com/docs](https://ably.com/docs/client-lib-development-guide/features)
+
+Going forwards, it is anticipated that this source file will move from `ably/docs` to this repository (`ably/ably-common`) so that it can more logically be managed alongside other efforts to catalogue and track SDK features.
+
 ## Feature Node Names
 
 The names of feature nodes (those not prefixed with a dot '`.`' to denote them as properties) in [the canonical feature list](sdk.yaml) should conform to the following requirements:
