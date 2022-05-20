@@ -64,6 +64,18 @@ Going forwards, it is anticipated that this source file will move from `ably/doc
 
 It will probably remain in textile format, for various reasons, at least in the short to medium term.
 
+### Future Direction for This Repository
+
+Based on the future directions laid out above for [SDK Manifests](#future-direction-for-the-sdk-manifests) and [the Client Library Features Specification](#future-direction-for-the-client-library-features-specification), there will be a need to change the way we view and treat this source code repository.
+
+This will start with a **well-defined release procedure**:
+
+- Add versioning, _strictly_ conforming to [the requirments Semantic Versioning](https://semver.org/), starting at version `1.2.0` (our epoch), indicating:
+  - the version of the canonical feature list
+  - the version of the Ably protocol for both REST and Realtime operations against the service
+- Stop using the entire contents of this repository downstreeam via a Git submodule in SDK repositories for test fixture purposes (e.g. [see `ably/ably-java`](https://github.com/ably/ably-java/blob/main/.gitmodules)), instead move to a model where SDKs consume those test fixtures from a 'proper' package management / distribution point (to which this repository will need to start publishing as part of this new release procedure).
+- Publish the canonical feature list to one or more package management / distribution points, for downstream consumption by SDK repositories as well as other systems at Ably (i.e. developer education / documentation), as part of this new release procedure.
+
 ## Feature Node Names
 
 The names of feature nodes (those not prefixed with a dot '`.`' to denote them as properties) in [the canonical feature list](sdk.yaml) should conform to the following requirements:
