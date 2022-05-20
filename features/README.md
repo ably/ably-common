@@ -23,7 +23,11 @@ As mentioned in [the Introduction to this document](#introduction),
 [the manifest source files]((sdk-manifests/))
 are only in this repository right now on a temporary basis while we incubate this prototype.
 
-They will be moved to the SDK repositories to which they pertain, to be managed as source code in that location, allowing for them to be atomically evolved alongside the interface and implementation source code that they document. At that point, it is anticipated that the real magic can start...
+They will be moved to the SDK repositories to which they pertain, to be managed as source code in that location, allowing for them to be atomically evolved alongside the interface and implementation source code that they document.
+
+Once they've moved, they will be treated as first-class citizens in their SDK repository homes. It will be a requirement that we run checks in CI, within each SDK repository, that validate that SDK's manifest against the canonical feature list - hence the `common-version` root node in manifests, as this will need to be anchored to allow the content of _this_ repository (`ably/ably-common`) to evolve independently.
+
+:magic_wand: At that point, it is anticipated that the real magic can start...
 
 #### Per-SDK Magic
 
