@@ -14,11 +14,16 @@ These are the pivotal components:
 
 ## Feature Node Names
 
-- Should not start with a verb
-- Should use plural form only if it's strictly necessary - i.e.:
+The names of feature nodes (those not prefixed with a dot '`.`' to denote them as properties) in [the canonical feature list](sdk.yaml) should conform to the following requirements:
+
+- not use abbreviations
+- not start with a verb
+- use plural form only if it's strictly necessary - i.e.:
   - use plural form when the concept being captured is _always_ dealing with many things - e.g. `Options` and `Options: Agents`
   - use plural form when the plurarily is utterly baked into the naming of the primary type involved - e.g. `Options: Token Details`
   - do not use plural form when the feature links to a primary type and includes methods or properties that involve with that type in both singular and plural contexts - e.g. `Push Notifications: Administration: Device Registration`
+
+This is so that we keep a consistent 'tone of voice', making feature names that are easily comprehensible by human readers and sit alongside one another congruously.
 
 ## Scope of SDK Manifest Coverage
 
