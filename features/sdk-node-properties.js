@@ -134,11 +134,6 @@ class Properties {
       if (isPropertyKey(key)) {
         const name = propertyKeyName(key);
         switch (name) {
-          case 'api_documentation':
-            // used in the canonical features list
-            this.apiDocumentation = transformString(value, IDENTITY_TRANSFORM);
-            break;
-
           case 'documentation':
             // used in the canonical features list
             this.documentationUrls = transformStrings(value, (stringValue) => new URL(stringValue));

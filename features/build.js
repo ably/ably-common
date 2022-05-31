@@ -109,12 +109,6 @@ function renderTableHeaderRow(writer, maximumLevel) {
       cellContentWriter.text('Synopsis and Links to Conceptual Documentation');
     });
 
-    // API Documentation
-    rowWriter.class(`px-1 ${commonCellStyle}`);
-    rowWriter.cell((cellContentWriter) => {
-      cellContentWriter.text('Generic API Documentation');
-    });
-
     // SDK columns
     // eslint-disable-next-line no-restricted-syntax
     for (const sdkManifestSuffix of sdkManifests.keys()) {
@@ -153,7 +147,6 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
             specificationPoints,
             documentationUrls,
             synopsis,
-            apiDocumentation,
           } = new Properties(value);
 
           console.log(`${consoleIndent}${key}:`);
@@ -210,12 +203,6 @@ function generateTableRows(writer, maximumLevel, parentKeys, node) {
               if (empty) {
                 cellContentWriter.write('&nbsp;');
               }
-            });
-
-            // API Documentation
-            rowWriter.class(`px-1 ${commonCellStyle}`);
-            rowWriter.cell((cellContentWriter) => {
-              cellContentWriter.write(apiDocumentation ? marked.parse(apiDocumentation) : '&nbsp;');
             });
 
             // SDK columns

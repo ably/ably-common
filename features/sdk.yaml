@@ -37,9 +37,6 @@ Options:
     .synopsis: |
       `AuthOptions`
     Callback:
-      .api_documentation: |
-        For non-browser clients, an authentication callback is the preferred method of implementing token refresh, although browser clients can also use `authCallback` if the use case requires it.
-        This relies on your application communicating securely with your own servers to obtain a token.
       .specification: [RSA4a, RSA4, TO3j5, AO2b]
       .synopsis: |
         `authCallback`:
@@ -68,16 +65,6 @@ Options:
       .synopsis: |
         `token`
     URL:
-      .api_documentation: |
-        Typically, in a browser environment, the `authUrl` provided would be a URL relative to an endpoint under the same origin.
-        This endpoint issues tokens to trusted clients.
-        Client requests can, for example, be trusted based on session cookies.
-
-        There are several options you can specify along with `authUrl`:
-
-        - `authMethod` - the default “GET” method will be used, unless “POST” is specified here
-        - `authHeaders` - allows you to pass additional headers as required, depending on your use case
-        - `authParams` - allows you to pass additional query parameters, depending on your use case
       .specification:
         [RSA8c, TO3j6, TO3j7, TO3j8, TO3j9, AO2c, AO2d, AO2e, AO2f, RSA4]
       .synopsis: |
