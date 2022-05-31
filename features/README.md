@@ -32,7 +32,7 @@ Once they've moved, they will be treated as first-class citizens in their SDK re
 #### Per-SDK Magic
 
 - **Key Information, Front and Centre**: standard Git tools will help us to understand the evolution of the SDK from a customer-focussed perspective, by simply `diff`'ing this single file
-- **Validation Against Source Code Interfaces**: either using runtime-build reflection or source-code annotation we can evolve language-specific tools that validate the Smithy-formatted `.api` nodes against what we're actually delivering to customers
+- **Validation Against Source Code Interfaces**: either using runtime-build reflection or source-code annotation we can evolve language-specific tools that link the SDK-specific APIs back to canonical feature nodes, allowing us to navigate back and forth between the two
 
 #### Estate-wide Magic
 
@@ -105,21 +105,6 @@ The names of feature nodes (those not prefixed with a dot '`.`' to denote them a
   - do not use plural form when the feature links to a primary type and includes methods or properties that involve with that type in both singular and plural contexts - e.g. `Push Notifications: Administration: Device Registration`
 
 This is so that we keep a consistent 'tone of voice', making feature names that are easily comprehensible by human readers and sit alongside one another congruously.
-
-## Scope of SDK Manifest Coverage
-
-The goal is to capture API shape, within a given SDK's API surface area, which means:
-
-- Capturing all of the information needed to navigate to the class, interface, method/function or property/field which provides access to the implemented feature - i.e.:
-  - namespace
-  - class/interface name
-  - method/function or property/field name
-  - method/function argument types
-- Excluding information which is superfluous to this goal - that means information which describes details which are not required to navigate to the access point for the implemented feature - e.g.:
-  - method/function return types
-  - method/function argument names
-  - property/field types
-  - thrown error/exception type(s)
 
 ## Disincluded Features
 
