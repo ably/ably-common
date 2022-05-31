@@ -10,250 +10,69 @@ compliance:
       .notes:
         partial: Only emitted for JRE, not Android.
   Client Instance Creation:
-    .api:
-      - io.ably.lib.realtime#AblyRealtime
-      - io.ably.lib.rest#AblyRest
     With Client Options:
-      .api:
-        constructor: io.ably.lib.types.ClientOptions
     With String:
-      .api:
-        constructor: java.lang.String
   Options:
     Agents:
-      .api: $agents
     Authentication:
-      .api: io.ably.lib.rest.Auth#AuthOptions
       Callback:
-        .api: $authCallback
       Key:
-        .api: $key
       Query Time:
-        .api: $queryTime
       Token Details:
-        .api: $tokenDetails
       Token String:
-        .api: $token
       URL:
-        .api:
-          - $authUrl
-          - $authMethod
-          - $authHeaders
-          - $authParams
       Use Token Authentication:
-        .api: $useTokenAuth
     Binary Protocol:
-      .api: $useBinaryProtocol
     Client Identifier:
-      .api: $clientId
     Default Token Parameters:
-      .api: $defaultTokenParams
     Environment:
-      .api: $environment
     Fallback Hosts:
-      .api: $fallbackHosts
     HTTP Connection Open Timeout:
-      .api: $httpOpenTimeout
     Log Handling:
-      .api:
-        - $logLevel
-        - $logHandler
     Port:
-      .api: $port
     Proxy:
-      .api: $proxy
     TLS Port:
-      .api: $tlsPort
     Transport Layer Security:
-      .api: $tls
   Push Notifications:
-    .api: io.ably.lib.push#Push
     Activation:
-      .api:
-        - $activate
-        - $deactivate
       .variants: Android
     Administration:
-      .api: io.ably.lib.push.PushBase#Admin
       Channel Subscription:
-        .api: $channelSubscriptions
         List:
-          .api:
-            - arguments: io.ably.lib.types.Param[]
-              identifier: $list
-            - arguments:
-                - io.ably.lib.types.Param[]
-                - io.ably.lib.types.Callback<io.ably.lib.types.AsyncPaginatedResult<io.ably.lib.push.PushBase.ChannelSubscription>>
-              identifier: $listAsync
         List Channels:
-          .api:
-            - arguments: io.ably.lib.types.Param[]
-              identifier: $listChannels
-            - arguments:
-                - io.ably.lib.types.Param[]
-                - io.ably.lib.types.Callback<io.ably.lib.types.AsyncPaginatedResult<java.lang.String>>
-              identifier: $listChannelsAsync
         Remove:
-          .api:
-            - arguments: io.ably.lib.push.PushBase.ChannelSubscription
-              identifier: $remove
-            - arguments:
-                - io.ably.lib.push.PushBase.ChannelSubscription
-                - io.ably.lib.realtime.CompletionListener
-              identifier: $removeAsync
-            - arguments: io.ably.lib.types.Param[]
-              identifier: $removeWhere
-            - arguments:
-                - io.ably.lib.types.Param[]
-                - io.ably.lib.realtime.CompletionListener
-              identifier: $removeWhereAsync
         Save:
-          .api:
-            - arguments: io.ably.lib.push.PushBase.ChannelSubscription
-              identifier: $save
-            - arguments:
-                - io.ably.lib.push.PushBase.ChannelSubscription
-                - io.ably.lib.types.Callback<io.ably.lib.push.PushBase.ChannelSubscription>
-              identifier: $saveAsync
       Device Registration:
-        .api: $deviceRegistrations
         Get:
-          .api:
-            - arguments: java.lang.String
-              identifier: $get
-            - arguments:
-                - java.lang.String
-                - io.ably.lib.types.Callback<io.ably.lib.rest.DeviceDetails>
-              identifier: $getAsync
         List:
-          .api:
-            - arguments: io.ably.lib.types.Param[]
-              identifier: $list
-            - arguments:
-                - io.ably.lib.types.Param[]
-                - io.ably.lib.types.Callback<io.ably.lib.types.AsyncPaginatedResult<io.ably.lib.rest.DeviceDetails>>
-              identifier: $listAsync
         Remove:
-          .api:
-            - arguments: io.ably.lib.rest.DeviceDetails
-              identifier: $remove
-            - arguments: java.lang.String
-              identifier: $remove
-            - arguments:
-                - io.ably.lib.rest.DeviceDetails
-                - io.ably.lib.realtime.CompletionListener
-              identifier: $removeAsync
-            - arguments:
-                - java.lang.String
-                - io.ably.lib.realtime.CompletionListener
-              identifier: $removeAsync
-            - arguments: io.ably.lib.types.Param[]
-              identifier: $removeWhere
-            - arguments:
-                - io.ably.lib.types.Param[]
-                - io.ably.lib.realtime.CompletionListener
-              identifier: $removeWhereAsync
         Save:
-          .api:
-            - arguments: io.ably.lib.rest.DeviceDetails
-              identifier: $save
-            - arguments:
-                - io.ably.lib.rest.DeviceDetails
-                - io.ably.lib.types.Callback<io.ably.lib.rest.DeviceDetails>
-              identifier: $saveAsync
       Publish:
-        .api:
-          - arguments:
-              - io.ably.lib.types.Param[]
-              - com.google.gson.JsonObject
-            identifier: $publish
-          - arguments:
-              - io.ably.lib.types.Param[]
-              - com.google.gson.JsonObject
-              - io.ably.lib.realtime.CompletionListener
-            identifier: $publishAsync
   Realtime:
     Channel:
-      .api: io.ably.lib.realtime#Channel
       Attach:
       Presence:
-        .api: io.ably.lib.realtime#Presence
         Get:
-          .api:
-            - arguments: io.ably.lib.types.Param...
-              identifier: $get
-            - arguments: boolean
-              identifier: $get
-            - arguments: [java.lang.String, boolean]
-              identifier: $get
         Subscribe:
-          .api:
-            - arguments: io.ably.lib.realtime.Presence.PresenceListener
-              identifier: $subscribe
-            - arguments:
-                - io.ably.lib.realtime.Presence.PresenceListener
-                - io.ably.lib.realtime.CompletionListener
-              identifier: $subscribe
-            - arguments:
-                - io.ably.lib.types.PresenceMessage.Action
-                - io.ably.lib.realtime.Presence.PresenceListener
-                - io.ably.lib.realtime.CompletionListener
-              identifier: $subscribe
-            - arguments:
-                - java.util.EnumSet<io.ably.lib.types.PresenceMessage.Action>
-                - io.ably.lib.realtime.Presence.PresenceListener
-                - io.ably.lib.realtime.CompletionListener
-              identifier: $subscribe
-            - arguments:
-                - java.util.EnumSet<io.ably.lib.types.PresenceMessage.Action>
-                - io.ably.lib.realtime.Presence.PresenceListener
-              identifier: $subscribe
-            - arguments: io.ably.lib.realtime.Presence.PresenceListener
-              identifier: $unsubscribe
-            - arguments:
-                - io.ably.lib.types.PresenceMessage.Action
-                - io.ably.lib.realtime.Presence.PresenceListener
-              identifier: $unsubscribe
-            - arguments:
-                - java.util.EnumSet<io.ably.lib.types.PresenceMessage.Action>
-                - io.ably.lib.realtime.Presence.PresenceListener
-              identifier: $unsubscribe
-            - $unsubscribe
       Subscribe:
         Deltas:
     Options:
-      .api: io.ably.lib.types#ClientOptions
       Automatic Connection:
-        .api: $autoConnect
       Channel Retry Timeout:
-        .api: $channelRetryTimeout
       Connection Recovery String:
-        .api: $recover
       Host:
-        .api: $realtimeHost
       Message Echoes:
-        .api: $echoMessages
       Message Queuing:
-        .api: $queueMessages
       Transport Parameters:
-        .api: $transportParams
   REST:
     Authentication:
-      .api: io.ably.lib.rest#AblyBase$auth
     Options:
-      .api: io.ably.lib.types#ClientOptions
       Fallback Retry Timeout:
-        .api: $fallbackRetryTimeout
       Host:
-        .api: $restHost
       HTTP Request Timeout:
-        .api: $httpRequestTimeout
       Idempotent Publishing:
-        .api: $idempotentRestPublishing
       Maximum HTTP Retry Count:
-        .api: $httpMaxRetryCount
       Request Identifiers:
-        .api: $addRequestIds
 variants:
   Android:
     .synopsis: |
