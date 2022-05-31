@@ -25,16 +25,6 @@ class SpecificationPoint {
 
 const IDENTITY_TRANSFORM = (value) => value;
 
-class Notes {
-  constructor(value) {
-    if (!(value instanceof Map)) {
-      throw new Error('Expected a Map.');
-    }
-
-    this.partial = transformString(value.get('partial'), IDENTITY_TRANSFORM);
-  }
-}
-
 class Properties {
   constructor(node) {
     if (!(node instanceof Map)) {
@@ -62,11 +52,6 @@ class Properties {
           case 'variants':
             // used in the SDK manifests
             this.variants = transformStrings(value, IDENTITY_TRANSFORM);
-            break;
-
-          case 'notes':
-            // used in the SDK manifests
-            this.notes = new Notes(value);
             break;
 
           default:

@@ -4,11 +4,9 @@ common-version: 1.2.0
 compliance:
   Agent Identifier:
     Operating System:
-      .notes:
-        partial: Only emitted on Android.
+      .variants: Android
     Runtime:
-      .notes:
-        partial: Only emitted for JRE, not Android.
+      .variants: JRE
   Client Instance Creation:
     With Client Options:
     With String:
