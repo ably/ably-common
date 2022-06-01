@@ -270,26 +270,28 @@ function createDirectory(directoryPath) {
  * Inspects YAML AST to ensure source constraints are met (e.g. ordered keys).
  *
  * @param {*} astNode The YAML AST node.
- * @param {number} level The depth, for recursion depth protection.
+ * @param {string[]} parentKeys Parent keys, also indicating the depth of this node. Nodes at root have an empty array.
  */
-function validateStructure(astNode, level = 0) {
-  if (astNode === null) {
-    return;
+function validateStructure(astNode, parentKeys = []) {
+  if (astNode === undefined || astNode === null) {
+    throw new Error(`Unexpected - astNode value cannot be undefined or null at "${parentKeys}".`);
   }
-  if (level > 20) {
+  if (parentKeys.length > 20) {
     throw new Error('Recursion depth exceeded arbitrary limit.');
   }
 
   const nodeType = astNode.type;
+  let arrayIndex = 0;
   switch (nodeType) {
     case 'MAP':
-      validateMapItems(astNode.items, level + 1);
+      validateMapItems(astNode.items, parentKeys);
       break;
 
     case 'FLOW_SEQ':
     case 'SEQ':
       astNode.items.forEach((item) => {
-        validateStructure(item, level + 1);
+        validateStructure(item, [...parentKeys, `${arrayIndex}`]);
+        arrayIndex += 1;
       });
       break;
 
@@ -306,9 +308,9 @@ function validateStructure(astNode, level = 0) {
  * Inspects items of YAML AST map to ensure source constraints are met.
  *
  * @param {*[]} items The YAML AST 'MAP' node items.
- * @param {number} level The depth, for recursion depth protection.
+ * @param {string[]} parentKeys Parent keys, also indicating the depth of this node. Nodes at root have an empty array.
  */
-function validateMapItems(items, level) {
+function validateMapItems(items, parentKeys) {
   let previousKeyValue;
   items.forEach((item) => {
     if (item.type !== 'PAIR') {
@@ -326,7 +328,20 @@ function validateMapItems(items, level) {
     }
     previousKeyValue = keyValue;
 
-    validateStructure(value, level + 1);
+    // It is normal for `value` to be `null` here, where the map key is 'hanging' in the YAML - e.g. in the case of the
+    // 'Hanging Parent Key' in this snippet:
+    //
+    // ```yaml
+    // Some Parent Key:
+    //   Hanging Parent Key:
+    //   Some Other Key that Does have a Value: Hello World
+    // ```
+    //
+    // The hanging key represents that there is intended to be a node at this location in the tree, but that there is
+    // no additional information to convey about this node - above and beyond its name (the key).
+    if (value !== null) {
+      validateStructure(value, [...parentKeys, key]);
+    }
   });
 }
 
