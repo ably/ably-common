@@ -81,6 +81,15 @@ This will start with a **well-defined release procedure**:
 - Stop using the entire contents of this repository downstream via a Git submodule in SDK repositories for test fixture purposes (e.g. [see `ably/ably-java`](https://github.com/ably/ably-java/blob/main/.gitmodules)), instead move to a model where SDKs consume those test fixtures from a 'proper' package management / distribution point (to which this repository will need to start publishing as part of this new release procedure).
 - Publish the canonical feature list to one or more package management / distribution points, for downstream consumption by SDK repositories as well as other systems at Ably (i.e. developer education / documentation), as part of this new release procedure.
 
+We also have
+[JSON Schemas](../json-schemas)
+which
+[are published](../.github/workflows/publish-json-schemas.yml)
+from this repository, with independent
+[version numbering](../json-schemas/versions.json).
+The implication of this is that it _might not_ make sense for us to apply version number to this entire repository as we do for other source code repositories, specifically in respect of Git tags, change log and GitHub releases.
+_The conversation is ongoing in this area and a firm decision has not yet been made around this._
+
 ## Future Direction for Specification Point Adherence Tracking
 
 We have
