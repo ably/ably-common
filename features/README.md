@@ -77,9 +77,7 @@ Based on the future directions laid out above for [SDK Manifests](#future-direct
 
 This will start with a **well-defined release procedure**:
 
-- Add versioning, _strictly_ conforming to [the requirments Semantic Versioning](https://semver.org/), starting at version `1.2.0` (our epoch), indicating:
-  - the version of the canonical feature list
-  - the version of the Ably protocol for both REST and Realtime operations against the service
+- Add versioning, _strictly_ conforming to [the requirments Semantic Versioning](https://semver.org/), starting at version `1.2.0` (our epoch), indicating the version of the canonical feature list.
 - Stop using the entire contents of this repository downstream via a Git submodule in SDK repositories for test fixture purposes (e.g. [see `ably/ably-java`](https://github.com/ably/ably-java/blob/main/.gitmodules)), instead move to a model where SDKs consume those test fixtures from a 'proper' package management / distribution point (to which this repository will need to start publishing as part of this new release procedure).
 - Publish the canonical feature list to one or more package management / distribution points, for downstream consumption by SDK repositories as well as other systems at Ably (i.e. developer education / documentation), as part of this new release procedure.
 
