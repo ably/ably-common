@@ -54,7 +54,7 @@ This single source file will remain our reference for:
 - protocol details, including interactions with SDK state and behaviours
 - SDK implementation details
 - conformed naming for types and their members
-- testing requirements
+- testing requirements (though it is anticipated that, at some point in the future, we will these from the scope of concern for this source file)
 
 Currently:
 
