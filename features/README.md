@@ -4,7 +4,7 @@ Welcome to Ably's common `features/` folder. :wave:
 
 This readme document has been created as the starting point and canonical root for information relating to how we programmatically track Ably features at Ably.
 The focus of the content in this folder, as well as this readme, is on our SDKs (sometimes referred to as client libraries).
-Our SDKs provide the primary, lanuage/platform-idiomatic APIs that our customers - software application developers -
+Our SDKs provide the primary, language/platform-idiomatic APIs that our customers - software application developers -
 use in order to integrate and leverage the Ably platform in their solutions.
 
 ## Introduction
