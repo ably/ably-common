@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl font-bold;
+  }
+  ul {
+    @apply list-disc pl-5;
+  }
+  code {
+    @apply text-slate-600 bg-amber-100;
+  }
+  a code {
+    @apply bg-inherit hover:text-amber-700 hover:font-semibold;
+  }
+  a {
+    @apply hover:underline hover:text-amber-700;
+  }
+  .tooltip-contents {
+    @apply invisible rounded-md shadow-lg py-1 px-2 bg-gray-200 border-2 border-amber-500 absolute -mt-9 -ml-2;
+  }
+  .tooltip-container {
+    @apply cursor-default;
+  }
+  .tooltip-container:hover .tooltip-contents {
+    @apply visible z-50;
+  }
+  .tooltip-container:hover {
+    @apply bg-amber-100;
+  }
+
+  /*
+   * `btn` styles taken from:
+   * https://v1.tailwindcss.com/components/buttons#simple
+   * Adding `inline-block` here for `a` element.
+   */
+  a.btn {
+    @apply inline-block;
+  }
+  .btn {
+    @apply font-bold py-1 px-2 rounded;
+  }
+  .btn-blue {
+    @apply bg-blue-500 text-white;
+  }
+  .btn-blue:hover {
+    @apply bg-blue-700 text-white;
+  }
+}
+
+/*
+ * TODO consider why this class is defined in this layer, not base.
+ * Clearly, Stackoverflow told me to, but I need to learn more about Tailwind to see why or if needed.
+ */
+@layer components {
+  /*
+   * We need this to combine with border-seperate, in order not to have gaps between
+   * borders of cells within a table.
+   * It's seemingly not a utility offered, out-of-the-box, by Tailwind - see:
+   * https://stackoverflow.com/a/70326229/392847
+   */
+  .zero-border-spacing {
+    border-spacing: 0;
+  }
+}

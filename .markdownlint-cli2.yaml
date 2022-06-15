@@ -1,5 +1,4 @@
 config:
-
   # Limiting line length is too restrictive in many cases - in particular in respect of laying out markdown to be Git diff friendly.
   line-length: false
 

@@ -1,0 +1,80 @@
+%YAML 1.2
+---
+common-version: 1.2.0
+compliance:
+  Agent Identifier:
+    Operating System:
+      .variants: Android
+    Runtime:
+      .variants: JRE
+  Client Instance Creation:
+    With Client Options:
+    With String:
+  Options:
+    Agents:
+    Authentication:
+      Callback:
+      Key:
+      Query Time:
+      Token Details:
+      Token String:
+      URL:
+      Use Token Authentication:
+    Binary Protocol:
+    Client Identifier:
+    Default Token Parameters:
+    Environment:
+    Fallback Hosts:
+    HTTP Connection Open Timeout:
+    Log Handling:
+    Port:
+    Proxy:
+    TLS Port:
+    Transport Layer Security:
+  Push Notifications:
+    Activation:
+      .variants: Android
+    Administration:
+      Channel Subscription:
+        List:
+        List Channels:
+        Remove:
+        Save:
+      Device Registration:
+        Get:
+        List:
+        Remove:
+        Save:
+      Publish:
+  Realtime:
+    Channel:
+      Attach:
+      Presence:
+        Get:
+        Subscribe:
+      Subscribe:
+        Deltas:
+    Options:
+      Automatic Connection:
+      Channel Retry Timeout:
+      Connection Recovery String:
+      Host:
+      Message Echoes:
+      Message Queuing:
+      Transport Parameters:
+  REST:
+    Authentication:
+    Options:
+      Fallback Retry Timeout:
+      Host:
+      HTTP Request Timeout:
+      Idempotent Publishing:
+      Maximum HTTP Retry Count:
+      Request Identifiers:
+variants:
+  Android:
+    .synopsis: |
+      Builds `aar` artifact(s) for use by applications running on the Android operating system.
+  JRE:
+    .synopsis: |
+      Builds `jar` artifact(s) for use by applications running in a Java Runtime Environment (JRE).
