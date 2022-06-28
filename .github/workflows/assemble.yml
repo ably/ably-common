@@ -30,7 +30,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v1
         with:
            aws-region: eu-west-2
-           role-to-assume: arn:aws:iam::${{ secrets.ABLY_AWS_ACCOUNT_ID_SDK}}:role/ably-sdk-builds-kafka-connect-ably
+           role-to-assume: arn:aws:iam::${{ secrets.ABLY_AWS_ACCOUNT_ID_SDK}}:role/ably-sdk-schemas-ably-common
            role-session-name: "${{ github.run_id }}-${{ github.run_number }}"
 
       - uses: ably/sdk-upload-action@v1
