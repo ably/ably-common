@@ -28,8 +28,6 @@ jobs:
 
       - uses: ably/sdk-upload-action@v1
         with:
-          s3AccessKeyId: ${{ secrets.SDK_S3_ACCESS_KEY_ID }}
-          s3AccessKey: ${{ secrets.SDK_S3_ACCESS_KEY }}
           sourcePath: output/features
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           artifactName: sdk-features
