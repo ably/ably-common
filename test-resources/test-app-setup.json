@@ -12,6 +12,9 @@
       },
       {
         "capability": "{ \"*\":[\"subscribe\"] }"
+      },
+      {
+        "revocableTokens": true
       }
     ],
     "namespaces": [
