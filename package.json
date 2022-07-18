@@ -2,14 +2,11 @@
   "name": "ably-common",
   "version": "1.2.0",
   "scripts": {
-    "build:features": "npm-run-all build:features:generate build:features:tailwind",
-    "build:features:generate": "node features/build.js",
-    "build:features:tailwind": "tailwindcss -i ./features/main.css -o ./output/features/tailwind.css --minify",
     "publish:json-schemas": "node json-schemas/publish.js",
     "lint": "npm-run-all format:*:check",
     "format:js-code:check": "eslint --max-warnings=0 .",
-    "format:data": "prettier --write **/{*.json,*.yml,*.yaml,.*.yaml}",
-    "format:data:check": "prettier --check **/{*.json,*.yml,*.yaml,.*.yaml}",
+    "format:data": "prettier --write **/*.{json,yml}",
+    "format:data:check": "prettier --check **/*.{json,yml}",
     "format:documentation:check": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
     "test": "jest"
   },
@@ -21,10 +18,7 @@
   "homepage": "https://github.com/ably/ably-common#readme",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.28.0",
-    "escape-html": "^1.0.3",
-    "jsonschema": "^1.4.0",
-    "marked": "^4.0.14",
-    "yaml": "^1.10.2"
+    "jsonschema": "^1.4.0"
   },
   "devDependencies": {
     "eslint": "^8.11.0",
@@ -34,7 +28,6 @@
     "jest": "^27.5.1",
     "markdownlint-cli2": "^0.4.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "2.4.0",
-    "tailwindcss": "^3.0.23"
+    "prettier": "2.4.0"
   }
 }

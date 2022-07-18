@@ -25,6 +25,10 @@ The following external locations are updated by publishing processes within this
 While there is a `package.json` file at the root of this repository, we do not publish any npm packages from here.
 We just use Node.js to run tests, lints and to publish elsewhere.
 
+## Features
+
+The canonical SDK feature list has been moved to the [`ably/features` repository](https://github.com/ably/features).
+
 ## Contributing
 
 For guidance on how to contribute to this project, see [CONTRIBUTING.md](CONTRIBUTING.md).
