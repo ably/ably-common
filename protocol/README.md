@@ -37,6 +37,18 @@ Codes in [errors.json](errors.json) fall into these ranges:
 | 80000 | connection-related |
 | 90000 | channel-related |
 
+Codes from `100000` are defined outside of scope of this repository.
+In other words, these higher ranges are reserved for use by specific Ably projects and ecosystems, where these codes are unknown to the core Ably service:
+
+| From | To | Project / Ecosystem | Location of Definitions |
+| ---- | -- | ------------------- | ----------------------- |
+| 100000 | 100999 | Asset Tracking | [Specification: Error codes](https://github.com/ably/ably-asset-tracking-common/tree/main/specification#error-codes) |
+
+The table above is our canonical location for:
+
+- specifying these ranges
+- delegating the definitions of codes that sit within these ranges to elsewhere
+
 ## Agents
 
 A list of agents announced by Ably client libraries can be found in [agents.json](agents.json).
