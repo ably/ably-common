@@ -76,6 +76,25 @@
       "type": "integer",
       "description": "The duration the connection was open for in milliseconds."
     },
+    "credentials": {
+      "type": "object",
+      "description": "The connection's token credentials.",
+      "properties": {
+        "hasUserClaims": {
+          "type": "boolean",
+          "description": "Does this token contain user claims."
+        },
+        "keyName": {
+          "type": "string",
+          "description": "The token's key name."
+        },
+        "type": {
+          "type": "string",
+          "description": "The credential type: either 'key', 'ablyToken', 'ablyJWT', or 'ablyJWE'."
+        }
+      },
+      "required": ["hasUserClaims", "type"]
+    },
     "error": {
       "type": "object",
       "description": "The details of any error encountered whilst processing the connection.",
