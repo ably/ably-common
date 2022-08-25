@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ably Channel Lifecycle Event",
+  "type": "object",
+  "properties": {
+    "channelId": {
+      "type": "string",
+      "description": "The ID of the channel"
+    },
+    "eventName": {
+      "type": "string",
+      "description": "The name of the channel lifecycle event"
+    },
+    "region": {
+      "type": "string",
+      "description": "The region in which the event occurred"
+    },
+    "timestamp": {
+      "type": "string",
+      "description": "The ISO 8601 formatted timestamp of the time that the event occurred"
+    },
+    "eventId": {
+      "type": "string",
+      "description": "A unique identifier for the event"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["channelId", "eventName", "timestamp", "eventId"]
+}
