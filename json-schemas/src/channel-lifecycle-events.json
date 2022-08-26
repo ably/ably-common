@@ -9,6 +9,7 @@
     },
     "eventName": {
       "type": "string",
+      "enum": ["channel.opened", "channel.closed", "channel.region.active", "channel.region.inactive"],
       "description": "The name of the channel lifecycle event"
     },
     "region": {
