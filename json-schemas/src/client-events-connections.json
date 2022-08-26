@@ -78,7 +78,7 @@
     },
     "credential": {
       "type": "object",
-      "description": "The connection's token credentials.",
+      "description": "Details of the credential used to authenticate the client.",
       "properties": {
         "hasUserClaims": {
           "type": "boolean",
@@ -86,7 +86,7 @@
         },
         "keyName": {
           "type": "string",
-          "description": "The token's key name."
+          "description": "The credential's key name."
         },
         "type": {
           "type": "string",
