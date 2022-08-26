@@ -86,7 +86,7 @@
         },
         "keyName": {
           "type": "string",
-          "description": "The token's key name."
+          "description": "The credential's key name."
         },
         "type": {
           "type": "string",
