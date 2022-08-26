@@ -76,7 +76,7 @@
       "type": "integer",
       "description": "The duration the connection was open for in milliseconds."
     },
-    "credentials": {
+    "credential": {
       "type": "object",
       "description": "The connection's token credentials.",
       "properties": {
@@ -93,7 +93,7 @@
           "description": "The credential type: either 'key', 'ablyToken', 'ablyJWT', or 'ablyJWE'."
         }
       },
-      "required": ["hasUserClaims", "type"]
+      "required": ["hasUserClaims", "keyName", "type"]
     },
     "error": {
       "type": "object",
