@@ -7,24 +7,25 @@
       "type": "string",
       "description": "The ID of the channel"
     },
-    "eventName": {
+    "name": {
       "type": "string",
-      "enum": ["channel.opened", "channel.closed", "channel.region.active", "channel.region.inactive"],
-      "description": "The name of the channel lifecycle event"
+      "description": "The name of the channel"
     },
     "region": {
       "type": "string",
       "description": "The region in which the event occurred"
     },
-    "timestamp": {
-      "type": "string",
-      "description": "The ISO 8601 formatted timestamp of the time that the event occurred"
-    },
-    "eventId": {
-      "type": "string",
-      "description": "A unique identifier for the event"
+    "status": {
+      "type": "object",
+      "description": "The details of the channel status.",
+      "properties": {
+        "isActive": {
+          "type": "boolean",
+          "description": "True if the channel is active."
+        }
+      }
     }
   },
   "additionalProperties": false,
-  "required": ["channelId", "eventName", "timestamp", "eventId"]
+  "required": ["channelId", "name"]
 }
