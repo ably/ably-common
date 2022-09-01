@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ably Channel Lifecycle Event",
+  "type": "object",
+  "properties": {
+    "channelId": {
+      "type": "string",
+      "description": "The ID of the channel"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the channel"
+    },
+    "region": {
+      "type": "string",
+      "description": "The region in which the event occurred"
+    },
+    "status": {
+      "type": "object",
+      "description": "The details of the channel status.",
+      "properties": {
+        "isActive": {
+          "type": "boolean",
+          "description": "True if the channel is active."
+        }
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": ["channelId", "name"]
+}
