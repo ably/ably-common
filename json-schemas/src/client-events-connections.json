@@ -51,8 +51,9 @@
           "description": "The format used to encode protocol messages. Either 'json' or 'msgpack'."
         },
         "heartbeats": {
-          "type": "boolean",
-          "description": "The type of heartbeats to send on the connection. True for Ably protocol heartbeats, false for transport specific heartbeats."
+          "type": "string",
+          "description": "The type of heartbeats to send on the connection. True for Ably protocol heartbeats, false for transport specific heartbeats.",
+          "enum": ["true", "false"]
         },
         "v": {
           "type": "string",
