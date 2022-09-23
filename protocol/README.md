@@ -4,7 +4,9 @@
 
 Ably's [client library SDKs](https://www.ably.io/download), and the [core realtime platform](https://www.ably.io/platform), use common error codes. These error codes are stored and maintained in the shared public JSON file [errors.json](./errors.json).
 
-In addition, a list of error codes and corresponding support articles to help understand how to resolve common problems relating to these error codes can be seen in [errorsHelp.json](./errorsHelp.json). This ensures that with every Ably error message that includes a help link for the error in the format 	https://help.ably.io/error/{{ERROR_CODE}}, the user is taken to a relevant FAQ if it exists, and if one does not exist, we record the number of times that error code has been visited so that the docs/support team can work on adding relevant documentation. See https://github.com/ably/help.
+In addition, a list of error codes and corresponding support articles to help understand how to resolve common problems relating to these error codes can be seen in [errorsHelp.json](./errorsHelp.json).
+This ensures that with every Ably error message that includes a help link for the error in the format `https://help.ably.io/error/{{ERROR_CODE}}`, the user is taken to a relevant FAQ if it exists, and if one does not exist, we record the number of times that error code has been visited so that the docs/support team can work on adding relevant documentation.
+See [the `ably/help` repository (internal)](https://github.com/ably/help), the "simple help redirect site".
 
 If you need help understanding any error codes, or need technical support, please visit the [Ably support desk](https://www.ably.io/support).
 
