@@ -37,7 +37,7 @@
         "messages.all.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas)."
+          "description": "Total uncompressed message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas)."
         },
         "messages.all.messages.count": {
           "type": "number",
@@ -52,7 +52,7 @@
         "messages.all.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas), excluding presence messages."
+          "description": "Total uncompressed message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas), excluding presence messages."
         },
         "messages.all.presence.count": {
           "type": "number",
@@ -67,7 +67,7 @@
         "messages.all.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed presence message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas)."
+          "description": "Total uncompressed presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas)."
         },
         "messages.inbound.realtime.all.count": {
           "type": "number",
@@ -82,7 +82,7 @@
         "messages.inbound.realtime.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound realtime message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
+          "description": "Total uncompressed inbound realtime message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
         },
         "messages.inbound.realtime.messages.count": {
           "type": "number",
@@ -97,7 +97,7 @@
         "messages.inbound.realtime.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound realtime message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, received by the Ably service from clients), excluding presence messages."
+          "description": "Total uncompressed inbound realtime message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients), excluding presence messages."
         },
         "messages.inbound.realtime.presence.count": {
           "type": "number",
@@ -112,7 +112,7 @@
         "messages.inbound.realtime.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound realtime presence message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
+          "description": "Total uncompressed inbound realtime presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
         },
         "messages.inbound.rest.all.count": {
           "type": "number",
@@ -127,7 +127,7 @@
         "messages.inbound.rest.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound REST message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
+          "description": "Total uncompressed inbound REST message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
         },
         "messages.inbound.rest.messages.count": {
           "type": "number",
@@ -142,7 +142,7 @@
         "messages.inbound.rest.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound REST message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, received by the Ably service from clients), excluding presence messages."
+          "description": "Total uncompressed inbound REST message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients), excluding presence messages."
         },
         "messages.inbound.rest.presence.count": {
           "type": "number",
@@ -157,7 +157,7 @@
         "messages.inbound.rest.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound REST presence message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
+          "description": "Total uncompressed inbound REST presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
         },
         "messages.inbound.all.all.count": {
           "type": "number",
@@ -172,7 +172,7 @@
         "messages.inbound.all.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
+          "description": "Total uncompressed inbound message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
         },
         "messages.inbound.all.messages.count": {
           "type": "number",
@@ -187,7 +187,7 @@
         "messages.inbound.all.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, received by the Ably service from clients), excluding presence messages."
+          "description": "Total uncompressed inbound message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients), excluding presence messages."
         },
         "messages.inbound.all.presence.count": {
           "type": "number",
@@ -202,7 +202,7 @@
         "messages.inbound.all.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound presence message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
+          "description": "Total uncompressed inbound presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
         },
         "messages.outbound.realtime.all.count": {
           "type": "number",
@@ -217,7 +217,7 @@
         "messages.outbound.realtime.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound realtime message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
+          "description": "Total uncompressed outbound realtime message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
         },
         "messages.outbound.realtime.messages.count": {
           "type": "number",
@@ -232,7 +232,7 @@
         "messages.outbound.realtime.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound realtime message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients), excluding presence messages."
+          "description": "Total uncompressed outbound realtime message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients), excluding presence messages."
         },
         "messages.outbound.realtime.presence.count": {
           "type": "number",
@@ -247,7 +247,7 @@
         "messages.outbound.realtime.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound realtime presence message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
+          "description": "Total uncompressed outbound realtime presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
         },
         "messages.outbound.rest.all.count": {
           "type": "number",
@@ -262,7 +262,7 @@
         "messages.outbound.rest.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound REST message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
+          "description": "Total uncompressed outbound REST message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
         },
         "messages.outbound.rest.messages.count": {
           "type": "number",
@@ -277,7 +277,7 @@
         "messages.outbound.rest.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound REST message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients), excluding presence messages."
+          "description": "Total uncompressed outbound REST message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients), excluding presence messages."
         },
         "messages.outbound.rest.presence.count": {
           "type": "number",
@@ -292,7 +292,7 @@
         "messages.outbound.rest.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound REST presence message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
+          "description": "Total uncompressed outbound REST presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
         },
         "messages.outbound.webhook.all.count": {
           "type": "number",
@@ -307,7 +307,7 @@
         "messages.outbound.webhook.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Webhook message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients using Webhooks)."
+          "description": "Total uncompressed Webhook message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients using Webhooks)."
         },
         "messages.outbound.webhook.messages.count": {
           "type": "number",
@@ -322,7 +322,7 @@
         "messages.outbound.webhook.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Webhook message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients using Webhooks), excluding presence messages."
+          "description": "Total uncompressed Webhook message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients using Webhooks), excluding presence messages."
         },
         "messages.outbound.webhook.presence.count": {
           "type": "number",
@@ -337,7 +337,7 @@
         "messages.outbound.webhook.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Webhook presence message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients using Webhooks)."
+          "description": "Total uncompressed Webhook presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients using Webhooks)."
         },
         "messages.outbound.sharedQueue.all.count": {
           "type": "number",
@@ -352,7 +352,7 @@
         "messages.outbound.sharedQueue.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Queue message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to a Reactor Queue)."
+          "description": "Total uncompressed Reactor Queue message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to a Reactor Queue)."
         },
         "messages.outbound.sharedQueue.messages.count": {
           "type": "number",
@@ -367,7 +367,7 @@
         "messages.outbound.sharedQueue.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Queue message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to a Reactor Queue), excluding presence messages."
+          "description": "Total uncompressed Reactor Queue message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to a Reactor Queue), excluding presence messages."
         },
         "messages.outbound.sharedQueue.presence.count": {
           "type": "number",
@@ -382,7 +382,7 @@
         "messages.outbound.sharedQueue.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Queue presence message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to a Reactor Queue)."
+          "description": "Total uncompressed Reactor Queue presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to a Reactor Queue)."
         },
         "messages.outbound.externalQueue.all.count": {
           "type": "number",
@@ -397,7 +397,7 @@
         "messages.outbound.externalQueue.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Firehose message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to some external target using Reactor Firehose)."
+          "description": "Total uncompressed Reactor Firehose message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to some external target using Reactor Firehose)."
         },
         "messages.outbound.externalQueue.messages.count": {
           "type": "number",
@@ -412,7 +412,7 @@
         "messages.outbound.externalQueue.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Firehose message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to some external target using Reactor Firehose), excluding presence messages."
+          "description": "Total uncompressed Reactor Firehose message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to some external target using Reactor Firehose), excluding presence messages."
         },
         "messages.outbound.externalQueue.presence.count": {
           "type": "number",
@@ -427,7 +427,7 @@
         "messages.outbound.externalQueue.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Firehose presence message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to some external target using Reactor Firehose)."
+          "description": "Total uncompressed Reactor Firehose presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to some external target using Reactor Firehose)."
         },
         "messages.outbound.httpEvent.all.count": {
           "type": "number",
@@ -442,7 +442,7 @@
         "messages.outbound.httpEvent.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed size of messages sent by a HTTP trigger (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions)."
+          "description": "Total uncompressed size of messages sent by a HTTP trigger (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions)."
         },
         "messages.outbound.httpEvent.messages.count": {
           "type": "number",
@@ -457,7 +457,7 @@
         "messages.outbound.httpEvent.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed size of messages sent by a HTTP trigger (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions), excluding presence messages."
+          "description": "Total uncompressed size of messages sent by a HTTP trigger (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions), excluding presence messages."
         },
         "messages.outbound.httpEvent.presence.count": {
           "type": "number",
@@ -472,7 +472,7 @@
         "messages.outbound.httpEvent.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed size of presence messages sent by a HTTP trigger (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions)."
+          "description": "Total uncompressed size of presence messages sent by a HTTP trigger (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions)."
         },
         "messages.outbound.push.all.count": {
           "type": "number",
@@ -487,7 +487,7 @@
         "messages.outbound.push.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Push message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, pushed to devices via a Push Notifications transport such as FCM or APNS)."
+          "description": "Total uncompressed Push message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, pushed to devices via a Push Notifications transport such as FCM or APNS)."
         },
         "messages.outbound.push.messages.count": {
           "type": "number",
@@ -502,7 +502,7 @@
         "messages.outbound.push.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Push message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, pushed to devices via a Push Notifications transport such as FCM or APNS), excluding presence messages."
+          "description": "Total uncompressed Push message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, pushed to devices via a Push Notifications transport such as FCM or APNS), excluding presence messages."
         },
         "messages.outbound.push.presence.count": {
           "type": "number",
@@ -517,7 +517,7 @@
         "messages.outbound.push.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Push presence message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, pushed to devices via a Push Notifications transport such as FCM or APNS)."
+          "description": "Total uncompressed Push presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, pushed to devices via a Push Notifications transport such as FCM or APNS)."
         },
         "messages.outbound.all.all.count": {
           "type": "number",
@@ -532,7 +532,7 @@
         "messages.outbound.all.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
+          "description": "Total uncompressed outbound message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
         },
         "messages.outbound.all.messages.count": {
           "type": "number",
@@ -547,7 +547,7 @@
         "messages.outbound.all.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients), excluding presence messages."
+          "description": "Total uncompressed outbound message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients), excluding presence messages."
         },
         "messages.outbound.all.presence.count": {
           "type": "number",
@@ -562,7 +562,7 @@
         "messages.outbound.all.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound presence message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
+          "description": "Total uncompressed outbound presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
         },
         "messages.persisted.all.count": {
           "type": "number",
@@ -577,7 +577,7 @@
         "messages.persisted.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed persisted message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas) based on configured channel rules."
+          "description": "Total uncompressed persisted message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas) based on configured channel rules."
         },
         "messages.persisted.messages.count": {
           "type": "number",
@@ -592,7 +592,7 @@
         "messages.persisted.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed persisted message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas) based on configured channel rules, excluding presence messages."
+          "description": "Total uncompressed persisted message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas) based on configured channel rules, excluding presence messages."
         },
         "messages.persisted.presence.count": {
           "type": "number",
@@ -607,7 +607,7 @@
         "messages.persisted.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed persisted presence message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas) based on configured channel rules."
+          "description": "Total uncompressed persisted presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas) based on configured channel rules."
         },
         "messages.processed.all.count": {
           "type": "number",
@@ -622,7 +622,7 @@
         "messages.processed.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed processed message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas) based on configured channel rules."
+          "description": "Total uncompressed processed message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas) based on configured channel rules."
         },
         "messages.processed.messages.count": {
           "type": "number",
@@ -637,7 +637,7 @@
         "messages.processed.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed processed message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas) based on configured channel rules, excluding presence messages."
+          "description": "Total uncompressed processed message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas) based on configured channel rules, excluding presence messages."
         },
         "messages.processed.presence.count": {
           "type": "number",
@@ -652,7 +652,7 @@
         "messages.processed.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed processed presence message size (excluding any compression, e.g. delta compression: https://ably.com/documentation/realtime/channels/channel-parameters/deltas) based on configured channel rules."
+          "description": "Total uncompressed processed presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas) based on configured channel rules."
         },
         "connections.all.peak": {
           "type": "number",
