@@ -31,6 +31,12 @@
       "type": "wrapper"
     },
     {
+      "identifier": "laravel-echo",
+      "versioned": true,
+      "emitters": ["ably-js"],
+      "type": "wrapper"
+    },
+    {
       "identifier": "ably-cocoa",
       "versioned": true,
       "emitters": ["ably-cocoa"],
@@ -206,6 +212,12 @@
     },
     {
       "identifier": "laravel",
+      "versioned": true,
+      "emitters": ["ably-php"],
+      "type": "wrapper"
+    },
+    {
+      "identifier": "laravel-broadcaster",
       "versioned": true,
       "emitters": ["ably-php"],
       "type": "wrapper"
