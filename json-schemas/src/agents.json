@@ -13,13 +13,6 @@
             "description": "The identifier (product name) as it appears in the Ably-Agent string. See RSC7d in the Ably Features spec for more information.",
             "type": "string"
           },
-          "emitters": {
-            "type": "array",
-            "description": "An array containing the names of Ably SDKs which directly emit this identifier. SDK names must match the repository name we use in GitHub (i.e. the component that appears after ably org in the URL).",
-            "items": {
-              "type": "string"
-            }
-          },
           "versioned": {
             "type": "boolean",
             "description": "If true, indicates that the identifier will have an associated version."
@@ -30,7 +23,7 @@
             "enum": ["os", "sdk", "wrapper", "runtime"]
           }
         },
-        "required": ["identifier", "emitters", "versioned", "type"]
+        "required": ["identifier", "versioned", "type"]
       }
     },
     "ablyLibMappings": {
