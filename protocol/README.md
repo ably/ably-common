@@ -93,6 +93,8 @@ The following table adds more contextual detail for some agent identifiers, wher
 | `jre` | [ably-java](https://github.com/ably/ably-java) |
 | `kafka-connect-ably` | [kafka-connect-ably](https://github.com/ably/kafka-connect-ably) |
 | `laravel` | [ably-php](https://github.com/ably/ably-php) |
+| `laravel-broadcaster` |  [ably-php](https://github.com/ably/ably-php) |
+| `laravel-echo` | [ably-js](https://github.com/ably/ably-js) |
 | `linux` | [ably-dotnet](https://github.com/ably/ably-dotnet), [ably-go](https://github.com/ably/ably-go) |
 | `macOS` | [ably-cocoa](https://github.com/ably/ably-cocoa), [ably-dotnet](https://github.com/ably/ably-dotnet) |
 | `nativescript` | [ably-js](https://github.com/ably/ably-js) |
