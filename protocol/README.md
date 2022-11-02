@@ -66,6 +66,48 @@ request against the `main` branch with those changes.
 Once the pull request is merged into `main`, open an internal ticket requesting that the realtime team
 follow the "Publishing Changes" steps below.
 
+### Additional Notes on Agents
+
+The following table adds more contextual detail for some agent identifiers, where:
+
+- The table does not include those where `type` is `sdk`.
+  In these cases there is always only a single emitter, where the identifier value matches the name of the SDK source code repository in the `ably` GitHub org - e.g. identifier `ably-js` is emitted by [ably-js](https://github.com/ably/ably-js).
+- The table rows are sorted alphabetically by identifier.
+- It intentionally does not include columns that repeat information that is already canonically defined in [agents.json](agents.json) (e.g. values of `versioned` and `type`).
+- The 'Emitters' column provides links to SDK source code repositories which directly emit this identifier.
+
+| Identifier | Emitters |
+| ---------- | -------- |
+| `ably-asset-tracking-android` | [ably-asset-tracking-android](https://github.com/ably/ably-asset-tracking-android) |
+| `ably-asset-tracking-swift` | [ably-asset-tracking-swift](https://github.com/ably/ably-asset-tracking-swift) |
+| `ably-flutter` | [ably-flutter](https://github.com/ably/ably-flutter) |
+| `ably-ruby-rest` | [ably-ruby](https://github.com/ably/ably-ruby) |
+| `android` | [ably-java](https://github.com/ably/ably-java), [ably-dotnet](https://github.com/ably/ably-dotnet) |
+| `browser` | [ably-js](https://github.com/ably/ably-js) |
+| `dart` | [ably-flutter](https://github.com/ably/ably-flutter) |
+| `darwin` | [ably-go](https://github.com/ably/ably-go) |
+| `dotnet-framework` | [ably-dotnet](https://github.com/ably/ably-dotnet) |
+| `dotnet-standard` | [ably-dotnet](https://github.com/ably/ably-dotnet) |
+| `go` | [ably-go](https://github.com/ably/ably-go) |
+| `iOS` | [ably-cocoa](https://github.com/ably/ably-cocoa), [ably-dotnet](https://github.com/ably/ably-dotnet) |
+| `jre` | [ably-java](https://github.com/ably/ably-java) |
+| `kafka-connect-ably` | [kafka-connect-ably](https://github.com/ably/kafka-connect-ably) |
+| `laravel` | [ably-php](https://github.com/ably/ably-php) |
+| `linux` | [ably-dotnet](https://github.com/ably/ably-dotnet), [ably-go](https://github.com/ably/ably-go) |
+| `macOS` | [ably-cocoa](https://github.com/ably/ably-cocoa), [ably-dotnet](https://github.com/ably/ably-dotnet) |
+| `nativescript` | [ably-js](https://github.com/ably/ably-js) |
+| `nodejs` | [ably-js](https://github.com/ably/ably-js) |
+| `php` | [ably-php](https://github.com/ably/ably-php) |
+| `python` | [ably-python](https://github.com/ably/ably-python) |
+| `react-native` | [ably-js](https://github.com/ably/ably-js) |
+| `ruby` | [ably-ruby](https://github.com/ably/ably-ruby) |
+| `tvOS` | [ably-cocoa](https://github.com/ably/ably-cocoa) |
+| `unity` | [ably-dotnet](https://github.com/ably/ably-dotnet) |
+| `uwp` | [ably-dotnet](https://github.com/ably/ably-dotnet) |
+| `watchOS` | [ably-cocoa](https://github.com/ably/ably-cocoa) |
+| `windows` | [ably-dotnet](https://github.com/ably/ably-dotnet), [ably-go](https://github.com/ably/ably-go) |
+| `xamarin` | [ably-dotnet](https://github.com/ably/ably-dotnet) |
+
 ### Publishing Changes
 
 #### Step 1: Public
