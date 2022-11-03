@@ -26,6 +26,11 @@
       "type": "wrapper"
     },
     {
+      "identifier": "laravel-echo",
+      "versioned": true,
+      "type": "wrapper"
+    },
+    {
       "identifier": "ably-cocoa",
       "versioned": true,
       "type": "sdk"
@@ -172,6 +177,11 @@
     },
     {
       "identifier": "laravel",
+      "versioned": true,
+      "type": "wrapper"
+    },
+    {
+      "identifier": "laravel-broadcaster",
       "versioned": true,
       "type": "wrapper"
     },
