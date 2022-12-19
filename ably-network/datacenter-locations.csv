@@ -1,8 +1,8 @@
-location,region,region_id,label
-"Ohio, US",North America,us-east-2-a,Ohio — US
-"North Virginia, US",North America,us-east-1-a,North Virginia — US
-"California, US",North America,us-west-1-a,California — US
-"Ireland, UK",Europe,eu-west-1-a,Ireland - Europe
-"Frankfurt, Germany",Europe,eu-central-1-a,Frankfurt - Europe
-Sydney,Oceania,ap-southeast-2-a,Sydney — Oceania
-Singapore,Asia,ap-southeast-1-a,Singapore — Asia
+location,region,region_id,label,latitude,longitude
+"Ohio, US",North America,us-east-2-a,Ohio — US,39.982867,-83.1309094
+"North Virginia, US",North America,us-east-1-a,North Virginia — US,38.852134,-77.336851
+"California, US",North America,us-west-1-a,California — US,37.757687,-122.4551093
+"Ireland, UK",Europe,eu-west-1-a,Ireland - Europe,53.3239756,-6.5327525
+"Frankfurt, Germany",Europe,eu-central-1-a,Frankfurt - Europe,50.1211909,8.566525
+Sydney,Oceania,ap-southeast-2-a,Sydney — Oceania,-33.8481647,150.7918939
+Singapore,Asia,ap-southeast-1-a,Singapore — Asia,1.3139961,103.7041681
