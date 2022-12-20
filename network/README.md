@@ -6,7 +6,9 @@ There's are three tasks involved in the process of all up-to-date which are expl
 
 - Update datacenters list, by updating its datacenter-locations.csv file
 - Update edge locations list, by updating aws-edge-locations.json
-- On the ably.com website, update the network map illustration, as consequence of any update to the abovementioned datasets, to reflect added/remove pins (see ably.com README in `/data/network`)
+- Commit these changes to and merge into `main` branch.
+
+**Note:** If the edge locations or datacenters have changed, update the network map illustration on the ably.com website as a consequence of any update to the abovementioned datasets. See ably.com README in `/data/network` for more info.
 
 ## Updating datacenter locations
 
