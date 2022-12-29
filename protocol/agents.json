@@ -132,27 +132,22 @@
     },
     {
       "identifier": "dotnet-framework",
-      "versioned": true,
+      "versioned": false,
       "type": "runtime"
     },
     {
       "identifier": "dotnet-standard",
-      "versioned": true,
-      "type": "runtime"
-    },
-    {
-      "identifier": "uwp",
       "versioned": false,
       "type": "runtime"
     },
     {
-      "identifier": "xamarin",
+      "identifier": "xamarin-android",
       "versioned": false,
       "type": "runtime"
     },
     {
-      "identifier": "unity",
-      "versioned": true,
+      "identifier": "xamarin-iOS",
+      "versioned": false,
       "type": "runtime"
     },
     {
