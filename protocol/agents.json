@@ -202,6 +202,7 @@
     "js-ns": "ably-js/${version} nativescript",
     "js-rn": "ably-js/${version} react-native",
     "go": "ably-go/${version}",
+    "ably-go": "ably-go/${version}",
     "android": "ably-java/${version} android/0.0.0",
     "java": "ably-java/${version}",
     "cocoa.ios": "ably-cocoa/${version} iOS/0.0.0",
