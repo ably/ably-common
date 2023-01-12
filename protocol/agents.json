@@ -132,27 +132,22 @@
     },
     {
       "identifier": "dotnet-framework",
-      "versioned": true,
+      "versioned": false,
       "type": "runtime"
     },
     {
       "identifier": "dotnet-standard",
-      "versioned": true,
-      "type": "runtime"
-    },
-    {
-      "identifier": "uwp",
       "versioned": false,
       "type": "runtime"
     },
     {
-      "identifier": "xamarin",
+      "identifier": "xamarin-android",
       "versioned": false,
       "type": "runtime"
     },
     {
-      "identifier": "unity",
-      "versioned": true,
+      "identifier": "xamarin-iOS",
+      "versioned": false,
       "type": "runtime"
     },
     {
@@ -209,11 +204,10 @@
     "cocoa.macos": "ably-cocoa/${version} macOS/0.0.0",
     "cocoa.tvos": "ably-cocoa/${version} tvOS/0.0.0",
     "dotnet": "ably-dotnet/${version}",
-    "dotnet.framework": "ably-dotnet/${version} dotnet-framework/0.0.0",
-    "dotnet.uwp": "ably-dotnet/${version} uwp",
-    "dotnet.netstandard20": "ably-dotnet/${version} dotnet-standard/0.0.0",
-    "dotnet.xamarin-android": "ably-dotnet/${version} xamarin android/0.0.0",
-    "dotnet.xamarin-ios": "ably-dotnet/${version} xamarin iOS/0.0.0",
+    "dotnet.framework": "ably-dotnet/${version} dotnet-framework",
+    "dotnet.netstandard20": "ably-dotnet/${version} dotnet-standard",
+    "dotnet.xamarin-android": "ably-dotnet/${version} xamarin-android",
+    "dotnet.xamarin-ios": "ably-dotnet/${version} xamarin-iOS",
     "php": "ably-php/${version}",
     "php-laravel": "ably-php/${version} laravel",
     "python": "ably-python/${version}",
