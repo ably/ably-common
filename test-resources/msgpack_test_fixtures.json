@@ -16,7 +16,7 @@
     "msgpack": "g7Bjb25uZWN0aW9uU2VyaWFsAKhtZXNzYWdlc5GBpGRhdGGhYaltc2dTZXJpYWwA"
   },
   {
-    "name": "200 byte string string",
+    "name": "200 character string",
     "data": "a",
     "encoding": "",
     "numRepeat": 200,
@@ -24,7 +24,7 @@
     "msgpack": "g7Bjb25uZWN0aW9uU2VyaWFsAKhtZXNzYWdlc5GBpGRhdGHZyGFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhqW1zZ1NlcmlhbAA="
   },
   {
-    "name": "2000 byte string string",
+    "name": "2000 character string",
     "data": "a",
     "encoding": "",
     "numRepeat": 2000,
