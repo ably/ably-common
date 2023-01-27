@@ -2,10 +2,10 @@
   {
     "name": "json array",
     "data": ["a", "b", "c"],
-    "encoding": "json",
+    "encoding": "",
     "numRepeat": 0,
     "type": "jsonArray",
-    "msgpack": "g7Bjb25uZWN0aW9uU2VyaWFsAKhtZXNzYWdlc5GCpGRhdGGtWyJhIiwiYiIsImMiXahlbmNvZGluZ6lqc29uL2pzb26pbXNnU2VyaWFsAA=="
+    "msgpack": "g7Bjb25uZWN0aW9uU2VyaWFsAKhtZXNzYWdlc5GCpGRhdGGtWyJhIiwiYiIsImMiXahlbmNvZGluZ6Rqc29uqW1zZ1NlcmlhbAA="
   },
   {
     "name": "short string",
@@ -67,9 +67,9 @@
       ],
       "foo": 42
     },
-    "encoding": "json",
+    "encoding": "",
     "numRepeat": 0,
     "type": "jsonObject",
-    "msgpack": "g7Bjb25uZWN0aW9uU2VyaWFsAKhtZXNzYWdlc5GCpGRhdGHZJ3siYmFyIjpbImEiLDEuMix7ImJvbyI6ImhhIn1dLCJmb28iOjQyfahlbmNvZGluZ6lqc29uL2pzb26pbXNnU2VyaWFsAA=="
+    "msgpack": "g7Bjb25uZWN0aW9uU2VyaWFsAKhtZXNzYWdlc5GCpGRhdGHZJ3siYmFyIjpbImEiLDEuMix7ImJvbyI6ImhhIn1dLCJmb28iOjQyfahlbmNvZGluZ6Rqc29uqW1zZ1NlcmlhbAA="
   }
 ]
