@@ -1,11 +1,7 @@
 [
   {
     "name": "json array",
-    "data": [
-      "a",
-      "b",
-      "c"
-    ],
+    "data": ["a", "b", "c"],
     "encoding": "json",
     "numRepeat": 0,
     "type": "jsonArray",
