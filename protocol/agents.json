@@ -189,6 +189,11 @@
       "identifier": "go",
       "versioned": true,
       "type": "runtime"
+    },
+    {
+      "identifier": "react-hooks",
+      "versioned": true,
+      "type": "wrapper"
     }
   ],
   "ablyLibMappings": {
