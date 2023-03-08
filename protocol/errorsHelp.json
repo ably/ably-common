@@ -5,6 +5,7 @@
   "40006": "https://faqs.ably.com/error-code-40006-invalid-connection-id",
   "40009": "https://faqs.ably.com/error-code-40009-maximum-message-length-exceeded",
   "40010": "https://faqs.ably.com/error-code-40010-invalid-channel-name",
+  "40111": "https://faqs.ably.com/error-code-40111-connection-limits-exceeded",
   "40012": "https://faqs.ably.com/error-code-40012-invalid-client-id",
   "40032": "https://faqs.ably.com/error-code-40032-invalid-publish-request-impermissible-extras-field",
   "40100": "https://faqs.ably.com/error-code-40100",
