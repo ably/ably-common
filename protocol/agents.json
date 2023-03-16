@@ -194,6 +194,16 @@
       "identifier": "react-hooks",
       "versioned": true,
       "type": "wrapper"
+    },
+    {
+      "identifier": "ably-control-go",
+      "versioned": true,
+      "type": "sdk"
+    },
+    {
+      "identifier": "terraform-provider-ably",
+      "versioned": true,
+      "type": "wrapper"
     }
   ],
   "ablyLibMappings": {
