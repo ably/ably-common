@@ -51,5 +51,6 @@
   "90010": "https://faqs.ably.com/error-code-90010-maximum-number-of-channels-per-connection-exceeded",
   "90021": "https://faqs.ably.com/error-code-90021-max-channel-creation-rate-exceeded",
   "91001": "https://faqs.ably.com/error-code-91001",
-  "91005": "https://faqs.ably.com/error-code-91005"
+  "91005": "https://faqs.ably.com/error-code-91005",
+  "10000": "https://faqs.ably.com/error-code-10000"
 }
