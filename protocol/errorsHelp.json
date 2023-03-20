@@ -42,6 +42,7 @@
   "80008": "https://faqs.ably.com/error-code-80008-unable-to-recover-connection-connection-expired",
   "80016": "https://faqs.ably.com/error-code-80016-operation-on-superseded-connection",
   "80017": "https://faqs.ably.com/error-code-80017-connection-already-closed",
+  "80018": "https://faqs.ably.com/error-code-80018-invalid-connection-id-invalid-format",
   "80019": "https://faqs.ably.com/error-code-80019",
   "80021": "https://faqs.ably.com/error-code-80021-max-new-connections-rate-exceeded",
   "80022": "https://faqs.ably.com/error-code-80022-unable-to-find-connection",
