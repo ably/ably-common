@@ -96,6 +96,11 @@
       "type": "wrapper"
     },
     {
+      "identifier": "ably-asset-tracking-js",
+      "versioned": true,
+      "type": "wrapper"
+    },
+    {
       "identifier": "ably-flutter",
       "versioned": true,
       "type": "wrapper"
@@ -209,6 +214,16 @@
       "identifier": "spaces-custom-client",
       "versioned": false,
       "type": "runtime"
+    },
+    {
+      "identifier": "ably-control-go",
+      "versioned": true,
+      "type": "sdk"
+    },
+    {
+      "identifier": "terraform-provider-ably",
+      "versioned": true,
+      "type": "wrapper"
     }
   ],
   "ablyLibMappings": {
