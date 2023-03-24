@@ -201,6 +201,21 @@
       "type": "wrapper"
     },
     {
+      "identifier": "ably-spaces",
+      "versioned": true,
+      "type": "wrapper"
+    },
+    {
+      "identifier": "spaces-default-client",
+      "versioned": false,
+      "type": "runtime"
+    },
+    {
+      "identifier": "spaces-custom-client",
+      "versioned": false,
+      "type": "runtime"
+    },
+    {
       "identifier": "ably-control-go",
       "versioned": true,
       "type": "sdk"
