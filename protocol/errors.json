@@ -1,6 +1,8 @@
 {
   "10000": "no error",
 
+  "20000": "general error code",
+
   "40000": "bad request",
   "40001": "invalid request body",
   "40002": "invalid parameter name",

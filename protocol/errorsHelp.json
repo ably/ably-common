@@ -1,5 +1,6 @@
 {
   "10000": "https://faqs.ably.com/error-code-10000",
+  "20000": "https://faqs.ably.com/error-code-20000",
   "40000": "https://faqs.ably.com/error-code-40000-bad-request",
   "40001": "https://faqs.ably.com/error-code-40001-invalid-request-body",
   "40005": "https://faqs.ably.com/error-code-40005-invalid-credentials",
@@ -36,6 +37,7 @@
   "50000": "https://faqs.ably.com/error-code-50000-internal-error",
   "50001": "https://faqs.ably.com/error-code-50001-internal-channel-error",
   "50003": "https://faqs.ably.com/error-code-50003-timeout-error",
+  "70001": "https://faqs.ably.com/error-code-70001",
   "70002": "https://faqs.ably.com/error-code-70002",
   "80000": "https://faqs.ably.com/error-code-80000-connection-failed",
   "80002": "https://faqs.ably.com/error-code-80002-password-validation-request-timeout",
