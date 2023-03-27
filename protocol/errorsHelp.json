@@ -1,5 +1,6 @@
 {
   "10000": "https://faqs.ably.com/error-code-10000",
+  "20000": "https://faqs.ably.com/error-code-20000",
   "40000": "https://faqs.ably.com/error-code-40000-bad-request",
   "40001": "https://faqs.ably.com/error-code-40001-invalid-request-body",
   "40005": "https://faqs.ably.com/error-code-40005-invalid-credentials",
