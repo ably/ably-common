@@ -3,6 +3,7 @@
   "20000": "https://faqs.ably.com/error-code-20000",
   "40000": "https://faqs.ably.com/error-code-40000-bad-request",
   "40001": "https://faqs.ably.com/error-code-40001-invalid-request-body",
+  "40003": "https://faqs.ably.com/error-40003",
   "40005": "https://faqs.ably.com/error-code-40005-invalid-credentials",
   "40006": "https://faqs.ably.com/error-code-40006-invalid-connection-id",
   "40009": "https://faqs.ably.com/error-code-40009-maximum-message-length-exceeded",
@@ -55,5 +56,6 @@
   "90010": "https://faqs.ably.com/error-code-90010-maximum-number-of-channels-per-connection-exceeded",
   "90021": "https://faqs.ably.com/error-code-90021-max-channel-creation-rate-exceeded",
   "91001": "https://faqs.ably.com/error-code-91001",
+  "91003": "https://faqs.ably.com/error-91003-maximum-member-limit-exceeded",
   "91005": "https://faqs.ably.com/error-code-91005"
 }
