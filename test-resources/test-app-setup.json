@@ -15,6 +15,9 @@
       },
       {
         "revocableTokens": true
+      },
+      {
+        "capability": "{ \"[*]*\":[\"*\"] }"
       }
     ],
     "namespaces": [
