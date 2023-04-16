@@ -156,6 +156,61 @@
       "type": "runtime"
     },
     {
+      "identifier": "xamarin",
+      "versioned": false,
+      "type": "runtime"
+    },
+    {
+      "identifier": "dotnet6",
+      "versioned": false,
+      "type": "runtime"
+    },
+    {
+      "identifier": "dotnet7",
+      "versioned": false,
+      "type": "runtime"
+    },
+    {
+      "identifier": "dotnet-windows",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "dotnet-macOS",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "dotnet-linux",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "dotnet-iOS",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "dotnet-android",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "dotnet-browser",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "dotnet-watchOS",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "dotnet-tvOS",
+      "versioned": false,
+      "type": "os"
+    },
+    {
       "identifier": "python",
       "versioned": true,
       "type": "runtime"
