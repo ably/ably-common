@@ -137,12 +137,12 @@
     },
     {
       "identifier": "dotnet-framework",
-      "versioned": false,
+      "versioned": true,
       "type": "runtime"
     },
     {
       "identifier": "dotnet-standard",
-      "versioned": false,
+      "versioned": true,
       "type": "runtime"
     },
     {
@@ -157,17 +157,17 @@
     },
     {
       "identifier": "xamarin",
-      "versioned": false,
+      "versioned": true,
       "type": "runtime"
     },
     {
       "identifier": "dotnet6",
-      "versioned": false,
+      "versioned": true,
       "type": "runtime"
     },
     {
       "identifier": "dotnet7",
-      "versioned": false,
+      "versioned": true,
       "type": "runtime"
     },
     {
