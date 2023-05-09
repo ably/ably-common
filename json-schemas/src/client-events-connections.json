@@ -85,6 +85,10 @@
           "type": "boolean",
           "description": "Does this token contain user claims."
         },
+        "hasLimitsClaims": {
+          "type": "boolean",
+          "description": "Does this token contain limits claims."
+        },
         "keyName": {
           "type": "string",
           "description": "The credential's key name."
@@ -94,7 +98,7 @@
           "description": "The credential type: either 'key', 'ablyToken', 'ablyJWT', or 'ablyJWE'."
         }
       },
-      "required": ["hasUserClaims", "keyName", "type"]
+      "required": ["hasUserClaims", "hasLimitsClaims", "keyName", "type"]
     },
     "error": {
       "type": "object",
