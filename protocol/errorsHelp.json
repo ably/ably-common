@@ -22,7 +22,7 @@
   "40112": "https://faqs.ably.com/error-code-40112-account-blocked-message-limits-exceeded",
   "40114": "https://faqs.ably.com/error-code-40114-account-wide-peak-channel-limit-exceeded",
   "40115": "https://faqs.ably.com/error-code-40115-account-restricted-request-limit-exceeded",
-  "40125": "https://faqs.ably.com/error-40125-max-number-of-rules-per-application",
+  "40125": "https://faqs.ably.com/error-code-40125-max-number-of-rules-per-application",
   "40131": "https://faqs.ably.com/error-code-40131-key-revoked",
   "40142": "https://faqs.ably.com/error-code-40142-token-expired-code",
   "40143": "https://faqs.ably.com/error-code-40143-token-unrecognised",
