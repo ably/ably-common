@@ -13,7 +13,7 @@
     },
     "unit": {
       "type": "string",
-      "description": "Unit of time that this stats entry covers (partially in the case of an in-progress entry)",
+      "description": "Unit of time that this stats entry covers (partially, in the case of an in-progress entry)",
       "enum": ["minute", "hour", "day", "month"]
     },
     "schema": {
