@@ -9,16 +9,20 @@
     },
     "intervalId": {
       "type": "string",
-      "description": "time period for statistics in date-time format yyyy-mm-dd:hh:mm:ss"
+      "description": "Start time for this stats entry. Format is yyyy-mm-dd:hh:mm for unit=minute, and yyyy-mm-dd:hh for unit=hour,day,month"
     },
     "unit": {
       "type": "string",
-      "description": "Unit of time for these statistics from the intervalId forwards.",
-      "pattern": "^minute$"
+      "description": "Unit of time that this stats entry covers (partially, in the case of an in-progress entry)",
+      "enum": ["minute", "hour", "day", "month"]
     },
     "schema": {
       "type": "string",
       "description": "URI to this schema."
+    },
+    "inProgress": {
+      "type": "string",
+      "description": "For entries that are still in progress, such as the current month: the last sub-interval included in this entry (in format yyyy-mm-dd:hh:mm:ss), else undefined"
     },
     "entries": {
       "type": "object",
