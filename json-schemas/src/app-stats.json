@@ -22,7 +22,7 @@
     },
     "inProgress": {
       "type": "string",
-      "description": "for entries that are still in progress, such as the current month: the last sub-interval included in this entry (in format yyyy-mm-dd:hh:mm:ss), else undefined"
+      "description": "For entries that are still in progress, such as the current month: the last sub-interval included in this entry (in format yyyy-mm-dd:hh:mm:ss), else undefined"
     },
     "entries": {
       "type": "object",
