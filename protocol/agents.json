@@ -137,12 +137,12 @@
     },
     {
       "identifier": "dotnet-framework",
-      "versioned": false,
+      "versioned": true,
       "type": "runtime"
     },
     {
       "identifier": "dotnet-standard",
-      "versioned": false,
+      "versioned": true,
       "type": "runtime"
     },
     {
@@ -154,6 +154,61 @@
       "identifier": "xamarin-iOS",
       "versioned": false,
       "type": "runtime"
+    },
+    {
+      "identifier": "xamarin",
+      "versioned": true,
+      "type": "runtime"
+    },
+    {
+      "identifier": "dotnet6",
+      "versioned": true,
+      "type": "runtime"
+    },
+    {
+      "identifier": "dotnet7",
+      "versioned": true,
+      "type": "runtime"
+    },
+    {
+      "identifier": "dotnet-windows",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "dotnet-macOS",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "dotnet-linux",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "dotnet-iOS",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "dotnet-android",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "dotnet-browser",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "dotnet-watchOS",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "dotnet-tvOS",
+      "versioned": false,
+      "type": "os"
     },
     {
       "identifier": "python",
