@@ -59,6 +59,7 @@
   "90007": "https://faqs.ably.com/error-code-40006-invalid-connection-id",
   "90010": "https://faqs.ably.com/error-code-90010-maximum-number-of-channels-per-connection-exceeded",
   "90021": "https://faqs.ably.com/error-code-90021-max-channel-creation-rate-exceeded",
+  "91000": "https://faqs.ably.com/error-code-91000",
   "91001": "https://faqs.ably.com/error-code-91001",
   "91003": "https://faqs.ably.com/error-91003-maximum-member-limit-exceeded",
   "91005": "https://faqs.ably.com/error-code-91005"
