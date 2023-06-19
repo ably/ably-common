@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ably Attachment Event",
+  "type": "object",
+  "properties": {
+    "connectionId": {
+      "type": "string",
+      "description": "The ID of the connection"
+    },
+    "site": {
+      "type": "string",
+      "description": "The site in which the attachment was established"
+    },
+    "channelId": {
+      "type": "string",
+      "description": "The ID of the channel"
+    },
+    "channelName": {
+      "type": "string",
+      "description": "The name of the channel"
+    },
+    "qualifier": {
+      "type": "string",
+      "description": "The qualifier used in the channel spec"
+    },
+    "qualifierParam": {
+      "type": "string",
+      "description": "The parameter for the qualifier used in the channel spec"
+    },
+    "channelParams": {
+      "type": "object",
+      "description": "Channel parameters",
+      "properties": {
+        "delta": {
+          "type": "string",
+          "description": "Channel delta parameter",
+          "enum": ["vcdiff"]
+        },
+        "rewind": {
+          "type": "string",
+          "description": "Channel rewind parameter"
+        },
+        "mode": {
+          "type": "string",
+          "description": "Channel mode parameter, a comma-separated list of channel modes"
+        },
+        "occupancy": {
+          "type": "string",
+          "description": "Channel occupancy parameter",
+          "enum": [
+            "metrics",
+            "metrics.connections",
+            "metrics.publishers",
+            "metrics.subscribers",
+            "metrics.presenceConnections",
+            "metrics.presenceMembers",
+            "metrics.presenceSubscribers"
+          ]
+        }
+      }
+    },
+    "duration": {
+      "type": "integer",
+      "description": "The duration the attachment was open for in milliseconds"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["connectionId", "site", "channelId", "channelName", "duration"]
+}
