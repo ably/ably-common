@@ -211,6 +211,66 @@
       "type": "os"
     },
     {
+      "identifier": "unity",
+      "versioned": true,
+      "type": "runtime"
+    },
+    {
+      "identifier": "unity-windows",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "unity-macOS",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "unity-linux",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "unity-iOS",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "unity-android",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "unity-webGL",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "unity-tvOS",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "unity-nintendo-switch",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "unity-PS4",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "unity-PS5",
+      "versioned": false,
+      "type": "os"
+    },
+    {
+      "identifier": "unity-xbox",
+      "versioned": false,
+      "type": "os"
+    },
+    {
       "identifier": "python",
       "versioned": true,
       "type": "runtime"
