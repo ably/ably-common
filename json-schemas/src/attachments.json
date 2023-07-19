@@ -62,6 +62,94 @@
     "duration": {
       "type": "integer",
       "description": "The duration the attachment was open for in milliseconds"
+    },
+    "messages": {
+      "type": "object",
+      "description": "Message statistics",
+      "properties": {
+        "inbound": {
+          "type": "object",
+          "description": "Number of inbound messages",
+          "properties": {
+            "messages": {
+              "type": "object",
+              "description": "Message statistics",
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Message count"
+                },
+                "data": {
+                  "type": "integer",
+                  "description": "Message data in bytes"
+                }
+              }
+            },
+            "presence": {
+              "type": "object",
+              "description": "Message statistics",
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Message count"
+                },
+                "data": {
+                  "type": "integer",
+                  "description": "Message data in bytes"
+                }
+              }
+            }
+          }
+        },
+        "outbound": {
+          "type": "object",
+          "description": "Number of outbound messages",
+          "properties": {
+            "messages": {
+              "type": "object",
+              "description": "Message statistics",
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Message count"
+                },
+                "data": {
+                  "type": "integer",
+                  "description": "Message data in bytes"
+                }
+              }
+            },
+            "presence": {
+              "type": "object",
+              "description": "Message statistics",
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Message count"
+                },
+                "data": {
+                  "type": "integer",
+                  "description": "Message data in bytes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "filter": {
+      "type": "object",
+      "description": "Filtered channel statistics",
+      "properties": {
+        "messagesReceived": {
+          "type": "integer",
+          "description": "The number of messages received by the filtered channel (including filtered messages)"
+        },
+        "messagesAccepted": {
+          "type": "integer",
+          "description": "The number of messages that pass the channels filter"
+        }
+      }
     }
   },
   "additionalProperties": false,

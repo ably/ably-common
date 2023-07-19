@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ably Epoch Event",
+  "type": "object",
+  "properties": {
+    "channelId": {
+      "type": "string",
+      "description": "The ID of the channel"
+    },
+    "epochId": {
+      "type": "string",
+      "description": "The ID of the epoch"
+    },
+    "startTime": {
+      "type": "number",
+      "description": "The time the epoch started"
+    },
+    "endTime": {
+      "type": "number",
+      "description": "The time the epoch ended"
+    },
+    "peakOccupancy": {
+      "type": "object",
+      "description": "Peak channel occupancy metrics",
+      "properties": {
+        "connections": {
+          "type": "number",
+          "description": "The number of connections"
+        },
+        "publishers": {
+          "type": "number",
+          "description": "The number of connections that are authorized to publishThe number of connections"
+        },
+        "subscribers": {
+          "type": "number",
+          "description": "The number of connections that are authorized to subscribe to messagesThe number of connections"
+        },
+        "presenceSubscribers": {
+          "type": "number",
+          "description": "The number of connections that are authorized to subscribe to presence messages"
+        },
+        "presenceConnections": {
+          "type": "number",
+          "description": "The number of connections that are authorized to enter members into the presence channel"
+        },
+        "presenceMembers": {
+          "type": "number",
+          "description": "The number of members currently entered into the presence channel"
+        }
+      }
+    },
+    "messages": {
+      "type": "object",
+      "description": "Message statistics",
+      "properties": {
+        "messages": {
+          "type": "object",
+          "description": "Message statistics",
+          "properties": {
+            "count": {
+              "type": "integer",
+              "description": "Message count"
+            },
+            "data": {
+              "type": "integer",
+              "description": "Message data in bytes"
+            }
+          }
+        },
+        "presence": {
+          "type": "object",
+          "description": "Message statistics",
+          "properties": {
+            "count": {
+              "type": "integer",
+              "description": "Message count"
+            },
+            "data": {
+              "type": "integer",
+              "description": "Message data in bytes"
+            }
+          }
+        }
+      }
+    },
+    "namespace": {
+      "type": "object",
+      "description": "Namespace information",
+      "properties": {
+        "namespaceId": {
+          "type": "string",
+          "description": "The ID of the namespace"
+        },
+        "persisted": {
+          "type": "boolean"
+        },
+        "persistLast": {
+          "type": "boolean"
+        },
+        "authenticated": {
+          "type": "boolean"
+        },
+        "tlsOnly": {
+          "type": "boolean"
+        },
+        "pushEnabled": {
+          "type": "boolean"
+        },
+        "exposeTimeserial": {
+          "type": "boolean"
+        },
+        "populateChannelRegistry": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

@@ -77,6 +77,88 @@
       "type": "integer",
       "description": "The duration the connection was open for in milliseconds."
     },
+    "messages": {
+      "type": "object",
+      "description": "Message statistics",
+      "properties": {
+        "inbound": {
+          "type": "object",
+          "description": "Number of inbound messages",
+          "properties": {
+            "messages": {
+              "type": "object",
+              "description": "Message statistics",
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Message count"
+                },
+                "data": {
+                  "type": "integer",
+                  "description": "Message data in bytes"
+                }
+              }
+            },
+            "presence": {
+              "type": "object",
+              "description": "Presence statistics",
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Message count"
+                },
+                "data": {
+                  "type": "integer",
+                  "description": "Message data in bytes"
+                }
+              }
+            },
+            "maxRate": {
+              "type": "integer",
+              "description": "Maximum message rate over a 6 second interval"
+            }
+          }
+        },
+        "outbound": {
+          "type": "object",
+          "description": "Number of outbound messages",
+          "properties": {
+            "messages": {
+              "type": "object",
+              "description": "Message statistics",
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Message count"
+                },
+                "data": {
+                  "type": "integer",
+                  "description": "Message data in bytes"
+                }
+              }
+            },
+            "presence": {
+              "type": "object",
+              "description": "Presence statistics",
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Message count"
+                },
+                "data": {
+                  "type": "integer",
+                  "description": "Message data in bytes"
+                }
+              }
+            },
+            "maxRate": {
+              "type": "integer",
+              "description": "Maximum message rate over a 6 second interval"
+            }
+          }
+        }
+      }
+    },
     "credential": {
       "type": "object",
       "description": "Details of the credential used to authenticate the client.",
