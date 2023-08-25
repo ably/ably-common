@@ -66,5 +66,12 @@
   "91000": "https://faqs.ably.com/error-code-91000",
   "91001": "https://faqs.ably.com/error-code-91001",
   "91003": "https://faqs.ably.com/error-91003-maximum-member-limit-exceeded",
-  "91005": "https://faqs.ably.com/error-code-91005"
+  "91005": "https://faqs.ably.com/error-code-91005",
+
+  "101000": "https://faqs.ably.com/error-code-101000",
+  "101001": "https://faqs.ably.com/error-code-101001",
+  "101002": "https://faqs.ably.com/error-code-101002",
+  "101003": "https://faqs.ably.com/error-code-101003",
+  "101004": "https://faqs.ably.com/error-code-101004",
+  "101004": "https://faqs.ably.com/error-code-101005"
 }
