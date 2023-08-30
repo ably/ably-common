@@ -316,6 +316,11 @@
       "type": "wrapper"
     },
     {
+      "identifier": "react-hooks-time-ping",
+      "versioned": true,
+      "type": "wrapper"
+    },
+    {
       "identifier": "ably-spaces",
       "versioned": true,
       "type": "wrapper"
