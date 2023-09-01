@@ -74,6 +74,29 @@
         }
       },
       "required": ["message", "code", "statusCode"]
+    },
+    "credential": {
+      "type": "object",
+      "description": "Details of the credential used to authenticate the client.",
+      "properties": {
+        "hasUserClaims": {
+          "type": "boolean",
+          "description": "Does this token contain user claims."
+        },
+        "hasLimitsClaims": {
+          "type": "boolean",
+          "description": "Does this token contain limits claims."
+        },
+        "keyName": {
+          "type": "string",
+          "description": "The credential's key name."
+        },
+        "type": {
+          "type": "string",
+          "description": "The credential type: either 'key', 'ablyToken', 'ablyJWT', or 'ablyJWE'."
+        }
+      },
+      "required": ["hasUserClaims", "hasLimitsClaims", "keyName", "type"]
     }
   },
   "additionalProperties": false,
