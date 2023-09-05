@@ -39,17 +39,26 @@ Codes in [errors.json](errors.json) fall into these ranges:
 | 80000 | connection-related |
 | 90000 | channel-related |
 
-Codes from `100000` are defined outside of scope of this repository.
-In other words, these higher ranges are reserved for use by specific Ably projects and ecosystems, where these codes are unknown to the core Ably service:
+Codes above `100000` are reserved for use by specific Ably projects and ecosystems, where these codes are unknown to the core Ably service. Definitions for these ranges are defined below.
 
-| From | To | Project / Ecosystem | Location of Definitions |
-| ---- | -- | ------------------- | ----------------------- |
-| 100000 | 100999 | Asset Tracking | [Specification: Error codes](https://github.com/ably/ably-asset-tracking-common/tree/main/specification#error-codes) |
+#### Asset Tracking
 
-The table above is our canonical location for:
+Codes for Asset Tracking are maintained externally.
 
-- specifying these ranges
-- delegating the definitions of codes that sit within these ranges to elsewhere
+| From | To | Location of Definitions |
+| ---- | -- | ----------------------- |
+| 100000 | 100999 | [Specification: Error codes](https://github.com/ably/ably-asset-tracking-common/tree/main/specification#error-codes) |
+
+#### Spaces
+
+| From  | Title |
+| ----- | ----- |
+| 101000 | Space name missing |
+| 101001 | Not entered space  |
+| 101002 | Lock request exists |
+| 101003 | Lock is locked |
+| 101004 | Lock invalidated |
+| 101005 | Lock released |
 
 ## Agents
 
