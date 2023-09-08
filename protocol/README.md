@@ -58,7 +58,6 @@ Codes for Asset Tracking are maintained externally.
 | 101002 | Lock request exists |
 | 101003 | Lock is locked |
 | 101004 | Lock invalidated |
-| 101005 | Lock released |
 
 ## Agents
 
