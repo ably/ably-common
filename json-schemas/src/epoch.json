@@ -97,7 +97,7 @@
         "persistLast": {
           "type": "boolean"
         },
-        "authenticated": {
+        "identified": {
           "type": "boolean"
         },
         "tlsOnly": {
