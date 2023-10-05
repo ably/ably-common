@@ -103,6 +103,7 @@
   "50320": "Active Traffic Management: traffic for this cluster is being temporarily redirected to a backup service",
 
   "50330": "request reached the wrong cluster; retry (used during dns changes for cluster migrations)",
+  "50305": "Ably's routing layer was unable to service this request",
 
   "50410": "Ably's edge proxy service timed out waiting for the Ably platform",
 
