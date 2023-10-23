@@ -13,6 +13,7 @@
   "40111": "https://faqs.ably.com/error-code-40111-connection-limits-exceeded",
   "40012": "https://faqs.ably.com/error-code-40012-invalid-client-id",
   "40013": "https://faqs.ably.com/error-code-40013",
+  "40016": "https://faqs.ably.com/error-code-40016",
   "40031": "https://faqs.ably.com/client-specified-message-id-restrictions-for-multiple-messages-published-atomically",
   "40032": "https://faqs.ably.com/error-code-40032-invalid-publish-request-impermissible-extras-field",
   "40100": "https://faqs.ably.com/error-code-40100",
