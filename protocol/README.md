@@ -90,7 +90,6 @@ The following table adds more contextual detail for some agent identifiers, wher
 | `ably-asset-tracking-swift` | [ably-asset-tracking-swift](https://github.com/ably/ably-asset-tracking-swift) |
 | `ably-flutter` | [ably-flutter](https://github.com/ably/ably-flutter) |
 | `ably-ruby-rest` | [ably-ruby](https://github.com/ably/ably-ruby) |
-| `ably-spaces` | [spaces](https://github.com/ably-labs/spaces) |
 | `android` | [ably-java](https://github.com/ably/ably-java), [ably-dotnet](https://github.com/ably/ably-dotnet) |
 | `browser` | [ably-js](https://github.com/ably/ably-js) |
 | `dart` | [ably-flutter](https://github.com/ably/ably-flutter) |
@@ -113,8 +112,9 @@ The following table adds more contextual detail for some agent identifiers, wher
 | `react-hooks` | [react-hooks](https://github.com/ably-labs/react-hooks) |
 | `react-native` | [ably-js](https://github.com/ably/ably-js) |
 | `ruby` | [ably-ruby](https://github.com/ably/ably-ruby) |
-| `spaces-default-client` | [spaces](https://github.com/ably-labs/spaces) |
-| `spaces-custom-client` | [spaces](https://github.com/ably-labs/spaces) |
+| `spaces` | [spaces](https://github.com/ably/spaces) |
+| `spaces-default-client` | [spaces](https://github.com/ably/spaces) |
+| `spaces-custom-client` | [spaces](https://github.com/ably/spaces) |
 | `tvOS` | [ably-cocoa](https://github.com/ably/ably-cocoa) |
 | `unity` | [ably-dotnet](https://github.com/ably/ably-dotnet) |
 | `uwp` | [ably-dotnet](https://github.com/ably/ably-dotnet) |
