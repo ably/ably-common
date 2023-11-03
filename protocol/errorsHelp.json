@@ -1,6 +1,7 @@
 {
   "10000": "https://faqs.ably.com/error-code-10000",
   "20000": "https://faqs.ably.com/error-code-20000",
+  "400": "https://faqs.ably.com/error-code-40000-bad-request",
   "40000": "https://faqs.ably.com/error-code-40000-bad-request",
   "40001": "https://faqs.ably.com/error-code-40001-invalid-request-body",
   "40003": "https://faqs.ably.com/error-40003",
@@ -12,6 +13,8 @@
   "40111": "https://faqs.ably.com/error-code-40111-connection-limits-exceeded",
   "40012": "https://faqs.ably.com/error-code-40012-invalid-client-id",
   "40013": "https://faqs.ably.com/error-code-40013",
+  "40016": "https://faqs.ably.com/error-code-40016",
+  "40030": "https://faqs.ably.com/error-code-40030",
   "40031": "https://faqs.ably.com/client-specified-message-id-restrictions-for-multiple-messages-published-atomically",
   "40032": "https://faqs.ably.com/error-code-40032-invalid-publish-request-impermissible-extras-field",
   "40100": "https://faqs.ably.com/error-code-40100",
@@ -39,8 +42,11 @@
   "40400": "https://faqs.ably.com/error-code-40400-not-found",
   "42910": "https://faqs.ably.com/error-code-42910-rate-limit-exceeded-request-rejected",
   "42911": "https://faqs.ably.com/error-code-42911-maximum-account-wide-instantaneous-messages-rate-exceeded",
+  "42912": "https://faqs.ably.com/error-code-42912-channel-iteration-call-already-in-progress",
+  "500": "https://faqs.ably.com/error-code-500",
   "50000": "https://faqs.ably.com/error-code-50000-internal-error",
   "50001": "https://faqs.ably.com/error-code-50001-internal-channel-error",
+  "50002": "https://faqs.ably.com/error-code-50002-internal-connection-error",
   "50003": "https://faqs.ably.com/error-code-50003-timeout-error",
   "70001": "https://faqs.ably.com/error-code-70001",
   "70002": "https://faqs.ably.com/error-code-70002",
@@ -59,7 +65,14 @@
   "90007": "https://faqs.ably.com/error-code-40006-invalid-connection-id",
   "90010": "https://faqs.ably.com/error-code-90010-maximum-number-of-channels-per-connection-exceeded",
   "90021": "https://faqs.ably.com/error-code-90021-max-channel-creation-rate-exceeded",
+  "91000": "https://faqs.ably.com/error-code-91000",
   "91001": "https://faqs.ably.com/error-code-91001",
   "91003": "https://faqs.ably.com/error-91003-maximum-member-limit-exceeded",
-  "91005": "https://faqs.ably.com/error-code-91005"
+  "91005": "https://faqs.ably.com/error-code-91005",
+
+  "101000": "https://faqs.ably.com/error-code-101000",
+  "101001": "https://faqs.ably.com/error-code-101001",
+  "101002": "https://faqs.ably.com/error-code-101002",
+  "101003": "https://faqs.ably.com/error-code-101003",
+  "101004": "https://faqs.ably.com/error-code-101004"
 }

@@ -39,17 +39,25 @@ Codes in [errors.json](errors.json) fall into these ranges:
 | 80000 | connection-related |
 | 90000 | channel-related |
 
-Codes from `100000` are defined outside of scope of this repository.
-In other words, these higher ranges are reserved for use by specific Ably projects and ecosystems, where these codes are unknown to the core Ably service:
+Codes above `100000` are reserved for use by specific Ably projects and ecosystems, where these codes are unknown to the core Ably service. Definitions for these ranges are defined below.
 
-| From | To | Project / Ecosystem | Location of Definitions |
-| ---- | -- | ------------------- | ----------------------- |
-| 100000 | 100999 | Asset Tracking | [Specification: Error codes](https://github.com/ably/ably-asset-tracking-common/tree/main/specification#error-codes) |
+#### Asset Tracking
 
-The table above is our canonical location for:
+Codes for Asset Tracking are maintained externally.
 
-- specifying these ranges
-- delegating the definitions of codes that sit within these ranges to elsewhere
+| From | To | Location of Definitions |
+| ---- | -- | ----------------------- |
+| 100000 | 100999 | [Specification: Error codes](https://github.com/ably/ably-asset-tracking-common/tree/main/specification#error-codes) |
+
+#### Spaces
+
+| From  | Title |
+| ----- | ----- |
+| 101000 | Space name missing |
+| 101001 | Not entered space  |
+| 101002 | Lock request exists |
+| 101003 | Lock is locked |
+| 101004 | Lock invalidated |
 
 ## Agents
 
@@ -82,7 +90,6 @@ The following table adds more contextual detail for some agent identifiers, wher
 | `ably-asset-tracking-swift` | [ably-asset-tracking-swift](https://github.com/ably/ably-asset-tracking-swift) |
 | `ably-flutter` | [ably-flutter](https://github.com/ably/ably-flutter) |
 | `ably-ruby-rest` | [ably-ruby](https://github.com/ably/ably-ruby) |
-| `ably-spaces` | [spaces](https://github.com/ably-labs/spaces) |
 | `android` | [ably-java](https://github.com/ably/ably-java), [ably-dotnet](https://github.com/ably/ably-dotnet) |
 | `browser` | [ably-js](https://github.com/ably/ably-js) |
 | `dart` | [ably-flutter](https://github.com/ably/ably-flutter) |
@@ -105,8 +112,9 @@ The following table adds more contextual detail for some agent identifiers, wher
 | `react-hooks` | [react-hooks](https://github.com/ably-labs/react-hooks) |
 | `react-native` | [ably-js](https://github.com/ably/ably-js) |
 | `ruby` | [ably-ruby](https://github.com/ably/ably-ruby) |
-| `spaces-default-client` | [spaces](https://github.com/ably-labs/spaces) |
-| `spaces-custom-client` | [spaces](https://github.com/ably-labs/spaces) |
+| `spaces` | [spaces](https://github.com/ably/spaces) |
+| `spaces-default-client` | [spaces](https://github.com/ably/spaces) |
+| `spaces-custom-client` | [spaces](https://github.com/ably/spaces) |
 | `tvOS` | [ably-cocoa](https://github.com/ably/ably-cocoa) |
 | `unity` | [ably-dotnet](https://github.com/ably/ably-dotnet) |
 | `uwp` | [ably-dotnet](https://github.com/ably/ably-dotnet) |
