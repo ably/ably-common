@@ -321,7 +321,7 @@
       "type": "wrapper"
     },
     {
-      "identifier": "ably-spaces",
+      "identifier": "spaces",
       "versioned": true,
       "type": "wrapper"
     },
