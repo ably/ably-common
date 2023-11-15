@@ -336,6 +336,11 @@
       "type": "runtime"
     },
     {
+      "identifier": "models",
+      "versioned": true,
+      "type": "wrapper"
+    },
+    {
       "identifier": "ably-control-go",
       "versioned": true,
       "type": "sdk"
