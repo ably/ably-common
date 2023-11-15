@@ -115,6 +115,7 @@ The following table adds more contextual detail for some agent identifiers, wher
 | `spaces` | [spaces](https://github.com/ably/spaces) |
 | `spaces-default-client` | [spaces](https://github.com/ably/spaces) |
 | `spaces-custom-client` | [spaces](https://github.com/ably/spaces) |
+| `models` | [models](https://github.com/ably-labs/models) |
 | `tvOS` | [ably-cocoa](https://github.com/ably/ably-cocoa) |
 | `unity` | [ably-dotnet](https://github.com/ably/ably-dotnet) |
 | `uwp` | [ably-dotnet](https://github.com/ably/ably-dotnet) |
