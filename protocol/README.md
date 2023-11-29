@@ -59,6 +59,10 @@ Codes for Asset Tracking are maintained externally.
 | 101003 | Lock is locked |
 | 101004 | Lock invalidated |
 
+#### Chat
+
+102000 - 102999 are reserved for chat purposes.
+
 ## Agents
 
 A list of agents announced by Ably client libraries can be found in [agents.json](agents.json).
