@@ -22,6 +22,7 @@ Codes in [errors.json](errors.json) fall into these ranges:
 | 40300 | 403 |
 | 40400 | 404 |
 | 40500 | 405 |
+| 40900 | 409 |
 | 41001 | 410 |
 | 42200 | 422 |
 | 42910 | 429 |
