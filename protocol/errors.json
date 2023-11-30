@@ -79,6 +79,8 @@
 
   "40500": "method not allowed",
 
+  "40900": "conflict",
+
   "41001": "push device registration expired",
 
   "42200": "Unprocessable entity",
