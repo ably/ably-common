@@ -118,8 +118,6 @@ The following table adds more contextual detail for some agent identifiers, wher
 | `react-native` | [ably-js](https://github.com/ably/ably-js) |
 | `ruby` | [ably-ruby](https://github.com/ably/ably-ruby) |
 | `spaces` | [spaces](https://github.com/ably/spaces) |
-| `spaces-default-client` | [spaces](https://github.com/ably/spaces) |
-| `spaces-custom-client` | [spaces](https://github.com/ably/spaces) |
 | `models` | [models](https://github.com/ably-labs/models) |
 | `tvOS` | [ably-cocoa](https://github.com/ably/ably-cocoa) |
 | `unity` | [ably-dotnet](https://github.com/ably/ably-dotnet) |

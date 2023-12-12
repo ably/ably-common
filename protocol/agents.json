@@ -326,16 +326,6 @@
       "type": "wrapper"
     },
     {
-      "identifier": "spaces-default-client",
-      "versioned": false,
-      "type": "runtime"
-    },
-    {
-      "identifier": "spaces-custom-client",
-      "versioned": false,
-      "type": "runtime"
-    },
-    {
       "identifier": "models",
       "versioned": true,
       "type": "wrapper"
