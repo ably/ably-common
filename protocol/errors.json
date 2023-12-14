@@ -66,6 +66,7 @@
   "40163": "operation not permitted, key not marked as permitting revocable tokens",
   "40170": "error from client token callback",
   "40171": "no means provided to renew auth token",
+  "40172": "operation only permitted with token auth",
 
   "40300": "forbidden",
   "40310": "account does not permit tls connection",
