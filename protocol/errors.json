@@ -91,6 +91,7 @@
   "42912": "there is a channel iteration call already in progress; only 1 active call is permitted to execute at any one time",
   "42920": "rate limit exceeded (fatal)",
   "42921": "max per-connection publish rate limit exceeded (fatal); closing connection",
+  "42922": "rate limit exceeded; too many requests",
 
   "50000": "internal error",
   "50001": "internal channel error",
