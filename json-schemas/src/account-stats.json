@@ -14,7 +14,7 @@
     "unit": {
       "type": "string",
       "description": "Unit of time for these statistics from the intervalId forwards.",
-      "pattern": "^minute$"
+      "enum": ["minute", "hour", "day", "month"]
     },
     "schema": {
       "type": "string",
