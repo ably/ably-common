@@ -5,5 +5,6 @@
   "client-events-api-requests": "0.0.1",
   "client-events-connections": "0.0.1",
   "channel-lifecycle": "0.0.1",
-  "attachments": "0.0.1"
+  "attachments": "0.0.1",
+  "epochs": "0.0.1"
 }
