@@ -131,6 +131,11 @@
   "71302": "Requester has no subscription to this product",
   "71303": "Channel does not match the channel filter specified in the subscription to this product",
 
+  "72000": "ingress operation failed",
+  "72001": "ingress failed to publish message",
+  "72002": "ingress table is unhealthy",
+  "72003": "ingress cannot connect to database",
+
   "80000": "connection failed",
   "80001": "connection failed (no compatible transport)",
   "80002": "connection suspended",
