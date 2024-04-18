@@ -11,10 +11,11 @@ GEM
       timeout
     rake (13.0.3)
     timeout (0.1.1)
-    uri (0.10.1)
+    uri (0.13.0)
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-linux
 
 DEPENDENCIES
   json
