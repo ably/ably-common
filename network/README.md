@@ -4,8 +4,8 @@ Ably's network data basically encompasses two datasets: a list of datacenters lo
 
 There's are three tasks involved in the process of all up-to-date which are explained in detail afterwards:
 
-- Update datacenters list, by updating its datacenter-locations.csv file
-- Update edge locations list, by updating aws-edge-locations.json
+- Update datacenters list, by updating its `datacenter-locations.csv` file
+- Update edge locations list, by updating `aws-edge-locations.json`
 - Commit these changes to and merge into `main` branch.
 
 **Note:** If the edge locations or datacenters have changed, update the network map illustration on the ably.com website as a consequence of any update to the abovementioned datasets. See ably.com README in `/data/network` for more info.
@@ -20,7 +20,7 @@ This is just a spreadsheet where each row corresponds to a location: as long as 
 
 ## Updating edge locations
 
-We use the [`aws-edge-locations.json`](https://github.com/tobilg/aws-edge-locations/blob/master/dist/aws-edge-locations.json) file from [tobilg/aws-edge-locations](https://github.com/tobilg/aws-edge-locations) as our source of edge locations. We don't don't depend on the package in any way as it doesn't provide anything meaningful to us.
+We use the [`aws-edge-locations.json`](https://github.com/tobilg/aws-edge-locations/blob/main/data/aws-edge-locations.json) file from [tobilg/aws-edge-locations](https://github.com/tobilg/aws-edge-locations) as our source of edge locations. We don't don't depend on the package in any way as it doesn't provide anything meaningful to us.
 
 Simply download the file, and if the data has the same shape as the current version, replace it. Then proceed with the instructions below to find any missing/stale nodes on the map.
 
