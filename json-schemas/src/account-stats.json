@@ -767,32 +767,112 @@
         "push.channelMessages": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Push channel messages."
+          "description": "Total number of channel messages published over Ably containing a push payload (each of which may trigger notifications to be sent to a device with a matching registered push subscription)."
         },
-        "push.notifications.delivered": {
+        "push.notifications.delivered.fcm": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of delivered Push notifications."
+          "description": "Total number of successfully-delivered Push notifications over the FCM transport."
         },
-        "push.notifications.failed": {
+        "push.notifications.delivered.gcm": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of failed Push notifications."
+          "description": "Total number of successfully-delivered Push notifications over the GCM transport."
         },
-        "push.notifications.refused": {
+        "push.notifications.delivered.apns": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of refused Push notifications."
+          "description": "Total number of successfully-delivered Push notifications over the APNS transport."
         },
-        "push.notifications.all": {
+        "push.notifications.delivered.web": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Push notifications."
+          "description": "Total number of successfully-delivered Push notifications over the web transport."
+        },
+        "push.notifications.delivered.total": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of successfully-delivered Push notifications over any transport."
+        },
+        "push.notifications.refused.retriable.fcm": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push notifications that Ably attempted to deliver to FCM but were refused with a retriable error (so which Ably will attempt to retry)."
+        },
+        "push.notifications.refused.retriable.gcm": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push notifications that Ably attempted to deliver to GCM but were refused with a retriable error (so which Ably will attempt to retry)."
+        },
+        "push.notifications.refused.retriable.apns": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push notifications that Ably attempted to deliver to APNS but were refused with a retriable error (so which Ably will attempt to retry)."
+        },
+        "push.notifications.refused.retriable.web": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push notifications that Ably attempted to deliver over a web push transport but were refused with a retriable error (so which Ably will attempt to retry)."
+        },
+        "push.notifications.refused.retriable.total": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push notifications that Ably attempted to deliver but were refused with a retriable error (so which Ably will attempt to retry)."
+        },
+        "push.notifications.refused.final.fcm": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push notifications that Ably attempted to deliver to FCM but were refused with a non-retriable error."
+        },
+        "push.notifications.refused.final.gcm": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push notifications that Ably attempted to deliver to GCM but were refused with a non-retriable error."
+        },
+        "push.notifications.refused.final.apns": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push notifications that Ably attempted to deliver to APNS but were refused with a non-retriable error."
+        },
+        "push.notifications.refused.final.web": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push notifications that Ably attempted to deliver over a web push transport but were refused with a non-retriable error."
+        },
+        "push.notifications.refused.final.total": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push notifications that Ably attempted to deliver but were refused with a non-retriable error."
+        },
+        "push.notifications.all.fcm": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of attempts (whatever the outcome) to deliver Push notifications over the FCM transport."
+        },
+        "push.notifications.all.gcm": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of attempts (whatever the outcome) to deliver Push notifications over the GCM transport."
+        },
+        "push.notifications.all.apns": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of attempts (whatever the outcome) to deliver Push notifications over the APNS transport."
+        },
+        "push.notifications.all.web": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of attempts (whatever the outcome) to deliver Push notifications over the web transport."
+        },
+        "push.notifications.all.total": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of attempts (whatever the outcome) to deliver Push notifications over any transport."
         },
         "push.directPublishes": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of direct publishes."
+          "description": "Total number of direct push publishes (that is, notifications triggered by a request to /push/publish, not a channel message with a push payload)."
         },
         "peakRates.messages": {
           "type": "number",
