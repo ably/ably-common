@@ -59,7 +59,7 @@
   "70001": "https://faqs.ably.com/error-code-70001",
   "70002": "https://faqs.ably.com/error-code-70002",
   "72000": "https://faqs.ably.com/error-code-72000-ingress-operation-failed",
-  "72001": "https://faqs.ably.com/error-code-72001-ingress-failed-to-publish-message",
+  "72001": "https://faqs.ably.com/error-code-72002-ingress-table-is-unhealthy",
   "72003": "https://faqs.ably.com/error-code-72003-ingress-cannot-connect-to-database",
   "71302": "https://faqs.ably.com/error-71302-no-subscription-to-this-product-found-for-account",
   "80000": "https://faqs.ably.com/error-code-80000-connection-failed",
