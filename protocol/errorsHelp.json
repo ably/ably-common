@@ -71,6 +71,7 @@
   "80017": "https://faqs.ably.com/error-code-80017-connection-already-closed",
   "80018": "https://faqs.ably.com/error-code-80018-invalid-connection-id-invalid-format",
   "80019": "https://faqs.ably.com/error-code-80019",
+  "80020": "https://faqs.ably.com/error-code-80020",
   "80021": "https://faqs.ably.com/error-code-80021-max-new-connections-rate-exceeded",
   "80022": "https://faqs.ably.com/error-code-80022-unable-to-find-connection",
   "90001": "https://faqs.ably.com/error-code-90001-channel-operation-failed-invalid-channel-state",
