@@ -182,5 +182,7 @@
   "101001": "must enter a space to perform this operation",
   "101002": "lock request already exists",
   "101003": "lock is currently locked",
-  "101004": "lock was invalidated by a concurrent lock request which now holds the lock"
+  "101004": "lock was invalidated by a concurrent lock request which now holds the lock",
+
+  "102000": "chat room name is invalid"
 }
