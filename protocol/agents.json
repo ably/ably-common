@@ -344,6 +344,11 @@
       "identifier": "ably-db-connector",
       "versioned": true,
       "type": "wrapper"
+    },
+    {
+      "identifier": "chat-js",
+      "versioned": true,
+      "type": "wrapper"
     }
   ],
   "ablyLibMappings": {
