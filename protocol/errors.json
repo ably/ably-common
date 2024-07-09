@@ -184,5 +184,21 @@
   "101003": "lock is currently locked",
   "101004": "lock was invalidated by a concurrent lock request which now holds the lock",
 
-  "102000": "chat room name is invalid"
+  "102000": "chat room name is invalid",
+  "102001": "room attachment failed (messages)",
+  "102002": "room attachment failed (presence)",
+  "102003": "room attachment failed (reactions)",
+  "102004": "room attachment failed (occupancy)",
+  "102005": "room attachment failed (typing)",
+  "102050": "room detachment failed (messages)",
+  "102051": "room detachment failed (presence)",
+  "102052": "room detachment failed (reactions)",
+  "102053": "room detachment failed (occupancy)",
+  "102054": "room detachment failed (typing)",
+  "102100": "room discontinuity",
+  "102101": "unable to perform operation; room is in failed state",
+  "102102": "unable to perform operation; room is releasing",
+  "102103": "unable to perform operation; room is released",
+  "102104": "unable to perform operation; existing attempt failed",
+  "102105": "unknown room lifecycle error"
 }
