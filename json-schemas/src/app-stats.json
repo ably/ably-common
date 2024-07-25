@@ -511,152 +511,152 @@
         "messages.outbound.sharedQueue.all.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Queue message count (sent from the Ably service to a Reactor Queue)."
+          "description": "Total Ably Queue message count (sent from the Ably service to an Ably Queue using an integration rule)."
         },
         "messages.outbound.sharedQueue.all.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Queue message size (sent from the Ably service to a Reactor Queue)."
+          "description": "Total Ably Queue message size (sent from the Ably service to an Ably Queue using an integration rule)."
         },
         "messages.outbound.sharedQueue.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Queue message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas, sent from the Ably service to a Reactor Queue)."
+          "description": "Total uncompressed Ably Queue message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas, sent from the Ably service to an Ably Queue using an integration rule)."
         },
         "messages.outbound.sharedQueue.all.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Reactor Queue messages that failed (which were rejected by RabbitMQ for some reason)"
+          "description": "Total number of Ably Queue messages that failed (which were rejected by RabbitMQ for some reason)"
         },
         "messages.outbound.sharedQueue.all.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Reactor Queue messages that Ably refused to send (generally due to a rate limit)"
+          "description": "Total number of Ably Queue messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.sharedQueue.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Queue message count (sent from the Ably service to a Reactor Queue), excluding presence messages."
+          "description": "Total Ably Queue message count (sent from the Ably service to an Ably Queue using an integration rule), excluding presence messages."
         },
         "messages.outbound.sharedQueue.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Queue message size (sent from the Ably service to a Reactor Queue), excluding presence messages."
+          "description": "Total Ably Queue message size (sent from the Ably service to an Ably Queue using an integration rule), excluding presence messages."
         },
         "messages.outbound.sharedQueue.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Queue message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas, sent from the Ably service to a Reactor Queue), excluding presence messages."
+          "description": "Total uncompressed Ably Queue message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas, sent from the Ably service to an Ably Queue using an integration rule), excluding presence messages."
         },
         "messages.outbound.sharedQueue.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Reactor Queue messages excluding presence messages that failed (which were rejected by RabbitMQ for some reason)"
+          "description": "Total number of Ably Queue messages excluding presence messages that failed (which were rejected by RabbitMQ for some reason)"
         },
         "messages.outbound.sharedQueue.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Reactor Queue messages excluding presence messages that Ably refused to send (generally due to a rate limit)"
+          "description": "Total number of Ably Queue messages excluding presence messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.sharedQueue.presence.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Queue presence message count (sent from the Ably service to a Reactor Queue)."
+          "description": "Total Ably Queue presence message count (sent from the Ably service to an Ably Queue using an integration rule)."
         },
         "messages.outbound.sharedQueue.presence.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Queue presence message size (sent from the Ably service to a Reactor Queue)."
+          "description": "Total Ably Queue presence message size (sent from the Ably service to an Ably Queue using an integration rule)."
         },
         "messages.outbound.sharedQueue.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Queue presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas, sent from the Ably service to a Reactor Queue)."
+          "description": "Total uncompressed Ably Queue presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas, sent from the Ably service to an Ably Queue using an integration rule)."
         },
         "messages.outbound.sharedQueue.presence.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Reactor Queue presence messages that failed (which were rejected by RabbitMQ for some reason)"
+          "description": "Total number of Ably Queue presence messages that failed (which were rejected by RabbitMQ for some reason)"
         },
         "messages.outbound.sharedQueue.presence.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Reactor Queue presence messages that Ably refused to send (generally due to a rate limit)"
+          "description": "Total number of Ably Queue presence messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.externalQueue.all.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Firehose message count (sent from the Ably service to some external target using Reactor Firehose)."
+          "description": "Total Firehose message count (sent from the Ably service to some external target using a Firehose integration rule)."
         },
         "messages.outbound.externalQueue.all.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Firehose message size (sent from the Ably service to some external target using Reactor Firehose)."
+          "description": "Total Firehose message size (sent from the Ably service to some external target using a Firehose integration rule)."
         },
         "messages.outbound.externalQueue.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Firehose message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas, sent from the Ably service to some external target using Reactor Firehose)."
+          "description": "Total uncompressed Firehose message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas, sent from the Ably service to some external target using a Firehose integration rule)."
         },
         "messages.outbound.externalQueue.all.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Reactor Firehose messages that failed (which were rejected by the external integration target for some reason)"
+          "description": "Total number of Firehose messages that failed (which were rejected by the external integration target for some reason)"
         },
         "messages.outbound.externalQueue.all.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Reactor Firehose messages that Ably refused to send (generally due to a rate limit)"
+          "description": "Total number of Firehose messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.externalQueue.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Firehose message count (sent from the Ably service to some external target using Reactor Firehose), excluding presence messages."
+          "description": "Total Firehose message count (sent from the Ably service to some external target using a Firehose integration rule), excluding presence messages."
         },
         "messages.outbound.externalQueue.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Firehose message size (sent from the Ably service to some external target using Reactor Firehose), excluding presence messages."
+          "description": "Total Firehose message size (sent from the Ably service to some external target using a Firehose integration rule), excluding presence messages."
         },
         "messages.outbound.externalQueue.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Firehose message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas, sent from the Ably service to some external target using Reactor Firehose), excluding presence messages."
+          "description": "Total uncompressed Firehose message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas, sent from the Ably service to some external target using a Firehose integration rule), excluding presence messages."
         },
         "messages.outbound.externalQueue.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Reactor Firehose messages excluding presence messages that failed (which were rejected by the external integration target for some reason)"
+          "description": "Total number of Firehose messages excluding presence messages that failed (which were rejected by the external integration target for some reason)"
         },
         "messages.outbound.externalQueue.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Reactor Firehose messages excluding presence messages that Ably refused to send (generally due to a rate limit)"
+          "description": "Total number of Firehose messages excluding presence messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.externalQueue.presence.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Firehose presence message count (sent from the Ably service to some external target using Reactor Firehose)."
+          "description": "Total Firehose presence message count (sent from the Ably service to some external target using a Firehose integration rule)."
         },
         "messages.outbound.externalQueue.presence.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Firehose presence message size (sent from the Ably service to some external target using Reactor Firehose)."
+          "description": "Total Firehose presence message size (sent from the Ably service to some external target using a Firehose integration rule)."
         },
         "messages.outbound.externalQueue.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Firehose presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas, sent from the Ably service to some external target using Reactor Firehose)."
+          "description": "Total uncompressed Firehose presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas, sent from the Ably service to some external target using a Firehose integration rule)."
         },
         "messages.outbound.externalQueue.presence.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Reactor Firehose presence messages that failed (which were rejected by the external integration target for some reason)"
+          "description": "Total number of Firehose presence messages that failed (which were rejected by the external integration target for some reason)"
         },
         "messages.outbound.externalQueue.presence.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Reactor Firehose presence messages that Ably refused to send (generally due to a rate limit)"
+          "description": "Total number of Firehose presence messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.httpEvent.all.count": {
           "type": "number",
