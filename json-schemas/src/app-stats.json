@@ -928,50 +928,20 @@
           "inclusiveMinimum": 0,
           "description": "Total uncompressed persisted presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas) based on configured channel rules."
         },
-        "messages.processed.all.count": {
+        "messages.processed.delta.xdelta.succeeded": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total processed message count based on configured channel rules."
+          "description": "Total number of message deltas successfully generated (using xdelta, currently the only supported codec), see https://ably.com/docs/channels/options/deltas."
         },
-        "messages.processed.all.data": {
+        "messages.processed.delta.xdelta.skipped": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total processed message size based on configured channel rules."
+          "description": "Total number of messages on channels where delta generation was enabled but where we skipped delta generation, eg because the payload was too small to make it worthwhile, see https://ably.com/docs/channels/options/deltas."
         },
-        "messages.processed.all.uncompressedData": {
+        "messages.processed.delta.xdelta.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed processed message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas) based on configured channel rules."
-        },
-        "messages.processed.messages.count": {
-          "type": "number",
-          "inclusiveMinimum": 0,
-          "description": "Total processed message count based on configured channel rules, excluding presence messages."
-        },
-        "messages.processed.messages.data": {
-          "type": "number",
-          "inclusiveMinimum": 0,
-          "description": "Total processed message size based on configured channel rules, excluding presence messages."
-        },
-        "messages.processed.messages.uncompressedData": {
-          "type": "number",
-          "inclusiveMinimum": 0,
-          "description": "Total uncompressed processed message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas) based on configured channel rules, excluding presence messages."
-        },
-        "messages.processed.presence.count": {
-          "type": "number",
-          "inclusiveMinimum": 0,
-          "description": "Total processed presence message count based on configured channel rules."
-        },
-        "messages.processed.presence.data": {
-          "type": "number",
-          "inclusiveMinimum": 0,
-          "description": "Total processed presence message size based on configured channel rules."
-        },
-        "messages.processed.presence.uncompressedData": {
-          "type": "number",
-          "inclusiveMinimum": 0,
-          "description": "Total uncompressed processed presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/channels/options/deltas) based on configured channel rules."
+          "description": "Total number of messages on channels where delta generation was attempted but where a delta was not successfully generated, so we just broadcast the original, see https://ably.com/docs/channels/options/deltas."
         },
         "connections.all.peak": {
           "type": "number",
