@@ -31,17 +31,27 @@
         "messages.all.all.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total message count."
+          "description": "Total number of successfully-sent messages, summed over all message types and transports."
         },
         "messages.all.all.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total message size."
+          "description": "Total message size of all messages successfully sent, summed over all message types and transports."
         },
         "messages.all.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas)."
+          "description": "Total uncompressed message size, excluding delta compression https://ably.com/docs/channels/options/deltas."
+        },
+        "messages.all.all.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
+        },
+        "messages.all.all.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
         "messages.all.messages.count": {
           "type": "number",
@@ -56,7 +66,17 @@
         "messages.all.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas), excluding presence messages."
+          "description": "Total number of messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
+        },
+        "messages.all.messages.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
+        },
+        "messages.all.messages.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages excluding presence messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
         "messages.all.presence.count": {
           "type": "number",
@@ -71,7 +91,17 @@
         "messages.all.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas)."
+          "description": "Total uncompressed presence message size, excluding delta compression https://ably.com/docs/channels/options/deltas."
+        },
+        "messages.all.messages.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of presence messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
+        },
+        "messages.all.messages.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of presence messages excluding presence messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
         "messages.inbound.realtime.all.count": {
           "type": "number",
@@ -86,7 +116,17 @@
         "messages.inbound.realtime.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound realtime message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
+          "description": "Total uncompressed inbound realtime message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients."
+        },
+        "messages.inbound.realtime.all.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound realtime messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
+        },
+        "messages.inbound.realtime.all.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound realtime messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
         "messages.inbound.realtime.messages.count": {
           "type": "number",
@@ -101,7 +141,17 @@
         "messages.inbound.realtime.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound realtime message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients), excluding presence messages."
+          "description": "Total uncompressed inbound realtime message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients, excluding presence messages."
+        },
+        "messages.inbound.realtime.messages.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound realtime messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
+        },
+        "messages.inbound.realtime.messages.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound realtime messages excluding presence messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
         "messages.inbound.realtime.presence.count": {
           "type": "number",
@@ -116,7 +166,17 @@
         "messages.inbound.realtime.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound realtime presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
+          "description": "Total uncompressed inbound realtime presence message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients."
+        },
+        "messages.inbound.realtime.presence.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound realtime presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
+        },
+        "messages.inbound.realtime.presence.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound realtime presence messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
         "messages.inbound.rest.all.count": {
           "type": "number",
@@ -131,7 +191,17 @@
         "messages.inbound.rest.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound REST message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
+          "description": "Total uncompressed inbound REST message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients."
+        },
+        "messages.inbound.rest.all.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound REST messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
+        },
+        "messages.inbound.rest.all.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound REST messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
         "messages.inbound.rest.messages.count": {
           "type": "number",
@@ -146,7 +216,7 @@
         "messages.inbound.rest.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound REST message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients), excluding presence messages."
+          "description": "Total uncompressed inbound REST message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients, excluding presence messages."
         },
         "messages.inbound.rest.presence.count": {
           "type": "number",
@@ -161,7 +231,17 @@
         "messages.inbound.rest.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound REST presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
+          "description": "Total uncompressed inbound REST presence message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients."
+        },
+        "messages.inbound.rest.presence.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound REST presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
+        },
+        "messages.inbound.rest.presence.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound REST presence messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
         "messages.inbound.all.all.count": {
           "type": "number",
@@ -176,7 +256,17 @@
         "messages.inbound.all.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
+          "description": "Total uncompressed inbound message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients."
+        },
+        "messages.inbound.all.all.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
+        },
+        "messages.inbound.all.all.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
         "messages.inbound.all.messages.count": {
           "type": "number",
@@ -191,7 +281,12 @@
         "messages.inbound.all.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients), excluding presence messages."
+          "description": "Total uncompressed inbound message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients, excluding presence messages."
+        },
+        "messages.inbound.all.messages.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
         },
         "messages.inbound.all.presence.count": {
           "type": "number",
@@ -206,7 +301,17 @@
         "messages.inbound.all.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, received by the Ably service from clients)."
+          "description": "Total uncompressed inbound presence message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients."
+        },
+        "messages.inbound.all.presence.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
+        },
+        "messages.inbound.all.presence.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound presence messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
         "messages.outbound.realtime.all.count": {
           "type": "number",
@@ -221,7 +326,17 @@
         "messages.outbound.realtime.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound realtime message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
+          "description": "Total uncompressed outbound realtime message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients)."
+        },
+        "messages.outbound.realtime.all.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound realtime messages that failed (which did not succeed for some reason other than Ably rejecting it, such as being rejected by an external integration target)"
+        },
+        "messages.outbound.realtime.all.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound realtime messages that were refused by Ably (generally due to rate limits)"
         },
         "messages.outbound.realtime.messages.count": {
           "type": "number",
@@ -236,7 +351,17 @@
         "messages.outbound.realtime.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound realtime message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients), excluding presence messages."
+          "description": "Total uncompressed outbound realtime message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients), excluding presence messages."
+        },
+        "messages.outbound.realtime.messages.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound realtime messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
+        },
+        "messages.outbound.realtime.messages.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound realtime messages excluding presence messages that were refused by Ably (generally due to rate limits)"
         },
         "messages.outbound.realtime.presence.count": {
           "type": "number",
@@ -251,7 +376,17 @@
         "messages.outbound.realtime.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound realtime presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
+          "description": "Total uncompressed outbound realtime presence message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients)."
+        },
+        "messages.outbound.realtime.presence.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound realtime presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
+        },
+        "messages.outbound.realtime.presence.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound realtime presence messages that were refused by Ably (generally due to rate limits)"
         },
         "messages.outbound.rest.all.count": {
           "type": "number",
@@ -266,7 +401,7 @@
         "messages.outbound.rest.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound REST message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
+          "description": "Total uncompressed outbound REST message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients)."
         },
         "messages.outbound.rest.messages.count": {
           "type": "number",
@@ -281,7 +416,7 @@
         "messages.outbound.rest.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound REST message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients), excluding presence messages."
+          "description": "Total uncompressed outbound REST message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients), excluding presence messages."
         },
         "messages.outbound.rest.presence.count": {
           "type": "number",
@@ -296,142 +431,232 @@
         "messages.outbound.rest.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound REST presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
+          "description": "Total uncompressed outbound REST presence message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients)."
         },
         "messages.outbound.webhook.all.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Webhook message count (sent from the Ably service to clients using Webhooks)."
+          "description": "Total outbound webhook message count (sent from the Ably service to clients using webhooks)."
         },
         "messages.outbound.webhook.all.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Webhook message size (sent from the Ably service to clients using Webhooks)."
+          "description": "Total outbound webhook message size (sent from the Ably service to clients using webhooks)."
         },
         "messages.outbound.webhook.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Webhook message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients using Webhooks)."
+          "description": "Total uncompressed outbound webhook message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients using webhooks)."
+        },
+        "messages.outbound.webhook.all.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound webhook messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, in particular rejection by an external integration target)"
+        },
+        "messages.outbound.webhook.all.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound webhook messages that were refused by Ably (generally due to rate limits)"
         },
         "messages.outbound.webhook.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Webhook message count (sent from the Ably service to clients using Webhooks), excluding presence messages."
+          "description": "Total outbound webhook message count (sent from the Ably service to clients using webhooks), excluding presence messages."
         },
         "messages.outbound.webhook.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Webhook message size (sent from the Ably service to clients using Webhooks), excluding presence messages."
+          "description": "Total outbound webhook message size (sent from the Ably service to clients using webhooks), excluding presence messages."
         },
         "messages.outbound.webhook.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Webhook message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients using Webhooks), excluding presence messages."
+          "description": "Total uncompressed outbound webhook message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients using webhooks), excluding presence messages."
+        },
+        "messages.outbound.webhook.messages.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound webhook messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, in particular rejection by an external integration target)"
+        },
+        "messages.outbound.webhook.messages.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound webhook messages excluding presence messages that were refused by Ably (generally due to rate limits)"
         },
         "messages.outbound.webhook.presence.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Webhook presence message count (sent from the Ably service to clients using Webhooks)."
+          "description": "Total outbound webhook presence message count (sent from the Ably service to clients using webhooks)."
         },
         "messages.outbound.webhook.presence.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Webhook presence message size (sent from the Ably service to clients using Webhooks)."
+          "description": "Total outbound webhook presence message size (sent from the Ably service to clients using webhooks)."
         },
         "messages.outbound.webhook.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Webhook presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients using Webhooks)."
+          "description": "Total uncompressed outbound webhook presence message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients using webhooks)."
+        },
+        "messages.outbound.webhook.presence.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound webhook presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, in particular rejection by an external integration target)"
+        },
+        "messages.outbound.webhook.presence.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound webhook presence messages that were refused by Ably (generally due to rate limits)"
         },
         "messages.outbound.sharedQueue.all.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Queue message count (sent from the Ably service to a Reactor Queue)."
+          "description": "Total Ably Queue message count (sent from the Ably service to an Ably Queue using an integration rule)."
         },
         "messages.outbound.sharedQueue.all.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Queue message size (sent from the Ably service to a Reactor Queue)."
+          "description": "Total Ably Queue message size (sent from the Ably service to an Ably Queue using an integration rule)."
         },
         "messages.outbound.sharedQueue.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Queue message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to a Reactor Queue)."
+          "description": "Total uncompressed Ably Queue message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to an Ably Queue using an integration rule)."
+        },
+        "messages.outbound.sharedQueue.all.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Ably Queue messages that failed (which were rejected by RabbitMQ for some reason)"
+        },
+        "messages.outbound.sharedQueue.all.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Ably Queue messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.sharedQueue.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Queue message count (sent from the Ably service to a Reactor Queue), excluding presence messages."
+          "description": "Total Ably Queue message count (sent from the Ably service to an Ably Queue using an integration rule), excluding presence messages."
         },
         "messages.outbound.sharedQueue.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Queue message size (sent from the Ably service to a Reactor Queue), excluding presence messages."
+          "description": "Total Ably Queue message size (sent from the Ably service to an Ably Queue using an integration rule), excluding presence messages."
         },
         "messages.outbound.sharedQueue.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Queue message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to a Reactor Queue), excluding presence messages."
+          "description": "Total uncompressed Ably Queue message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to an Ably Queue using an integration rule), excluding presence messages."
+        },
+        "messages.outbound.sharedQueue.messages.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Ably Queue messages excluding presence messages that failed (which were rejected by RabbitMQ for some reason)"
+        },
+        "messages.outbound.sharedQueue.messages.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Ably Queue messages excluding presence messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.sharedQueue.presence.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Queue presence message count (sent from the Ably service to a Reactor Queue)."
+          "description": "Total Ably Queue presence message count (sent from the Ably service to an Ably Queue using an integration rule)."
         },
         "messages.outbound.sharedQueue.presence.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Queue presence message size (sent from the Ably service to a Reactor Queue)."
+          "description": "Total Ably Queue presence message size (sent from the Ably service to an Ably Queue using an integration rule)."
         },
         "messages.outbound.sharedQueue.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Queue presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to a Reactor Queue)."
+          "description": "Total uncompressed Ably Queue presence message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to an Ably Queue using an integration rule)."
+        },
+        "messages.outbound.sharedQueue.presence.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Ably Queue presence messages that failed (which were rejected by RabbitMQ for some reason)"
+        },
+        "messages.outbound.sharedQueue.presence.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Ably Queue presence messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.externalQueue.all.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Firehose message count (sent from the Ably service to some external target using Reactor Firehose)."
+          "description": "Total Firehose message count (sent from the Ably service to some external target using a Firehose integration rule)."
         },
         "messages.outbound.externalQueue.all.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Firehose message size (sent from the Ably service to some external target using Reactor Firehose)."
+          "description": "Total Firehose message size (sent from the Ably service to some external target using a Firehose integration rule)."
         },
         "messages.outbound.externalQueue.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Firehose message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to some external target using Reactor Firehose)."
+          "description": "Total uncompressed Firehose message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to some external target using a Firehose integration rule)."
+        },
+        "messages.outbound.externalQueue.all.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Firehose messages that failed (which were rejected by the external integration target for some reason)"
+        },
+        "messages.outbound.externalQueue.all.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Firehose messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.externalQueue.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Firehose message count (sent from the Ably service to some external target using Reactor Firehose), excluding presence messages."
+          "description": "Total Firehose message count (sent from the Ably service to some external target using a Firehose integration rule), excluding presence messages."
         },
         "messages.outbound.externalQueue.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Firehose message size (sent from the Ably service to some external target using Reactor Firehose), excluding presence messages."
+          "description": "Total Firehose message size (sent from the Ably service to some external target using a Firehose integration rule), excluding presence messages."
         },
         "messages.outbound.externalQueue.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Firehose message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to some external target using Reactor Firehose), excluding presence messages."
+          "description": "Total uncompressed Firehose message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to some external target using a Firehose integration rule), excluding presence messages."
+        },
+        "messages.outbound.externalQueue.messages.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Firehose messages excluding presence messages that failed (which were rejected by the external integration target for some reason)"
+        },
+        "messages.outbound.externalQueue.messages.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Firehose messages excluding presence messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.externalQueue.presence.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Firehose presence message count (sent from the Ably service to some external target using Reactor Firehose)."
+          "description": "Total Firehose presence message count (sent from the Ably service to some external target using a Firehose integration rule)."
         },
         "messages.outbound.externalQueue.presence.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Reactor Firehose presence message size (sent from the Ably service to some external target using Reactor Firehose)."
+          "description": "Total Firehose presence message size (sent from the Ably service to some external target using a Firehose integration rule)."
         },
         "messages.outbound.externalQueue.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Reactor Firehose presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to some external target using Reactor Firehose)."
+          "description": "Total uncompressed Firehose presence message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to some external target using a Firehose integration rule)."
+        },
+        "messages.outbound.externalQueue.presence.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Firehose presence messages that failed (which were rejected by the external integration target for some reason)"
+        },
+        "messages.outbound.externalQueue.presence.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Firehose presence messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.httpEvent.all.count": {
           "type": "number",
@@ -446,7 +671,17 @@
         "messages.outbound.httpEvent.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed size of messages sent by a HTTP trigger (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions)."
+          "description": "Total uncompressed size of messages sent by a HTTP trigger, excluding delta compression https://ably.com/docs/channels/options/deltas, typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions)."
+        },
+        "messages.outbound.httpEvent.all.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages sent by a HTTP trigger that failed (which were rejected by the external endpoint for some reason)"
+        },
+        "messages.outbound.httpEvent.all.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages sent by a HTTP trigger that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.httpEvent.messages.count": {
           "type": "number",
@@ -461,7 +696,17 @@
         "messages.outbound.httpEvent.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed size of messages sent by a HTTP trigger (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions), excluding presence messages."
+          "description": "Total uncompressed size of messages sent by a HTTP trigger, excluding delta compression https://ably.com/docs/channels/options/deltas, typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions), excluding presence messages."
+        },
+        "messages.outbound.httpEvent.messages.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages sent by a HTTP trigger excluding presence messages that failed (which were rejected by the external endpoint for some reason)"
+        },
+        "messages.outbound.httpEvent.messages.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages sent by a HTTP trigger excluding presence messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.httpEvent.presence.count": {
           "type": "number",
@@ -476,7 +721,17 @@
         "messages.outbound.httpEvent.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed size of presence messages sent by a HTTP trigger (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions)."
+          "description": "Total uncompressed size of presence messages sent by a HTTP trigger, excluding delta compression https://ably.com/docs/channels/options/deltas, typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions)."
+        },
+        "messages.outbound.httpEvent.presence.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of presence messages sent by a HTTP trigger that failed (which were rejected by the external endpoint for some reason)"
+        },
+        "messages.outbound.httpEvent.presence.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of presence messages sent by a HTTP trigger that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.push.all.count": {
           "type": "number",
@@ -491,7 +746,17 @@
         "messages.outbound.push.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Push message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, pushed to devices via a Push Notifications transport such as FCM or APNS)."
+          "description": "Total uncompressed Push message size, excluding delta compression https://ably.com/docs/channels/options/deltas, pushed to devices via a Push Notifications transport such as FCM or APNS)."
+        },
+        "messages.outbound.push.all.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by APNS or FCM, or a service issue on Ably's side)"
+        },
+        "messages.outbound.push.all.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push messages that were refused by Ably (eg due to a rate limit)"
         },
         "messages.outbound.push.messages.count": {
           "type": "number",
@@ -506,7 +771,17 @@
         "messages.outbound.push.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Push message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, pushed to devices via a Push Notifications transport such as FCM or APNS), excluding presence messages."
+          "description": "Total uncompressed Push message size, excluding delta compression https://ably.com/docs/channels/options/deltas, pushed to devices via a Push Notifications transport such as FCM or APNS), excluding presence messages."
+        },
+        "messages.outbound.push.messages.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by APNS or FCM, or a service issue on Ably's side)"
+        },
+        "messages.outbound.push.messages.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push messages excluding presence messages that were refused by Ably (eg due to a rate limit)"
         },
         "messages.outbound.push.presence.count": {
           "type": "number",
@@ -521,7 +796,17 @@
         "messages.outbound.push.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Push presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, pushed to devices via a Push Notifications transport such as FCM or APNS)."
+          "description": "Total uncompressed Push presence message size, excluding delta compression https://ably.com/docs/channels/options/deltas, pushed to devices via a Push Notifications transport such as FCM or APNS)."
+        },
+        "messages.outbound.push.presence.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by APNS or FCM, or a service issue on Ably's side)"
+        },
+        "messages.outbound.push.presence.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push presence messages that were refused by Ably (eg due to a rate limit)"
         },
         "messages.outbound.all.all.count": {
           "type": "number",
@@ -536,7 +821,17 @@
         "messages.outbound.all.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
+          "description": "Total uncompressed outbound message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients)."
+        },
+        "messages.outbound.all.all.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by an external integration target, or a service issue on Ably's side)"
+        },
+        "messages.outbound.all.all.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound messages that were refused by Ably (generally due to rate limits)"
         },
         "messages.outbound.all.messages.count": {
           "type": "number",
@@ -551,7 +846,17 @@
         "messages.outbound.all.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients), excluding presence messages."
+          "description": "Total uncompressed outbound message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients), excluding presence messages."
+        },
+        "messages.outbound.all.messages.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by an external integration target, or a service issue on Ably's side)"
+        },
+        "messages.outbound.all.messages.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound messages excluding presence messages that were refused by Ably (generally due to rate limits)"
         },
         "messages.outbound.all.presence.count": {
           "type": "number",
@@ -566,7 +871,17 @@
         "messages.outbound.all.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas, sent from the Ably service to clients)."
+          "description": "Total uncompressed outbound presence message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients)."
+        },
+        "messages.outbound.all.presence.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by an external integration target, or a service issue on Ably's side)"
+        },
+        "messages.outbound.all.presence.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound presence messages that were refused by Ably (generally due to rate limits)"
         },
         "messages.persisted.all.count": {
           "type": "number",
@@ -581,7 +896,7 @@
         "messages.persisted.all.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed persisted message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas) based on configured channel rules."
+          "description": "Total uncompressed persisted message size, excluding delta compression https://ably.com/docs/channels/options/deltas based on configured channel rules."
         },
         "messages.persisted.messages.count": {
           "type": "number",
@@ -596,7 +911,7 @@
         "messages.persisted.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed persisted message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas) based on configured channel rules, excluding presence messages."
+          "description": "Total uncompressed persisted message size, excluding delta compression https://ably.com/docs/channels/options/deltas based on configured channel rules, excluding presence messages."
         },
         "messages.persisted.presence.count": {
           "type": "number",
@@ -611,52 +926,22 @@
         "messages.persisted.presence.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed persisted presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas) based on configured channel rules."
+          "description": "Total uncompressed persisted presence message size, excluding delta compression https://ably.com/docs/channels/options/deltas based on configured channel rules."
         },
-        "messages.processed.all.count": {
+        "messages.processed.delta.xdelta.succeeded": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total processed message count based on configured channel rules."
+          "description": "Total number of message deltas successfully generated (using xdelta, currently the only supported codec), see https://ably.com/docs/channels/options/deltas."
         },
-        "messages.processed.all.data": {
+        "messages.processed.delta.xdelta.skipped": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total processed message size based on configured channel rules."
+          "description": "Total number of messages on channels where delta generation was enabled but where Ably skipped delta generation, eg because the payload was too small to make it worthwhile, see https://ably.com/docs/channels/options/deltas."
         },
-        "messages.processed.all.uncompressedData": {
+        "messages.processed.delta.xdelta.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed processed message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas) based on configured channel rules."
-        },
-        "messages.processed.messages.count": {
-          "type": "number",
-          "inclusiveMinimum": 0,
-          "description": "Total processed message count based on configured channel rules, excluding presence messages."
-        },
-        "messages.processed.messages.data": {
-          "type": "number",
-          "inclusiveMinimum": 0,
-          "description": "Total processed message size based on configured channel rules, excluding presence messages."
-        },
-        "messages.processed.messages.uncompressedData": {
-          "type": "number",
-          "inclusiveMinimum": 0,
-          "description": "Total uncompressed processed message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas) based on configured channel rules, excluding presence messages."
-        },
-        "messages.processed.presence.count": {
-          "type": "number",
-          "inclusiveMinimum": 0,
-          "description": "Total processed presence message count based on configured channel rules."
-        },
-        "messages.processed.presence.data": {
-          "type": "number",
-          "inclusiveMinimum": 0,
-          "description": "Total processed presence message size based on configured channel rules."
-        },
-        "messages.processed.presence.uncompressedData": {
-          "type": "number",
-          "inclusiveMinimum": 0,
-          "description": "Total uncompressed processed presence message size (excluding any compression, e.g. delta compression: https://ably.com/docs/realtime/channels/channel-parameters/deltas) based on configured channel rules."
+          "description": "Total number of messages on channels where delta generation was attempted but where a delta was not successfully generated, so Ably just broadcasted the original, see https://ably.com/docs/channels/options/deltas."
         },
         "connections.all.peak": {
           "type": "number",
@@ -681,7 +966,7 @@
         "connections.all.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of connections refused."
+          "description": "Total number of connections refused, eg for breaching the connection creation rate limit."
         },
         "channels.peak": {
           "type": "number",
@@ -706,7 +991,7 @@
         "channels.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of channel attach requests that failed because of permissions."
+          "description": "Total number of channel creation rejected for breaching the channel creation rate limit."
         },
         "apiRequests.all.succeeded": {
           "type": "number",
