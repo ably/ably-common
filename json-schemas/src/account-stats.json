@@ -42,7 +42,7 @@
         "messages.all.all.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as rejected by an external integration target, or a service issue on Ably's side)"
+          "description": "Total number of messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
         },
         "messages.all.all.refused": {
           "type": "number",
@@ -62,12 +62,12 @@
         "messages.all.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as rejected by an external integration target, or a service issue on Ably's side)"
+          "description": "Total number of messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
         },
         "messages.all.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of messages excluding presence messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as rejected by an external integration target, or a service issue on Ably's side)"
+          "description": "Total number of messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
         },
         "messages.all.messages.refused": {
           "type": "number",
@@ -92,7 +92,7 @@
         "messages.all.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of presence messages excluding presence messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as rejected by an external integration target, or a service issue on Ably's side)"
+          "description": "Total number of presence messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
         },
         "messages.all.messages.refused": {
           "type": "number",
@@ -117,7 +117,7 @@
         "messages.inbound.realtime.all.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound realtime messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as a service issue on Ably's side)"
+          "description": "Total number of inbound realtime messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
         },
         "messages.inbound.realtime.all.refused": {
           "type": "number",
@@ -142,7 +142,7 @@
         "messages.inbound.realtime.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound realtime messages excluding presence messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as ejected by an external integration target, or a service issue on Ably's side)"
+          "description": "Total number of inbound realtime messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as ejected by an external integration target, or a service issue on Ably's side)"
         },
         "messages.inbound.realtime.messages.refused": {
           "type": "number",
@@ -167,7 +167,7 @@
         "messages.inbound.realtime.presence.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound realtime presence messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as a service issue on Ably's side)"
+          "description": "Total number of inbound realtime presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
         },
         "messages.inbound.realtime.presence.refused": {
           "type": "number",
@@ -192,7 +192,7 @@
         "messages.inbound.rest.all.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound REST messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as a service issue on Ably's side)"
+          "description": "Total number of inbound REST messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
         },
         "messages.inbound.rest.all.refused": {
           "type": "number",
@@ -232,7 +232,7 @@
         "messages.inbound.rest.presence.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound REST presence messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as a service issue on Ably's side)"
+          "description": "Total number of inbound REST presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
         },
         "messages.inbound.rest.presence.refused": {
           "type": "number",
@@ -257,7 +257,7 @@
         "messages.inbound.all.all.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as a service issue on Ably's side)"
+          "description": "Total number of inbound messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
         },
         "messages.inbound.all.all.refused": {
           "type": "number",
@@ -282,7 +282,7 @@
         "messages.inbound.all.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound messages excluding presence messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as a service issue on Ably's side)"
+          "description": "Total number of inbound messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
         },
         "messages.inbound.all.presence.count": {
           "type": "number",
@@ -302,7 +302,7 @@
         "messages.inbound.all.presence.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound presence messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as a service issue on Ably's side)"
+          "description": "Total number of inbound presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
         },
         "messages.inbound.all.presence.refused": {
           "type": "number",
@@ -352,7 +352,7 @@
         "messages.outbound.realtime.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound realtime messages excluding presence messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as a service issue on Ably's side)"
+          "description": "Total number of outbound realtime messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
         },
         "messages.outbound.realtime.messages.refused": {
           "type": "number",
@@ -377,7 +377,7 @@
         "messages.outbound.realtime.presence.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound realtime presence messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as a service issue on Ably's side)"
+          "description": "Total number of outbound realtime presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
         },
         "messages.outbound.realtime.presence.refused": {
           "type": "number",
@@ -447,7 +447,7 @@
         "messages.outbound.webhook.all.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound Webhook messages that failed (which did not succeed for some reason other than Ably actively rejecting it, in particular rejection by an external integration target)"
+          "description": "Total number of outbound Webhook messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, in particular rejection by an external integration target)"
         },
         "messages.outbound.webhook.all.refused": {
           "type": "number",
@@ -472,7 +472,7 @@
         "messages.outbound.webhook.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound Webhook messages excluding presence messages that failed (which did not succeed for some reason other than Ably actively rejecting it, in particular rejection by an external integration target)"
+          "description": "Total number of outbound Webhook messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, in particular rejection by an external integration target)"
         },
         "messages.outbound.webhook.messages.refused": {
           "type": "number",
@@ -497,7 +497,7 @@
         "messages.outbound.webhook.presence.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound Webhook presence messages that failed (which did not succeed for some reason other than Ably actively rejecting it, in particular rejection by an external integration target)"
+          "description": "Total number of outbound Webhook presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, in particular rejection by an external integration target)"
         },
         "messages.outbound.webhook.presence.refused": {
           "type": "number",
@@ -747,7 +747,7 @@
         "messages.outbound.push.all.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Push messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as rejection by APNS or FCM, or a service issue on Ably's side)"
+          "description": "Total number of Push messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by APNS or FCM, or a service issue on Ably's side)"
         },
         "messages.outbound.push.all.refused": {
           "type": "number",
@@ -772,7 +772,7 @@
         "messages.outbound.push.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Push messages excluding presence messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as rejection by APNS or FCM, or a service issue on Ably's side)"
+          "description": "Total number of Push messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by APNS or FCM, or a service issue on Ably's side)"
         },
         "messages.outbound.push.messages.refused": {
           "type": "number",
@@ -797,7 +797,7 @@
         "messages.outbound.push.presence.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Push presence messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as rejection by APNS or FCM, or a service issue on Ably's side)"
+          "description": "Total number of Push presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by APNS or FCM, or a service issue on Ably's side)"
         },
         "messages.outbound.push.presence.refused": {
           "type": "number",
@@ -822,7 +822,7 @@
         "messages.outbound.all.all.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as rejection by an external integration target, or a service issue on Ably's side)"
+          "description": "Total number of outbound messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by an external integration target, or a service issue on Ably's side)"
         },
         "messages.outbound.all.all.refused": {
           "type": "number",
@@ -847,7 +847,7 @@
         "messages.outbound.all.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound messages excluding presence messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as rejection by an external integration target, or a service issue on Ably's side)"
+          "description": "Total number of outbound messages excluding presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by an external integration target, or a service issue on Ably's side)"
         },
         "messages.outbound.all.messages.refused": {
           "type": "number",
@@ -872,7 +872,7 @@
         "messages.outbound.all.presence.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound presence messages that failed (which did not succeed for some reason other than Ably actively rejecting it, such as rejection by an external integration target, or a service issue on Ably's side)"
+          "description": "Total number of outbound presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by an external integration target, or a service issue on Ably's side)"
         },
         "messages.outbound.all.presence.refused": {
           "type": "number",
