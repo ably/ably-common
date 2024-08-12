@@ -69,6 +69,8 @@
   "40170": "error from client token callback",
   "40171": "no means provided to renew auth token",
   "40172": "operation only permitted with token auth",
+  "40180": "unable to send location notification; location notifications can only be sent using token authentication",
+  "40181": "unable to send location notification; no location token for device",
 
   "40300": "forbidden",
   "40310": "account does not permit tls connection",
