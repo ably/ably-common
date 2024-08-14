@@ -349,6 +349,11 @@
       "identifier": "chat-js",
       "versioned": true,
       "type": "wrapper"
+    },
+    {
+      "identifier": "chat-react",
+      "versioned": true,
+      "type": "wrapper"
     }
   ],
   "ablyLibMappings": {
