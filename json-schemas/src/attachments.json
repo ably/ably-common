@@ -55,7 +55,8 @@
             "metrics.presenceConnections",
             "metrics.presenceMembers",
             "metrics.presenceSubscribers",
-            "metrics.stateSubscribers"
+            "metrics.stateSubscribers",
+            "metrics.statePublishers"
           ]
         }
       }
