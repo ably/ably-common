@@ -98,6 +98,7 @@ The following table adds more contextual detail for some agent identifiers, wher
 | `android` | [ably-java](https://github.com/ably/ably-java), [ably-dotnet](https://github.com/ably/ably-dotnet) |
 | `browser` | [ably-js](https://github.com/ably/ably-js) |
 | `chat-js` | [ably-chat-js](https://github.com/ably/ably-chat-js) |
+| `chat-react` | [ably-chat-js](https://github.com/ably/ably-chat-js) |
 | `dart` | [ably-flutter](https://github.com/ably/ably-flutter) |
 | `darwin` | [ably-go](https://github.com/ably/ably-go) |
 | `dotnet-framework` | [ably-dotnet](https://github.com/ably/ably-dotnet) |
