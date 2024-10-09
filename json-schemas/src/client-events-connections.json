@@ -8,6 +8,10 @@
       "type": "string",
       "description": "The HTTP Host header of the connection request."
     },
+    "transport": {
+      "type": "string",
+      "description": "The type of transport used by the connection, one of 'websocket', 'sse', or 'comet'."
+    },
     "requestId": {
       "type": "string",
       "description": "The unique ID of the connection request that Ably can use to correlate a connection event with internal logs, if necessary."
