@@ -31,6 +31,7 @@
   "40114": "https://faqs.ably.com/error-code-40114-account-wide-peak-channel-limit-exceeded",
   "40115": "https://faqs.ably.com/error-code-40115-account-restricted-request-limit-exceeded",
   "40125": "https://faqs.ably.com/error-code-40125-max-number-of-rules-per-application",
+  "40127": "https://faqs.ably.com/error-code-40127",
   "40131": "https://faqs.ably.com/error-code-40131-key-revoked",
   "40133": "https://faqs.ably.com/error-code-40133",
   "40141": "https://faqs.ably.com/error-code-40141",
