@@ -55,6 +55,7 @@
   "50001": "https://faqs.ably.com/error-code-50001-internal-channel-error",
   "50002": "https://faqs.ably.com/error-code-50002-internal-connection-error",
   "50003": "https://faqs.ably.com/error-code-50003-timeout-error",
+  "50305": "https://faqs.ably.com/error-code-50305",
   "61002": "https://faqs.ably.com/error-code-61002",
   "70001": "https://faqs.ably.com/error-code-70001",
   "70002": "https://faqs.ably.com/error-code-70002",
