@@ -1129,6 +1129,16 @@
           "inclusiveMinimum": 0,
           "description": "Total number of Push notifications that Ably attempted to deliver but were refused with a non-retriable error."
         },
+        "push.notifications.skipped.apns": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push notifications that Ably did not attempt to deliver to APNS, for example APNS location push notifications sent over a channel to subscribing devices without location tokens."
+        },
+        "push.notifications.skipped.total": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of Push notifications that Ably did not attempt to deliver, for example APNS location push notifications sent over a channel to subscribing devices without location tokens."
+        },
         "push.notifications.all.fcm": {
           "type": "number",
           "inclusiveMinimum": 0,
