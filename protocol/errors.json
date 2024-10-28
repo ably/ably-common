@@ -140,6 +140,8 @@
   "72001": "ingress failed to publish message",
   "72002": "ingress table is unhealthy",
   "72003": "ingress cannot connect to database",
+  "72004": "ingress cannot identify channel, no _ablyChannel field",
+  "72005": "ingress invalid pipeline",
 
   "80000": "connection failed",
   "80001": "connection failed (no compatible transport)",
