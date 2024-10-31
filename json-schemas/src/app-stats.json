@@ -33,6 +33,11 @@
           "inclusiveMinimum": 0,
           "description": "Total number of successfully-sent messages, summed over all message types and transports."
         },
+        "messages.all.all.billableCount": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of billable successfully-sent messages, summed over all message types and transports."
+        },
         "messages.all.all.data": {
           "type": "number",
           "inclusiveMinimum": 0,
@@ -58,6 +63,11 @@
           "inclusiveMinimum": 0,
           "description": "Total message count, excluding presence messages."
         },
+        "messages.all.messages.billableCount": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total billable message count, excluding presence messages."
+        },
         "messages.all.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
@@ -82,6 +92,11 @@
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total presence message count."
+        },
+        "messages.all.presence.billableCount": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total billable presence message count."
         },
         "messages.all.presence.data": {
           "type": "number",
@@ -318,6 +333,11 @@
           "inclusiveMinimum": 0,
           "description": "Total outbound realtime message count (sent from the Ably service to clients)."
         },
+        "messages.outbound.realtime.all.billableCount": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total billable outbound realtime message count (sent from the Ably service to clients)."
+        },
         "messages.outbound.realtime.all.data": {
           "type": "number",
           "inclusiveMinimum": 0,
@@ -343,6 +363,11 @@
           "inclusiveMinimum": 0,
           "description": "Total outbound realtime message count (sent from the Ably service to clients), excluding presence messages."
         },
+        "messages.outbound.realtime.messages.billableCount": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total billable outbound realtime message count (sent from the Ably service to clients), excluding presence messages."
+        },
         "messages.outbound.realtime.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
@@ -367,6 +392,11 @@
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total outbound realtime presence message count (sent from the Ably service to clients)."
+        },
+        "messages.outbound.realtime.presence.billableCount": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total billable outbound realtime presence message count (sent from the Ably service to clients)."
         },
         "messages.outbound.realtime.presence.data": {
           "type": "number",
@@ -813,6 +843,11 @@
           "inclusiveMinimum": 0,
           "description": "Total outbound message count (sent from the Ably service to clients)."
         },
+        "messages.outbound.all.all.billableCount": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total billable outbound message count (sent from the Ably service to clients)."
+        },
         "messages.outbound.all.all.data": {
           "type": "number",
           "inclusiveMinimum": 0,
@@ -838,6 +873,11 @@
           "inclusiveMinimum": 0,
           "description": "Total outbound message count (sent from the Ably service to clients), excluding presence messages."
         },
+        "messages.outbound.all.messages.billableCount": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total billable outbound message count (sent from the Ably service to clients), excluding presence messages."
+        },
         "messages.outbound.all.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
@@ -862,6 +902,11 @@
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total outbound presence message count (sent from the Ably service to clients)."
+        },
+        "messages.outbound.all.presence.billableCount": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total billable outbound presence message count (sent from the Ably service to clients)."
         },
         "messages.outbound.all.presence.data": {
           "type": "number",
