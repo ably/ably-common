@@ -142,6 +142,8 @@
   "72003": "ingress cannot connect to database",
   "72004": "ingress cannot identify channel, no _ablyChannel field",
   "72005": "ingress invalid pipeline",
+  "72006": "unable to resume from change stream",
+  "72007": "unable to store change stream resume token",
 
   "80000": "connection failed",
   "80001": "connection failed (no compatible transport)",
