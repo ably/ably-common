@@ -44,6 +44,7 @@
   "40170": "https://faqs.ably.com/error-code-40170",
   "40171": "https://faqs.ably.com/error-code-40171-no-means-provided-to-renew-auth-token",
   "40300": "https://faqs.ably.com/error-code-40300",
+  "40311": "https://faqs.ably.com/error-code-40311",
   "40330": "https://faqs.ably.com/error-code-40330-unable-to-activate-account-due-to-placement-constraint-unspecified",
   "40331": "https://faqs.ably.com/error-code-40331-unable-to-activate-account-due-to-placement-constraint-incompatible-environment",
   "40332": "https://faqs.ably.com/error-code-40332-unable-to-activate-account-due-to-placement-constraint-incompatible-site",
