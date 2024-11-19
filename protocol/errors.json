@@ -167,6 +167,8 @@
   "80019": "client configured authentication provider request failed",
   "80020": "continuity loss due to maximum subscribe message rate exceeded",
   "80021": "exceeded maximum permitted account-wide rate of creating new connections",
+  "80022": "unable to continue current comet connection",
+  "80023": "unable to resume connection from a different site",
   "80030": "client restriction not satisfied",
 
   "90000": "channel operation failed",
