@@ -93,6 +93,7 @@
   "42210": "content rejected (unspecified)",
   "42211": "content rejected by before publish rule",
   "42212": "content rejected by validation",
+  "42213": "content rejected by moderation",
 
   "42910": "rate limit exceeded (nonfatal): request rejected (unspecified)",
   "42911": "max per-connection publish rate limit exceeded (nonfatal): unable to publish message",
