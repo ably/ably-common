@@ -218,5 +218,7 @@
   "102102": "unable to perform operation; room is releasing",
   "102103": "unable to perform operation; room is released",
   "102104": "unable to perform operation; existing attempt failed",
-  "102105": "unknown room lifecycle error"
+  "102105": "unknown room lifecycle error",
+  "102106": "unable to perform operation; room released before operation completed",
+  "102107": "unable to perofrm operation; room in invalid state"
 }
