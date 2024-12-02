@@ -195,6 +195,7 @@
 
   "92000": "invalid state message",
   "92001": "state max objects limit",
+  "92002": "unable to submit operation on tombstone object",
 
   "101000": "must have a non-empty name for the space",
   "101001": "must enter a space to perform this operation",
