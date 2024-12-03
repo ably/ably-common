@@ -148,6 +148,7 @@
   "72005": "ingress invalid pipeline",
   "72006": "unable to resume from change stream",
   "72007": "unable to store change stream resume token",
+  "72008": "change stream history lost",
 
   "80000": "connection failed",
   "80001": "connection failed (no compatible transport)",
