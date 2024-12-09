@@ -1,0 +1,900 @@
+# Error codes
+#
+# shortDescription: this is a brief definition of the meaning of the error code (as in error.json)
+# description: this is a high-level explanation of the meaning of the error code in no more than a few sentences
+# identifier: this is the default const identifier used in code to represent the error code
+# help: a link to a help/FAQ page for this error code (as in errorsHelp.json)
+
+'10000':
+  shortDescription: no error
+  description: no error
+  identifier: Err_10000
+  help: https://faqs.ably.com/error-code-10000
+'20000':
+  shortDescription: general error code
+  description: general error code
+  identifier: Err_20000
+  help: https://faqs.ably.com/error-code-20000
+'40000':
+  shortDescription: bad request
+  description: bad request
+  identifier: Err_40000
+  help: https://faqs.ably.com/error-code-40000-bad-request
+'40001':
+  shortDescription: invalid request body
+  description: invalid request body
+  identifier: Err_40001
+  help: https://faqs.ably.com/error-code-40001-invalid-request-body
+'40002':
+  shortDescription: invalid parameter name
+  description: invalid parameter name
+  identifier: Err_40002
+'40003':
+  shortDescription: invalid parameter value
+  description: invalid parameter value
+  identifier: Err_40003
+  help: https://faqs.ably.com/error-40003
+'40004':
+  shortDescription: invalid header
+  description: invalid header
+  identifier: Err_40004
+'40005':
+  shortDescription: invalid credential
+  description: invalid credential
+  identifier: Err_40005
+  help: https://faqs.ably.com/error-code-40005-invalid-credentials
+'40006':
+  shortDescription: invalid connection id
+  description: invalid connection id
+  identifier: Err_40006
+  help: https://faqs.ably.com/error-code-40006-invalid-connection-id
+'40007':
+  shortDescription: invalid message id
+  description: invalid message id
+  identifier: Err_40007
+'40008':
+  shortDescription: invalid content length
+  description: invalid content length
+  identifier: Err_40008
+'40009':
+  shortDescription: maximum message length exceeded
+  description: maximum message length exceeded
+  identifier: Err_40009
+  help: https://faqs.ably.com/error-code-40009-maximum-message-length-exceeded
+'40010':
+  shortDescription: invalid channel name
+  description: invalid channel name
+  identifier: Err_40010
+  help: https://faqs.ably.com/error-code-40010-invalid-channel-name
+'40011':
+  shortDescription: stale ring state
+  description: stale ring state
+  identifier: Err_40011
+  help: https://faqs.ably.com/error-code-40011-stale-ring-state
+'40012':
+  shortDescription: invalid client id
+  description: invalid client id
+  identifier: Err_40012
+  help: https://faqs.ably.com/error-code-40012-invalid-client-id
+'40013':
+  shortDescription: Invalid message data or encoding
+  description: Invalid message data or encoding
+  identifier: Err_40013
+  help: https://faqs.ably.com/error-code-40013
+'40014':
+  shortDescription: Resource disposed
+  description: Resource disposed
+  identifier: Err_40014
+'40015':
+  shortDescription: Invalid device id
+  description: Invalid device id
+  identifier: Err_40015
+  help: https://faqs.ably.com/error-code-40015
+'40016':
+  shortDescription: Invalid message name
+  description: Invalid message name
+  identifier: Err_40016
+  help: https://faqs.ably.com/error-code-40016
+'40017':
+  shortDescription: Unsupported protocol version
+  description: Unsupported protocol version
+  identifier: Err_40017
+  help: https://faqs.ably.com/error-code-40017
+'40018':
+  shortDescription: Unable to decode message; channel attachment no longer viable
+  description: Unable to decode message; channel attachment no longer viable
+  identifier: Err_40018
+'40019':
+  shortDescription: Required client library plugin not present
+  description: Required client library plugin not present
+  identifier: Err_40019
+'40020':
+  shortDescription: Batch error
+  description: Batch error
+  identifier: Err_40020
+  help: https://faqs.ably.com/error-code-40020
+'40021':
+  shortDescription: Feature requires a newer platform version
+  description: Feature requires a newer platform version
+  identifier: Err_40021
+'40022':
+  shortDescription: API Streamer has been shut down
+  description: API Streamer has been shut down
+  identifier: Err_40022
+  help: https://faqs.ably.com/error-code-40022
+'40023':
+  shortDescription: Action requires a newer protocol version
+  description: Action requires a newer protocol version
+  identifier: Err_40023
+'40030':
+  shortDescription: Invalid publish request (unspecified)
+  description: Invalid publish request (unspecified)
+  identifier: Err_40030
+  help: https://faqs.ably.com/error-code-40030
+'40031':
+  shortDescription: Invalid publish request (invalid client-specified id)
+  description: Invalid publish request (invalid client-specified id)
+  identifier: Err_40031
+  help: https://faqs.ably.com/client-specified-message-id-restrictions-for-multiple-messages-published-atomically
+'40032':
+  shortDescription: Invalid publish request (impermissible extras field)
+  description: Invalid publish request (impermissible extras field)
+  identifier: Err_40032
+  help: https://faqs.ably.com/error-code-40032-invalid-publish-request-impermissible-extras-field
+'40099':
+  shortDescription: Reserved for artifical errors for testing
+  description: Reserved for artifical errors for testing
+  identifier: Err_40099
+'40100':
+  shortDescription: unauthorized
+  description: unauthorized
+  identifier: Err_40100
+  help: https://faqs.ably.com/error-code-40100
+'40101':
+  shortDescription: invalid credentials
+  description: invalid credentials
+  identifier: Err_40101
+  help: https://faqs.ably.com/40101-invalid-credentials
+'40102':
+  shortDescription: incompatible credentials
+  description: incompatible credentials
+  identifier: Err_40102
+  help: https://faqs.ably.com/error-code-40102
+'40103':
+  shortDescription: invalid use of Basic auth over non-TLS transport
+  description: invalid use of Basic auth over non-TLS transport
+  identifier: Err_40103
+  help: https://faqs.ably.com/error-code-40103-invalid-use-of-basic-auth-over-non-tls-transport
+'40104':
+  shortDescription: timestamp not current
+  description: timestamp not current
+  identifier: Err_40104
+  help: https://faqs.ably.com/40104-timestamp-not-current
+'40105':
+  shortDescription: nonce value replayed
+  description: nonce value replayed
+  identifier: Err_40105
+  help: https://faqs.ably.com/40105-nonce-value-replayed
+'40106':
+  shortDescription: Unable to obtain credentials from given parameters
+  description: Unable to obtain credentials from given parameters
+  identifier: Err_40106
+  help: https://faqs.ably.com/error-code-40106-unable-to-obtain-credentials-from-given-parameters
+'40110':
+  shortDescription: account disabled
+  description: account disabled
+  identifier: Err_40110
+'40111':
+  shortDescription: account restricted (connection limits exceeded)
+  description: account restricted (connection limits exceeded)
+  identifier: Err_40111
+  help: https://faqs.ably.com/error-code-40111-connection-limits-exceeded
+'40112':
+  shortDescription: account blocked (message limits exceeded)
+  description: account blocked (message limits exceeded)
+  identifier: Err_40112
+  help: https://faqs.ably.com/error-code-40112-account-blocked-message-limits-exceeded
+'40113':
+  shortDescription: account blocked
+  description: account blocked
+  identifier: Err_40113
+'40114':
+  shortDescription: account restricted (channel limits exceeded)
+  description: account restricted (channel limits exceeded)
+  identifier: Err_40114
+  help: https://faqs.ably.com/error-code-40114-account-wide-peak-channel-limit-exceeded
+'40115':
+  shortDescription: maximum number of permitted applications exceeded
+  description: maximum number of permitted applications exceeded
+  identifier: Err_40115
+  help: https://faqs.ably.com/error-code-40115-account-restricted-request-limit-exceeded
+'40120':
+  shortDescription: application disabled
+  description: application disabled
+  identifier: Err_40120
+'40121':
+  shortDescription: token revocation not enabled for this application
+  description: token revocation not enabled for this application
+  identifier: Err_40121
+'40125':
+  shortDescription: maximum number of rules per application exceeded
+  description: maximum number of rules per application exceeded
+  identifier: Err_40125
+  help: https://faqs.ably.com/error-code-40125-max-number-of-rules-per-application
+'40126':
+  shortDescription: maximum number of namespaces per application exceeded
+  description: maximum number of namespaces per application exceeded
+  identifier: Err_40126
+'40127':
+  shortDescription: maximum number of keys per application exceeded
+  description: maximum number of keys per application exceeded
+  identifier: Err_40127
+  help: https://faqs.ably.com/error-code-40127
+'40130':
+  shortDescription: key error (unspecified)
+  description: key error (unspecified)
+  identifier: Err_40130
+'40131':
+  shortDescription: key revoked
+  description: key revoked
+  identifier: Err_40131
+  help: https://faqs.ably.com/error-code-40131-key-revoked
+'40132':
+  shortDescription: key expired
+  description: key expired
+  identifier: Err_40132
+'40133':
+  shortDescription: wrong key; cannot revoke tokens with a different key to the one
+    that issued them
+  description: wrong key; cannot revoke tokens with a different key to the one that
+    issued them
+  identifier: Err_40133
+  help: https://faqs.ably.com/error-code-40133
+'40140':
+  shortDescription: token error (unspecified)
+  description: token error (unspecified)
+  identifier: Err_40140
+'40141':
+  shortDescription: token revoked
+  description: token revoked
+  identifier: Err_40141
+  help: https://faqs.ably.com/error-code-40141
+'40142':
+  shortDescription: token expired
+  description: token expired
+  identifier: Err_40142
+  help: https://faqs.ably.com/error-code-40142-token-expired-code
+'40143':
+  shortDescription: token unrecognised
+  description: token unrecognised
+  identifier: Err_40143
+  help: https://faqs.ably.com/error-code-40143-token-unrecognised
+'40144':
+  shortDescription: invalid JWT format
+  description: invalid JWT format
+  identifier: Err_40144
+  help: https://faqs.ably.com/error-code-40144-unexpected-error-decoding-jwt-decode-exception
+'40145':
+  shortDescription: invalid token format
+  description: invalid token format
+  identifier: Err_40145
+'40150':
+  shortDescription: connection blocked (limits exceeded)
+  description: connection blocked (limits exceeded)
+  identifier: Err_40150
+'40160':
+  shortDescription: operation not permitted with provided capability
+  description: operation not permitted with provided capability
+  identifier: Err_40160
+  help: https://faqs.ably.com/error-code-40160-action-not-permitted
+'40161':
+  shortDescription: operation not permitted as it requires an identified client
+  description: operation not permitted as it requires an identified client
+  identifier: Err_40161
+  help: https://faqs.ably.com/error-code-40161-access-denied-to-channel-namespace-requires-identified-clients
+'40162':
+  shortDescription: operation not permitted with a token, requires basic auth
+  description: operation not permitted with a token, requires basic auth
+  identifier: Err_40162
+'40163':
+  shortDescription: operation not permitted, key not marked as permitting revocable
+    tokens
+  description: operation not permitted, key not marked as permitting revocable tokens
+  identifier: Err_40163
+'40164':
+  shortDescription: channel state disabled
+  description: channel state disabled
+  identifier: Err_40164
+'40170':
+  shortDescription: error from client token callback
+  description: error from client token callback
+  identifier: Err_40170
+  help: https://faqs.ably.com/error-code-40170
+'40171':
+  shortDescription: no means provided to renew auth token
+  description: no means provided to renew auth token
+  identifier: Err_40171
+  help: https://faqs.ably.com/error-code-40171-no-means-provided-to-renew-auth-token
+'40172':
+  shortDescription: operation only permitted with token auth
+  description: operation only permitted with token auth
+  identifier: Err_40172
+'40180':
+  shortDescription: unable to send location notification; location notifications can
+    only be sent using token authentication
+  description: unable to send location notification; location notifications can only
+    be sent using token authentication
+  identifier: Err_40180
+'40181':
+  shortDescription: unable to send location notification; no location token for device
+  description: unable to send location notification; no location token for device
+  identifier: Err_40181
+'40300':
+  shortDescription: forbidden
+  description: forbidden
+  identifier: Err_40300
+  help: https://faqs.ably.com/error-code-40300
+'40310':
+  shortDescription: account does not permit tls connection
+  description: account does not permit tls connection
+  identifier: Err_40310
+'40311':
+  shortDescription: operation requires tls connection
+  description: operation requires tls connection
+  identifier: Err_40311
+  help: https://faqs.ably.com/error-code-40311
+'40320':
+  shortDescription: application requires authentication
+  description: application requires authentication
+  identifier: Err_40320
+'40330':
+  shortDescription: unable to activate account due to placement constraint (unspecified)
+  description: unable to activate account due to placement constraint (unspecified)
+  identifier: Err_40330
+  help: https://faqs.ably.com/error-code-40330-unable-to-activate-account-due-to-placement-constraint-unspecified
+'40331':
+  shortDescription: unable to activate account due to placement constraint (incompatible
+    environment)
+  description: unable to activate account due to placement constraint (incompatible
+    environment)
+  identifier: Err_40331
+  help: https://faqs.ably.com/error-code-40331-unable-to-activate-account-due-to-placement-constraint-incompatible-environment
+'40332':
+  shortDescription: unable to activate account due to placement constraint (incompatible
+    site)
+  description: unable to activate account due to placement constraint (incompatible
+    site)
+  identifier: Err_40332
+  help: https://faqs.ably.com/error-code-40332-unable-to-activate-account-due-to-placement-constraint-incompatible-site
+'40400':
+  shortDescription: not found
+  description: not found
+  identifier: Err_40400
+  help: https://faqs.ably.com/error-code-40400-not-found
+'40500':
+  shortDescription: method not allowed
+  description: method not allowed
+  identifier: Err_40500
+'40900':
+  shortDescription: conflict
+  description: conflict
+  identifier: Err_40900
+'41001':
+  shortDescription: push device registration expired
+  description: push device registration expired
+  identifier: Err_41001
+'42200':
+  shortDescription: Unprocessable entity
+  description: Unprocessable entity
+  identifier: Err_42200
+'42910':
+  shortDescription: 'rate limit exceeded (nonfatal): request rejected (unspecified)'
+  description: 'rate limit exceeded (nonfatal): request rejected (unspecified)'
+  identifier: Err_42910
+  help: https://faqs.ably.com/error-code-42910-rate-limit-exceeded-request-rejected
+'42911':
+  shortDescription: 'max per-connection publish rate limit exceeded (nonfatal): unable
+    to publish message'
+  description: 'max per-connection publish rate limit exceeded (nonfatal): unable
+    to publish message'
+  identifier: Err_42911
+  help: https://faqs.ably.com/error-code-42911-maximum-account-wide-instantaneous-messages-rate-exceeded
+'42912':
+  shortDescription: there is a channel iteration call already in progress; only 1
+    active call is permitted to execute at any one time
+  description: there is a channel iteration call already in progress; only 1 active
+    call is permitted to execute at any one time
+  identifier: Err_42912
+  help: https://faqs.ably.com/error-code-42912-channel-iteration-call-already-in-progress
+'42920':
+  shortDescription: rate limit exceeded (fatal)
+  description: rate limit exceeded (fatal)
+  identifier: Err_42920
+'42921':
+  shortDescription: max per-connection publish rate limit exceeded (fatal); closing
+    connection
+  description: max per-connection publish rate limit exceeded (fatal); closing connection
+  identifier: Err_42921
+'42922':
+  shortDescription: rate limit exceeded; too many requests
+  description: rate limit exceeded; too many requests
+  identifier: Err_42922
+  help: https://faqs.ably.com/error-code-42922-rate-limit-exceeded-request-rejected
+'50000':
+  shortDescription: internal error
+  description: internal error
+  identifier: Err_50000
+  help: https://faqs.ably.com/error-code-50000-internal-error
+'50001':
+  shortDescription: internal channel error
+  description: internal channel error
+  identifier: Err_50001
+  help: https://faqs.ably.com/error-code-50001-internal-channel-error
+'50002':
+  shortDescription: internal connection error
+  description: internal connection error
+  identifier: Err_50002
+  help: https://faqs.ably.com/error-code-50002-internal-connection-error
+'50003':
+  shortDescription: timeout error
+  description: timeout error
+  identifier: Err_50003
+  help: https://faqs.ably.com/error-code-50003-timeout-error
+'50004':
+  shortDescription: Request failed due to overloaded instance
+  description: Request failed due to overloaded instance
+  identifier: Err_50004
+'50005':
+  shortDescription: Service unavailable (service temporarily in lockdown)
+  description: Service unavailable (service temporarily in lockdown)
+  identifier: Err_50005
+'50010':
+  shortDescription: Ably's edge proxy service has encountered an unknown internal
+    error whilst processing the request
+  description: Ably's edge proxy service has encountered an unknown internal error
+    whilst processing the request
+  identifier: Err_50010
+'50210':
+  shortDescription: Ably's edge proxy service received an invalid (bad gateway) response
+    from the Ably platform
+  description: Ably's edge proxy service received an invalid (bad gateway) response
+    from the Ably platform
+  identifier: Err_50210
+'50310':
+  shortDescription: Ably's edge proxy service received a service unavailable response
+    code from the Ably platform
+  description: Ably's edge proxy service received a service unavailable response code
+    from the Ably platform
+  identifier: Err_50310
+'50320':
+  shortDescription: 'Active Traffic Management: traffic for this cluster is being
+    temporarily redirected to a backup service'
+  description: 'Active Traffic Management: traffic for this cluster is being temporarily
+    redirected to a backup service'
+  identifier: Err_50320
+'50330':
+  shortDescription: request reached the wrong cluster; retry (used during dns changes
+    for cluster migrations)
+  description: request reached the wrong cluster; retry (used during dns changes for
+    cluster migrations)
+  identifier: Err_50330
+'50410':
+  shortDescription: Ably's edge proxy service timed out waiting for the Ably platform
+  description: Ably's edge proxy service timed out waiting for the Ably platform
+  identifier: Err_50410
+'70000':
+  shortDescription: reactor operation failed
+  description: reactor operation failed
+  identifier: Err_70000
+'70001':
+  shortDescription: reactor operation failed (post operation failed)
+  description: reactor operation failed (post operation failed)
+  identifier: Err_70001
+  help: https://faqs.ably.com/error-code-70001
+'70002':
+  shortDescription: reactor operation failed (post operation returned unexpected code)
+  description: reactor operation failed (post operation returned unexpected code)
+  identifier: Err_70002
+  help: https://faqs.ably.com/error-code-70002
+'70003':
+  shortDescription: reactor operation failed (maximum number of concurrent in-flight
+    requests exceeded)
+  description: reactor operation failed (maximum number of concurrent in-flight requests
+    exceeded)
+  identifier: Err_70003
+'70004':
+  shortDescription: reactor operation failed (invalid or unaccepted message contents)
+  description: reactor operation failed (invalid or unaccepted message contents)
+  identifier: Err_70004
+'71000':
+  shortDescription: Exchange error (unspecified)
+  description: Exchange error (unspecified)
+  identifier: Err_71000
+'71001':
+  shortDescription: Forced re-attachment due to permissions change
+  description: Forced re-attachment due to permissions change
+  identifier: Err_71001
+'71100':
+  shortDescription: Exchange publisher error (unspecified)
+  description: Exchange publisher error (unspecified)
+  identifier: Err_71100
+'71101':
+  shortDescription: No such publisher
+  description: No such publisher
+  identifier: Err_71101
+'71102':
+  shortDescription: Publisher not enabled as an exchange publisher
+  description: Publisher not enabled as an exchange publisher
+  identifier: Err_71102
+'71200':
+  shortDescription: Exchange product error (unspecified)
+  description: Exchange product error (unspecified)
+  identifier: Err_71200
+'71201':
+  shortDescription: No such product
+  description: No such product
+  identifier: Err_71201
+'71202':
+  shortDescription: Product disabled
+  description: Product disabled
+  identifier: Err_71202
+'71203':
+  shortDescription: No such channel in this product
+  description: No such channel in this product
+  identifier: Err_71203
+'71204':
+  shortDescription: Forced re-attachment due to product being remapped to a different
+    namespace
+  description: Forced re-attachment due to product being remapped to a different namespace
+  identifier: Err_71204
+'71300':
+  shortDescription: Exchange subscription error (unspecified)
+  description: Exchange subscription error (unspecified)
+  identifier: Err_71300
+'71301':
+  shortDescription: Subscription disabled
+  description: Subscription disabled
+  identifier: Err_71301
+'71302':
+  shortDescription: Requester has no subscription to this product
+  description: Requester has no subscription to this product
+  identifier: Err_71302
+  help: https://faqs.ably.com/error-71302-no-subscription-to-this-product-found-for-account
+'71303':
+  shortDescription: Channel does not match the channel filter specified in the subscription
+    to this product
+  description: Channel does not match the channel filter specified in the subscription
+    to this product
+  identifier: Err_71303
+'72000':
+  shortDescription: ingress operation failed
+  description: ingress operation failed
+  identifier: Err_72000
+  help: https://faqs.ably.com/error-code-72000-ingress-operation-failed
+'72001':
+  shortDescription: ingress failed to publish message
+  description: ingress failed to publish message
+  identifier: Err_72001
+'72002':
+  shortDescription: ingress table is unhealthy
+  description: ingress table is unhealthy
+  identifier: Err_72002
+  help: https://faqs.ably.com/error-code-72002-ingress-table-is-unhealthy
+'72003':
+  shortDescription: ingress cannot connect to database
+  description: ingress cannot connect to database
+  identifier: Err_72003
+  help: https://faqs.ably.com/error-code-72003-ingress-cannot-connect-to-database
+'72004':
+  shortDescription: ingress cannot identify channel, no _ablyChannel field
+  description: ingress cannot identify channel, no _ablyChannel field
+  identifier: Err_72004
+  help: https://faqs.ably.com/error-code-72004-ingress-cannot-identify-channel-no-_ablychannel-field
+'72005':
+  shortDescription: ingress invalid pipeline
+  description: ingress invalid pipeline
+  identifier: Err_72005
+  help: https://faqs.ably.com/error-code-72005-ingress-invalid-pipeline
+'72006':
+  shortDescription: unable to resume from change stream
+  description: unable to resume from change stream
+  identifier: Err_72006
+  help: https://faqs.ably.com/error-code-72006-unable-to-resume-from-change-stream
+'72007':
+  shortDescription: unable to store change stream resume token
+  description: unable to store change stream resume token
+  identifier: Err_72007
+  help: https://faqs.ably.com/error-code-72007-unable-to-store-change-stream-resume-token
+'80000':
+  shortDescription: connection failed
+  description: connection failed
+  identifier: Err_80000
+  help: https://faqs.ably.com/error-code-80000-connection-failed
+'80001':
+  shortDescription: connection failed (no compatible transport)
+  description: connection failed (no compatible transport)
+  identifier: Err_80001
+'80002':
+  shortDescription: connection suspended
+  description: connection suspended
+  identifier: Err_80002
+  help: https://faqs.ably.com/error-code-80002-password-validation-request-timeout
+'80003':
+  shortDescription: disconnected
+  description: disconnected
+  identifier: Err_80003
+  help: https://faqs.ably.com/error-code-80003
+'80004':
+  shortDescription: already connected
+  description: already connected
+  identifier: Err_80004
+'80005':
+  shortDescription: invalid connection id (remote not found)
+  description: invalid connection id (remote not found)
+  identifier: Err_80005
+'80006':
+  shortDescription: unable to recover connection (messages expired)
+  description: unable to recover connection (messages expired)
+  identifier: Err_80006
+'80007':
+  shortDescription: unable to recover connection (message limit exceeded)
+  description: unable to recover connection (message limit exceeded)
+  identifier: Err_80007
+'80008':
+  shortDescription: unable to recover connection (connection expired)
+  description: unable to recover connection (connection expired)
+  identifier: Err_80008
+  help: https://faqs.ably.com/error-code-80008-unable-to-recover-connection-connection-expired
+'80009':
+  shortDescription: connection not established (no transport handle)
+  description: connection not established (no transport handle)
+  identifier: Err_80009
+'80010':
+  shortDescription: invalid operation (invalid transport handle)
+  description: invalid operation (invalid transport handle)
+  identifier: Err_80010
+'80011':
+  shortDescription: unable to recover connection (incompatible auth params)
+  description: unable to recover connection (incompatible auth params)
+  identifier: Err_80011
+'80012':
+  shortDescription: unable to recover connection (invalid or unspecified connection
+    serial)
+  description: unable to recover connection (invalid or unspecified connection serial)
+  identifier: Err_80012
+'80013':
+  shortDescription: protocol error
+  description: protocol error
+  identifier: Err_80013
+'80014':
+  shortDescription: connection timed out
+  description: connection timed out
+  identifier: Err_80014
+  help: https://faqs.ably.com/error-code-80014
+'80015':
+  shortDescription: incompatible connection parameters
+  description: incompatible connection parameters
+  identifier: Err_80015
+'80016':
+  shortDescription: operation on superseded connection
+  description: operation on superseded connection
+  identifier: Err_80016
+  help: https://faqs.ably.com/error-code-80016-operation-on-superseded-connection
+'80017':
+  shortDescription: connection closed
+  description: connection closed
+  identifier: Err_80017
+  help: https://faqs.ably.com/error-code-80017-connection-already-closed
+'80018':
+  shortDescription: invalid connection id (invalid format)
+  description: invalid connection id (invalid format)
+  identifier: Err_80018
+  help: https://faqs.ably.com/error-code-80018-invalid-connection-id-invalid-format
+'80019':
+  shortDescription: client configured authentication provider request failed
+  description: client configured authentication provider request failed
+  identifier: Err_80019
+  help: https://faqs.ably.com/error-code-80019
+'80020':
+  shortDescription: continuity loss due to maximum subscribe message rate exceeded
+  description: continuity loss due to maximum subscribe message rate exceeded
+  identifier: Err_80020
+  help: https://faqs.ably.com/error-code-80020
+'80021':
+  shortDescription: exceeded maximum permitted account-wide rate of creating new connections
+  description: exceeded maximum permitted account-wide rate of creating new connections
+  identifier: Err_80021
+  help: https://faqs.ably.com/error-code-80021-max-new-connections-rate-exceeded
+'80022':
+  shortDescription: unable to continue current comet connection
+  description: unable to continue current comet connection
+  identifier: Err_80022
+  help: https://faqs.ably.com/error-code-80022-unable-to-find-connection
+'80023':
+  shortDescription: unable to resume connection from a different site
+  description: unable to resume connection from a different site
+  identifier: Err_80023
+'80030':
+  shortDescription: client restriction not satisfied
+  description: client restriction not satisfied
+  identifier: Err_80030
+'90000':
+  shortDescription: channel operation failed
+  description: channel operation failed
+  identifier: Err_90000
+'90001':
+  shortDescription: channel operation failed (invalid channel state)
+  description: channel operation failed (invalid channel state)
+  identifier: Err_90001
+  help: https://faqs.ably.com/error-code-90001-channel-operation-failed-invalid-channel-state
+'90002':
+  shortDescription: channel operation failed (epoch expired or never existed)
+  description: channel operation failed (epoch expired or never existed)
+  identifier: Err_90002
+'90003':
+  shortDescription: unable to recover channel (messages expired)
+  description: unable to recover channel (messages expired)
+  identifier: Err_90003
+  help: https://faqs.ably.com/error-code-90003-unable-to-recover-channel-messages-expired
+'90004':
+  shortDescription: unable to recover channel (message limit exceeded)
+  description: unable to recover channel (message limit exceeded)
+  identifier: Err_90004
+'90005':
+  shortDescription: unable to recover channel (no matching epoch)
+  description: unable to recover channel (no matching epoch)
+  identifier: Err_90005
+'90006':
+  shortDescription: unable to recover channel (unbounded request)
+  description: unable to recover channel (unbounded request)
+  identifier: Err_90006
+'90007':
+  shortDescription: channel operation failed (no response from server)
+  description: channel operation failed (no response from server)
+  identifier: Err_90007
+  help: https://faqs.ably.com/error-code-90007
+'90010':
+  shortDescription: maximum number of channels per connection/request exceeded
+  description: maximum number of channels per connection/request exceeded
+  identifier: Err_90010
+  help: https://faqs.ably.com/error-code-90010-maximum-number-of-channels-per-connection-exceeded
+'90021':
+  shortDescription: exceeded maximum permitted account-wide rate of creating new channels
+  description: exceeded maximum permitted account-wide rate of creating new channels
+  identifier: Err_90021
+  help: https://faqs.ably.com/error-code-90021-max-channel-creation-rate-exceeded
+'91000':
+  shortDescription: unable to enter presence channel (no clientId)
+  description: unable to enter presence channel (no clientId)
+  identifier: Err_91000
+  help: https://faqs.ably.com/error-code-91000
+'91001':
+  shortDescription: unable to enter presence channel (invalid channel state)
+  description: unable to enter presence channel (invalid channel state)
+  identifier: Err_91001
+  help: https://faqs.ably.com/error-code-91001
+'91002':
+  shortDescription: unable to leave presence channel that is not entered
+  description: unable to leave presence channel that is not entered
+  identifier: Err_91002
+'91003':
+  shortDescription: unable to enter presence channel (maximum member limit exceeded)
+  description: unable to enter presence channel (maximum member limit exceeded)
+  identifier: Err_91003
+  help: https://faqs.ably.com/error-91003-maximum-member-limit-exceeded
+'91004':
+  shortDescription: unable to automatically re-enter presence channel
+  description: unable to automatically re-enter presence channel
+  identifier: Err_91004
+'91005':
+  shortDescription: presence state is out of sync
+  description: presence state is out of sync
+  identifier: Err_91005
+  help: https://faqs.ably.com/error-code-91005
+'91100':
+  shortDescription: member implicitly left presence channel (connection closed)
+  description: member implicitly left presence channel (connection closed)
+  identifier: Err_91100
+'92000':
+  shortDescription: invalid state message
+  description: invalid state message
+  identifier: Err_92000
+'92001':
+  shortDescription: state max objects limit
+  description: state max objects limit
+  identifier: Err_92001
+'101000':
+  shortDescription: must have a non-empty name for the space
+  description: must have a non-empty name for the space
+  identifier: Err_101000
+  help: https://faqs.ably.com/error-code-101000
+'101001':
+  shortDescription: must enter a space to perform this operation
+  description: must enter a space to perform this operation
+  identifier: Err_101001
+  help: https://faqs.ably.com/error-code-101001
+'101002':
+  shortDescription: lock request already exists
+  description: lock request already exists
+  identifier: Err_101002
+  help: https://faqs.ably.com/error-code-101002
+'101003':
+  shortDescription: lock is currently locked
+  description: lock is currently locked
+  identifier: Err_101003
+  help: https://faqs.ably.com/error-code-101003
+'101004':
+  shortDescription: lock was invalidated by a concurrent lock request which now holds
+    the lock
+  description: lock was invalidated by a concurrent lock request which now holds the
+    lock
+  identifier: Err_101004
+  help: https://faqs.ably.com/error-code-101004
+'102000':
+  shortDescription: chat room name is invalid
+  description: chat room name is invalid
+  identifier: Err_102000
+'102001':
+  shortDescription: room attachment failed (messages)
+  description: room attachment failed (messages)
+  identifier: Err_102001
+'102002':
+  shortDescription: room attachment failed (presence)
+  description: room attachment failed (presence)
+  identifier: Err_102002
+'102003':
+  shortDescription: room attachment failed (reactions)
+  description: room attachment failed (reactions)
+  identifier: Err_102003
+'102004':
+  shortDescription: room attachment failed (occupancy)
+  description: room attachment failed (occupancy)
+  identifier: Err_102004
+'102005':
+  shortDescription: room attachment failed (typing)
+  description: room attachment failed (typing)
+  identifier: Err_102005
+'102050':
+  shortDescription: room detachment failed (messages)
+  description: room detachment failed (messages)
+  identifier: Err_102050
+'102051':
+  shortDescription: room detachment failed (presence)
+  description: room detachment failed (presence)
+  identifier: Err_102051
+'102052':
+  shortDescription: room detachment failed (reactions)
+  description: room detachment failed (reactions)
+  identifier: Err_102052
+'102053':
+  shortDescription: room detachment failed (occupancy)
+  description: room detachment failed (occupancy)
+  identifier: Err_102053
+'102054':
+  shortDescription: room detachment failed (typing)
+  description: room detachment failed (typing)
+  identifier: Err_102054
+'102100':
+  shortDescription: room discontinuity
+  description: room discontinuity
+  identifier: Err_102100
+'102101':
+  shortDescription: unable to perform operation; room is in failed state
+  description: unable to perform operation; room is in failed state
+  identifier: Err_102101
+'102102':
+  shortDescription: unable to perform operation; room is releasing
+  description: unable to perform operation; room is releasing
+  identifier: Err_102102
+'102103':
+  shortDescription: unable to perform operation; room is released
+  description: unable to perform operation; room is released
+  identifier: Err_102103
+'102104':
+  shortDescription: unable to perform operation; existing attempt failed
+  description: unable to perform operation; existing attempt failed
+  identifier: Err_102104
+'102105':
+  shortDescription: unknown room lifecycle error
+  description: unknown room lifecycle error
+  identifier: Err_102105
