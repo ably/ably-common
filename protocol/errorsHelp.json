@@ -82,6 +82,7 @@
   "80020": "https://faqs.ably.com/error-code-80020",
   "80021": "https://faqs.ably.com/error-code-80021-max-new-connections-rate-exceeded",
   "80022": "https://faqs.ably.com/error-code-80022-unable-to-find-connection",
+  "80023": "https://faqs.ably.com/error-code-80023-unable-to-resume-connection-from-a-different-site",
   "90001": "https://faqs.ably.com/error-code-90001-channel-operation-failed-invalid-channel-state",
   "90003": "https://faqs.ably.com/error-code-90003-unable-to-recover-channel-messages-expired",
   "90004": "https://faqs.ably.com/error-code-90004",
