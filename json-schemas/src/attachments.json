@@ -152,8 +152,37 @@
           "description": "The number of messages that pass the channels filter"
         }
       }
+    },
+    "namespace": {
+      "type": "object",
+      "description": "Namespace information",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the namespace"
+        },
+        "batchingEnabled": {
+          "type": "boolean"
+        },
+        "batchingInterval": {
+          "type": "integer"
+        },
+        "batchingPolicy": {
+          "type": "string",
+          "enum": [
+            "simple",
+            "conflating"
+          ]
+        }
+      }
     }
   },
   "additionalProperties": false,
-  "required": ["connectionId", "site", "channelId", "channelName", "duration"]
+  "required": [
+    "connectionId",
+    "site",
+    "channelId",
+    "channelName",
+    "duration"
+  ]
 }
