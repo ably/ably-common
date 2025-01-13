@@ -120,10 +120,7 @@
         },
         "batchingPolicy": {
           "type": "string",
-          "enum": [
-            "simple",
-            "conflating"
-          ]
+          "enum": ["simple", "conflating"]
         }
       }
     }
