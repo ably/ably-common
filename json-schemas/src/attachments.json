@@ -169,20 +169,11 @@
         },
         "batchingPolicy": {
           "type": "string",
-          "enum": [
-            "simple",
-            "conflating"
-          ]
+          "enum": ["simple", "conflating"]
         }
       }
     }
   },
   "additionalProperties": false,
-  "required": [
-    "connectionId",
-    "site",
-    "channelId",
-    "channelName",
-    "duration"
-  ]
+  "required": ["connectionId", "site", "channelId", "channelName", "duration"]
 }
