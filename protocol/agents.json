@@ -354,6 +354,16 @@
       "identifier": "chat-react",
       "versioned": true,
       "type": "wrapper"
+    },
+    {
+      "identifier": "chat-kotlin",
+      "versioned": true,
+      "type": "wrapper"
+    },
+    {
+      "identifier": "chat-swift",
+      "versioned": true,
+      "type": "wrapper"
     }
   ],
   "ablyLibMappings": {
