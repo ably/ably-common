@@ -111,6 +111,16 @@
         },
         "populateChannelRegistry": {
           "type": "boolean"
+        },
+        "batchingEnabled": {
+          "type": "boolean"
+        },
+        "batchingInterval": {
+          "type": "integer"
+        },
+        "batchingPolicy": {
+          "type": "string",
+          "enum": ["simple", "conflating"]
         }
       }
     }
