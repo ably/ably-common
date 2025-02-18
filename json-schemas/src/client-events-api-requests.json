@@ -6,6 +6,10 @@
   "properties": {
     "host": {
       "type": "string",
+      "description": "The HTTP Method of the API request."
+    },
+    "method": {
+      "type": "string",
       "description": "The HTTP Host header of the API request."
     },
     "requestId": {
