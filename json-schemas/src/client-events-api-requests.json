@@ -8,6 +8,10 @@
       "type": "string",
       "description": "The HTTP Host header of the API request."
     },
+    "method": {
+      "type": "string",
+      "description": "The HTTP Method of the API request."
+    },
     "requestId": {
       "type": "string",
       "description": "The unique ID of the API request that Ably can use to correlate a request event with internal logs, if necessary."
