@@ -195,8 +195,8 @@
   "91005": "presence state is out of sync",
   "91100": "member implicitly left presence channel (connection closed)",
 
-  "92000": "invalid state message",
-  "92001": "state limit exceeded",
+  "92000": "invalid object message",
+  "92001": "objects limit exceeded",
   "92002": "unable to submit operation on tombstone object",
 
   "101000": "must have a non-empty name for the space",
