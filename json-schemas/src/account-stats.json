@@ -57,17 +57,17 @@
         "messages.all.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total message count, excluding presence and state messages."
+          "description": "Total message count, excluding presence and object messages."
         },
         "messages.all.messages.billableCount": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of messages that are billable, excluding presence and state messages."
+          "description": "Total number of messages that are billable, excluding presence and object messages."
         },
         "messages.all.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total message size, excluding presence and state messages."
+          "description": "Total message size, excluding presence and object messages."
         },
         "messages.all.messages.uncompressedData": {
           "type": "number",
@@ -77,12 +77,12 @@
         "messages.all.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of messages excluding presence and state messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
+          "description": "Total number of messages excluding presence and object messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
         },
         "messages.all.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of messages excluding presence and state messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
+          "description": "Total number of messages excluding presence and object messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
         "messages.all.presence.count": {
           "type": "number",
@@ -107,12 +107,12 @@
         "messages.all.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of presence messages excluding presence and state messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
+          "description": "Total number of presence messages excluding presence and object messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
         },
         "messages.all.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of presence messages excluding presence and state messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
+          "description": "Total number of presence messages excluding presence and object messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
         "messages.inbound.realtime.all.count": {
           "type": "number",
@@ -142,27 +142,27 @@
         "messages.inbound.realtime.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total inbound realtime message count (received by the Ably service from clients), excluding presence and state messages."
+          "description": "Total inbound realtime message count (received by the Ably service from clients), excluding presence and object messages."
         },
         "messages.inbound.realtime.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total inbound realtime message size (received by the Ably service from clients), excluding presence and state messages."
+          "description": "Total inbound realtime message size (received by the Ably service from clients), excluding presence and object messages."
         },
         "messages.inbound.realtime.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound realtime message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients, excluding presence and state messages."
+          "description": "Total uncompressed inbound realtime message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients, excluding presence and object messages."
         },
         "messages.inbound.realtime.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound realtime messages excluding presence and state messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
+          "description": "Total number of inbound realtime messages excluding presence and object messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
         },
         "messages.inbound.realtime.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound realtime messages excluding presence and state messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
+          "description": "Total number of inbound realtime messages excluding presence and object messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
         "messages.inbound.realtime.presence.count": {
           "type": "number",
@@ -189,30 +189,30 @@
           "inclusiveMinimum": 0,
           "description": "Total number of inbound realtime presence messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
-        "messages.inbound.realtime.state.count": {
+        "messages.inbound.realtime.objects.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total inbound realtime state message count (received by the Ably service from clients)."
+          "description": "Total inbound realtime object message count (received by the Ably service from clients)."
         },
-        "messages.inbound.realtime.state.data": {
+        "messages.inbound.realtime.objects.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total inbound realtime state message size (received by the Ably service from clients)."
+          "description": "Total inbound realtime object message size (received by the Ably service from clients)."
         },
-        "messages.inbound.realtime.state.uncompressedData": {
+        "messages.inbound.realtime.objects.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound realtime state message size received by the Ably service from clients."
+          "description": "Total uncompressed inbound realtime object message size received by the Ably service from clients."
         },
-        "messages.inbound.realtime.state.failed": {
+        "messages.inbound.realtime.objects.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound realtime state messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
+          "description": "Total number of inbound realtime object messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
         },
-        "messages.inbound.realtime.state.refused": {
+        "messages.inbound.realtime.objects.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound realtime state messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
+          "description": "Total number of inbound realtime object messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
         "messages.inbound.rest.all.count": {
           "type": "number",
@@ -242,27 +242,27 @@
         "messages.inbound.rest.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total inbound REST message count (received by the Ably service from clients), excluding presence and state messages."
+          "description": "Total inbound REST message count (received by the Ably service from clients), excluding presence and object messages."
         },
         "messages.inbound.rest.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total inbound REST message size (received by the Ably service from clients), excluding presence and state messages."
+          "description": "Total inbound REST message size (received by the Ably service from clients), excluding presence and object messages."
         },
         "messages.inbound.rest.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound REST message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients, excluding presence and state messages."
+          "description": "Total uncompressed inbound REST message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients, excluding presence and object messages."
         },
         "messages.inbound.rest.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound REST messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side), excluding presence and state messages."
+          "description": "Total number of inbound REST messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side), excluding presence and object messages."
         },
         "messages.inbound.rest.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound REST messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part), excluding presence and state messages."
+          "description": "Total number of inbound REST messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part), excluding presence and object messages."
         },
         "messages.inbound.rest.presence.count": {
           "type": "number",
@@ -289,30 +289,30 @@
           "inclusiveMinimum": 0,
           "description": "Total number of inbound REST presence messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
-        "messages.inbound.rest.state.count": {
+        "messages.inbound.rest.objects.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total inbound REST state message count (received by the Ably service from clients)."
+          "description": "Total inbound REST object message count (received by the Ably service from clients)."
         },
-        "messages.inbound.rest.state.data": {
+        "messages.inbound.rest.objects.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total inbound REST state message size (received by the Ably service from clients)."
+          "description": "Total inbound REST object message size (received by the Ably service from clients)."
         },
-        "messages.inbound.rest.state.uncompressedData": {
+        "messages.inbound.rest.objects.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound REST state message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients."
+          "description": "Total uncompressed inbound REST object message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients."
         },
-        "messages.inbound.rest.state.failed": {
+        "messages.inbound.rest.objects.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound REST state messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)."
+          "description": "Total number of inbound REST object messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)."
         },
-        "messages.inbound.rest.state.refused": {
+        "messages.inbound.rest.objects.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound REST state messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)."
+          "description": "Total number of inbound REST object messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)."
         },
         "messages.inbound.all.all.count": {
           "type": "number",
@@ -342,22 +342,22 @@
         "messages.inbound.all.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total inbound message count (received by the Ably service from clients), excluding presence and state messages."
+          "description": "Total inbound message count (received by the Ably service from clients), excluding presence and object messages."
         },
         "messages.inbound.all.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total inbound message size (received by the Ably service from clients), excluding presence and state messages."
+          "description": "Total inbound message size (received by the Ably service from clients), excluding presence and object messages."
         },
         "messages.inbound.all.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed inbound message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients, excluding presence and state messages."
+          "description": "Total uncompressed inbound message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients, excluding presence and object messages."
         },
         "messages.inbound.all.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of inbound messages excluding presence and state messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
+          "description": "Total number of inbound messages excluding presence and object messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
         },
         "messages.inbound.all.presence.count": {
           "type": "number",
@@ -417,32 +417,32 @@
         "messages.outbound.realtime.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total outbound realtime message count (sent from the Ably service to clients), excluding presence and state messages."
+          "description": "Total outbound realtime message count (sent from the Ably service to clients), excluding presence and object messages."
         },
         "messages.outbound.realtime.messages.billableCount": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound realtime messages that are billable (sent from the Ably service to clients), excluding presence and state messages."
+          "description": "Total number of outbound realtime messages that are billable (sent from the Ably service to clients), excluding presence and object messages."
         },
         "messages.outbound.realtime.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total outbound realtime message size (sent from the Ably service to clients), excluding presence and state messages."
+          "description": "Total outbound realtime message size (sent from the Ably service to clients), excluding presence and object messages."
         },
         "messages.outbound.realtime.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound realtime message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients), excluding presence and state messages."
+          "description": "Total uncompressed outbound realtime message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients), excluding presence and object messages."
         },
         "messages.outbound.realtime.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound realtime messages excluding presence and state messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
+          "description": "Total number of outbound realtime messages excluding presence and object messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
         },
         "messages.outbound.realtime.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound realtime messages excluding presence and state messages that were refused by Ably (generally due to rate limits)"
+          "description": "Total number of outbound realtime messages excluding presence and object messages that were refused by Ably (generally due to rate limits)"
         },
         "messages.outbound.realtime.presence.count": {
           "type": "number",
@@ -474,22 +474,22 @@
           "inclusiveMinimum": 0,
           "description": "Total number of outbound realtime presence messages that were refused by Ably (generally due to rate limits)"
         },
-        "messages.outbound.realtime.state.count": {
+        "messages.outbound.realtime.objects.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total outbound realtime state message count (sent from the Ably service to clients)."
+          "description": "Total outbound realtime object message count (sent from the Ably service to clients)."
         },
-        "messages.outbound.realtime.state.billableCount": {
+        "messages.outbound.realtime.objects.billableCount": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total billable outbound realtime state message count (sent from the Ably service to clients)."
+          "description": "Total billable outbound realtime object message count (sent from the Ably service to clients)."
         },
-        "messages.outbound.realtime.state.data": {
+        "messages.outbound.realtime.objects.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total outbound realtime state message size (sent from the Ably service to clients)."
+          "description": "Total outbound realtime object message size (sent from the Ably service to clients)."
         },
-        "messages.outbound.realtime.state.uncompressedData": {
+        "messages.outbound.realtime.objects.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total uncompressed outbound realtime presence message size sent from the Ably service to clients)."
@@ -517,22 +517,22 @@
         "messages.outbound.rest.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total outbound REST message count (sent from the Ably service to clients), excluding presence and state messages."
+          "description": "Total outbound REST message count (sent from the Ably service to clients), excluding presence and object messages."
         },
         "messages.outbound.rest.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total outbound REST message size (sent from the Ably service to clients), excluding presence and state messages."
+          "description": "Total outbound REST message size (sent from the Ably service to clients), excluding presence and object messages."
         },
         "messages.outbound.rest.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound REST message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients), excluding presence and state messages."
+          "description": "Total uncompressed outbound REST message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients), excluding presence and object messages."
         },
         "messages.outbound.rest.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of messages that would have been broadcast to realtime subscribers as a result of a REST publish attempt that was refused for breaching the account-wide message rate limiter, excluding presence and state messages"
+          "description": "Total number of messages that would have been broadcast to realtime subscribers as a result of a REST publish attempt that was refused for breaching the account-wide message rate limiter, excluding presence and object messages"
         },
         "messages.outbound.rest.presence.count": {
           "type": "number",
@@ -549,25 +549,25 @@
           "inclusiveMinimum": 0,
           "description": "Total uncompressed outbound REST presence message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients)."
         },
-        "messages.outbound.rest.state.count": {
+        "messages.outbound.rest.objects.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total outbound REST state message count (sent from the Ably service to clients)."
+          "description": "Total outbound REST object message count (sent from the Ably service to clients)."
         },
-        "messages.outbound.rest.state.data": {
+        "messages.outbound.rest.objects.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total outbound REST state message size (sent from the Ably service to clients)."
+          "description": "Total outbound REST object message size (sent from the Ably service to clients)."
         },
-        "messages.outbound.rest.state.uncompressedData": {
+        "messages.outbound.rest.objects.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound REST state message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients)."
+          "description": "Total uncompressed outbound REST object message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients)."
         },
-        "messages.outbound.rest.state.refused": {
+        "messages.outbound.rest.objects.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of state messages that would have been broadcast to realtime subscribers as a result of a REST publish attempt that was refused for breaching the account-wide message rate limiter."
+          "description": "Total number of object messages that would have been broadcast to realtime subscribers as a result of a REST publish attempt that was refused for breaching the account-wide message rate limiter."
         },
         "messages.outbound.webhook.all.count": {
           "type": "number",
@@ -597,27 +597,27 @@
         "messages.outbound.webhook.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total outbound webhook message count (sent from the Ably service to clients using webhooks), excluding presence and state messages."
+          "description": "Total outbound webhook message count (sent from the Ably service to clients using webhooks), excluding presence and object messages."
         },
         "messages.outbound.webhook.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total outbound webhook message size (sent from the Ably service to clients using webhooks), excluding presence and state messages."
+          "description": "Total outbound webhook message size (sent from the Ably service to clients using webhooks), excluding presence and object messages."
         },
         "messages.outbound.webhook.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound webhook message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients using webhooks), excluding presence and state messages."
+          "description": "Total uncompressed outbound webhook message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients using webhooks), excluding presence and object messages."
         },
         "messages.outbound.webhook.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound webhook messages excluding presence and state messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, in particular rejection by an external integration target)"
+          "description": "Total number of outbound webhook messages excluding presence and object messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, in particular rejection by an external integration target)"
         },
         "messages.outbound.webhook.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound webhook messages excluding presence and state messages that were refused by Ably (generally due to rate limits)"
+          "description": "Total number of outbound webhook messages excluding presence and object messages that were refused by Ably (generally due to rate limits)"
         },
         "messages.outbound.webhook.presence.count": {
           "type": "number",
@@ -672,27 +672,27 @@
         "messages.outbound.sharedQueue.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Ably Queue message count (sent from the Ably service to an Ably Queue using an integration rule), excluding presence and state messages."
+          "description": "Total Ably Queue message count (sent from the Ably service to an Ably Queue using an integration rule), excluding presence and object messages."
         },
         "messages.outbound.sharedQueue.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Ably Queue message size (sent from the Ably service to an Ably Queue using an integration rule), excluding presence and state messages."
+          "description": "Total Ably Queue message size (sent from the Ably service to an Ably Queue using an integration rule), excluding presence and object messages."
         },
         "messages.outbound.sharedQueue.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Ably Queue message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to an Ably Queue using an integration rule), excluding presence and state messages."
+          "description": "Total uncompressed Ably Queue message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to an Ably Queue using an integration rule), excluding presence and object messages."
         },
         "messages.outbound.sharedQueue.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Ably Queue messages excluding presence and state messages that failed (which were rejected by RabbitMQ for some reason)"
+          "description": "Total number of Ably Queue messages excluding presence and object messages that failed (which were rejected by RabbitMQ for some reason)"
         },
         "messages.outbound.sharedQueue.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Ably Queue messages excluding presence and state messages that Ably refused to send (generally due to a rate limit)"
+          "description": "Total number of Ably Queue messages excluding presence and object messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.sharedQueue.presence.count": {
           "type": "number",
@@ -747,27 +747,27 @@
         "messages.outbound.externalQueue.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Firehose message count (sent from the Ably service to some external target using a Firehose integration rule), excluding presence and state messages."
+          "description": "Total Firehose message count (sent from the Ably service to some external target using a Firehose integration rule), excluding presence and object messages."
         },
         "messages.outbound.externalQueue.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Firehose message size (sent from the Ably service to some external target using a Firehose integration rule), excluding presence and state messages."
+          "description": "Total Firehose message size (sent from the Ably service to some external target using a Firehose integration rule), excluding presence and object messages."
         },
         "messages.outbound.externalQueue.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Firehose message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to some external target using a Firehose integration rule), excluding presence and state messages."
+          "description": "Total uncompressed Firehose message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to some external target using a Firehose integration rule), excluding presence and object messages."
         },
         "messages.outbound.externalQueue.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Firehose messages excluding presence and state messages that failed (which were rejected by the external integration target for some reason)"
+          "description": "Total number of Firehose messages excluding presence and object messages that failed (which were rejected by the external integration target for some reason)"
         },
         "messages.outbound.externalQueue.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Firehose messages excluding presence and state messages that Ably refused to send (generally due to a rate limit)"
+          "description": "Total number of Firehose messages excluding presence and object messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.externalQueue.presence.count": {
           "type": "number",
@@ -822,27 +822,27 @@
         "messages.outbound.httpEvent.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total messages sent by a HTTP trigger (typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions), excluding presence and state messages."
+          "description": "Total messages sent by a HTTP trigger (typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions), excluding presence and object messages."
         },
         "messages.outbound.httpEvent.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total size of messages sent by a HTTP trigger (typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions), excluding presence and state messages."
+          "description": "Total size of messages sent by a HTTP trigger (typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions), excluding presence and object messages."
         },
         "messages.outbound.httpEvent.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed size of messages sent by a HTTP trigger, excluding delta compression https://ably.com/docs/channels/options/deltas, typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions), excluding presence and state messages."
+          "description": "Total uncompressed size of messages sent by a HTTP trigger, excluding delta compression https://ably.com/docs/channels/options/deltas, typically a serverless function on a service such as AWS Lambda, Google Cloud Functions, or Azure Functions), excluding presence and object messages."
         },
         "messages.outbound.httpEvent.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of messages sent by a HTTP trigger excluding presence and state messages that failed (which were rejected by the external endpoint for some reason)"
+          "description": "Total number of messages sent by a HTTP trigger excluding presence and object messages that failed (which were rejected by the external endpoint for some reason)"
         },
         "messages.outbound.httpEvent.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of messages sent by a HTTP trigger excluding presence and state messages that Ably refused to send (generally due to a rate limit)"
+          "description": "Total number of messages sent by a HTTP trigger excluding presence and object messages that Ably refused to send (generally due to a rate limit)"
         },
         "messages.outbound.httpEvent.presence.count": {
           "type": "number",
@@ -897,27 +897,27 @@
         "messages.outbound.push.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Push message count (pushed to devices via a Push Notifications transport such as FCM or APNS), excluding presence and state messages."
+          "description": "Total Push message count (pushed to devices via a Push Notifications transport such as FCM or APNS), excluding presence and object messages."
         },
         "messages.outbound.push.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total Push message size (pushed to devices via a Push Notifications transport such as FCM or APNS), excluding presence and state messages."
+          "description": "Total Push message size (pushed to devices via a Push Notifications transport such as FCM or APNS), excluding presence and object messages."
         },
         "messages.outbound.push.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed Push message size, excluding delta compression https://ably.com/docs/channels/options/deltas, pushed to devices via a Push Notifications transport such as FCM or APNS), excluding presence and state messages."
+          "description": "Total uncompressed Push message size, excluding delta compression https://ably.com/docs/channels/options/deltas, pushed to devices via a Push Notifications transport such as FCM or APNS), excluding presence and object messages."
         },
         "messages.outbound.push.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Push messages excluding presence and state messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by APNS or FCM, or a service issue on Ably's side)"
+          "description": "Total number of Push messages excluding presence and object messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by APNS or FCM, or a service issue on Ably's side)"
         },
         "messages.outbound.push.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Push messages excluding presence and state messages that were refused by Ably (eg due to a rate limit)"
+          "description": "Total number of Push messages excluding presence and object messages that were refused by Ably (eg due to a rate limit)"
         },
         "messages.outbound.push.presence.count": {
           "type": "number",
@@ -977,32 +977,32 @@
         "messages.outbound.all.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total outbound message count (sent from the Ably service to clients), excluding presence and state messages."
+          "description": "Total outbound message count (sent from the Ably service to clients), excluding presence and object messages."
         },
         "messages.outbound.all.messages.billableCount": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound messages that are billable (sent from the Ably service to clients), excluding presence and state messages."
+          "description": "Total number of outbound messages that are billable (sent from the Ably service to clients), excluding presence and object messages."
         },
         "messages.outbound.all.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total outbound message size (sent from the Ably service to clients), excluding presence and state messages."
+          "description": "Total outbound message size (sent from the Ably service to clients), excluding presence and object messages."
         },
         "messages.outbound.all.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients), excluding presence and state messages."
+          "description": "Total uncompressed outbound message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients), excluding presence and object messages."
         },
         "messages.outbound.all.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound messages excluding presence and state messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by an external integration target, or a service issue on Ably's side)"
+          "description": "Total number of outbound messages excluding presence and object messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by an external integration target, or a service issue on Ably's side)"
         },
         "messages.outbound.all.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of outbound messages excluding presence and state messages that were refused by Ably (generally due to rate limits)"
+          "description": "Total number of outbound messages excluding presence and object messages that were refused by Ably (generally due to rate limits)"
         },
         "messages.outbound.all.presence.count": {
           "type": "number",
@@ -1052,17 +1052,17 @@
         "messages.persisted.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total persisted message count based on configured channel rules, excluding presence and state messages."
+          "description": "Total persisted message count based on configured channel rules, excluding presence and object messages."
         },
         "messages.persisted.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total persisted message size based on configured channel rules, excluding presence and state messages."
+          "description": "Total persisted message size based on configured channel rules, excluding presence and object messages."
         },
         "messages.persisted.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed persisted message size, excluding delta compression https://ably.com/docs/channels/options/deltas based on configured channel rules, excluding presence and state messages."
+          "description": "Total uncompressed persisted message size, excluding delta compression https://ably.com/docs/channels/options/deltas based on configured channel rules, excluding presence and object messages."
         },
         "messages.persisted.presence.count": {
           "type": "number",
