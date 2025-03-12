@@ -1034,6 +1034,56 @@
           "inclusiveMinimum": 0,
           "description": "Total number of outbound presence messages that were refused by Ably (generally due to rate limits)"
         },
+        "messages.outbound.hiveDashboard.all.count": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total messages sent to the Hive moderation dashboard."
+        },
+        "messages.outbound.hiveDashboard.all.data": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total size of messages sent to the Hive moderation dashboard."
+        },
+        "messages.outbound.hiveDashboard.all.uncompressedData": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total uncompressed size of messages sent to the Hive moderation dashboard."
+        },
+        "messages.outbound.hiveDashboard.all.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages sent to the Hive moderation dashboard that failed (which were rejected by the external endpoint for some reason)"
+        },
+        "messages.outbound.hiveDashboard.all.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages sent to the Hive moderation dashboard that Ably refused to send or Hive refused to accept (generally due to a rate limit)"
+        },
+        "messages.outbound.hiveDashboard.messages.count": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total messages sent to the Hive moderation dashboard, excluding presence and object messages."
+        },
+        "messages.outbound.hiveDashboard.messages.data": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total size of messages sent to the Hive moderation dashboard, excluding presence and object messages."
+        },
+        "messages.outbound.hiveDashboard.messages.uncompressedData": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total uncompressed size of messages sent to the Hive moderation dashboard, excluding delta compression https://ably.com/docs/channels/options/deltas, excluding presence and object messages."
+        },
+        "messages.outbound.hiveDashboard.messages.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages sent to the Hive moderation dashboard excluding presence and object messages that failed (which were rejected by the external endpoint for some reason)"
+        },
+        "messages.outbound.hiveDashboard.messages.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages sent to the Hive moderation dashboard excluding presence and object messages that Ably refused to send or Hive refused to accept (generally due to a rate limit)"
+        },
         "messages.persisted.all.count": {
           "type": "number",
           "inclusiveMinimum": 0,
@@ -1118,6 +1168,106 @@
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total number of messages discarded by the 'conflating' batching policy."
+        },
+        "messages.processed.beforePublishRule.hiveTextModelOnly.count": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages that were successfully processed by a Hive text model only rule before being published."
+        },
+        "messages.processed.beforePublishRule.hiveTextModelOnly.data": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total size of messages that were processed by a Hive text model only rule before being published."
+        },
+        "messages.processed.beforePublishRule.hiveTextModelOnly.uncompressedData": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total uncompressed size of messages that were processed by a Hive text model only rule before being published."
+        },
+        "messages.processed.beforePublishRule.hiveTextModelOnly.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages that were to be processed by a Hive text model only rule, but failed to be processed."
+        },
+        "messages.processed.beforePublishRule.hiveTextModelOnly.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages that were to be processed by a Hive text model only rule, but were refused by Ably or Hive."
+        },
+        "messages.processed.beforePublishRule.hiveTextModelOnly.rejected": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages that were processed by a Hive text model only rule, but were rejected as a result of the processing, i.e. - they were violative of the category thresholds."
+        },
+        "messages.processed.beforePublishRule.hiveTextModelOnly.editedBeforePublish": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages that were processed by a Hive text model only rule and were edited before subsequently being published."
+        },
+        "messages.processed.beforePublishRule.hiveTextModelOnly.retries": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "The total number of times a message was attempted to be sent to Hive, but had to be retried due to a 5xx or 429 error."
+        },
+        "messages.processed.beforePublishRule.hiveTextModelOnly.rateLimited": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "The total number of messages that were attempted to be sent to Hive, but were rate limited."
+        },
+        "messages.processed.beforePublishRule.hiveTextModelOnly.acceptedWithoutSuccessfulInvocation": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "The total number of messages that were attempted to be sent to Hive but a 5xx or 429 error was returned, and the message was accepted for publishing anyway."
+        },
+        "messages.processed.beforePublishRule.lambda.count": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages that were successfully processed by a Lambda rule before being published."
+        },
+        "messages.processed.beforePublishRule.lambda.data": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total size of messages that were processed by a Lambda rule before being published."
+        },
+        "messages.processed.beforePublishRule.lambda.uncompressedData": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total uncompressed size of messages that were processed by a Lambda rule before being published."
+        },
+        "messages.processed.beforePublishRule.lambda.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages that were to be processed by a Lambda rule, but failed to be processed."
+        },
+        "messages.processed.beforePublishRule.lambda.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages that were to be processed by a Lambda rule, but were refused by Ably or Lambda."
+        },
+        "messages.processed.beforePublishRule.lambda.rejected": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages that were processed by a Lambda rule, but were rejected as a result of the processing, e.g. they were violative of some moderation policy."
+        },
+        "messages.processed.beforePublishRule.lambda.editedBeforePublish": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of messages that were processed by a Lambda rule and were edited before subsequently being published."
+        },
+        "messages.processed.beforePublishRule.lambda.retries": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "The total number of times a message was attempted to be sent to Lambda, but had to be retried due to a 5xx or 429 error."
+        },
+        "messages.processed.beforePublishRule.lambda.rateLimited": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "The total number of messages that were attempted to be sent to Lambda, but were rate limited."
+        },
+        "messages.processed.beforePublishRule.lambda.acceptedWithoutSuccessfulInvocation": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "The total number of messages that were attempted to be sent to Lambda but a 5xx or 429 error was returned, and the message was accepted for publishing anyway."
         },
         "connections.all.peak": {
           "type": "number",
