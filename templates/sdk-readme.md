@@ -59,7 +59,7 @@ Detail on what target runtimes are supported by this SDK. May also include detai
 
 ## Feature Support
 
-Specify the version of the spec that this SDK targets and link to the [feature support matrix](https://www.ably.io/download/sdk-feature-support-matrix).
+Specify the version of the spec that this SDK targets.
 
 ## Known Limitations
 
