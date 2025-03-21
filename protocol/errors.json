@@ -198,6 +198,8 @@
   "92000": "invalid object message",
   "92001": "objects limit exceeded",
   "92002": "unable to submit operation on tombstone object",
+  "92003": "unable to fetch state tree with tombstone object as root",
+  "92004": "unable to fetch state tree for not found object as root",
 
   "101000": "must have a non-empty name for the space",
   "101001": "must enter a space to perform this operation",
