@@ -1173,102 +1173,102 @@
           "inclusiveMinimum": 0,
           "description": "Total number of messages discarded by the 'conflating' batching policy."
         },
-        "messages.processed.beforePublishRule.hiveTextModelOnly.count": {
+        "messages.processed.beforePublishRule.hiveTextModelOnly.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total number of messages that were successfully processed by a Hive text model only rule before being published."
         },
-        "messages.processed.beforePublishRule.hiveTextModelOnly.data": {
+        "messages.processed.beforePublishRule.hiveTextModelOnly.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total size of messages that were processed by a Hive text model only rule before being published."
         },
-        "messages.processed.beforePublishRule.hiveTextModelOnly.uncompressedData": {
+        "messages.processed.beforePublishRule.hiveTextModelOnly.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total uncompressed size of messages that were processed by a Hive text model only rule before being published."
         },
-        "messages.processed.beforePublishRule.hiveTextModelOnly.failed": {
+        "messages.processed.beforePublishRule.hiveTextModelOnly.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total number of messages that were to be processed by a Hive text model only rule, but failed to be processed."
         },
-        "messages.processed.beforePublishRule.hiveTextModelOnly.refused": {
+        "messages.processed.beforePublishRule.hiveTextModelOnly.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total number of messages that were to be processed by a Hive text model only rule, but were refused by Ably or Hive."
         },
-        "messages.processed.beforePublishRule.hiveTextModelOnly.rejected": {
+        "messages.processed.beforePublishRule.hiveTextModelOnly.messages.rejected": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total number of messages that were processed by a Hive text model only rule, but were rejected as a result of the processing, i.e. - they were violative of the category thresholds."
         },
-        "messages.processed.beforePublishRule.hiveTextModelOnly.editedBeforePublish": {
+        "messages.processed.beforePublishRule.hiveTextModelOnly.messages.editedBeforePublish": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total number of messages that were processed by a Hive text model only rule and were edited before subsequently being published."
         },
-        "messages.processed.beforePublishRule.hiveTextModelOnly.retries": {
+        "messages.processed.beforePublishRule.hiveTextModelOnly.messages.retries": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "The total number of times a message was attempted to be sent to Hive, but had to be retried due to a 5xx or 429 error."
         },
-        "messages.processed.beforePublishRule.hiveTextModelOnly.rateLimited": {
+        "messages.processed.beforePublishRule.hiveTextModelOnly.messages.rateLimited": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "The total number of messages that were attempted to be sent to Hive, but were rate limited."
         },
-        "messages.processed.beforePublishRule.hiveTextModelOnly.acceptedWithoutSuccessfulInvocation": {
+        "messages.processed.beforePublishRule.hiveTextModelOnly.messages.acceptedWithoutSuccessfulInvocation": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "The total number of messages that were attempted to be sent to Hive but a 5xx or 429 error was returned, and the message was accepted for publishing anyway."
         },
-        "messages.processed.beforePublishRule.lambda.count": {
+        "messages.processed.beforePublishRule.lambda.messages.count": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total number of messages that were successfully processed by a Lambda rule before being published."
         },
-        "messages.processed.beforePublishRule.lambda.data": {
+        "messages.processed.beforePublishRule.lambda.messages.data": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total size of messages that were processed by a Lambda rule before being published."
         },
-        "messages.processed.beforePublishRule.lambda.uncompressedData": {
+        "messages.processed.beforePublishRule.lambda.messages.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total uncompressed size of messages that were processed by a Lambda rule before being published."
         },
-        "messages.processed.beforePublishRule.lambda.failed": {
+        "messages.processed.beforePublishRule.lambda.messages.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total number of messages that were to be processed by a Lambda rule, but failed to be processed."
         },
-        "messages.processed.beforePublishRule.lambda.refused": {
+        "messages.processed.beforePublishRule.lambda.messages.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total number of messages that were to be processed by a Lambda rule, but were refused by Ably or Lambda."
         },
-        "messages.processed.beforePublishRule.lambda.rejected": {
+        "messages.processed.beforePublishRule.lambda.messages.rejected": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total number of messages that were processed by a Lambda rule, but were rejected as a result of the processing, e.g. they were violative of some moderation policy."
         },
-        "messages.processed.beforePublishRule.lambda.editedBeforePublish": {
+        "messages.processed.beforePublishRule.lambda.messages.editedBeforePublish": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total number of messages that were processed by a Lambda rule and were edited before subsequently being published."
         },
-        "messages.processed.beforePublishRule.lambda.retries": {
+        "messages.processed.beforePublishRule.lambda.messages.retries": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "The total number of times a message was attempted to be sent to Lambda, but had to be retried due to a 5xx or 429 error."
         },
-        "messages.processed.beforePublishRule.lambda.rateLimited": {
+        "messages.processed.beforePublishRule.lambda.messages.rateLimited": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "The total number of messages that were attempted to be sent to Lambda, but were rate limited."
         },
-        "messages.processed.beforePublishRule.lambda.acceptedWithoutSuccessfulInvocation": {
+        "messages.processed.beforePublishRule.lambda.messages.acceptedWithoutSuccessfulInvocation": {
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "The total number of messages that were attempted to be sent to Lambda but a 5xx or 429 error was returned, and the message was accepted for publishing anyway."
