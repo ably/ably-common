@@ -7,7 +7,7 @@
 
 '10000':
   shortDescription: no error
-  description: no error
+  description: This is not an error but a success code. The operation was completed successfully. Additional details about the successful action may be included in the accompanying message.
   identifier: Err_10000
   help: https://faqs.ably.com/error-code-10000
 '20000':
@@ -17,12 +17,12 @@
   help: https://faqs.ably.com/error-code-20000
 '40000':
   shortDescription: bad request
-  description: bad request
+  description: The request was invalid and could not be processed. The error message contains details on what part of the request was invalid or which constraint was violated.
   identifier: Err_40000
   help: https://faqs.ably.com/error-code-40000-bad-request
 '40001':
   shortDescription: invalid request body
-  description: invalid request body
+  description: The contents of the request sent to the Ably platform are invalid. This is most likely caused by invalid data types or missed objects that are necessarily expected by the platform as part of the request.
   identifier: Err_40001
   help: https://faqs.ably.com/error-code-40001-invalid-request-body
 '40002':
@@ -58,27 +58,27 @@
   identifier: Err_40008
 '40009':
   shortDescription: maximum message length exceeded
-  description: maximum message length exceeded
+  description: The message being published exceeds the size limits permitted by the account package. Message size calculations may need to be checked or a larger message size limit requested.
   identifier: Err_40009
   help: https://faqs.ably.com/error-code-40009-maximum-message-length-exceeded
 '40010':
   shortDescription: invalid channel name
-  description: invalid channel name
+  description: The channel name provided does not comply with Ably's channel naming restrictions. The documentation should be consulted for valid channel name formats and constraints.
   identifier: Err_40010
   help: https://faqs.ably.com/error-code-40010-invalid-channel-name
 '40011':
   shortDescription: stale ring state
-  description: stale ring state
+  description: This error occurs when using the channel enumeration API. Since the state of the cluster may change between successive calls, a pagination sequence may become invalid. In this case, it is necessary to start the enumeration again from the beginning.
   identifier: Err_40011
   help: https://faqs.ably.com/error-code-40011-stale-ring-state
 '40012':
   shortDescription: invalid client id
-  description: invalid client id
+  description: The client ID provided does not meet Ably's requirements. Client IDs cannot exceed 255 characters, and may be restricted to certain formats depending on context.
   identifier: Err_40012
   help: https://faqs.ably.com/error-code-40012-invalid-client-id
 '40013':
   shortDescription: Invalid message data or encoding
-  description: Invalid message data or encoding
+  description: The client library can't encode the message payload because it contains an unsupported datatype. Ensure your payload can be serialized as JSON or MsgPack.
   identifier: Err_40013
   help: https://faqs.ably.com/error-code-40013
 '40014':
@@ -87,17 +87,17 @@
   identifier: Err_40014
 '40015':
   shortDescription: Invalid device id
-  description: Invalid device id
+  description: The id property in a DeviceDetails object sent in a request to register a device for push notifications is invalid. The id property in the request must be a string type.
   identifier: Err_40015
   help: https://faqs.ably.com/error-code-40015
 '40016':
   shortDescription: Invalid message name
-  description: Invalid message name
+  description: The name property of an Ably message must be a String type. This error occurs when the message name is provided with an incorrect data type.
   identifier: Err_40016
   help: https://faqs.ably.com/error-code-40016
 '40017':
   shortDescription: Unsupported protocol version
-  description: Unsupported protocol version
+  description: An invalid or unsupported protocol version was specified in the request. For server-sent events, versions 1.1 or greater are supported. For websocket connections, valid versions are 0.8, 0.9, 1.1, 1.2 and 2.0.
   identifier: Err_40017
   help: https://faqs.ably.com/error-code-40017
 '40018':
@@ -110,7 +110,7 @@
   identifier: Err_40019
 '40020':
   shortDescription: Batch error
-  description: Batch error
+  description: Indicates a partial failure in batch operation requests. This occurs with batch operations like token revocation, message publishing, or presence queries where some but not all operations in the batch succeeded.
   identifier: Err_40020
   help: https://faqs.ably.com/error-code-40020
 '40021':
@@ -119,7 +119,7 @@
   identifier: Err_40021
 '40022':
   shortDescription: API Streamer has been shut down
-  description: API Streamer has been shut down
+  description: The requested resource already exists, or the request is invalid. Returned by requests to the Control API when attempting to create an app with a name that already exists or when creating an API key with invalid capabilities.
   identifier: Err_40022
   help: https://faqs.ably.com/error-code-40022
 '40023':
@@ -128,7 +128,7 @@
   identifier: Err_40023
 '40030':
   shortDescription: Invalid publish request (unspecified)
-  description: Invalid publish request (unspecified)
+  description: The publish request is malformed in some way. This general error indicates there is a problem with the structure or content of a message being published to a channel.
   identifier: Err_40030
   help: https://faqs.ably.com/error-code-40030
 '40031':
@@ -147,37 +147,37 @@
   identifier: Err_40099
 '40100':
   shortDescription: unauthorized
-  description: unauthorized
+  description: An action cannot be performed due to a lack of authorization. The message in the error should outline the root cause in more detail.
   identifier: Err_40100
   help: https://faqs.ably.com/error-code-40100
 '40101':
   shortDescription: invalid credentials
-  description: invalid credentials
+  description: The authentication credentials are invalid. This may include issues with a cryptographic signature in token requests, incorrect API keys, or mismatched clientId values between token and client options.
   identifier: Err_40101
   help: https://faqs.ably.com/40101-invalid-credentials
 '40102':
   shortDescription: incompatible credentials
-  description: incompatible credentials
+  description: The credentials are not compatible with the existing connection. This occurs when there is a mismatch between clientId in a token and the current connection, or when attempting to resume a connection using credentials from a different app.
   identifier: Err_40102
   help: https://faqs.ably.com/error-code-40102
 '40103':
   shortDescription: invalid use of Basic auth over non-TLS transport
-  description: invalid use of Basic auth over non-TLS transport
+  description: API keys cannot be used with non-TLS transports as they can be inspected by network devices. This presents an unacceptable security risk. Either use TLS transports with API keys or token authentication with non-TLS connections.
   identifier: Err_40103
   help: https://faqs.ably.com/error-code-40103-invalid-use-of-basic-auth-over-non-tls-transport
 '40104':
   shortDescription: timestamp not current
-  description: timestamp not current
+  description: A signed token request is too old. This timestamp check ensures token requests can only be used for a limited time period. The auth server's clock may need to be synchronized or queryTime=true can be used to utilize Ably's server time.
   identifier: Err_40104
   help: https://faqs.ably.com/40104-timestamp-not-current
 '40105':
   shortDescription: nonce value replayed
-  description: nonce value replayed
+  description: A nonce value in the token request has already been used. Nonce values must be unique for each token request to prevent replay attacks.
   identifier: Err_40105
   help: https://faqs.ably.com/40105-nonce-value-replayed
 '40106':
   shortDescription: Unable to obtain credentials from given parameters
-  description: Unable to obtain credentials from given parameters
+  description: Invalid authentication options have been provided to the Ably client library. This may include cases with no API key, no token and no means to create a token, or attempting to request a token using another token.
   identifier: Err_40106
   help: https://faqs.ably.com/error-code-40106-unable-to-obtain-credentials-from-given-parameters
 '40110':
@@ -186,12 +186,12 @@
   identifier: Err_40110
 '40111':
   shortDescription: account restricted (connection limits exceeded)
-  description: account restricted (connection limits exceeded)
+  description: The hard peak connections limit for the account package has been exceeded. No new connections can be created until existing connections disconnect. Understanding how peak connections are counted can help minimize future occurrences.
   identifier: Err_40111
   help: https://faqs.ably.com/error-code-40111-connection-limits-exceeded
 '40112':
   shortDescription: account blocked (message limits exceeded)
-  description: account blocked (message limits exceeded)
+  description: The usage limit for the number of messages allocated to the account based on the package has been exceeded. The package may need to be upgraded to increase this limit and restore normal operation.
   identifier: Err_40112
   help: https://faqs.ably.com/error-code-40112-account-blocked-message-limits-exceeded
 '40113':
@@ -200,7 +200,7 @@
   identifier: Err_40113
 '40114':
   shortDescription: account restricted (channel limits exceeded)
-  description: account restricted (channel limits exceeded)
+  description: The account has exceeded the maximum number of concurrent channels allowed by the package. New channel creation is restricted until the number of active channels decreases.
   identifier: Err_40114
   help: https://faqs.ably.com/error-code-40114-account-wide-peak-channel-limit-exceeded
 '40115':
@@ -218,7 +218,7 @@
   identifier: Err_40121
 '40125':
   shortDescription: maximum number of rules per application exceeded
-  description: maximum number of rules per application exceeded
+  description: The maximum number of integration rules allowed per app has been reached. Each package has a specific limit for the number of integration rules as defined in the limits documentation.
   identifier: Err_40125
   help: https://faqs.ably.com/error-code-40125-max-number-of-rules-per-application
 '40126':
@@ -266,7 +266,7 @@
   help: https://faqs.ably.com/error-code-40142-token-expired-code
 '40143':
   shortDescription: token unrecognised
-  description: token unrecognised
+  description: The provided token is not recognized as a valid Ably Token, Ably JWT, or JWT with a valid embedded Ably Token. When creating tokens, a standard JWT library should be used or the Ably Token must have the proper format.
   identifier: Err_40143
   help: https://faqs.ably.com/error-code-40143-token-unrecognised
 '40144':
@@ -284,12 +284,12 @@
   identifier: Err_40150
 '40160':
   shortDescription: operation not permitted with provided capability
-  description: operation not permitted with provided capability
+  description: Operation not permitted with the provided capability. The API key or token lacks the necessary permissions for this operation on this channel.
   identifier: Err_40160
   help: https://faqs.ably.com/error-code-40160-action-not-permitted
 '40161':
   shortDescription: operation not permitted as it requires an identified client
-  description: operation not permitted as it requires an identified client
+  description: Operation not permitted as it requires an identified client. The requested channel requires a clientId to be specified in the client options.
   identifier: Err_40161
   help: https://faqs.ably.com/error-code-40161-access-denied-to-channel-namespace-requires-identified-clients
 '40162':
@@ -307,12 +307,12 @@
   identifier: Err_40164
 '40170':
   shortDescription: error from client token callback
-  description: error from client token callback
+  description: The attempt to authenticate using an authUrl or authCallback failed. Failures may be due to timeout, network error, invalid token format or other authentication error conditions. Additional error information is included in the error.message field.
   identifier: Err_40170
   help: https://faqs.ably.com/error-code-40170
 '40171':
   shortDescription: no means provided to renew auth token
-  description: no means provided to renew auth token
+  description: No means provided to renew the auth token. When using token authentication, either an authUrl or authCallback must be provided to enable token renewal.
   identifier: Err_40171
   help: https://faqs.ably.com/error-code-40171-no-means-provided-to-renew-auth-token
 '40172':
@@ -422,7 +422,7 @@
   help: https://faqs.ably.com/error-code-42922-rate-limit-exceeded-request-rejected
 '50000':
   shortDescription: internal error
-  description: internal error
+  description: An internal error has occurred within Ably's system. A support ticket with details like appId, necessary logs, and steps to reproduce the error may be required to resolve this issue.
   identifier: Err_50000
   help: https://faqs.ably.com/error-code-50000-internal-error
 '50001':
@@ -437,7 +437,7 @@
   help: https://faqs.ably.com/error-code-50002-internal-connection-error
 '50003':
   shortDescription: timeout error
-  description: timeout error
+  description: The request to Ably timed out. This could be due to poor network conditions, improper SDK usage, or Ably server issues. Network connectivity may need to be checked before retrying the operation.
   identifier: Err_50003
   help: https://faqs.ably.com/error-code-50003-timeout-error
 '50004':
@@ -597,7 +597,7 @@
   help: https://faqs.ably.com/error-code-72005-ingress-invalid-pipeline
 '72006':
   shortDescription: unable to resume from change stream
-  description: unable to resume from change stream
+  description: The system is unable to resume monitoring from the MongoDB change stream. This can happen if the required oplog entries are no longer available due to retention periods in MongoDB.
   identifier: Err_72006
   help: https://faqs.ably.com/error-code-72006-unable-to-resume-from-change-stream
 '72007':
@@ -607,7 +607,7 @@
   help: https://faqs.ably.com/error-code-72007-unable-to-store-change-stream-resume-token
 '80000':
   shortDescription: connection failed
-  description: connection failed
+  description: The library is having trouble connecting to Ably, likely due to client-side network connectivity issues. The library will automatically retry the connection after a short delay (typically 15 seconds).
   identifier: Err_80000
   help: https://faqs.ably.com/error-code-80000-connection-failed
 '80001':
@@ -616,12 +616,12 @@
   identifier: Err_80001
 '80002':
   shortDescription: connection suspended
-  description: connection suspended
+  description: The library is having trouble connecting to Ably and hasn't been able to establish a connection within 2 minutes. This usually indicates persistent network connectivity issues on the client side.
   identifier: Err_80002
   help: https://faqs.ably.com/error-code-80002-password-validation-request-timeout
 '80003':
   shortDescription: disconnected
-  description: disconnected
+  description: The client is having trouble connecting to Ably, likely due to network connectivity issues. The library will automatically retry the connection after 15 seconds.
   identifier: Err_80003
   help: https://faqs.ably.com/error-code-80003
 '80004':
@@ -642,7 +642,7 @@
   identifier: Err_80007
 '80008':
   shortDescription: unable to recover connection (connection expired)
-  description: unable to recover connection (connection expired)
+  description: An attempt was made to resume a connection that could not be found, typically because the resume attempt happened after the two-minute window expired. A fresh connection was created instead, and messages sent during the disconnection period may have been missed.
   identifier: Err_80008
   help: https://faqs.ably.com/error-code-80008-unable-to-recover-connection-connection-expired
 '80009':
@@ -724,7 +724,7 @@
   identifier: Err_90000
 '90001':
   shortDescription: channel operation failed (invalid channel state)
-  description: channel operation failed (invalid channel state)
+  description: The requested operation cannot be performed because the channel is in an invalid state for this operation. For example, when a message is published on a channel that is in the FAILED state.
   identifier: Err_90001
   help: https://faqs.ably.com/error-code-90001-channel-operation-failed-invalid-channel-state
 '90002':
@@ -733,7 +733,7 @@
   identifier: Err_90002
 '90003':
   shortDescription: unable to recover channel (messages expired)
-  description: unable to recover channel (messages expired)
+  description: Unable to recover channel messages because they have expired. The channel history needed for recovery is no longer available due to the time elapsed since disconnection.
   identifier: Err_90003
   help: https://faqs.ably.com/error-code-90003-unable-to-recover-channel-messages-expired
 '90004':
@@ -750,7 +750,7 @@
   identifier: Err_90006
 '90007':
   shortDescription: channel operation failed (no response from server)
-  description: channel operation failed (no response from server)
+  description: The channel didn't attach within the timeout period (default 10s). This typically happens with poor internet connections where an ACK response to an ATTACH request doesn't arrive in time. The realtimeRequestTimeout or channelRetryTimeout may need to be adjusted to a higher value.
   identifier: Err_90007
   help: https://faqs.ably.com/error-code-90007
 '90010':
@@ -779,7 +779,7 @@
   identifier: Err_91002
 '91003':
   shortDescription: unable to enter presence channel (maximum member limit exceeded)
-  description: unable to enter presence channel (maximum member limit exceeded)
+  description: The maximum number of members permitted on this presence channel has been exceeded. This limit exists to prevent performance degradation in high-presence scenarios. Presence data may need to be sharded across multiple channels.
   identifier: Err_91003
   help: https://faqs.ably.com/error-91003-maximum-member-limit-exceeded
 '91004':
@@ -788,7 +788,7 @@
   identifier: Err_91004
 '91005':
   shortDescription: presence state is out of sync
-  description: presence state is out of sync
+  description: The client's view of presence members is out of sync with the server. This can happen after network interruptions. The client should re-enter presence to ensure consistency.
   identifier: Err_91005
   help: https://faqs.ably.com/error-code-91005
 '91100':
