@@ -364,6 +364,11 @@
       "identifier": "chat-swift",
       "versioned": true,
       "type": "wrapper"
+    },
+    {
+      "identifier": "ably-cli",
+      "versioned": true,
+      "type": "wrapper"
     }
   ],
   "ablyLibMappings": {

@@ -93,6 +93,7 @@ The following table adds more contextual detail for some agent identifiers, wher
 | ---------- | -------- |
 | `ably-asset-tracking-android` | [ably-asset-tracking-android](https://github.com/ably/ably-asset-tracking-android) |
 | `ably-asset-tracking-swift` | [ably-asset-tracking-swift](https://github.com/ably/ably-asset-tracking-swift) |
+| `ably-cli` | [ably-cli command line CLI too](https://github.com/ably/cli) |
 | `ably-flutter` | [ably-flutter](https://github.com/ably/ably-flutter) |
 | `ably-ruby-rest` | [ably-ruby](https://github.com/ably/ably-ruby) |
 | `android` | [ably-java](https://github.com/ably/ably-java), [ably-dotnet](https://github.com/ably/ably-dotnet) |
@@ -144,6 +145,8 @@ Therefore it is safe to publish without consulting others because they have an e
 
 #### Step 2: Internal
 
+**Go router support**
+
 Once the generated Go code has been updated, update the `ably-common-go` module in the
 internal [go-services](https://github.com/ably/go-services) repository by running:
 
@@ -153,6 +156,10 @@ go get -u github.com/ably/ably-common-go
 
 Open a pull request with the resulting changes to `go.mod` and `go.sum`, and once merged deploy the router
 so that it's aware of the newly added agent identifiers.
+
+**Analytics pipeline support**
+
+The agents are replicated in the analytics pipeline that processes agent headers. See [udtf_parse_ably_agent.py](https://github.com/ably/infrastructure/blob/main/terraform/modules/analytics/snowflake/files/functions/udtf_parse_ably_agent.py). Notify the Data / Infrastructure team of the changes in `agents.json` so that support in the analytics data pipeine is added.
 
 ### `ablyLibMappings`
 
