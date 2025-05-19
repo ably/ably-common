@@ -76,8 +76,11 @@ When a new agent is added to a client library, add a corresponding entry to [age
 using the schema defined in [agents-schema.json](../json-schemas/src/agents.json), and open a pull
 request against the `main` branch with those changes.
 
-Once the pull request is merged into `main`, open an internal ticket requesting that the realtime team
-follow the "Publishing Changes" steps below.
+#### Analytics pipeline support
+
+The agents are replicated in the analytics pipeline that processes agent headers. See [udtf_parse_ably_agent.py](https://github.com/ably/infrastructure/blob/main/terraform/modules/analytics/snowflake/files/functions/udtf_parse_ably_agent.py).
+
+Once the pull request is merged into `main`, notify the Data / Infrastructure team of the changes to agents.json so that they can update the analytics data pipeine to support the newly added agents.
 
 ### Additional Notes on Agents
 
@@ -130,36 +133,6 @@ The following table adds more contextual detail for some agent identifiers, wher
 | `watchOS` | [ably-cocoa](https://github.com/ably/ably-cocoa) |
 | `windows` | [ably-dotnet](https://github.com/ably/ably-dotnet), [ably-go](https://github.com/ably/ably-go) |
 | `xamarin` | [ably-dotnet](https://github.com/ably/ably-dotnet) |
-
-### Publishing Changes
-
-#### Step 1: Public
-
-After changes to [agents.json](agents.json) have been merged into `main`, update the generated Go code
-in the [ably-common-go](https://github.com/ably/ably-common-go) repository by manually triggering the
-[publish workflow](../.github/workflows/publish.yml) (see [here](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow)
-for instructions on how to do that).
-
-There is no further, immediate downstream impact of publishing to `ably-common-go` like this.
-Therefore it is safe to publish without consulting others because they have an explicit step required to update the submodule in their codebase (see [Step 2: Internal](#step-2-internal)).
-
-#### Step 2: Internal
-
-**Go router support**
-
-Once the generated Go code has been updated, update the `ably-common-go` module in the
-internal [go-services](https://github.com/ably/go-services) repository by running:
-
-```bash
-go get -u github.com/ably/ably-common-go
-```
-
-Open a pull request with the resulting changes to `go.mod` and `go.sum`, and once merged deploy the router
-so that it's aware of the newly added agent identifiers.
-
-**Analytics pipeline support**
-
-The agents are replicated in the analytics pipeline that processes agent headers. See [udtf_parse_ably_agent.py](https://github.com/ably/infrastructure/blob/main/terraform/modules/analytics/snowflake/files/functions/udtf_parse_ably_agent.py). Notify the Data / Infrastructure team of the changes in `agents.json` so that support in the analytics data pipeine is added.
 
 ### `ablyLibMappings`
 
