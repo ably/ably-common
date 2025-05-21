@@ -15,6 +15,10 @@
       "type": "string",
       "description": "The region in which the event occurred"
     },
+    "cluster": {
+      "type": "string",
+      "description": "The cluster in which the event occurred"
+    },
     "status": {
       "type": "object",
       "description": "The details of the channel status.",
