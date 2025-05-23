@@ -125,6 +125,8 @@
   "70002": "reactor operation failed (post operation returned unexpected code)",
   "70003": "reactor operation failed (maximum number of concurrent in-flight requests exceeded)",
   "70004": "reactor operation failed (invalid or unaccepted message contents)",
+  "70005": "unable to deliver AMQP message (unspecified timeout)",
+  "70006": "unable to deliver AMQP message (cluster busy)",
 
   "71000": "Exchange error (unspecified)",
   "71001": "Forced re-attachment due to permissions change",
