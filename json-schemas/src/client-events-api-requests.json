@@ -54,7 +54,11 @@
     },
     "path": {
       "type": "string",
-      "description": "The path component of the API request URL (e.g. /channels/{channel-name}/messages)."
+      "description": "The original path component of the API request URL (e.g. /channels/myChannel/messages)."
+    },
+    "pathPattern": {
+      "type": "string",
+      "description": "The path pattern of the API request URL, in a normalised format (e.g. /channels/{channelName}/messages)."
     },
     "channels": {
       "type": "array",
