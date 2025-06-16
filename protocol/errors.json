@@ -206,8 +206,8 @@
   "92006": "unable to perform operation without objectId or path",
   "92007": "operation not processable on path",
 
-  "93001": "attempt to add an annotation listener without having requested the annotation_subscribe channel mode in ChannelOptions, which won't do anything (we only deliver annotations to clients who have explicitly requested them)",
-  "93002": "Attempt to publish an annotation on a channel which isn't in a namespace which has Mutable Messages enabled",
+  "93001": "Attempt to add an annotation listener without having requested the annotation_subscribe channel mode",
+  "93002": "Annotations are only supported on channels with the Mutable Messages feature enabled",
 
   "101000": "must have a non-empty name for the space",
   "101001": "must enter a space to perform this operation",
