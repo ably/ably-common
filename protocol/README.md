@@ -146,3 +146,80 @@ based on the `js-web` entry, and then handled as if it sent that `Ably-Agent` he
 
 It is not expected that any new mappings will be added, since we shouldn't be sending any new types of values using the deprecated
 `X-Ably-Lib` header, any newly released code should be sending the `Ably-Agent` header instead.
+
+## Guidance adding custom agents to SDKs and/or Control API
+
+[  Based on the implementation experience, here are the suggested changes for the
+https://github.com/ably/ably-common/blob/main/protocol/README.md to help other Ably engineers add
+custom agents:
+
+## Adding Custom Agent Headers
+
+When implementing Ably functionality in tools, wrappers, or integrations, it's important to add custom
+agent headers to help track usage and debug issues. Here's how to add agent headers in different contexts:
+
+### 1. Using Ably SDK (JavaScript/TypeScript)
+
+For REST or Realtime clients, use the `agents` property in ClientOptions:
+
+```javascript
+const client = new Ably.Realtime({
+  key: 'your-api-key',
+  agents: {
+    'your-agent-name': 'version'  // e.g., 'ably-cli': '0.7.7'
+  }
+});
+```
+
+Note: The agents property may not be in the TypeScript definitions. Use type assertion if needed:
+
+```javascript
+const options: any = {
+  key: 'your-api-key',
+  agents: { 'your-agent-name': 'version' }
+};
+const client = new Ably.Realtime(options);
+```
+
+1. Direct HTTP Requests
+
+When making direct HTTP requests to Ably APIs, add the Ably-Agent header:
+
+```javascript
+fetch('https://api.ably.com/endpoint', {
+  headers: {
+    'Authorization': 'Bearer your-token',
+    'Ably-Agent': 'your-agent-name/version'  // e.g., 'ably-cli/0.7.7'
+  }
+});
+```
+
+1. Agent Naming Conventions
+
+- Use lowercase kebab-case for agent names (e.g., ably-cli, my-integration)
+- Include version numbers in semantic versioning format (e.g., 1.2.3)
+- For wrappers/tools, use descriptive names that indicate the tool's purpose
+
+1. Adding to agents.json
+
+To officially register your agent, add it to agents.json:
+
+```json
+{
+  "identifier": "your-agent-name",
+  "versioned": true,
+  "type": "wrapper"  // or "tool", "integration", etc.
+}
+```
+
+1. Testing Agent Headers
+
+- For SDK usage: The agent will be automatically included in all REST and WebSocket requests
+- For HTTP requests: Verify the header is present using network inspection tools
+- Consider adding tests to ensure the agent header is included correctly
+
+1. Version Management
+
+- Consider reading version from your local package
+- For compiled/distributed tools, you may need to hardcode the version
+- Remember to update the version when releasing new versions of your tool
