@@ -149,10 +149,6 @@ It is not expected that any new mappings will be added, since we shouldn't be se
 
 ## Guidance adding custom agents to SDKs and/or Control API
 
-[  Based on the implementation experience, here are the suggested changes for the
-https://github.com/ably/ably-common/blob/main/protocol/README.md to help other Ably engineers add
-custom agents:
-
 ## Adding Custom Agent Headers
 
 When implementing Ably functionality in tools, wrappers, or integrations, it's important to add custom
@@ -169,16 +165,6 @@ const client = new Ably.Realtime({
     'your-agent-name': 'version'  // e.g., 'ably-cli': '0.7.7'
   }
 });
-```
-
-Note: The agents property may not be in the TypeScript definitions. Use type assertion if needed:
-
-```javascript
-const options: any = {
-  key: 'your-api-key',
-  agents: { 'your-agent-name': 'version' }
-};
-const client = new Ably.Realtime(options);
 ```
 
 1. Direct HTTP Requests
