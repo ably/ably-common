@@ -31,6 +31,7 @@
   "40031": "Invalid publish request (invalid client-specified id)",
   "40032": "Invalid publish request (impermissible extras field)",
   "40033": "Operation cancelled",
+  "40034": "Invalid publish request (maximum number of messages per ChannelMessage exceeded)",
   "40099": "Reserved for artifical errors for testing",
 
   "40100": "unauthorized",
