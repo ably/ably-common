@@ -232,5 +232,10 @@
   "102102": "unable to perform operation; room is releasing",
   "102103": "unable to perform operation; room is released",
   "102104": "unable to perform operation; existing attempt failed",
-  "102105": "unknown room lifecycle error"
+  "102105": "unknown room lifecycle error",
+
+  "103000": "unable to publish push notification",
+  "103001": "unable to publish push notification, retries exhausted",
+  "103002": "unable to publish push notification, no recipient for direct publish",
+  "103003": "unable to publish push notification, cannot handle body"
 }
