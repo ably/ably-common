@@ -366,6 +366,11 @@
       "type": "wrapper"
     },
     {
+      "identifier": "chat-react-ui-components",
+      "versioned": true,
+      "type": "wrapper"
+    },
+    {
       "identifier": "ably-cli",
       "versioned": true,
       "type": "wrapper"
