@@ -108,15 +108,15 @@
           "inclusiveMinimum": 0,
           "description": "Total uncompressed presence message size, excluding delta compression https://ably.com/docs/channels/options/deltas."
         },
-        "messages.all.messages.failed": {
+        "messages.all.presence.failed": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of presence messages excluding presence and object messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
+          "description": "Total number of presence messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
         },
-        "messages.all.messages.refused": {
+        "messages.all.presence.refused": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of presence messages excluding presence and object messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
+          "description": "Total number of presence messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
         "messages.inbound.realtime.all.count": {
           "type": "number",
