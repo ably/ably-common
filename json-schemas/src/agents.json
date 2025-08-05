@@ -46,27 +46,27 @@
             "items": {
               "type": "object",
               "properties": {
-                "noLongerSupported": {
+                "sunsetted": {
                   "type": "array",
-                  "description": "List of versions that are explicitly no longer supported",
+                  "description": "List of versions that are explicitly sunsetted (will no longer work)",
                   "items": {
                     "type": "object",
                     "properties": {
                       "upToVersion": {
                         "type": "string",
-                        "description": "All versions up to and including this version are no longer supported"
+                        "description": "All versions up to and including this version are sunsetted"
                       },
-                      "supportEndDate": {
+                      "sunsetDate": {
                         "type": "string",
-                        "description": "The date when support ended",
+                        "description": "The date when these versions will stop working",
                         "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
                       },
                       "reason": {
                         "type": "string",
-                        "description": "The reason why this version is no longer supported"
+                        "description": "The reason why this version is being sunsetted"
                       }
                     },
-                    "required": ["upToVersion", "supportEndDate", "reason"]
+                    "required": ["upToVersion", "sunsetDate", "reason"]
                   }
                 }
               }
