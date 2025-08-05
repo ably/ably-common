@@ -1,4 +1,5 @@
 {
+  "$schema": "../json-schemas/src/agents.json",
   "agents": [
     {
       "identifier": "ably-js",

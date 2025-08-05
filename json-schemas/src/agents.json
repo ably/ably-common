@@ -3,6 +3,10 @@
   "title": "Ably Agents Definition",
   "type": "object",
   "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "The JSON Schema reference"
+    },
     "agents": {
       "type": "array",
       "description": "An array containing all Ably agent identifiers and their properties.",
