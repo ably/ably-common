@@ -4,7 +4,41 @@
     {
       "identifier": "ably-js",
       "versioned": true,
-      "type": "sdk"
+      "type": "sdk",
+      "versions": [
+        {
+          "noLongerSupported": [
+            {
+              "upToVersion": "0",
+              "supportEndDate": "2017-03-18",
+              "reason": "Legacy version superseded by 1.x with breaking API changes"
+            },
+            {
+              "upToVersion": "1.0",
+              "supportEndDate": "2019-02-06",
+              "reason": "End of life - superseded by 1.1"
+            },
+            {
+              "upToVersion": "1.1",
+              "supportEndDate": "2020-06-08",
+              "reason": "End of life - superseded by 1.2"
+            },
+            {
+              "upToVersion": "1",
+              "supportEndDate": "2024-03-22",
+              "reason": "Major version deprecated in favor of 2.x with modern JavaScript features"
+            },
+            {
+              "upToVersion": "1.2.35",
+              "supportEndDate": "2025-11-01",
+              "reason": "Protocol v2 migration - SDK versions that do not support Ably protocol v2 will no longer be supported"
+            }
+          ]
+        }
+      ],
+      "source": "https://github.com/ably/ably-js",
+      "product": "pub-sub",
+      "name": "Pub/Sub JavaScript"
     },
     {
       "identifier": "nodejs",
@@ -19,22 +53,56 @@
     {
       "identifier": "nativescript",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-js-nativescript",
+      "product": "pub-sub",
+      "name": "Pub/Sub NativeScript"
     },
     {
       "identifier": "react-native",
       "versioned": false,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-js",
+      "product": "pub-sub",
+      "name": "Pub/Sub React Native",
+      "versions": [
+        {
+          "noLongerSupported": [
+            {
+              "upToVersion": "1.2.35",
+              "supportEndDate": "2025-11-01",
+              "reason": "Protocol v2 migration - SDK versions that do not support Ably protocol v2 will no longer be supported"
+            }
+          ]
+        }
+      ]
     },
     {
       "identifier": "laravel-echo",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably-forks/laravel-echo",
+      "product": "pub-sub",
+      "name": "Pub/Sub Laravel Echo"
     },
     {
       "identifier": "ably-cocoa",
       "versioned": true,
-      "type": "sdk"
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-cocoa",
+      "product": "pub-sub",
+      "name": "Pub/Sub Cocoa (iOS, macOS, tvOS)",
+      "versions": [
+        {
+          "noLongerSupported": [
+            {
+              "upToVersion": "1.2.23",
+              "supportEndDate": "2025-11-01",
+              "reason": "Protocol v2 migration - SDK versions that do not support Ably protocol v2 will no longer be supported"
+            }
+          ]
+        }
+      ]
     },
     {
       "identifier": "iOS",
@@ -74,7 +142,21 @@
     {
       "identifier": "ably-java",
       "versioned": true,
-      "type": "sdk"
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-java",
+      "product": "pub-sub",
+      "name": "Pub/Sub Java & Android",
+      "versions": [
+        {
+          "noLongerSupported": [
+            {
+              "upToVersion": "1.2.34",
+              "supportEndDate": "2025-11-01",
+              "reason": "Protocol v2 migration - SDK versions that do not support Ably protocol v2 will no longer be supported"
+            }
+          ]
+        }
+      ]
     },
     {
       "identifier": "jre",
@@ -89,22 +171,45 @@
     {
       "identifier": "ably-asset-tracking-android",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-asset-tracking-android",
+      "product": "asset-tracking",
+      "name": "Asset Tracking Android"
     },
     {
       "identifier": "ably-asset-tracking-swift",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-asset-tracking-swift",
+      "product": "asset-tracking",
+      "name": "Asset Tracking Swift iOS"
     },
     {
       "identifier": "ably-asset-tracking-js",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-asset-tracking-js",
+      "product": "asset-tracking",
+      "name": "Asset Tracking Javascript"
     },
     {
       "identifier": "ably-flutter",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-flutter",
+      "product": "pub-sub",
+      "name": "Pub/Sub Flutter",
+      "versions": [
+        {
+          "noLongerSupported": [
+            {
+              "upToVersion": "1.2.24",
+              "supportEndDate": "2025-11-01",
+              "reason": "Protocol v2 migration - SDK versions that do not support Ably protocol v2 will no longer be supported"
+            }
+          ]
+        }
+      ]
     },
     {
       "identifier": "dart",
@@ -114,12 +219,40 @@
     {
       "identifier": "kafka-connect-ably",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/kafka-connect-ably",
+      "product": "platform",
+      "name": "Kafka Ingress Connector",
+      "versions": [
+        {
+          "noLongerSupported": [
+            {
+              "upToVersion": "2.1.3",
+              "supportEndDate": "2025-11-01",
+              "reason": "Protocol v2 migration - SDK versions that do not support Ably protocol v2 will no longer be supported"
+            }
+          ]
+        }
+      ]
     },
     {
       "identifier": "ably-ruby",
       "versioned": true,
-      "type": "sdk"
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-ruby",
+      "product": "pub-sub",
+      "name": "Pub/Sub Ruby",
+      "versions": [
+        {
+          "noLongerSupported": [
+            {
+              "upToVersion": "1.2.4",
+              "supportEndDate": "2025-11-01",
+              "reason": "Protocol v2 migration - SDK versions that do not support Ably protocol v2 will no longer be supported"
+            }
+          ]
+        }
+      ]
     },
     {
       "identifier": "ruby",
@@ -129,12 +262,40 @@
     {
       "identifier": "ably-ruby-rest",
       "versioned": false,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-ruby",
+      "product": "pub-sub",
+      "name": "Pub/Sub Ruby REST-only",
+      "versions": [
+        {
+          "noLongerSupported": [
+            {
+              "upToVersion": "1.2.4",
+              "supportEndDate": "2025-11-01",
+              "reason": "Protocol v2 migration - SDK versions that do not support Ably protocol v2 will no longer be supported"
+            }
+          ]
+        }
+      ]
     },
     {
       "identifier": "ably-dotnet",
       "versioned": true,
-      "type": "sdk"
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-dotnet",
+      "product": "pub-sub",
+      "name": "Pub/Sub .NET",
+      "versions": [
+        {
+          "noLongerSupported": [
+            {
+              "upToVersion": "1.2.11",
+              "supportEndDate": "2025-11-01",
+              "reason": "Protocol v2 migration - SDK versions that do not support Ably protocol v2 will no longer be supported"
+            }
+          ]
+        }
+      ]
     },
     {
       "identifier": "dotnet-framework",
@@ -279,12 +440,40 @@
     {
       "identifier": "ably-python",
       "versioned": true,
-      "type": "sdk"
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-python",
+      "product": "pub-sub",
+      "name": "Pub/Sub Python",
+      "versions": [
+        {
+          "noLongerSupported": [
+            {
+              "upToVersion": "1.2.3",
+              "supportEndDate": "2025-11-01",
+              "reason": "Protocol v2 migration - SDK versions that do not support Ably protocol v2 will no longer be supported"
+            }
+          ]
+        }
+      ]
     },
     {
       "identifier": "ably-php",
       "versioned": true,
-      "type": "sdk"
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-php",
+      "product": "pub-sub",
+      "name": "Pub/Sub PHP",
+      "versions": [
+        {
+          "noLongerSupported": [
+            {
+              "upToVersion": "1.1.8",
+              "supportEndDate": "2025-11-01",
+              "reason": "Protocol v2 migration - SDK versions that do not support Ably protocol v2 will no longer be supported"
+            }
+          ]
+        }
+      ]
     },
     {
       "identifier": "php",
@@ -294,17 +483,37 @@
     {
       "identifier": "laravel",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-php-laravel",
+      "product": "pub-sub",
+      "name": "Pub/Sub PHP Laravel"
     },
     {
       "identifier": "laravel-broadcaster",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/laravel-broadcaster",
+      "product": "pub-sub",
+      "name": "Pub/Sub PHP Laravel Broadcaster"
     },
     {
       "identifier": "ably-go",
       "versioned": true,
-      "type": "sdk"
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-go",
+      "product": "pub-sub",
+      "name": "Pub/Sub Go",
+      "versions": [
+        {
+          "noLongerSupported": [
+            {
+              "upToVersion": "1.2.13",
+              "supportEndDate": "2025-11-01",
+              "reason": "Protocol v2 migration - SDK versions that do not support Ably protocol v2 will no longer be supported"
+            }
+          ]
+        }
+      ]
     },
     {
       "identifier": "go",
@@ -314,67 +523,109 @@
     {
       "identifier": "react-hooks",
       "versioned": true,
-      "type": "wrapper"
-    },
-    {
-      "identifier": "react-hooks-time-ping",
-      "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-js",
+      "product": "pub-sub",
+      "name": "Pub/Sub React Hooks",
+      "versions": [
+        {
+          "noLongerSupported": [
+            {
+              "upToVersion": "1.2.35",
+              "supportEndDate": "2025-11-01",
+              "reason": "Protocol v2 migration - SDK versions that do not support Ably protocol v2 will no longer be supported"
+            }
+          ]
+        }
+      ]
     },
     {
       "identifier": "spaces",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/spaces",
+      "product": "pub-sub",
+      "name": "Spaces Javascript"
     },
     {
       "identifier": "models",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably-labs/models",
+      "product": "livesync",
+      "name": "LiveSync Models Javascript"
     },
     {
       "identifier": "ably-control-go",
       "versioned": true,
-      "type": "sdk"
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-control-go",
+      "product": "platform",
+      "name": "Control API Go"
     },
     {
       "identifier": "terraform-provider-ably",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/terraform-provider-ably",
+      "product": "platform",
+      "name": "Terraform Control API Provider"
     },
     {
       "identifier": "ably-db-connector",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably-labs/adbc",
+      "product": "livesync",
+      "name": "LiveSync Database Connector"
     },
     {
       "identifier": "chat-js",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-chat-js",
+      "product": "chat",
+      "name": "Chat Javascript"
     },
     {
       "identifier": "chat-react",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-chat-js",
+      "product": "chat",
+      "name": "Chat React"
     },
     {
       "identifier": "chat-kotlin",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-chat-kotlin",
+      "product": "chat",
+      "name": "Chat Kotlin (Android)"
     },
     {
       "identifier": "chat-swift",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-chat-swift",
+      "product": "chat",
+      "name": "Chat Swift (iOS)"
     },
     {
       "identifier": "chat-react-ui-components",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-chat-react-ui-components",
+      "product": "chat",
+      "name": "Chat React UI Components"
     },
     {
       "identifier": "ably-cli",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-cli",
+      "product": "platform",
+      "name": "Ably CLI"
     }
   ],
   "ablyLibMappings": {

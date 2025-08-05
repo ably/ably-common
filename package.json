@@ -8,7 +8,9 @@
     "format:data": "prettier --write '**/*.{json,yml}'",
     "format:data:check": "prettier --check '**/*.{json,yml}'",
     "format:documentation:check": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
-    "test": "jest"
+    "test": "jest",
+    "validate:agents": "node scripts/validate-json-schema.js protocol/agents.json",
+    "validate:json-schema": "node scripts/validate-json-schema.js"
   },
   "repository": "ably/ably-common",
   "license": "Apache-2.0",
