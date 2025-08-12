@@ -57,7 +57,12 @@ if (!schemaLocation) {
   console.log(`📋 Using schema from $schema property: ${schemaLocation}`);
 }
 
-// Load schema
+/**
+ * Load schema from file path or URL
+ *
+ * @param {string} location - The schema location (file path or URL)
+ * @returns {Promise<object>} The loaded schema object
+ */
 async function loadSchema(location) {
   // Check if it's a URL
   if (location.startsWith('http://') || location.startsWith('https://')) {
@@ -65,7 +70,7 @@ async function loadSchema(location) {
       const client = location.startsWith('https://') ? https : http;
       client.get(location, (res) => {
         let data = '';
-        res.on('data', chunk => data += chunk);
+        res.on('data', (chunk) => { data += chunk; });
         res.on('end', () => {
           try {
             resolve(JSON.parse(data));
@@ -75,76 +80,87 @@ async function loadSchema(location) {
         });
       }).on('error', reject);
     });
-  } else {
-    // It's a file path
-    let schemaPath;
-    if (path.isAbsolute(location)) {
-      schemaPath = location;
-    } else if (location === schemaPathOrUrl) {
-      // Schema was provided as argument - resolve relative to current directory
-      schemaPath = path.resolve(location);
-    } else {
-      // Schema came from $schema property - resolve relative to JSON file
-      schemaPath = path.resolve(path.dirname(path.resolve(jsonFilePath)), location);
-    }
-    
-    if (!fs.existsSync(schemaPath)) {
-      throw new Error(`Schema file not found: ${schemaPath}`);
-    }
-    return JSON.parse(fs.readFileSync(schemaPath, 'utf8'));
   }
+  // It's a file path
+  let schemaPath;
+  if (path.isAbsolute(location)) {
+    schemaPath = location;
+  } else if (location === schemaPathOrUrl) {
+    // Schema was provided as argument - resolve relative to current directory
+    schemaPath = path.resolve(location);
+  } else {
+    // Schema came from $schema property - resolve relative to JSON file
+    schemaPath = path.resolve(path.dirname(path.resolve(jsonFilePath)), location);
+  }
+
+  if (!fs.existsSync(schemaPath)) {
+    throw new Error(`Schema file not found: ${schemaPath}`);
+  }
+  return JSON.parse(fs.readFileSync(schemaPath, 'utf8'));
 }
 
-// Try to use jsonschema library if available, otherwise fall back to basic validation
+/**
+ * Validate data against schema using jsonschema library or basic validation
+ *
+ * @param {object} data - The data to validate
+ * @param {object} schema - The JSON schema
+ * @returns {Promise<{valid: boolean, errors: string[]}>} Validation result
+ */
 async function validateWithLibrary(data, schema) {
   try {
     // Try to load jsonschema library
+    // eslint-disable-next-line global-require, import/no-extraneous-dependencies
     const { Validator } = require('jsonschema');
     const validator = new Validator();
-    
+
     const result = validator.validate(data, schema);
-    
+
     if (result.valid) {
       return { valid: true, errors: [] };
-    } else {
-      return {
-        valid: false,
-        errors: result.errors.map(err => {
-          const path = err.property ? `${err.property}: ` : '';
-          return `${path}${err.message}`;
-        })
-      };
     }
+    return {
+      valid: false,
+      errors: result.errors.map((err) => {
+        const pathPrefix = err.property ? `${err.property}: ` : '';
+        return `${pathPrefix}${err.message}`;
+      }),
+    };
   } catch (e) {
     // jsonschema library not available, fall back to basic validation
     return basicValidation(data, schema);
   }
 }
 
-// Basic validation without external libraries
+/**
+ * Basic validation without external libraries
+ *
+ * @param {object} data - The data to validate
+ * @param {object} schema - The JSON schema
+ * @returns {{valid: boolean, errors: string[]}} Validation result
+ */
 function basicValidation(data, schema) {
   const errors = [];
-  
+
   // Check required properties
   if (schema.required && Array.isArray(schema.required)) {
-    schema.required.forEach(prop => {
+    schema.required.forEach((prop) => {
       if (!(prop in data)) {
         errors.push(`Missing required property: ${prop}`);
       }
     });
   }
-  
+
   // Check for additional properties if not allowed
   if (schema.additionalProperties === false && schema.properties) {
     const allowedProps = Object.keys(schema.properties);
     const dataProps = Object.keys(data);
-    dataProps.forEach(prop => {
+    dataProps.forEach((prop) => {
       if (!allowedProps.includes(prop)) {
         errors.push(`Unexpected property: ${prop}`);
       }
     });
   }
-  
+
   // Check property types
   if (schema.properties && typeof data === 'object' && data !== null) {
     Object.entries(schema.properties).forEach(([prop, propSchema]) => {
@@ -156,12 +172,12 @@ function basicValidation(data, schema) {
             errors.push(`Property '${prop}' should be ${propSchema.type} but is ${actualType}`);
           }
         }
-        
+
         // Check enum values
         if (propSchema.enum && !propSchema.enum.includes(value)) {
           errors.push(`Property '${prop}' value '${value}' is not in allowed values: ${propSchema.enum.join(', ')}`);
         }
-        
+
         // Check pattern
         if (propSchema.pattern && typeof value === 'string') {
           const regex = new RegExp(propSchema.pattern);
@@ -172,10 +188,10 @@ function basicValidation(data, schema) {
       }
     });
   }
-  
+
   return {
     valid: errors.length === 0,
-    errors: errors
+    errors,
   };
 }
 
@@ -183,16 +199,16 @@ function basicValidation(data, schema) {
 (async () => {
   try {
     const schema = await loadSchema(schemaLocation);
-    console.log(`✅ Schema loaded successfully`);
-    
+    console.log('✅ Schema loaded successfully');
+
     const result = await validateWithLibrary(jsonData, schema);
-    
+
     if (result.valid) {
       console.log(`✅ Validation successful! ${jsonFilePath} is valid according to the schema.`);
-      
+
       // Print basic statistics about the data
       const stats = [];
-      
+
       // Count arrays
       Object.entries(jsonData).forEach(([key, value]) => {
         if (Array.isArray(value)) {
@@ -204,18 +220,17 @@ function basicValidation(data, schema) {
           }
         }
       });
-      
+
       if (stats.length > 0) {
-        console.log(`   Summary:`);
-        stats.forEach(stat => console.log(`   - ${stat}`));
+        console.log('   Summary:');
+        stats.forEach((stat) => console.log(`   - ${stat}`));
       }
-      
+
       process.exit(0);
-    } else {
-      console.log(`❌ Validation failed with ${result.errors.length} error(s):`);
-      result.errors.forEach(err => console.log(`   - ${err}`));
-      process.exit(1);
     }
+    console.log(`❌ Validation failed with ${result.errors.length} error(s):`);
+    result.errors.forEach((err) => console.log(`   - ${err}`));
+    process.exit(1);
   } catch (error) {
     console.error(`❌ Error: ${error.message}`);
     process.exit(1);
