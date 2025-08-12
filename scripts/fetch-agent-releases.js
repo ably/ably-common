@@ -17,7 +17,7 @@ try {
 }
 
 const agentsFilePath = path.join(__dirname, '..', 'protocol', 'agents.json');
-const outputPath = path.join(__dirname, '..', 'agent-release-data.csv');
+const outputPath = path.join(__dirname, '..', 'data', 'agents', 'agent-release-data.csv');
 
 // Load agents data
 const agents = JSON.parse(fs.readFileSync(agentsFilePath, 'utf8'));

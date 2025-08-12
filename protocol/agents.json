@@ -28,12 +28,14 @@
     {
       "identifier": "nodejs",
       "versioned": true,
-      "type": "runtime"
+      "type": "runtime",
+      "name": "Node.js"
     },
     {
       "identifier": "browser",
       "versioned": false,
-      "type": "runtime"
+      "type": "runtime",
+      "name": "Browser"
     },
     {
       "identifier": "nativescript",
@@ -92,37 +94,44 @@
     {
       "identifier": "iOS",
       "versioned": true,
-      "type": "os"
+      "type": "os",
+      "name": "iOS"
     },
     {
       "identifier": "tvOS",
       "versioned": true,
-      "type": "os"
+      "type": "os",
+      "name": "tvOS"
     },
     {
       "identifier": "watchOS",
       "versioned": true,
-      "type": "os"
+      "type": "os",
+      "name": "watchOS"
     },
     {
       "identifier": "macOS",
       "versioned": true,
-      "type": "os"
+      "type": "os",
+      "name": "macOS"
     },
     {
       "identifier": "darwin",
       "versioned": true,
-      "type": "os"
+      "type": "os",
+      "name": "Darwin (macOS/iOS)"
     },
     {
       "identifier": "windows",
       "versioned": true,
-      "type": "os"
+      "type": "os",
+      "name": "Windows"
     },
     {
       "identifier": "linux",
       "versioned": true,
-      "type": "os"
+      "type": "os",
+      "name": "Linux"
     },
     {
       "identifier": "ably-java",
@@ -146,12 +155,14 @@
     {
       "identifier": "jre",
       "versioned": true,
-      "type": "runtime"
+      "type": "runtime",
+      "name": "Java Runtime Environment"
     },
     {
       "identifier": "android",
       "versioned": true,
-      "type": "os"
+      "type": "os",
+      "name": "Android"
     },
     {
       "identifier": "ably-asset-tracking-android",
@@ -199,7 +210,8 @@
     {
       "identifier": "dart",
       "versioned": true,
-      "type": "runtime"
+      "type": "runtime",
+      "name": "Dart"
     },
     {
       "identifier": "kafka-connect-ably",
@@ -242,7 +254,8 @@
     {
       "identifier": "ruby",
       "versioned": true,
-      "type": "runtime"
+      "type": "runtime",
+      "name": "Ruby"
     },
     {
       "identifier": "ably-ruby-rest",
@@ -285,142 +298,170 @@
     {
       "identifier": "dotnet-framework",
       "versioned": true,
-      "type": "runtime"
+      "type": "runtime",
+      "name": ".NET Framework"
     },
     {
       "identifier": "dotnet-standard",
       "versioned": true,
-      "type": "runtime"
+      "type": "runtime",
+      "name": ".NET Standard"
     },
     {
       "identifier": "xamarin-android",
       "versioned": false,
-      "type": "runtime"
+      "type": "runtime",
+      "name": "Xamarin Android"
     },
     {
       "identifier": "xamarin-iOS",
       "versioned": false,
-      "type": "runtime"
+      "type": "runtime",
+      "name": "Xamarin iOS"
     },
     {
       "identifier": "xamarin",
       "versioned": true,
-      "type": "runtime"
+      "type": "runtime",
+      "name": "Xamarin"
     },
     {
       "identifier": "dotnet6",
       "versioned": true,
-      "type": "runtime"
+      "type": "runtime",
+      "name": ".NET 6"
     },
     {
       "identifier": "dotnet7",
       "versioned": true,
-      "type": "runtime"
+      "type": "runtime",
+      "name": ".NET 7"
     },
     {
       "identifier": "dotnet-windows",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "Windows"
     },
     {
       "identifier": "dotnet-macOS",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "macOS"
     },
     {
       "identifier": "dotnet-linux",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "Linux"
     },
     {
       "identifier": "dotnet-iOS",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "iOS"
     },
     {
       "identifier": "dotnet-android",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "Android"
     },
     {
       "identifier": "dotnet-browser",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "Browser"
     },
     {
       "identifier": "dotnet-watchOS",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "watchOS"
     },
     {
       "identifier": "dotnet-tvOS",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "tvOS"
     },
     {
       "identifier": "unity",
       "versioned": true,
-      "type": "runtime"
+      "type": "runtime",
+      "name": "Unity"
     },
     {
       "identifier": "unity-windows",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "Windows"
     },
     {
       "identifier": "unity-macOS",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "macOS"
     },
     {
       "identifier": "unity-linux",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "Linux"
     },
     {
       "identifier": "unity-iOS",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "iOS"
     },
     {
       "identifier": "unity-android",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "Android"
     },
     {
       "identifier": "unity-webGL",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "WebGL"
     },
     {
       "identifier": "unity-tvOS",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "tvOS"
     },
     {
       "identifier": "unity-nintendo-switch",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "Nintendo Switch"
     },
     {
       "identifier": "unity-PS4",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "PlayStation 4"
     },
     {
       "identifier": "unity-PS5",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "PlayStation 5"
     },
     {
       "identifier": "unity-xbox",
       "versioned": false,
-      "type": "os"
+      "type": "os",
+      "name": "Xbox"
     },
     {
       "identifier": "python",
       "versioned": true,
-      "type": "runtime"
+      "type": "runtime",
+      "name": "Python"
     },
     {
       "identifier": "ably-python",
@@ -463,7 +504,8 @@
     {
       "identifier": "php",
       "versioned": true,
-      "type": "runtime"
+      "type": "runtime",
+      "name": "PHP"
     },
     {
       "identifier": "laravel",
@@ -503,7 +545,8 @@
     {
       "identifier": "go",
       "versioned": true,
-      "type": "runtime"
+      "type": "runtime",
+      "name": "Go"
     },
     {
       "identifier": "react-hooks",

@@ -1,0 +1,75 @@
+identifier,versioned,type,source,product,name
+ably-js,true,sdk,https://github.com/ably/ably-js,pub-sub,Pub/Sub JavaScript
+nodejs,true,runtime,,,Node.js
+browser,false,runtime,,,Browser
+nativescript,true,wrapper,https://github.com/ably/ably-js-nativescript,pub-sub,Pub/Sub NativeScript
+react-native,false,wrapper,https://github.com/ably/ably-js,pub-sub,Pub/Sub React Native
+laravel-echo,true,wrapper,https://github.com/ably-forks/laravel-echo,pub-sub,Pub/Sub Laravel Echo
+ably-cocoa,true,sdk,https://github.com/ably/ably-cocoa,pub-sub,"Pub/Sub Cocoa (iOS, macOS, tvOS)"
+iOS,true,os,,,iOS
+tvOS,true,os,,,tvOS
+watchOS,true,os,,,watchOS
+macOS,true,os,,,macOS
+darwin,true,os,,,Darwin (macOS/iOS)
+windows,true,os,,,Windows
+linux,true,os,,,Linux
+ably-java,true,sdk,https://github.com/ably/ably-java,pub-sub,Pub/Sub Java & Android
+jre,true,runtime,,,Java Runtime Environment
+android,true,os,,,Android
+ably-asset-tracking-android,true,wrapper,https://github.com/ably/ably-asset-tracking-android,asset-tracking,Asset Tracking Android
+ably-asset-tracking-swift,true,wrapper,https://github.com/ably/ably-asset-tracking-swift,asset-tracking,Asset Tracking Swift iOS
+ably-asset-tracking-js,true,wrapper,https://github.com/ably/ably-asset-tracking-js,asset-tracking,Asset Tracking Javascript
+ably-flutter,true,wrapper,https://github.com/ably/ably-flutter,pub-sub,Pub/Sub Flutter
+dart,true,runtime,,,Dart
+kafka-connect-ably,true,wrapper,https://github.com/ably/kafka-connect-ably,platform,Kafka Ingress Connector
+ably-ruby,true,sdk,https://github.com/ably/ably-ruby,pub-sub,Pub/Sub Ruby
+ruby,true,runtime,,,Ruby
+ably-ruby-rest,false,wrapper,https://github.com/ably/ably-ruby,pub-sub,Pub/Sub Ruby REST-only
+ably-dotnet,true,sdk,https://github.com/ably/ably-dotnet,pub-sub,Pub/Sub .NET
+dotnet-framework,true,runtime,,,.NET Framework
+dotnet-standard,true,runtime,,,.NET Standard
+xamarin-android,false,runtime,,,Xamarin Android
+xamarin-iOS,false,runtime,,,Xamarin iOS
+xamarin,true,runtime,,,Xamarin
+dotnet6,true,runtime,,,.NET 6
+dotnet7,true,runtime,,,.NET 7
+dotnet-windows,false,os,,,Windows
+dotnet-macOS,false,os,,,macOS
+dotnet-linux,false,os,,,Linux
+dotnet-iOS,false,os,,,iOS
+dotnet-android,false,os,,,Android
+dotnet-browser,false,os,,,Browser
+dotnet-watchOS,false,os,,,watchOS
+dotnet-tvOS,false,os,,,tvOS
+unity,true,runtime,,,Unity
+unity-windows,false,os,,,Windows
+unity-macOS,false,os,,,macOS
+unity-linux,false,os,,,Linux
+unity-iOS,false,os,,,iOS
+unity-android,false,os,,,Android
+unity-webGL,false,os,,,WebGL
+unity-tvOS,false,os,,,tvOS
+unity-nintendo-switch,false,os,,,Nintendo Switch
+unity-PS4,false,os,,,PlayStation 4
+unity-PS5,false,os,,,PlayStation 5
+unity-xbox,false,os,,,Xbox
+python,true,runtime,,,Python
+ably-python,true,sdk,https://github.com/ably/ably-python,pub-sub,Pub/Sub Python
+ably-php,true,sdk,https://github.com/ably/ably-php,pub-sub,Pub/Sub PHP
+php,true,runtime,,,PHP
+laravel,true,wrapper,https://github.com/ably/ably-php-laravel,pub-sub,Pub/Sub PHP Laravel
+laravel-broadcaster,true,wrapper,https://github.com/ably/laravel-broadcaster,pub-sub,Pub/Sub PHP Laravel Broadcaster
+ably-go,true,sdk,https://github.com/ably/ably-go,pub-sub,Pub/Sub Go
+go,true,runtime,,,Go
+react-hooks,true,wrapper,https://github.com/ably/ably-js,pub-sub,Pub/Sub React Hooks
+spaces,true,wrapper,https://github.com/ably/spaces,pub-sub,Spaces Javascript
+models,true,wrapper,https://github.com/ably-labs/models,livesync,LiveSync Models Javascript
+ably-control-go,true,sdk,https://github.com/ably/ably-control-go,platform,Control API Go
+terraform-provider-ably,true,wrapper,https://github.com/ably/terraform-provider-ably,platform,Terraform Control API Provider
+ably-db-connector,true,wrapper,https://github.com/ably-labs/adbc,livesync,LiveSync Database Connector
+chat-js,true,wrapper,https://github.com/ably/ably-chat-js,chat,Chat Javascript
+chat-react,true,wrapper,https://github.com/ably/ably-chat-js,chat,Chat React
+chat-kotlin,true,wrapper,https://github.com/ably/ably-chat-kotlin,chat,Chat Kotlin (Android)
+chat-swift,true,wrapper,https://github.com/ably/ably-chat-swift,chat,Chat Swift (iOS)
+chat-react-ui-components,true,wrapper,https://github.com/ably/ably-chat-react-ui-components,chat,Chat React UI Components
+ably-cli,true,wrapper,https://github.com/ably/ably-cli,platform,Ably CLI

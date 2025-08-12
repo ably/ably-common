@@ -38,7 +38,7 @@
           },
           "name": {
             "type": "string",
-            "description": "The human-readable name of the agent (required for SDK and wrapper types)"
+            "description": "The human-readable name of the agent"
           },
           "versions": {
             "type": "array",
@@ -73,7 +73,7 @@
             }
           }
         },
-        "required": ["identifier", "versioned", "type"],
+        "required": ["identifier", "versioned", "type", "name"],
         "allOf": [
           {
             "if": {
@@ -84,7 +84,7 @@
               }
             },
             "then": {
-              "required": ["source", "product", "name"]
+              "required": ["source", "product"]
             }
           },
           {
@@ -99,8 +99,7 @@
               "properties": {
                 "versions": false,
                 "source": false,
-                "product": false,
-                "name": false
+                "product": false
               }
             }
           }

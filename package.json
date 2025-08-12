@@ -11,7 +11,9 @@
     "test": "jest",
     "validate:agents": "node scripts/validate-json-schema.js protocol/agents.json",
     "validate:json-schema": "node scripts/validate-json-schema.js",
-    "fetch:agent-releases": "node scripts/fetch-agent-releases.js"
+    "fetch:agent-releases": "node scripts/fetch-agent-releases.js",
+    "export:agents": "node scripts/export-agents-csv.js",
+    "upload:s3": "./scripts/upload-to-s3.sh"
   },
   "repository": "ably/ably-common",
   "license": "Apache-2.0",
