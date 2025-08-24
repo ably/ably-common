@@ -113,6 +113,7 @@
 
   "50010": "Ably's edge proxy service has encountered an unknown internal error whilst processing the request",
   "50210": "Ably's edge proxy service received an invalid (bad gateway) response from the Ably platform",
+  "50305": "Ably's routing layer was unable to service this request",
   "50310": "Ably's edge proxy service received a service unavailable response code from the Ably platform",
 
   "50320": "Active Traffic Management: traffic for this cluster is being temporarily redirected to a backup service",
