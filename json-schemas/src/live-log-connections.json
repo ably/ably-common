@@ -1,0 +1,217 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "live-log-connections-0.0.1",
+  "title": "Live Log Connections Schema",
+  "description": "Schema for live log connection events stored in the liveLogConnections analytics table",
+  "type": "object",
+  "required": [
+    "eventId",
+    "eventName",
+    "timestamp",
+    "accountId",
+    "appId",
+    "resourceId",
+    "level"
+  ],
+  "properties": {
+    "eventId": {
+      "type": "string",
+      "description": "Unique event identifier"
+    },
+    "eventName": {
+      "type": "string",
+      "description": "Name of the event"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Event timestamp in ISO format"
+    },
+    "accountId": {
+      "type": "string",
+      "description": "Account identifier"
+    },
+    "appId": {
+      "type": "string",
+      "description": "Application identifier"
+    },
+    "resourceId": {
+      "type": "string",
+      "description": "Resource identifier"
+    },
+    "level": {
+      "type": "string",
+      "enum": ["info", "error", "warning", "debug"],
+      "description": "Log level of the event"
+    },
+    "client": {
+      "$ref": "#/definitions/ClientInfo",
+      "description": "Client information"
+    },
+    "cluster": {
+      "$ref": "#/definitions/ClusterInfo",
+      "description": "Cluster information"
+    },
+    "request": {
+      "$ref": "#/definitions/RequestInfo",
+      "description": "Request information"
+    },
+    "attachment": {
+      "$ref": "#/definitions/AttachmentInfo",
+      "description": "Attachment information"
+    },
+    "error": {
+      "$ref": "#/definitions/ErrorInfo",
+      "description": "Error information if applicable"
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "ClientInfo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Client identifier"
+        },
+        "geoIp": {
+          "type": "string",
+          "description": "Geographic IP location"
+        },
+        "agent": {
+          "type": "string",
+          "description": "User agent string"
+        },
+        "ablyAgent": {
+          "type": "string",
+          "description": "Ably agent string"
+        },
+        "credentialType": {
+          "type": "string",
+          "description": "Type of credentials used"
+        },
+        "credentialName": {
+          "type": "string",
+          "description": "Name of the credential"
+        },
+        "transport": {
+          "type": "string",
+          "description": "Transport protocol used"
+        },
+        "protocolVersion": {
+          "type": "integer",
+          "description": "Protocol version number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ClusterInfo": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Cluster name"
+        },
+        "region": {
+          "type": "string",
+          "description": "Cluster region"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RequestInfo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Request identifier"
+        },
+        "method": {
+          "type": "string",
+          "description": "HTTP method"
+        },
+        "host": {
+          "type": "string",
+          "description": "Request host"
+        },
+        "path": {
+          "type": "string",
+          "description": "Request path"
+        },
+        "query": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Query parameters (sensitive params redacted)"
+        },
+        "headers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Request headers (sensitive headers redacted)"
+        },
+        "statusCode": {
+          "type": "integer",
+          "description": "HTTP status code"
+        }
+      },
+      "additionalProperties": false
+    },
+    "AttachmentInfo": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string",
+          "description": "Channel identifier"
+        },
+        "connectionId": {
+          "type": "string",
+          "description": "Connection identifier"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Attachment start time"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Attachment end time (optional)"
+        },
+        "mode": {
+          "type": "string",
+          "description": "Attachment mode"
+        },
+        "params": {
+          "type": "string",
+          "description": "Attachment parameters"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ErrorInfo": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "description": "Error code"
+        },
+        "message": {
+          "type": "string",
+          "description": "Error message"
+        },
+        "statusCode": {
+          "type": "integer",
+          "description": "HTTP status code"
+        },
+        "href": {
+          "type": "string",
+          "description": "Link to error documentation"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
