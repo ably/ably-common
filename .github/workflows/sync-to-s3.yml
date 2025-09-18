@@ -16,8 +16,8 @@ permissions:
   contents: read
 
 env:
-  S3_BUCKET: files.ably.io
-  S3_PREFIX: ably-common/data
+  S3_BUCKET: ${{ secrets.S3_BUCKET_NAME }}
+  S3_PREFIX: ${{ secrets.S3_PREFIX }}
 
 jobs:
   sync-to-s3:
