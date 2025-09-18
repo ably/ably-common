@@ -356,6 +356,16 @@
       "type": "wrapper"
     },
     {
+      "identifier": "chat-kotlin-android",
+      "versioned": true,
+      "type": "wrapper"
+    },
+    {
+      "identifier": "chat-kotlin-jvm",
+      "versioned": true,
+      "type": "wrapper"
+    },
+    {
       "identifier": "chat-swift",
       "versioned": true,
       "type": "wrapper"
