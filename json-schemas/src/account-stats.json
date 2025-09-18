@@ -114,6 +114,36 @@
           "inclusiveMinimum": 0,
           "description": "Total number of presence messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
+        "messages.all.objects.count": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total object message count."
+        },
+        "messages.all.objects.billableCount": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of object messages that are billable."
+        },
+        "messages.all.objects.data": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total object message size."
+        },
+        "messages.all.objects.uncompressedData": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total uncompressed object message size, excluding delta compression https://ably.com/docs/channels/options/deltas."
+        },
+        "messages.all.objects.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of object messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejected by an external integration target, or a service issue on Ably's side)"
+        },
+        "messages.all.objects.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of object messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
+        },
         "messages.inbound.realtime.all.count": {
           "type": "number",
           "inclusiveMinimum": 0,
@@ -509,6 +539,31 @@
           "inclusiveMinimum": 0,
           "description": "Total number of inbound presence messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
         },
+        "messages.inbound.all.objects.count": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total inbound object message count (received by the Ably service from clients)."
+        },
+        "messages.inbound.all.objects.data": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total inbound object message size (received by the Ably service from clients)."
+        },
+        "messages.inbound.all.objects.uncompressedData": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total uncompressed inbound object message size, excluding delta compression https://ably.com/docs/channels/options/deltas, received by the Ably service from clients."
+        },
+        "messages.inbound.all.objects.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound object messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
+        },
+        "messages.inbound.all.objects.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of inbound object messages that were refused by Ably (eg due to a rate limit, a malformed message, or incorrect permissions on the client's part)"
+        },
         "messages.outbound.realtime.all.count": {
           "type": "number",
           "inclusiveMinimum": 0,
@@ -617,7 +672,17 @@
         "messages.outbound.realtime.objects.uncompressedData": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total uncompressed outbound realtime presence message size sent from the Ably service to clients)."
+          "description": "Total uncompressed outbound realtime object message size sent from the Ably service to clients)."
+        },
+        "messages.outbound.realtime.objects.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound realtime object messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as a service issue on Ably's side)"
+        },
+        "messages.outbound.realtime.objects.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound realtime object messages that were refused by Ably (generally due to rate limits)"
         },
         "messages.outbound.rest.all.count": {
           "type": "number",
@@ -1158,6 +1223,36 @@
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total number of outbound presence messages that were refused by Ably (generally due to rate limits)"
+        },
+        "messages.outbound.all.objects.count": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total outbound object message count (sent from the Ably service to clients)."
+        },
+        "messages.outbound.all.objects.billableCount": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound object messages that are billable (sent from the Ably service to clients)."
+        },
+        "messages.outbound.all.objects.data": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total outbound object message size (sent from the Ably service to clients)."
+        },
+        "messages.outbound.all.objects.uncompressedData": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total uncompressed outbound object message size, excluding delta compression https://ably.com/docs/channels/options/deltas, sent from the Ably service to clients)."
+        },
+        "messages.outbound.all.objects.failed": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound object messages that failed (which did not succeed for some reason other than Ably explicitly refusing it, such as rejection by an external integration target, or a service issue on Ably's side)"
+        },
+        "messages.outbound.all.objects.refused": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of outbound object messages that were refused by Ably (generally due to rate limits)"
         },
         "messages.persisted.all.count": {
           "type": "number",
