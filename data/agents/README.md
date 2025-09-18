@@ -7,33 +7,6 @@ This directory contains CSV exports of Ably agent metadata for analysis and data
 - **agents.csv** - Export of all agents from protocol/agents.json
 - **agent-release-data.csv** - GitHub release data for all SDK/wrapper agents with version tracking
 
-## Snowflake Import
-
-### Initial Setup
-
-1. Create tables and stages using `create_tables.sql`
-2. Upload CSV files to Snowflake stage
-3. Run `load_data.sql` to import data
-
-### Manual Import Steps
-
-1. **Upload files to Snowflake:**
-   ```sql
-   PUT file://data/agents.csv @AGENT_DATA_STAGE;
-   PUT file://data/agent-release-data.csv @AGENT_DATA_STAGE;
-   ```
-
-2. **Run the merge operation** (from load_data.sql):
-   - Loads data into staging tables
-   - Merges with existing data (updates existing, inserts new)
-   - Cleans up staging tables
-
-3. **Verify the import:**
-   ```sql
-   SELECT COUNT(*) FROM AGENTS;
-   SELECT COUNT(*) FROM AGENT_RELEASES;
-   ```
-
 ## Data Schema
 
 ### agents.csv
