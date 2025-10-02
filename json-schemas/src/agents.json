@@ -48,7 +48,7 @@
               "properties": {
                 "sunsetted": {
                   "type": "array",
-                  "description": "List of versions that are explicitly sunsetted (will no longer work)",
+                  "description": "List of versions that are explicitly sunsetted (will no longer work after the sunsetDate)",
                   "items": {
                     "type": "object",
                     "properties": {
