@@ -16,7 +16,7 @@
             {
               "upToVersion": "1.2.35",
               "sunsetDate": "2025-11-01",
-              "reason": "Protocol v2 migration - SDK versions that do not support Ably protocol v2 will no longer be supported"
+              "reason": "SDK versions up to 1.2.35 use protocol v1 which is no longer supported, see https://ably.com/docs/protocols/migration-guides"
             }
           ]
         }

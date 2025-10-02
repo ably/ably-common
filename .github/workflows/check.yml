@@ -24,6 +24,7 @@ jobs:
           ! git --no-pager grep $'\t' -- './*' ':!./go' || { echo 'ERROR: Lint failed! Source files must use spaces for whitespace.'; false; }
           npm ci
           npm run lint
+          npm run validate:agents
           npm test
 
   check-go:

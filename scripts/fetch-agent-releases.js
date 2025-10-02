@@ -369,13 +369,13 @@ function calculateSupportEndDate(releaseDate) {
 }
 
 /**
- * Calculate deprecation date (24 months after release)
+ * Calculate deprecation date (24 months after the superseding release)
  */
-function calculateDeprecationDate(releaseDate, hasNewerStableVersion) {
-  if (!hasNewerStableVersion) {
+function calculateDeprecationDate(supersedingReleaseDate) {
+  if (!supersedingReleaseDate) {
     return '';
   }
-  const date = new Date(releaseDate);
+  const date = new Date(supersedingReleaseDate);
   date.setFullYear(date.getFullYear() + 2);
   return date.toISOString().split('T')[0];
 }
@@ -423,11 +423,12 @@ async function processReleases(agent, releases, latestVersion, latestVersionDate
       supportEndDate = calculateSupportEndDate(releaseDate);
     }
     
-    // Calculate deprecation date
-    const hasNewerStableVersion = stableReleases.some(r => 
+    // Calculate deprecation date based on superseding release
+    const supersedingRelease = stableReleases.find(r =>
       compareVersions(r.tag_name, release.tag_name) > 0
     );
-    const deprecationDate = releaseDate ? calculateDeprecationDate(releaseDate, hasNewerStableVersion) : '';
+    const supersedingReleaseDate = supersedingRelease?.published_at ? supersedingRelease.published_at.split('T')[0] : '';
+    const deprecationDate = calculateDeprecationDate(supersedingReleaseDate);
     
     // Check if version is sunsetted
     let sunsetDate = '';

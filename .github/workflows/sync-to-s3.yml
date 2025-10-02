@@ -20,43 +20,8 @@ env:
   S3_PREFIX: ${{ secrets.S3_PREFIX }}
 
 jobs:
-  sync-to-s3:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Configure AWS credentials via OIDC
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          role-session-name: GitHubActions-ably-common
-          aws-region: ${{ secrets.AWS_REGION }}
-
-      - name: Sync CSV files to S3
-        run: |
-          echo "🔄 Syncing CSV files to S3..."
-          echo "   Bucket: $S3_BUCKET"
-          echo "   Path: $S3_PREFIX"
-          
-          # Upload with public-read ACL if the bucket serves public files
-          # Remove --acl public-read if files should be private
-          aws s3 sync data/ s3://${S3_BUCKET}/${S3_PREFIX}/ \
-            --exclude "*" \
-            --include "*.csv" \
-            --delete
-          
-          echo "✅ Sync complete!"
-          
-          # List uploaded files
-          echo ""
-          echo "📋 Uploaded files:"
-          aws s3 ls s3://${S3_BUCKET}/${S3_PREFIX}/ --recursive
-
   generate-and-sync:
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
     
     steps:
       - name: Checkout repository
@@ -76,15 +41,16 @@ jobs:
 
       - name: Generate release data
         run: |
-          # Only run if we have the required tokens
-          if [ -n "${{ secrets.GITHUB_TOKEN }}" ] && [ -n "${{ secrets.OPENAI_API_KEY }}" ]; then
-            echo "Generating release data..."
-            GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
-            OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
-            npm run fetch:agent-releases
-          else
-            echo "⚠️  Skipping release data generation (missing tokens)"
+          # Ensure we have the required tokens
+          if [ -z "${{ secrets.GITHUB_TOKEN }}" ] || [ -z "${{ secrets.OPENAI_API_KEY }}" ]; then
+            echo "❌ Error: Missing required tokens (GITHUB_TOKEN or OPENAI_API_KEY)"
+            exit 1
           fi
+
+          echo "Generating release data..."
+          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+          OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
+          npm run fetch:agent-releases
 
       - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
