@@ -360,10 +360,13 @@ function isVersionLessThanOrEqual(version, threshold) {
 }
 
 /**
- * Calculate support end date (12 months after release)
+ * Calculate support end date (12 months after the superseding release)
  */
-function calculateSupportEndDate(releaseDate) {
-  const date = new Date(releaseDate);
+function calculateSupportEndDate(supersedingReleaseDate) {
+  if (!supersedingReleaseDate) {
+    return '';
+  }
+  const date = new Date(supersedingReleaseDate);
   date.setFullYear(date.getFullYear() + 1);
   return date.toISOString().split('T')[0];
 }
@@ -414,20 +417,27 @@ async function processReleases(agent, releases, latestVersion, latestVersionDate
     const releaseDate = release.published_at ? release.published_at.split('T')[0] : '';
     const releaseType = getReleaseType(release.tag_name);
     
-    // Calculate support end date
+    // Find the immediate next stable release (minimum version greater than current)
+    const laterReleases = stableReleases.filter(r =>
+      compareVersions(r.tag_name, release.tag_name) > 0
+    );
+    const supersedingRelease = laterReleases.length > 0
+      ? laterReleases.reduce((min, r) =>
+          compareVersions(r.tag_name, min.tag_name) < 0 ? r : min
+        )
+      : null;
+    const supersedingReleaseDate = supersedingRelease?.published_at ? supersedingRelease.published_at.split('T')[0] : '';
+
+    // Calculate support end date (12 months after superseding release)
     let supportEndDate = '';
     if (release.tag_name === latestVersion) {
       // Latest version is supported indefinitely
       supportEndDate = '';
-    } else if (releaseDate) {
-      supportEndDate = calculateSupportEndDate(releaseDate);
+    } else {
+      supportEndDate = calculateSupportEndDate(supersedingReleaseDate);
     }
-    
-    // Calculate deprecation date based on superseding release
-    const supersedingRelease = stableReleases.find(r =>
-      compareVersions(r.tag_name, release.tag_name) > 0
-    );
-    const supersedingReleaseDate = supersedingRelease?.published_at ? supersedingRelease.published_at.split('T')[0] : '';
+
+    // Calculate deprecation date (24 months after superseding release)
     const deprecationDate = calculateDeprecationDate(supersedingReleaseDate);
     
     // Check if version is sunsetted
