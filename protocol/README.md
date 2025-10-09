@@ -8,6 +8,26 @@ In addition, a list of error codes and corresponding support articles to help un
 This ensures that with every Ably error message that includes a help link for the error in the format `https://help.ably.io/error/{{ERROR_CODE}}`, the user is taken to a relevant FAQ if it exists, and if one does not exist, we record the number of times that error code has been visited so that the docs/support team can work on adding relevant documentation.
 See [the `ably/help` repository (internal)](https://github.com/ably/help), the "simple help redirect site".
 
+### Error Code Management
+
+**IMPORTANT**: Error codes and their definitions are now automatically managed by the [ably-os error documentation system](https://github.com/ably/ably-os/blob/main/docs/ERROR_COMMANDS_GUIDE.md). The files [errors.json](./errors.json) and [errorsHelp.json](./errorsHelp.json) are automatically updated from the ably-os system.
+
+**Do not manually edit these files directly.** Instead:
+
+1. **For error code updates**: Use the ably-os error commands to regenerate and update centralized error definitions:
+   ```bash
+   # From the ably-os repository:
+   ably-os errors aggregate-error-data    # Consolidate all error data
+   ably-os errors update-ably-common      # Update this repository's JSON files
+   ```
+
+2. **For new error code ranges or categories**: When adding new error code ranges or categories:
+   - Add the range definition to this README file (see Ranges section below)
+   - Also add the category to the ably-os error categorization system: [`src/prompts/errors/error-docs-context.md`](https://github.com/ably/ably-os/blob/main/src/prompts/errors/error-docs-context.md)
+   - This ensures consistency between the protocol documentation and the automated error documentation system
+
+3. **For comprehensive error documentation**: The ably-os system generates individual error pages at `https://ably.com/docs/platform/errors/codes/[CODE]-[slug]` with detailed explanations, causes, and solutions.
+
 If you need help understanding any error codes, or need technical support, please visit the [Ably support desk](https://www.ably.io/support).
 
 ### Ranges
