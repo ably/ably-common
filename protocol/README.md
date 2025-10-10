@@ -105,7 +105,8 @@ The following table adds more contextual detail for some agent identifiers, wher
 | `chat-react` | [ably-chat-js](https://github.com/ably/ably-chat-js) |
 | `chat-kotlin` | [ably-chat-kotlin](https://github.com/ably/ably-chat-kotlin) |
 | `chat-swift` | [ably-chat-swift](https://github.com/ably/ably-chat-swift) |
-| `chat-react-ui-components` | [ably-chat-react-ui-components](https://github.com/ably/ably-chat-react-ui-components)               |
+| `chat-react-ui-components` | [ably-chat-react-ui-components](https://github.com/ably/ably-chat-react-ui-components) (Deprecated, use `chat-react-ui-kit` |
+| `chat-react-ui-kit` | [ably-chat-react-ui-kit](https://github.com/ably/ably-chat-react-ui-kit)                                 |
 | `dart` | [ably-flutter](https://github.com/ably/ably-flutter) |
 | `darwin` | [ably-go](https://github.com/ably/ably-go) |
 | `dotnet-framework` | [ably-dotnet](https://github.com/ably/ably-dotnet) |
