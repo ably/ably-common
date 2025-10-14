@@ -93,7 +93,7 @@
 
   "42200": "unprocessable content",
   "42210": "content rejected (unspecified)",
-  "42211": "content rejected by before publish rule",
+  "42211": "content rejected by before publish integration",
   "42212": "content rejected by validation",
   "42213": "content rejected by moderation",
 
