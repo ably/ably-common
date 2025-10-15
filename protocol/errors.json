@@ -93,7 +93,7 @@
 
   "42200": "unprocessable content",
   "42210": "content rejected (unspecified)",
-  "42211": "content rejected by before publish rule",
+  "42211": "content rejected by before publish integration",
   "42212": "content rejected by validation",
   "42213": "content rejected by moderation",
 
@@ -103,6 +103,7 @@
   "42920": "rate limit exceeded (fatal)",
   "42921": "max per-connection publish rate limit exceeded (fatal); closing connection",
   "42922": "rate limit exceeded; too many requests",
+  "42923": "channel integration responded with rate limited error",
 
   "50000": "internal error",
   "50001": "internal channel error",
