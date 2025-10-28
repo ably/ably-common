@@ -93,7 +93,7 @@
 
   "42200": "unprocessable content",
   "42210": "content rejected (unspecified)",
-  "42211": "content rejected by before publish rule",
+  "42211": "content rejected by before publish integration",
   "42212": "content rejected by validation",
   "42213": "content rejected by moderation",
 
@@ -103,6 +103,7 @@
   "42920": "rate limit exceeded (fatal)",
   "42921": "max per-connection publish rate limit exceeded (fatal); closing connection",
   "42922": "rate limit exceeded; too many requests",
+  "42923": "channel integration responded with rate limited error",
 
   "50000": "internal error",
   "50001": "internal channel error",
@@ -233,6 +234,17 @@
   "102103": "unable to perform operation; room is released",
   "102104": "unable to perform operation; existing attempt failed",
   "102105": "unknown room lifecycle error",
+  "102106": "room was released before the operation could complete",
+  "102107": "a room already exists with different options",
+  "102108": "feature is not enabled in room options",
+  "102109": "listener has not been subscribed yet",
+  "102110": "channel serial is not defined when expected",
+  "102111": "channel options cannot be modified after the channel has been requested",
+  "102112": "cannot perform operation because the room is in an invalid state",
+  "102113": "failed to enforce sequential execution of the operation",
+  "102200": "react hook must be used within the appropriate provider",
+  "102201": "react component has been unmounted",
+  "102202": "failed to fetch presence data after maximum retries",
 
   "103000": "unable to publish push notification",
   "103001": "unable to publish push notification, retries exhausted",
