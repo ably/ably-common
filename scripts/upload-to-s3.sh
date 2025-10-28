@@ -2,8 +2,17 @@
 
 # Script to upload CSV files to S3
 # Reads configuration from environment variables or .env file
+# Usage: ./upload-to-s3.sh [--dry-run]
 
 set -e
+
+# Parse command line arguments
+DRY_RUN=false
+if [ "$1" = "--dry-run" ]; then
+    DRY_RUN=true
+    echo "🔍 Running in DRY-RUN mode (no actual upload will occur)"
+    echo ""
+fi
 
 # Load .env file if it exists
 if [ -f .env ]; then
@@ -11,8 +20,8 @@ if [ -f .env ]; then
 fi
 
 # Configuration from environment variables with defaults
-S3_BUCKET="${S3_BUCKET:-files.ably.io}"
-S3_PREFIX="${S3_PREFIX:-ably-common/data}"
+S3_BUCKET="${S3_BUCKET:-schemas.ably.com}"
+S3_PREFIX="${S3_PREFIX:-csv/agents}"
 AWS_PROFILE="${AWS_PROFILE:-default}"
 
 echo "📤 Uploading CSV files to S3..."
@@ -46,22 +55,41 @@ if [ ! -f "data/agents/agent-release-data.csv" ]; then
     echo "   Continuing with available files..."
 fi
 
-# Upload all CSV files from data folder recursively
-echo "Uploading CSV files from data/ folder..."
+# Upload all CSV files from data/agents folder
+echo "Uploading CSV files from data/agents/ folder..."
 echo "  Bucket: s3://${S3_BUCKET}"
 echo "  Prefix: ${S3_PREFIX}"
 echo ""
 
-# Use sync to upload all CSV files while maintaining folder structure
-aws s3 sync data/ "s3://${S3_BUCKET}/${S3_PREFIX}/" \
-    --exclude "*" \
-    --include "*.csv" \
-    --profile "$AWS_PROFILE"
+# Use sync to upload all CSV files to schemas.ably.com/csv/agents/
+if [ "$DRY_RUN" = true ]; then
+    echo "📋 Files that would be uploaded:"
+    find data/agents/ -name "*.csv" -type f | while read file; do
+        basename="$(basename "$file")"
+        echo "  - $basename → s3://${S3_BUCKET}/${S3_PREFIX}/$basename"
+    done
+    echo ""
+    echo "🔍 Dry-run complete. To actually upload, run without --dry-run"
+    echo ""
+    echo "Files will be publicly available at:"
+    echo "  - https://${S3_BUCKET}/${S3_PREFIX}/agents.csv"
+    echo "  - https://${S3_BUCKET}/${S3_PREFIX}/agent-release-data.csv"
+    echo ""
+    echo "⚠️  Note: Upload requires GitHub Actions or appropriate AWS IAM permissions"
+    echo "   The schemas.ably.com bucket uses the ably-sdk-schemas-ably-common role"
+else
+    aws s3 sync data/agents/ "s3://${S3_BUCKET}/${S3_PREFIX}/" \
+        --exclude "*" \
+        --include "*.csv" \
+        --profile "$AWS_PROFILE"
 
-echo ""
-echo "✅ Files uploaded successfully!"
-echo ""
-echo "📋 Uploaded files:"
-aws s3 ls "s3://${S3_BUCKET}/${S3_PREFIX}/" --recursive --profile "$AWS_PROFILE" | grep "\.csv$"
-echo ""
-echo "Now Snowflake is ready to import the data from S3."
+    echo ""
+    echo "✅ Files uploaded successfully!"
+    echo ""
+    echo "📋 Uploaded files:"
+    aws s3 ls "s3://${S3_BUCKET}/${S3_PREFIX}/" --recursive --profile "$AWS_PROFILE" | grep "\.csv$"
+    echo ""
+    echo "Files publicly available at:"
+    echo "  - https://${S3_BUCKET}/${S3_PREFIX}/agents.csv"
+    echo "  - https://${S3_BUCKET}/${S3_PREFIX}/agent-release-data.csv"
+fi

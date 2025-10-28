@@ -70,6 +70,75 @@ A list of agents announced by Ably client libraries can be found in [agents.json
 
 See [RSC7d](https://docs.ably.com/client-lib-development-guide/features/#RSC7d) for more information on the `Agent` library identifier and the `Ably-Agent` HTTP header.
 
+### Agent CSV Data
+
+Agent metadata and release information is automatically exported to CSV files and published to S3 for analytics and reporting purposes. These files are publicly accessible at:
+
+- **Agent Metadata**: [https://schemas.ably.com/csv/agents/agents.csv](https://schemas.ably.com/csv/agents/agents.csv)
+  - Contains all agent metadata from `agents.json` (identifier, type, versioned, source, product, name)
+  
+- **Release Data**: [https://schemas.ably.com/csv/agents/agent-release-data.csv](https://schemas.ably.com/csv/agents/agent-release-data.csv)
+  - Contains GitHub release information for all SDK and wrapper agents
+  - Includes version, release dates, support/deprecation dates, and AI-generated release summaries
+
+The CSV files are automatically regenerated and uploaded:
+- Daily at 2 AM UTC (via scheduled workflow)
+- When changes are made to `protocol/agents.json` or the export scripts
+- Manually via the [Sync Data to S3 workflow](../.github/workflows/sync-to-s3.yml)
+
+#### Generating CSV Files Locally
+
+To generate the CSV files locally for testing:
+
+```bash
+# Generate agent metadata CSV
+npm run export:agents
+
+# Generate release data (requires GITHUB_TOKEN and OPENAI_API_KEY in .env)
+npm run fetch:agent-releases
+```
+
+The generated files will be created in the `data/agents/` directory (which is git-ignored).
+
+#### Testing S3 Upload Locally
+
+To test the upload configuration without actually uploading to S3:
+
+```bash
+# Dry-run mode (no AWS credentials required)
+npm run upload:s3 -- --dry-run
+```
+
+**Note**: Actual uploads to S3 require AWS credentials. The production `schemas.ably.com` bucket uses the `ably-sdk-schemas-ably-common` IAM role, which is only available in GitHub Actions. Local users typically won't have direct access to upload to the production bucket.
+
+##### AWS Credentials for Local Upload
+
+If you need to upload to S3 locally (e.g., to a test bucket), you must have AWS CLI installed and configured:
+
+```bash
+# Install AWS CLI if not already installed
+brew install awscli  # macOS
+# or
+apt-get install awscli  # Ubuntu/Debian
+
+# Configure AWS credentials (creates a 'default' profile)
+aws configure
+```
+
+You can also specify a different AWS profile by setting the `AWS_PROFILE` environment variable in your `.env` file:
+
+```bash
+AWS_PROFILE=your-profile-name
+```
+
+For uploading to a different bucket (for testing), set these in your `.env`:
+
+```bash
+S3_BUCKET=your-test-bucket
+S3_PREFIX=csv/agents
+AWS_PROFILE=your-profile-name
+```
+
 ### Adding New Agents
 
 When a new agent is added to a client library, add a corresponding entry to [agents.json](agents.json)
