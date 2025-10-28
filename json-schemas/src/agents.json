@@ -34,7 +34,13 @@
           "product": {
             "type": "string",
             "description": "The product category (required for SDK and wrapper types)",
-            "enum": ["pub-sub", "asset-tracking", "platform", "livesync", "chat"]
+            "enum": [
+              "pub-sub",
+              "asset-tracking",
+              "platform",
+              "livesync",
+              "chat"
+            ]
           },
           "name": {
             "type": "string",

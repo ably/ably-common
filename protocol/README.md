@@ -82,6 +82,7 @@ Agent metadata and release information is automatically exported to CSV files an
   - Includes version, release dates, support/deprecation dates, and AI-generated release summaries
 
 The CSV files are automatically regenerated and uploaded:
+
 - Daily at 2 AM UTC (via scheduled workflow)
 - When changes are made to `protocol/agents.json` or the export scripts
 - Manually via the [Sync Data to S3 workflow](../.github/workflows/sync-to-s3.yml)

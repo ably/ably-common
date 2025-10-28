@@ -634,12 +634,18 @@
     {
       "identifier": "chat-kotlin-android",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-chat-kotlin",
+      "product": "chat",
+      "name": "Chat Kotlin Android"
     },
     {
       "identifier": "chat-kotlin-jvm",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-chat-kotlin",
+      "product": "chat",
+      "name": "Chat Kotlin JVM"
     },
     {
       "identifier": "chat-swift",
@@ -653,14 +659,17 @@
       "identifier": "chat-react-ui-components",
       "versioned": true,
       "type": "wrapper",
-      "source": "https://github.com/ably/ably-chat-react-ui-components",
+      "source": "https://github.com/ably/ably-chat-react-ui-kit",
       "product": "chat",
       "name": "Chat React UI Components"
     },
     {
       "identifier": "chat-react-ui-kit",
       "versioned": true,
-      "type": "wrapper"
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-chat-react-ui-kit",
+      "product": "chat",
+      "name": "Chat React UI Kit"
     },
     {
       "identifier": "ably-cli",
