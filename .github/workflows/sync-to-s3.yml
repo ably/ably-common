@@ -65,6 +65,7 @@ jobs:
           aws s3 sync data/agents/ s3://schemas.ably.com/csv/agents/ \
             --exclude "*" \
             --include "*.csv" \
+            --acl public-read \
             --delete
 
           echo "✅ Upload complete!"

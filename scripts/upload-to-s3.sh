@@ -81,6 +81,7 @@ else
     aws s3 sync data/agents/ "s3://${S3_BUCKET}/${S3_PREFIX}/" \
         --exclude "*" \
         --include "*.csv" \
+        --acl public-read \
         --profile "$AWS_PROFILE"
 
     echo ""
