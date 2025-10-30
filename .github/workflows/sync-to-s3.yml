@@ -8,6 +8,7 @@ on:
       - "protocol/agents.json"
       - "scripts/export-agents-csv.js"
       - "scripts/fetch-agent-releases.js"
+      - ".github/workflows/sync-to-s3.yml"
   schedule:
     # Run daily at 2 AM UTC
     - cron: "0 2 * * *"
