@@ -8,7 +8,12 @@
     "format:data": "prettier --write '**/*.{json,yml}'",
     "format:data:check": "prettier --check '**/*.{json,yml}'",
     "format:documentation:check": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
-    "test": "jest"
+    "test": "jest",
+    "validate:agents": "node scripts/validate-json-schema.js protocol/agents.json",
+    "validate:json-schema": "node scripts/validate-json-schema.js",
+    "fetch:agent-releases": "node scripts/fetch-agent-releases.js",
+    "export:agents": "node scripts/export-agents-csv.js",
+    "upload:s3": "./scripts/upload-to-s3.sh"
   },
   "repository": "ably/ably-common",
   "license": "Apache-2.0",
@@ -21,6 +26,7 @@
     "jsonschema": "^1.4.0"
   },
   "devDependencies": {
+    "dotenv": "^17.2.1",
     "eslint": "^8.11.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-jest": "^26.1.3",

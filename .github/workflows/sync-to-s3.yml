@@ -1,0 +1,74 @@
+name: Sync Data to S3
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "protocol/agents.json"
+      - "scripts/export-agents-csv.js"
+      - "scripts/fetch-agent-releases.js"
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: "0 2 * * *"
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
+jobs:
+  generate-and-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate agent CSV
+        run: npm run export:agents
+
+      - name: Generate release data
+        run: |
+          # Ensure we have the required tokens
+          if [ -z "${{ secrets.GITHUB_TOKEN }}" ] || [ -z "${{ secrets.OPENAI_API_KEY }}" ]; then
+            echo "❌ Error: Missing required tokens (GITHUB_TOKEN or OPENAI_API_KEY)"
+            exit 1
+          fi
+
+          echo "Generating release data..."
+          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+          OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
+          npm run fetch:agent-releases
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: eu-west-2
+          role-to-assume: arn:aws:iam::${{ secrets.ABLY_AWS_ACCOUNT_ID_SDK}}:role/ably-sdk-schemas-ably-common
+          role-session-name: "${{ github.run_id }}-${{ github.run_number }}"
+
+      - name: Upload generated files to S3
+        run: |
+          echo "📤 Uploading generated files to S3..."
+
+          # Sync all CSV files to schemas.ably.com/csv/agents/
+          aws s3 sync data/agents/ s3://schemas.ably.com/csv/agents/ \
+            --exclude "*" \
+            --include "*.csv" \
+            --acl public-read \
+            --delete
+
+          echo "✅ Upload complete!"
+          echo "Files available at:"
+          echo "  - https://schemas.ably.com/csv/agents/agents.csv"
+          echo "  - https://schemas.ably.com/csv/agents/agent-release-data.csv"

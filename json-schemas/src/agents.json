@@ -3,6 +3,10 @@
   "title": "Ably Agents Definition",
   "type": "object",
   "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "The JSON Schema reference"
+    },
     "agents": {
       "type": "array",
       "description": "An array containing all Ably agent identifiers and their properties.",
@@ -10,7 +14,7 @@
         "type": "object",
         "properties": {
           "identifier": {
-            "description": "The identifier (product name) as it appears in the Ably-Agent string. See RSC7d in the Ably Features spec for more information.",
+            "description": "The identifier (product name) as it appears in the Ably-Agent string. See https://sdk.ably.com/builds/ably/specification/main/features/#RSC7d in the Ably Features spec for more information.",
             "type": "string"
           },
           "versioned": {
@@ -21,9 +25,91 @@
             "type": "string",
             "description": "The software layer where the identifier is located.",
             "enum": ["os", "sdk", "wrapper", "runtime"]
+          },
+          "source": {
+            "type": "string",
+            "description": "The source code repository URL (required for SDK and wrapper types) where version and release information can be found.",
+            "format": "uri"
+          },
+          "product": {
+            "type": "string",
+            "description": "The product category (required for SDK and wrapper types)",
+            "enum": [
+              "pub-sub",
+              "asset-tracking",
+              "platform",
+              "livesync",
+              "chat"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "description": "The human-readable name of the agent"
+          },
+          "versions": {
+            "type": "array",
+            "description": "Version information for SDKs and wrappers (only allowed for SDK and wrapper types)",
+            "items": {
+              "type": "object",
+              "properties": {
+                "sunsetted": {
+                  "type": "array",
+                  "description": "List of versions that are explicitly sunsetted (will no longer work after the sunsetDate)",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "upToVersion": {
+                        "type": "string",
+                        "description": "All versions up to and including this version are sunsetted"
+                      },
+                      "sunsetDate": {
+                        "type": "string",
+                        "description": "The date when these versions will stop working",
+                        "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                      },
+                      "reason": {
+                        "type": "string",
+                        "description": "The reason why this version is being sunsetted"
+                      }
+                    },
+                    "required": ["upToVersion", "sunsetDate", "reason"]
+                  }
+                }
+              }
+            }
           }
         },
-        "required": ["identifier", "versioned", "type"]
+        "required": ["identifier", "versioned", "type", "name"],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "enum": ["sdk", "wrapper"]
+                }
+              }
+            },
+            "then": {
+              "required": ["source", "product"]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "enum": ["os", "runtime"]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "versions": false,
+                "source": false,
+                "product": false
+              }
+            }
+          }
+        ]
       }
     },
     "ablyLibMappings": {

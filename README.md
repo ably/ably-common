@@ -21,6 +21,7 @@ The following external locations are updated by publishing processes within this
 
 - [JSON Schemas](json-schemas/) at the `schemas.ably.com` https endpoint
 - [Common Go Packages](protocol/) to the [`ably/ably-common-go` repository](https://github.com/ably/ably-common-go)
+- [Agent CSV Data](protocol/README.md#agent-csv-data) at `https://schemas.ably.com/csv/agents/`
 
 While there is a `package.json` file at the root of this repository, we do not publish any npm packages from here.
 We just use Node.js to run tests, lints and to publish elsewhere.

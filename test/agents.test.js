@@ -1,18 +1,41 @@
+/* eslint-disable global-require */
+
 const { Validator } = require('jsonschema');
-
-const schema = require('../json-schemas/src/agents.json');
-const agents = require('../protocol/agents.json');
-const versions = require('../json-schemas/versions.json');
-
-const jsonschema = new Validator();
-jsonschema.addSchema(
-  schema,
-  `https://schemas.ably.com/json/agents-${versions.agents}.json`,
-);
+const path = require('path');
+const fs = require('fs');
 
 describe('agents.json', () => {
-  it('matches the jsonschema', () => {
-    const { errors } = jsonschema.validate(agents, schema);
-    expect(errors.length).toBe(0);
+  it('has a $schema attribute', () => {
+    const agents = require('../protocol/agents.json');
+    expect(agents.$schema).toBeDefined();
+    expect(typeof agents.$schema).toBe('string');
+  });
+
+  it('validates against its declared schema', () => {
+    const agents = require('../protocol/agents.json');
+
+    // Ensure $schema is present
+    if (!agents.$schema) {
+      throw new Error('agents.json must have a $schema property');
+    }
+
+    // Load the schema from the path specified in $schema
+    const schemaPath = path.resolve(
+      path.dirname(require.resolve('../protocol/agents.json')),
+      agents.$schema,
+    );
+
+    if (!fs.existsSync(schemaPath)) {
+      throw new Error(`Schema file not found at: ${schemaPath}`);
+    }
+
+    const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'));
+
+    // Validate
+    const validator = new Validator();
+    const result = validator.validate(agents, schema);
+
+    expect(result.errors).toEqual([]);
+    expect(result.valid).toBe(true);
   });
 });
