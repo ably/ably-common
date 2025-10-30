@@ -38,16 +38,17 @@ jobs:
         run: npm run export:agents
 
       - name: Generate release data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           # Ensure we have the required tokens
-          if [ -z "${{ secrets.GITHUB_TOKEN }}" ] || [ -z "${{ secrets.OPENAI_API_KEY }}" ]; then
+          if [ -z "$GITHUB_TOKEN" ] || [ -z "$OPENAI_API_KEY" ]; then
             echo "❌ Error: Missing required tokens (GITHUB_TOKEN or OPENAI_API_KEY)"
             exit 1
           fi
 
           echo "Generating release data..."
-          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
-          OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
           npm run fetch:agent-releases
 
       - name: Configure AWS Credentials
