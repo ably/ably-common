@@ -78,7 +78,7 @@
       "type": "sdk",
       "source": "https://github.com/ably/ably-cocoa",
       "product": "pub-sub",
-      "name": "Pub/Sub Cocoa (iOS, macOS, tvOS)",
+      "name": "Pub/Sub Cocoa (iOS, macOS, tvOS, watchOS)",
       "versions": [
         {
           "sunsetted": [
@@ -678,6 +678,14 @@
       "source": "https://github.com/ably/ably-cli",
       "product": "platform",
       "name": "Ably CLI"
+    },
+    {
+      "identifier": "ably-swift",
+      "versioned": true,
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-swift",
+      "product": "pub-sub",
+      "name": "Pub/Sub Swift (iOS, macOS, tvOS, watchOS)"
     }
   ],
   "ablyLibMappings": {
