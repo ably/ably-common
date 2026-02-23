@@ -686,6 +686,14 @@
       "source": "https://github.com/ably/ably-swift",
       "product": "pub-sub",
       "name": "Pub/Sub Swift (iOS, macOS, tvOS, watchOS)"
+    },
+    {
+      "identifier": "liveobjects-swift",
+      "versioned": true,
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-liveobjects-swift-plugin",
+      "product": "liveobjects",
+      "name": "LiveObjects Swift (iOS, macOS, tvOS)"
     }
   ],
   "ablyLibMappings": {

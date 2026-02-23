@@ -39,7 +39,8 @@
               "asset-tracking",
               "platform",
               "livesync",
-              "chat"
+              "chat",
+              "liveobjects"
             ]
           },
           "name": {
