@@ -199,6 +199,7 @@
   "91003": "unable to enter presence channel (maximum member limit exceeded)",
   "91004": "unable to automatically re-enter presence channel",
   "91005": "presence state is out of sync",
+  "91006": "unable to enter presence channel (maximum presence set data size exceeded)",
   "91100": "member implicitly left presence channel (connection closed)",
 
   "92000": "invalid object message",
