@@ -260,5 +260,6 @@
   "104002": "cancel listener error",
   "104003": "turn lifecycle event publish failed",
   "104004": "transport is closed",
-  "104005": "transport send failed"
+  "104005": "transport send failed",
+  "104006": "channel continuity lost"
 }
