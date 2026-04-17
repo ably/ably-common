@@ -254,5 +254,14 @@
   "103000": "unable to publish push notification",
   "103001": "unable to publish push notification, retries exhausted",
   "103002": "unable to publish push notification, no recipient for direct publish",
-  "103003": "unable to publish push notification, cannot handle body"
+  "103003": "unable to publish push notification, cannot handle body",
+
+  "104000": "encoder recovery failed after flush",
+  "104001": "transport subscription callback error",
+  "104002": "cancel listener error",
+  "104003": "turn lifecycle event publish failed",
+  "104004": "transport is closed",
+  "104005": "transport send failed",
+  "104006": "channel continuity lost",
+  "104007": "channel is not ready"
 }
