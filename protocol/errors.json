@@ -262,5 +262,6 @@
   "104004": "transport is closed",
   "104005": "transport send failed",
   "104006": "channel continuity lost",
-  "104007": "channel is not ready"
+  "104007": "channel is not ready",
+  "104008": "source event stream failed during piping"
 }
