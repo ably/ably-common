@@ -73,6 +73,11 @@
       "type": "string",
       "description": "The ID of the client that attempted the connection."
     },
+    "clientType": {
+      "type": "string",
+      "description": "Connection-level client type, one of 'user' or 'agent'. Set by the client via the clientType transport param at connection creation time, and immutable for the connection's lifetime.",
+      "enum": ["user", "agent"]
+    },
     "channels": {
       "type": "array",
       "description": "The list of channels referenced in the connection request. This is only relevant where channels are supported as part of the connection request, such as with SSE."
