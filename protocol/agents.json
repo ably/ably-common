@@ -672,6 +672,14 @@
       "name": "Chat React UI Kit"
     },
     {
+      "identifier": "ai-transport-js",
+      "versioned": true,
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-ai-transport-js",
+      "product": "ai-transport",
+      "name": "AI Transport Javascript"
+    },
+    {
       "identifier": "ably-cli",
       "versioned": true,
       "type": "wrapper",
