@@ -3,9 +3,13 @@
 
 on: workflow_dispatch
 
+permissions: {}
+
 jobs:
   publish-go:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v2
         with:

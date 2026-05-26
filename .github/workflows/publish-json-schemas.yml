@@ -3,11 +3,14 @@
 
 on: workflow_dispatch
 
+permissions: {}
+
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
+      contents: read
+      id-token: write # Required for OIDC assume-role into AWS
     steps:
       - uses: actions/checkout@v2
         with:

@@ -14,14 +14,14 @@ on:
     - cron: "0 2 * * *"
   workflow_dispatch: # Allow manual trigger
 
-permissions:
-  id-token: write # Required for OIDC
-  contents: read
+permissions: {}
 
 jobs:
   generate-and-sync:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read
+      id-token: write # Required for OIDC assume-role into AWS
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
