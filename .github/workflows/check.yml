@@ -12,7 +12,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
         with:
           persist-credentials: false
 
@@ -20,7 +20,7 @@ jobs:
         id: tool-versions
         run: echo "::set-output name=nodejs::$(sed -nr 's/nodejs ([0-9]+)/\1/p' .tool-versions)"
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@7c12f8017d5436eb855f1ed4399f037a36fbd9e8 # v2
         with:
           node-version: ${{ steps.tool-versions.outputs.nodejs }}
 
@@ -38,7 +38,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
         with:
           persist-credentials: false
 
@@ -47,7 +47,7 @@ jobs:
         run: echo "::set-output name=golang::$(sed -nr 's/golang ([0-9]+)/\1/p' .tool-versions)"
 
       - name: Setup Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@bfdd3570ce990073878bf10f6b2d79082de49492 # v2
         with:
           go-version: ${{ steps.tool-versions.outputs.golang }}
 

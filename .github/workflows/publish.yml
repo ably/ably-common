@@ -11,7 +11,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
         with:
           persist-credentials: false
 
@@ -20,7 +20,7 @@ jobs:
         run: echo "::set-output name=golang::$(sed -nr 's/golang ([0-9]+)/\1/p' .tool-versions)"
 
       - name: Setup Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@bfdd3570ce990073878bf10f6b2d79082de49492 # v2
         with:
           go-version: ${{ steps.tool-versions.outputs.golang }}
 
