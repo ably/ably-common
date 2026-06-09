@@ -266,5 +266,6 @@
   "104007": "channel is not ready",
   "104008": "source event stream failed during piping",
   "104009": "run start deadline exceeded",
-  "104010": "user prompt not found within lookup deadline"
+  "104010": "user prompt not found within lookup deadline",
+  "104011": "channel history fetch failed"
 }
