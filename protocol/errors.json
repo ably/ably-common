@@ -100,13 +100,22 @@
   "42212": "content rejected by validation",
   "42213": "content rejected by moderation",
 
-  "42910": "rate limit exceeded (nonfatal): request rejected (unspecified)",
-  "42911": "max per-connection publish rate limit exceeded (nonfatal): unable to publish message",
+  "42910": "System rate limit exceeded",
+  "42911": "Per-connection publish rate exceeded",
   "42912": "there is a channel iteration call already in progress; only 1 active call is permitted to execute at any one time",
+  "42913": "Per-channel publish rate exceeded",
+  "42914": "Per-channel publish bandwidth exceeded",
+  "42915": "Per-connection outbound message rate exceeded",
+  "42916": "Per-connection outbound resume rate exceeded",
+  "42917": "Account-wide message publish rate exceeded",
+  "42918": "Account-wide API request rate exceeded",
   "42920": "rate limit exceeded (fatal)",
-  "42921": "max per-connection publish rate limit exceeded (fatal); closing connection",
-  "42922": "rate limit exceeded; too many requests",
-  "42923": "channel integration responded with rate limited error",
+  "42921": "Connection terminated (per-connection publish rate exceeded)",
+  "42922": "Too many requests",
+  "42923": "Integration target responded with rate limit error",
+  "42924": "Per-connection protocol message rate exceeded",
+  "42925": "Account-wide integration invocation rate exceeded",
+  "42926": "Account-wide push notification rate exceeded",
 
   "50000": "internal error",
   "50001": "internal channel error",
@@ -114,6 +123,7 @@
   "50003": "timeout error",
   "50004": "Request failed due to overloaded instance",
   "50005": "Service unavailable (service temporarily in lockdown)",
+  "50006": "Connection superseded by a newer connection",
 
   "50010": "Ably's edge proxy service has encountered an unknown internal error whilst processing the request",
   "50210": "Ably's edge proxy service received an invalid (bad gateway) response from the Ably platform",
@@ -203,6 +213,7 @@
   "91004": "unable to automatically re-enter presence channel",
   "91005": "presence state is out of sync",
   "91006": "unable to enter presence channel (maximum presence set data size exceeded)",
+  "91007": "Unexpected loss of presence membership",
   "91100": "member implicitly left presence channel (connection closed)",
 
   "92000": "invalid object message",
@@ -253,8 +264,12 @@
   "102201": "react component has been unmounted",
   "102202": "failed to fetch presence data after maximum retries",
 
-  "103000": "unable to publish push notification",
-  "103001": "unable to publish push notification, retries exhausted",
-  "103002": "unable to publish push notification, no recipient for direct publish",
-  "103003": "unable to publish push notification, cannot handle body"
+  "103000": "Push notification internal error",
+  "103001": "Push notification retry limit reached",
+  "103002": "Push notification recipient missing",
+  "103003": "Push notification body invalid",
+  "103004": "Push notification rejected by provider",
+  "103005": "Push device token invalid",
+  "103006": "Push transport not configured",
+  "103007": "Push notification provider unreachable"
 }
