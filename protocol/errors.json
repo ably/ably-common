@@ -204,6 +204,7 @@
   "90006": "unable to recover channel (unbounded request)",
   "90007": "channel operation failed (no response from server)",
   "90008": "unable to get channel history (attach point not found)",
+  "90009": "messages not delivered to subscriber (channel attached without the subscribe mode)",
   "90010": "maximum number of channels per connection/request exceeded",
   "90021": "exceeded maximum permitted account-wide rate of creating new channels",
   "91000": "unable to enter presence channel (no clientId)",
@@ -214,6 +215,7 @@
   "91005": "presence state is out of sync",
   "91006": "unable to enter presence channel (maximum presence set data size exceeded)",
   "91007": "Unexpected loss of presence membership",
+  "91008": "unable to retrieve presence members (channel attached without the presence_subscribe mode)",
   "91100": "member implicitly left presence channel (connection closed)",
 
   "92000": "invalid object message",
