@@ -6,7 +6,7 @@
 
 The per-code files live in [`codes/`](./codes): one Markdown file per error code, named `<CODE>.md` (e.g. `40142.md`). Each file has YAML frontmatter (`code`, `identifier`, `title`, `summary`) and an optional Markdown body that provides the detail-page content beneath the title and summary. Title, summary, and body conventions are all covered in `guidelines.md`.
 
-The set of files in `codes/` **is the registry** — the source of truth for which codes are valid and what they mean. `protocol/errors.json` is the legacy `code → title` map this registry supersedes; it is being retired. While it still exists, the validator (`scripts/`) checks that every `errors.json` code has a matching `codes/<code>.md`, so keep the two aligned when adding a code.
+The set of files in `codes/` **is the registry** — the source of truth for which codes are valid and what they mean. `protocol/errors.json` is generated from it (a machine-readable map of each code to its `identifier`, `title`, and `summary`); never edit it by hand — run `npm run generate:errors`, which CI enforces via a drift check.
 
 ## Conventions at a glance
 

@@ -2,7 +2,7 @@
 
 ## Error Codes
 
-Ably's [client library SDKs](https://www.ably.io/download), and the [core realtime platform](https://www.ably.io/platform), use common error codes. These error codes are stored and maintained in the shared public JSON file [errors.json](./errors.json).
+Ably's [client library SDKs](https://www.ably.io/download), and the [core realtime platform](https://www.ably.io/platform), use common error codes. The canonical registry of these codes is maintained as one Markdown file per code in [`errors/codes`](../errors); the machine-readable [errors.json](./errors.json) in this directory — a map of each code to its `identifier`, `title` and `summary` — is generated from that registry (via `npm run generate:errors`) and must not be edited by hand.
 
 In addition, a list of error codes and corresponding support articles to help understand how to resolve common problems relating to these error codes can be seen in [errorsHelp.json](./errorsHelp.json).
 This ensures that with every Ably error message that includes a help link for the error in the format `https://help.ably.io/error/{{ERROR_CODE}}`, the user is taken to a relevant FAQ if it exists, and if one does not exist, we record the number of times that error code has been visited so that the docs/support team can work on adding relevant documentation.

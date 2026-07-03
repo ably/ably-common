@@ -20,9 +20,9 @@ summary: The channel name in the request was not valid, for example because it w
 - **`title`** — a short phrase identifying the error at a glance (aim for 3–7 words), e.g. `Invalid channel name`.
 - **`summary`** — one or two plain-language sentences (roughly 15–40 words) covering what happened and, when known, why.
 
-You can add an optional Markdown body beneath the frontmatter for detail-page content (what to do, why it happens). While `protocol/errors.json` still exists, add the same code there too — the validator requires every `errors.json` code to have a registry file.
+You can add an optional Markdown body beneath the frontmatter for detail-page content (what to do, why it happens). Don't touch `protocol/errors.json` — it is generated from these files; run `npm run generate:errors` to regenerate it after adding or editing a code.
 
-See [`guidelines.md`](./guidelines.md) for the full rules on title, summary, body, tone, and terminology, and run `npm run validate:errors` to check your entry (CI runs it automatically).
+See [`guidelines.md`](./guidelines.md) for the full rules on title, summary, body, tone, and terminology, and run `npm run validate:errors` to check your entry (CI runs both, and fails if `errors.json` is out of date).
 
 ## What's in this directory
 
@@ -31,4 +31,4 @@ See [`guidelines.md`](./guidelines.md) for the full rules on title, summary, bod
 - [`CLAUDE.md`](./CLAUDE.md) — guidance for agents adding, editing, or reviewing entries.
 - [`scripts/`](./scripts) — the validator run in CI.
 
-`protocol/errors.json` is the legacy `code → title` map that this registry supersedes; it is being retired once every consumer has moved off it. Until then, the validator checks that the registry and `errors.json` stay aligned.
+`protocol/errors.json` is generated from this registry — a machine-readable map of each code to its `identifier`, `title`, and `summary`. It must not be edited by hand; run `npm run generate:errors` to regenerate it, and CI fails if the committed file is out of date.
