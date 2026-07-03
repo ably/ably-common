@@ -72,6 +72,8 @@
   "40162": "operation not permitted with a token, requires basic auth",
   "40163": "operation not permitted, key not marked as permitting revocable tokens",
   "40164": "channel state disabled",
+  "40165": "channel mode not requested when attaching",
+  "40166": "unidentified client cannot modify own messages",
   "40170": "error from client token callback",
   "40171": "no means provided to renew auth token",
   "40172": "operation only permitted with token auth",
@@ -273,5 +275,6 @@
   "103004": "Push notification rejected by provider",
   "103005": "Push device token invalid",
   "103006": "Push transport not configured",
-  "103007": "Push notification provider unreachable"
+  "103007": "Push notification provider unreachable",
+  "103008": "Push transport credentials invalid"
 }
