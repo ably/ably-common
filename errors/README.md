@@ -4,17 +4,19 @@ This directory is the canonical registry of Ably's error codes and their custome
 
 ## Registering a new error code
 
-To register a new code, create a Markdown file at `codes/<code>.md` (the filename must be the numeric code, e.g. `codes/40010.md`). It must start with YAML frontmatter containing three required fields:
+To register a new code, create a Markdown file at `codes/<code>.md` (the filename must be the numeric code, e.g. `codes/40010.md`). It must start with YAML frontmatter containing four required fields:
 
 ```markdown
 ---
 code: 40010
+identifier: invalid_channel_name
 title: Invalid channel name
 summary: The channel name in the request was not valid, for example because it was empty, contained characters that are not permitted, or used an unknown square-bracketed prefix.
 ---
 ```
 
 - **`code`** — the numeric error code. Must match the filename.
+- **`identifier`** — a stable, unique `snake_case` name for the code, e.g. `invalid_channel_name`.
 - **`title`** — a short phrase identifying the error at a glance (aim for 3–7 words), e.g. `Invalid channel name`.
 - **`summary`** — one or two plain-language sentences (roughly 15–40 words) covering what happened and, when known, why.
 

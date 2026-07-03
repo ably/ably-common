@@ -4,7 +4,7 @@
 
 ## What this directory holds
 
-The per-code files live in [`codes/`](./codes): one Markdown file per error code, named `<CODE>.md` (e.g. `40142.md`). Each file has YAML frontmatter (`code`, `title`, `summary`) and an optional Markdown body that provides the detail-page content beneath the title and summary. Title, summary, and body conventions are all covered in `guidelines.md`.
+The per-code files live in [`codes/`](./codes): one Markdown file per error code, named `<CODE>.md` (e.g. `40142.md`). Each file has YAML frontmatter (`code`, `identifier`, `title`, `summary`) and an optional Markdown body that provides the detail-page content beneath the title and summary. Title, summary, and body conventions are all covered in `guidelines.md`.
 
 The set of files in `codes/` **is the registry** — the source of truth for which codes are valid and what they mean. `protocol/errors.json` is the legacy `code → title` map this registry supersedes; it is being retired. While it still exists, the validator (`scripts/`) checks that every `errors.json` code has a matching `codes/<code>.md`, so keep the two aligned when adding a code.
 
@@ -13,6 +13,7 @@ The set of files in `codes/` **is the registry** — the source of truth for whi
 These are reminders, not substitutes for `guidelines.md`.
 
 - **Filename = code.** `40142.md` must have `code: 40142` in frontmatter.
+- **Identifier** — a stable `snake_case` name (`^[a-z][a-z0-9_]*$`), unique across the registry, the canonical basis for each SDK's generated constant. Name the cause not the consequence; concise but not cryptic; UK spelling. A frozen contract — don't churn it, and don't derive it mechanically from the title.
 - **Title** — 3–7 words (cap 10), short phrase or concise subject–verb clause (not necessarily a noun phrase), sentence case, no trailing punctuation, no error-code restatement. Specific enough that a reader can distinguish it from neighbouring errors at a glance.
 - **Summary** — 15–40 words, one or two sentences, plain language. Describe what happened, then (when known) why it might have happened. Don't prescribe remediation — no "Check…", "Verify…", "Retry…". Generic phrasing — the summary represents *every* occurrence of the code, so avoid deictic ("this token", "your channel"); prefer "the token", "the channel". No Markdown formatting, stack traces, or internal identifiers.
 - **Body** (optional) — detail-page content beneath the title and summary. Don't restate either. Order: *What you should do* (lead with the triage — including when the answer is "nothing", for transient/self-healing errors) → *Why it happens* (causes in the reader's terms, each with its fix) → *What you'll see* (message string(s) and status, last, as a findability aid). Link out to feature docs for how-to; no inline code samples. No "related errors" section — disambiguate inline only when codes are genuinely confusable. Describe generically, instruct in second person.

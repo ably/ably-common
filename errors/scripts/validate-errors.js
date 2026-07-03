@@ -10,14 +10,15 @@
  *
  * Two tiers:
  *   - Errors fail CI (exit 1): unparseable frontmatter, missing/blank `code`,
- *     `title`, or `summary`, filename/`code` mismatch, non-integer `code`, and
- *     any `errors.json` code with no `codes/<code>.md` (completeness).
+ *     `identifier`, `title`, or `summary`, filename/`code` mismatch, non-integer
+ *     `code`, a malformed or duplicate `identifier`, and any `errors.json` code
+ *     with no `codes/<code>.md` (completeness).
  *   - Warnings do not fail CI: a `codes/<code>.md` whose code is absent from
  *     `errors.json` (curated ahead of the map, or the map is being retired),
  *     and soft length checks on `title`/`summary` per guidelines.md.
  *
- * A valid registry entry requires `code`, `title`, and `summary` (per
- * guidelines.md); a Markdown body is optional.
+ * A valid registry entry requires `code`, `identifier`, `title`, and `summary`
+ * (per guidelines.md); a Markdown body is optional.
  */
 
 const fs = require('fs');
@@ -29,6 +30,7 @@ const ERRORS_JSON = path.resolve(ERRORS_DIR, '..', 'protocol', 'errors.json');
 
 const errors = [];
 const warnings = [];
+const identifiers = new Map();
 
 const fail = (file, message) => errors.push(`${file}: ${message}`);
 const warn = (file, message) => warnings.push(`${file}: ${message}`);
@@ -102,6 +104,18 @@ function validateFile(fileName) {
     fail(fileName, `\`code\` must be an integer, got "${fields.code}"`);
   } else if (fields.code !== codeFromName) {
     fail(fileName, `\`code\` (${fields.code}) does not match filename`);
+  }
+
+  // identifier — required; a stable snake_case name, unique across the registry,
+  // used as the canonical basis for the constant each SDK generates.
+  if (!fields.identifier || fields.identifier.trim() === '') {
+    fail(fileName, 'missing required `identifier` frontmatter field');
+  } else if (!/^[a-z][a-z0-9_]*$/.test(fields.identifier)) {
+    fail(fileName, `\`identifier\` must match ^[a-z][a-z0-9_]*$, got "${fields.identifier}"`);
+  } else if (identifiers.has(fields.identifier)) {
+    fail(fileName, `\`identifier\` "${fields.identifier}" is already used by ${identifiers.get(fields.identifier)}`);
+  } else {
+    identifiers.set(fields.identifier, fileName);
   }
 
   // title

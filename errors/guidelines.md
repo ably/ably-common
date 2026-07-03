@@ -17,6 +17,7 @@ Each file is a Markdown document with YAML frontmatter:
 ```markdown
 ---
 code: 40142
+identifier: token_expired
 title: Token expired
 summary: The client's connection or request was rejected because the authentication token had expired. Each token has an expiry time that is set when it is issued.
 ---
@@ -27,6 +28,7 @@ summary: The client's connection or request was rejected because the authenticat
 | Field | Required | Description |
 |---|---|---|
 | `code` | Yes | The error code. Must match the filename. |
+| `identifier` | Yes | A stable `snake_case` name, unique across the registry, used as the canonical basis for the constant each SDK generates. See [Choosing an identifier](#choosing-an-identifier). |
 | `title` | Yes | A short noun phrase describing the error. See [Writing titles](#writing-titles). |
 | `summary` | Yes | A one or two sentence plain-prose summary. See [Writing summaries](#writing-summaries). |
 
@@ -41,6 +43,16 @@ The same file feeds two surfaces:
 **Detail page.** Renders the title as the page heading, the summary as a lede paragraph beneath it, and the body (if present) beneath that.
 
 This is why the summary lives in frontmatter rather than as a body section: it has strict rules (length, plain prose, no formatting) and is reused across both views.
+
+## Choosing an identifier
+
+The `identifier` is the machine-facing name for the code: SDKs generate a constant from it (transformed into each language's idiom — `SCREAMING_SNAKE`, `PascalCase`, and so on). Unlike the title, which is prose for humans and may be reworded, the identifier is a **stable contract** — once published, changing it breaks every SDK that generates from it, so choose it carefully and don't churn it.
+
+- **`snake_case`, matching `^[a-z][a-z0-9_]*$`**, and unique across the registry.
+- **Name the cause, not the consequence.** For `80007` prefer `connection_message_limit_exceeded` over `connection_continuity_lost` — the limit is why it happened; the continuity loss is just the effect.
+- **Concise but not cryptic.** Aim to keep it readable at a glance; avoid both cryptic abbreviations (`conn`, `creds`) and restating the whole title as a sentence.
+- **Spell words out and use UK spelling**, consistent with the title and summary (`unrecognised`, not `unrecognized`).
+- **Don't derive it mechanically from the title.** The title can change; the identifier can't. Set it deliberately.
 
 ## Writing titles
 
