@@ -51,7 +51,7 @@ The `identifier` is the machine-facing name for the code: SDKs generate a consta
 - **`snake_case`, matching `^[a-z][a-z0-9_]*$`**, and unique across the registry.
 - **Name the cause, not the consequence.** For `80007` prefer `connection_message_limit_exceeded` over `connection_continuity_lost` — the limit is why it happened; the continuity loss is just the effect.
 - **Concise but not cryptic.** Aim to keep it readable at a glance; avoid both cryptic abbreviations (`conn`, `creds`) and restating the whole title as a sentence.
-- **Spell words out and use UK spelling**, consistent with the title and summary (`unrecognised`, not `unrecognized`).
+- **Spell words out and use US spelling**, consistent with the title and summary (`unrecognized`, not `unrecognised`).
 - **Don't derive it mechanically from the title.** The title can change; the identifier can't. Set it deliberately.
 
 ## Writing titles
@@ -136,7 +136,8 @@ If you need a term that isn't covered here, check the dictionary before inventin
 
 ## Tone, across all fields
 
-- **Plain, calm, and specific.** The reader is often stressed, in a hurry, or unfamiliar with the system. Optimise for them.
+- **Plain, calm, and specific.** The reader is often stressed, in a hurry, or unfamiliar with the system. Optimize for them.
+- **US spelling.** Per the Ably documentation style guide, use US spelling throughout — every field, including the body (`color`, `behavior`, `canceled`, `recognize`, `unauthorized`).
 - **Consistent voice across errors.** When 15 of these are read end-to-end, they should feel like they were written by one person. Inconsistency across teams is the most common failure mode here.
 - **Treat error copy as product copy, not log messages.** It's worth a second pair of eyes — engineers aren't always the best judges of what reads naturally to a user.
 
