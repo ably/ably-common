@@ -850,7 +850,7 @@
     "80016": {
       "identifier": "connection_replaced_by_a_newer_one",
       "title": "Connection replaced by a newer one",
-      "summary": "An operation was attempted on a connection that was no longer current — a newer connection had replaced it, or its transport handle had been recycled — so the operation could not be applied and the client re-establishes to continue."
+      "summary": "An operation was attempted on a connection that is no longer current, so it could not be applied. A newer connection had replaced it, or its transport handle had been recycled. The client re-establishes the connection to continue."
     },
     "80017": {
       "identifier": "connection_closed",
@@ -1058,9 +1058,9 @@
       "summary": "An annotation listener was added to a channel that had not requested the annotation_subscribe mode in its channel options. Annotations are only delivered to clients that explicitly request them, so the listener will not receive anything."
     },
     "93002": {
-      "identifier": "mutable_messages_not_enabled",
+      "identifier": "message_updates_not_enabled",
       "title": "Message annotations, updates, appends, and deletes not enabled",
-      "summary": "An operation could not be performed because it requires a feature that is enabled by the channel namespace's 'Message annotations, updates, appends, and deletes' setting."
+      "summary": "An operation could not be performed because the channel did not have the 'Message annotations, updates, appends, and deletes' rule enabled."
     },
     "101000": {
       "identifier": "space_name_is_empty",
