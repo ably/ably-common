@@ -1,5 +1,6 @@
 {
   "agents": "0.0.2",
+  "errors": "0.0.1",
   "account-stats": "0.0.3",
   "app-stats": "0.0.5",
   "client-events-api-requests": "0.0.1",

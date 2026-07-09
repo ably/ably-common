@@ -25,6 +25,10 @@ jobs:
           npm ci
           npm run lint
           npm run validate:agents
+          npm run validate:errors
+          npm run validate:errors-json
+          npm run generate:errors
+          git diff --exit-code -- protocol/errors.json || { echo 'ERROR: protocol/errors.json is out of date. Run `npm run generate:errors` and commit the result.'; false; }
           npm test
 
   check-go:

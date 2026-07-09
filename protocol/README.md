@@ -2,67 +2,13 @@
 
 ## Error Codes
 
-Ably's [client library SDKs](https://www.ably.io/download), and the [core realtime platform](https://www.ably.io/platform), use common error codes. These error codes are stored and maintained in the shared public JSON file [errors.json](./errors.json).
+Ably's [client library SDKs](https://www.ably.io/download), and the [core realtime platform](https://www.ably.io/platform), use common error codes. The canonical registry of these codes is maintained as one Markdown file per code in [`errors/codes`](../errors); the machine-readable [errors.json](./errors.json) in this directory — a map of each code to its `identifier`, `title` and `summary` — is generated from that registry (via `npm run generate:errors`) and must not be edited by hand.
 
 In addition, a list of error codes and corresponding support articles to help understand how to resolve common problems relating to these error codes can be seen in [errorsHelp.json](./errorsHelp.json).
 This ensures that with every Ably error message that includes a help link for the error in the format `https://help.ably.io/error/{{ERROR_CODE}}`, the user is taken to a relevant FAQ if it exists, and if one does not exist, we record the number of times that error code has been visited so that the docs/support team can work on adding relevant documentation.
 See [the `ably/help` repository (internal)](https://github.com/ably/help), the "simple help redirect site".
 
 If you need help understanding any error codes, or need technical support, please visit the [Ably support desk](https://www.ably.io/support).
-
-### Ranges
-
-Codes in [errors.json](errors.json) fall into these ranges:
-
-| From  | Title |
-| ----- | ----- |
-| 10000 | Generic |
-| 40000 | 400 |
-| 40100 | 401 |
-| 40300 | 403 |
-| 40400 | 404 |
-| 40500 | 405 |
-| 40900 | 409 |
-| 41001 | 410 |
-| 42200 | 422 |
-| 42910 | 429 |
-| 50000 | 500 |
-| 50010 | Edge cacheing / proxy service |
-| 50320 | Active Traffic Management error code to indicate intentional redirect of traffic to fallback hosts |
-| 50330 | DNS switch over |
-| 50410 | Edge cacheing / proxy service |
-| 60000 | reserved for internal (non-customer-facing) use |
-| 70000 | reactor-related |
-| 71000 | exchange-related: general |
-| 71100 | exchange-related: publisher |
-| 71200 | exchange-related: product |
-| 71300 | exchange-related: subscription |
-| 80000 | connection-related |
-| 90000 | channel-related |
-
-Codes above `100000` are reserved for use by specific Ably projects and ecosystems, where these codes are unknown to the core Ably service. Definitions for these ranges are defined below.
-
-#### Asset Tracking
-
-Codes for Asset Tracking are maintained externally.
-
-| From | To | Location of Definitions |
-| ---- | -- | ----------------------- |
-| 100000 | 100999 | [Specification: Error codes](https://github.com/ably/ably-asset-tracking-common/tree/main/specification#error-codes) |
-
-#### Spaces
-
-| From  | Title |
-| ----- | ----- |
-| 101000 | Space name missing |
-| 101001 | Not entered space  |
-| 101002 | Lock request exists |
-| 101003 | Lock is locked |
-| 101004 | Lock invalidated |
-
-#### Chat
-
-102000 - 102999 are reserved for chat purposes.
 
 ## Agents
 

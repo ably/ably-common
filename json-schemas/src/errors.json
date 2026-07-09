@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Ably Error Codes",
+  "description": "The registry of Ably error codes, generated from errors/codes/*.md in ably-common.",
+  "type": "object",
+  "required": ["codes"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "The JSON Schema reference."
+    },
+    "_comment": {
+      "type": "string",
+      "description": "Note that this file is generated; not part of the data."
+    },
+    "codes": {
+      "type": "object",
+      "description": "A map of error code to its definition.",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "required": ["identifier", "title", "summary"],
+          "additionalProperties": false,
+          "properties": {
+            "identifier": {
+              "type": "string",
+              "description": "A stable snake_case name for the code, the canonical basis for the constant each SDK generates.",
+              "pattern": "^[a-z][a-z0-9_]*$"
+            },
+            "title": {
+              "type": "string",
+              "description": "A short human-readable title for the error."
+            },
+            "summary": {
+              "type": "string",
+              "description": "A one or two sentence plain-language summary of the error."
+            }
+          }
+        }
+      }
+    }
+  }
+}
