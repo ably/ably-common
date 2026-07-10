@@ -383,14 +383,19 @@
       "summary": "The operation was refused because it can only be performed with Token authentication, but the client authenticated using Basic authentication. Some operations are available only to clients using a token."
     },
     "40180": {
-      "identifier": "apns_token_authentication_required",
-      "title": "APNs token authentication required",
-      "summary": "A location or live-activity notification was not sent because these require the app's APNs credentials to use token-based authentication, but the app is not configured that way."
+      "identifier": "apns_token_authentication_required_for_location",
+      "title": "APNs token authentication required for location notification",
+      "summary": "A location notification was not sent because location notifications require the app's APNs credentials to use token-based authentication, but the app is not configured that way."
     },
     "40181": {
       "identifier": "no_location_token_for_device",
       "title": "No location token for device",
       "summary": "A location push notification was not sent to a device because the device has no location token registered. Location notifications can only be delivered to devices that have supplied one."
+    },
+    "40182": {
+      "identifier": "apns_token_authentication_required_for_push_to_start",
+      "title": "APNs token authentication required for push-to-start Live Activities notification",
+      "summary": "A live-activity push-to-start notification was not sent because push-to-start requires the app's APNs credentials to use token-based authentication, but the app is not configured that way."
     },
     "40300": {
       "identifier": "forbidden",

@@ -1529,6 +1529,11 @@
           "inclusiveMinimum": 0,
           "description": "Total number of successfully-delivered APNS location Push notifications."
         },
+        "push.notifications.delivered.apnsLiveActivity": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of successfully-delivered APNS Live Activity Push notifications."
+        },
         "push.notifications.delivered.apnsAlert": {
           "type": "number",
           "inclusiveMinimum": 0,
@@ -1563,6 +1568,11 @@
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total number of APNS location Push notifications that Ably attempted to deliver but were refused with a retriable error (so which Ably will attempt to retry)."
+        },
+        "push.notifications.refused.retriable.apnsLiveActivity": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of APNS Live Activity Push notifications that Ably attempted to deliver but were refused with a retriable error (so which Ably will attempt to retry)."
         },
         "push.notifications.refused.retriable.apnsAlert": {
           "type": "number",
@@ -1599,6 +1609,11 @@
           "inclusiveMinimum": 0,
           "description": "Total number of APNS location Push notifications that Ably attempted to deliver but were refused with a non-retriable error."
         },
+        "push.notifications.refused.final.apnsLiveActivity": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of APNS Live Activity Push notifications that Ably attempted to deliver but were refused with a non-retriable error."
+        },
         "push.notifications.refused.final.apnsAlert": {
           "type": "number",
           "inclusiveMinimum": 0,
@@ -1623,6 +1638,11 @@
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total number of APNS location Push notifications that Ably did not attempt to deliver, for example APNS location push notifications sent over a channel to subscribing devices without location tokens."
+        },
+        "push.notifications.skipped.apnsLiveActivity": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of APNS Live Activity Push notifications that Ably did not attempt to deliver, for example Live Activity push-to-start notifications sent to devices without push-to-start tokens."
         },
         "push.notifications.skipped.apnsAlert": {
           "type": "number",
@@ -1654,6 +1674,11 @@
           "inclusiveMinimum": 0,
           "description": "Total number of attempts (whatever the outcome) to deliver APNS location Push notifications."
         },
+        "push.notifications.all.apnsLiveActivity": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of attempts (whatever the outcome) to deliver APNS Live Activity Push notifications."
+        },
         "push.notifications.all.apnsAlert": {
           "type": "number",
           "inclusiveMinimum": 0,
@@ -1673,6 +1698,11 @@
           "type": "number",
           "inclusiveMinimum": 0,
           "description": "Total number of direct push publishes (that is, notifications triggered by a request to /push/publish, not a channel message with a push payload)."
+        },
+        "push.apnsBroadcasts": {
+          "type": "number",
+          "inclusiveMinimum": 0,
+          "description": "Total number of APNs Live Activity broadcasts issued. Each broadcast is a single request to Apple that Apple fans out to every device subscribed to the broadcast channel (Ably has no per-device visibility), so this counts issuance, not deliveries. Includes the final broadcast sent by an end request."
         }
       }
     }
