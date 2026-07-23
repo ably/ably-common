@@ -1020,7 +1020,7 @@
     "92001": {
       "identifier": "object_limit_exceeded",
       "title": "LiveObjects limit exceeded",
-      "summary": "A LiveObjects operation was rejected because it would take the channel beyond the maximum number of objects it is allowed to hold. The limit is set by the account."
+      "summary": "A LiveObjects operation was rejected because it exceeded a size limit set by the account: either the channel's total object size, or the maximum size of a single object."
     },
     "92002": {
       "identifier": "operation_on_tombstone_object",
