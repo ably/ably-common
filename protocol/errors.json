@@ -280,7 +280,7 @@
     "40131": {
       "identifier": "key_revoked",
       "title": "API key revoked",
-      "summary": "A connection or request was rejected because the API key it used has been revoked. A revoked key is permanently invalidated and can no longer authenticate."
+      "summary": "A connection or request was rejected because the API key it used has been revoked by an account admin and can no longer authenticate."
     },
     "40132": {
       "identifier": "key_expired",

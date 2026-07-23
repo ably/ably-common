@@ -101,7 +101,7 @@ Because the title and summary come first, the body's overriding rule is:
 
 Use this small, consistent set of sections. Use only the ones that apply, and omit a section rather than padding it.
 
-1. **What you should do.** Open here — including when the answer is *nothing*: if the error is expected, transient, or self-healing, say so plainly and explain how to tell that case from one that needs fixing. If an error is always a hard failure, the answer is simply the fix.
+1. **What you should do.** Open with the action itself — the reader already has the "what" and "why it might have happened" from the summary, so don't re-establish that context before getting to the fix. Lead with what to do — including when the answer is *nothing*: if the error is expected, transient, or self-healing, say so plainly and explain how to tell that case from one that needs fixing. If an error is always a hard failure, the answer is simply the fix. Save the "why" for *Why it happens*; state only the action here, plus the minimum caveat the reader needs to act (e.g. "this is permanent, so don't wait for it to clear").
 2. **Why it happens.** The realistic causes, in the reader's terms — their configuration, their actions, their environment — not where the code is raised internally. Where a cause has a fix of its own, give it here; a fix shared across causes belongs once in *What you should do*. Where a fix is "use the feature correctly", link to that feature's documentation; **don't inline code samples** (see the rules below).
 3. **What you'll see.** Last, and only as a findability aid: the fixed wording of the message(s), and the HTTP status. Quote only the stable parts — many messages also carry runtime detail (the channel, the observed rate) that varies between occurrences. This helps someone searching for the text they saw; it is of little use to someone already reading, which is why it goes at the bottom.
 
@@ -139,6 +139,7 @@ If you need a term that isn't covered here, check the dictionary before inventin
 - **Plain, calm, and specific.** The reader is often stressed, in a hurry, or unfamiliar with the system. Optimize for them.
 - **US spelling.** Per the Ably documentation style guide, use US spelling throughout — every field, including the body (`color`, `behavior`, `canceled`, `recognize`, `unauthorized`).
 - **Consistent voice across errors.** When 15 of these are read end-to-end, they should feel like they were written by one person. Inconsistency across teams is the most common failure mode here.
+- **No em-dashes.** Write plain sentences rather than ones littered with em-dash asides. Split into two sentences, or use a comma, colon, or parentheses where a genuine aside is needed. This applies to every field, including summaries and bodies.
 - **Treat error copy as product copy, not log messages.** It's worth a second pair of eyes — engineers aren't always the best judges of what reads naturally to a user.
 
 ## Reviewing changes
