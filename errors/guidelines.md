@@ -123,7 +123,7 @@ Use the customer-facing terms from the internal [Dictionary of terms](https://ab
 
 | Use | Don't use | Notes |
 |---|---|---|
-| Region | Site, datacenter, cluster | The geographic AWS location that a resource runs in (e.g. `eu-west-1`). "Site" and "cluster" are internal infrastructure concepts and should almost never appear in customer-facing copy. |
+| Region | Site, datacenter | The geographic AWS location that a resource runs in (e.g. `eu-west-1`). "Site" is an internal infrastructure concept and should almost never appear in customer-facing copy. "Cluster" is not a synonym for region and is valid customer-facing terminology for a dedicated deployment. |
 | Ably [Product] [Language] SDK | Client library, ably-js | E.g. "Ably Pub/Sub JavaScript SDK". |
 | Ably Platform | Data Streaming Network, DSN | The technology and infrastructure that delivers the Ably Service. |
 | Connection state recovery | Stream resume | Plain "resume" is fine for resuming a connection — only "stream resume" is disallowed. |
