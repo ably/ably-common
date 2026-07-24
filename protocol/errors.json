@@ -1306,6 +1306,76 @@
       "identifier": "push_transport_credentials_invalid",
       "title": "Push transport credentials invalid",
       "summary": "A push notification could not be sent because the credentials configured for the target platform were rejected or had expired, such as an expired APNs certificate."
+    },
+    "104000": {
+      "identifier": "streamed_message_finalize_failed",
+      "title": "Streamed message could not be finalized",
+      "summary": "Completing or cancelling a streamed message failed. One of its appends was not published, and the follow-up attempt to repair it by re-sending the accumulated content in a single update also failed."
+    },
+    "104001": {
+      "identifier": "session_subscription_failed",
+      "title": "Session subscription failed",
+      "summary": "An AI Transport session could not subscribe to and attach its channel while connecting. The channel may have been rejected, unreachable, or in a failed state, so the session can neither send nor receive."
+    },
+    "104002": {
+      "identifier": "run_cancel_handler_failed",
+      "title": "Run cancel handler failed",
+      "summary": "A developer-supplied onCancel hook threw while AI Transport was processing a cancel message for a run. The cancel is not carried out, so the run continues as though the message had not arrived."
+    },
+    "104003": {
+      "identifier": "run_lifecycle_event_publish_failed",
+      "title": "Run lifecycle event publish failed",
+      "summary": "The publish of a run's start, suspend, or end, or of one of its steps' start or end, was rejected, or the channel was unavailable. Clients therefore do not observe the run or step entering that phase."
+    },
+    "104004": {
+      "identifier": "session_closed",
+      "title": "Session already closed",
+      "summary": "An operation was attempted on an AI Transport session, view, or encoder that has already been closed. Once closed, these cannot send, receive, or be reopened."
+    },
+    "104005": {
+      "identifier": "session_send_failed",
+      "title": "Session send failed",
+      "summary": "An AI Transport send or steer could not be delivered. Either publishing it to the channel failed, or, in the Vercel chat transport, the HTTP POST to the agent endpoint failed with a network error or a non-2xx response."
+    },
+    "104006": {
+      "identifier": "session_continuity_not_guaranteed",
+      "title": "Session continuity not guaranteed",
+      "summary": "After an AI Transport session's channel first attached, it entered a failed, suspended, or detached state, or re-attached without resuming, so the SDK can no longer guarantee that active streams received every event."
+    },
+    "104007": {
+      "identifier": "session_channel_not_ready",
+      "title": "Session channel not ready",
+      "summary": "An AI Transport send was attempted while the session's channel was not in a usable state, neither attached nor attaching, so there was no reliable channel to publish on."
+    },
+    "104008": {
+      "identifier": "run_response_stream_failed",
+      "title": "Run response stream failed",
+      "summary": "An AI Transport run's response could not be streamed to the channel: the source event stream threw, or an underlying publish failed mid-stream."
+    },
+    "104009": {
+      "identifier": "session_message_processing_failed",
+      "title": "Inbound message processing failed",
+      "summary": "Processing a message that arrived on an AI Transport session's channel threw, so that one message was not folded into session state. The session's subscription survives, and it keeps sending and receiving."
+    },
+    "104010": {
+      "identifier": "adopted_run_start_not_observed",
+      "title": "Adopted run start not observed",
+      "summary": "A fresh process adopting an AI Transport run waited for that run's start event to appear on the channel, but the wait timed out before it was seen."
+    },
+    "104011": {
+      "identifier": "session_history_fetch_failed",
+      "title": "Session history fetch failed",
+      "summary": "Loading an AI Transport session's channel history failed after retries, so the messages needed to rebuild session state could not be retrieved."
+    },
+    "104012": {
+      "identifier": "run_steer_handler_failed",
+      "title": "Run steer handler failed",
+      "summary": "A developer-supplied onSteer hook threw while AI Transport was notifying a run that a steering message had folded into it. The run itself is unaffected, because only the notification failed."
+    },
+    "104013": {
+      "identifier": "run_cancel_routing_failed",
+      "title": "Run cancel routing failed",
+      "summary": "AI Transport could not deliver an inbound cancel message to the run it targets. The cancel was neither carried out nor rejected, so the run continues as though the message had not arrived."
     }
   }
 }
