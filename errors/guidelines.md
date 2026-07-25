@@ -101,7 +101,7 @@ Because the title and summary come first, the body's overriding rule is:
 
 Use this small, consistent set of sections. Use only the ones that apply, and omit a section rather than padding it.
 
-1. **What you should do.** Open here — including when the answer is *nothing*: if the error is expected, transient, or self-healing, say so plainly and explain how to tell that case from one that needs fixing. If an error is always a hard failure, the answer is simply the fix.
+1. **What you should do.** Open with the action itself — the reader already has the "what" and "why it might have happened" from the summary, so don't re-establish that context before getting to the fix. Lead with what to do — including when the answer is *nothing*: if the error is expected, transient, or self-healing, say so plainly and explain how to tell that case from one that needs fixing. If an error is always a hard failure, the answer is simply the fix. Save the "why" for *Why it happens*; state only the action here, plus the minimum caveat the reader needs to act (e.g. "this is permanent, so don't wait for it to clear").
 2. **Why it happens.** The realistic causes, in the reader's terms — their configuration, their actions, their environment — not where the code is raised internally. Where a cause has a fix of its own, give it here; a fix shared across causes belongs once in *What you should do*. Where a fix is "use the feature correctly", link to that feature's documentation; **don't inline code samples** (see the rules below).
 3. **What you'll see.** Last, and only as a findability aid: the fixed wording of the message(s), and the HTTP status. Quote only the stable parts — many messages also carry runtime detail (the channel, the observed rate) that varies between occurrences. This helps someone searching for the text they saw; it is of little use to someone already reading, which is why it goes at the bottom.
 
@@ -111,6 +111,8 @@ Use this small, consistent set of sections. Use only the ones that apply, and om
 - **Don't inline code samples.** Examples of how to use a feature belong in that feature's documentation, where a customer can find them *before* they hit an error — link there instead. If there is no doc to link to, that is a general documentation gap: raise it (e.g. open an issue) rather than papering over it with a one-off snippet here.
 - **Link out for how-to; keep the page about the error.** The body explains the error and points at the fix; it is not a tutorial. Link to maintained values (limits, durations) rather than restating them, so the page can't drift.
 - **Weave links into the prose.** Link the words that name the thing — "enable [persistence](...)", "[around two minutes](...)" — rather than appending a separate "(see ...)" aside. The sentence should still read naturally if the link markup were stripped out.
+- **Link dashboard actions to the specific page, not the root.** When you point the reader at something to do in the dashboard, link the exact page — e.g. the app's API keys page, `https://ably.com/accounts/any/apps/any/app_keys` — rather than the generic `https://ably.com/dashboard`. The `any` path segments resolve to the reader's currently selected account and app, so the link lands them on the right screen.
+- **Send support links to the support page, not the docs.** Use `https://ably.com/support` for "contact Ably support", rather than routing through a docs page about support. The one exception is the [incident escalation process](https://ably.com/docs/platform/support#escalation), which is documented under docs.
 - **Verify facts against their source; don't cite it.** Check message strings, status codes, and limits against the raising code before writing them — never from memory. Those are how you verify, not what you link: the page links only to customer-facing docs. Confirm those links resolve.
 - **Tight, not exhaustive.** Include only what serves the decision and the fix. A good body is often three or four short paragraphs.
 - **Terminology and tone** follow the same rules as every other field — use the [Dictionary of terms](https://ably.atlassian.net/wiki/spaces/devex/pages/4295262228/Dictionary+of+terms), and keep the voice plain and calm.
@@ -123,13 +125,14 @@ Use the customer-facing terms from the internal [Dictionary of terms](https://ab
 
 | Use | Don't use | Notes |
 |---|---|---|
-| Region | Site, datacenter, cluster | The geographic AWS location that a resource runs in (e.g. `eu-west-1`). "Site" and "cluster" are internal infrastructure concepts and should almost never appear in customer-facing copy. |
+| Region | Site, datacenter | The geographic AWS location that a resource runs in (e.g. `eu-west-1`). "Site" is an internal infrastructure concept and should almost never appear in customer-facing copy. "Cluster" is not a synonym for region and is valid customer-facing terminology for a dedicated deployment. |
 | Ably [Product] [Language] SDK | Client library, ably-js | E.g. "Ably Pub/Sub JavaScript SDK". |
 | Ably Platform | Data Streaming Network, DSN | The technology and infrastructure that delivers the Ably Service. |
 | Connection state recovery | Stream resume | Plain "resume" is fine for resuming a connection — only "stream resume" is disallowed. |
 | Token authentication, Basic authentication | Key authentication | |
 | Inbound / Outbound webhook | Incoming / Outgoing webhook | |
-| Integration | Reactor, Firehose, Integration rule | "Rule" now refers to channel rules (per-namespace settings), a different concept; don't call an integration a rule. |
+| Integration | Reactor, Firehose, Integration rule | "Rule" now refers to a namespace rule (a per-namespace setting), a different concept; don't call an integration a rule. |
+| Namespace, namespace settings | Channel rule(s) | A namespace groups channels sharing a name prefix; its settings (persistence, identified clients, TLS-only, and so on) are configured per namespace. Ably's docs lead with "namespace"; avoid the legacy compound "channel rule". An individual setting may still be called a "rule" where the dashboard names it one (e.g. the "Identified" rule). |
 | Ably error code | Error code | When referring to a code in this documentation, qualify it. |
 
 If you need a term that isn't covered here, check the dictionary before inventing one.
@@ -139,6 +142,7 @@ If you need a term that isn't covered here, check the dictionary before inventin
 - **Plain, calm, and specific.** The reader is often stressed, in a hurry, or unfamiliar with the system. Optimize for them.
 - **US spelling.** Per the Ably documentation style guide, use US spelling throughout — every field, including the body (`color`, `behavior`, `canceled`, `recognize`, `unauthorized`).
 - **Consistent voice across errors.** When 15 of these are read end-to-end, they should feel like they were written by one person. Inconsistency across teams is the most common failure mode here.
+- **No em-dashes.** Write plain sentences rather than ones littered with em-dash asides. Split into two sentences, or use a comma, colon, or parentheses where a genuine aside is needed. This applies to every field, including summaries and bodies.
 - **Treat error copy as product copy, not log messages.** It's worth a second pair of eyes — engineers aren't always the best judges of what reads naturally to a user.
 
 ## Reviewing changes

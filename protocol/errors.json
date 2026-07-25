@@ -105,7 +105,7 @@
     "40018": {
       "identifier": "delta_decoding_failed",
       "title": "Message delta could not be applied",
-      "summary": "On a channel using delta compression, the Ably SDK could not apply a message's delta against the preceding message — for example because that message was missed or arrived out of order. The SDK recovers automatically by reattaching the channel to receive a full message."
+      "summary": "On a channel using delta compression, the Ably SDK could not apply a message's delta against the preceding message, for example because that message was missed or arrived out of order. The SDK recovers automatically by reattaching the channel to receive a full message."
     },
     "40019": {
       "identifier": "missing_plugin",
@@ -185,12 +185,12 @@
     "40101": {
       "identifier": "invalid_credentials",
       "title": "Authentication failed",
-      "summary": "The credentials presented were not accepted — for example an API key secret that did not match, an invalid token, or no credentials supplied at all."
+      "summary": "The credentials presented were not accepted, for example an API key secret that did not match, an invalid token, or no credentials supplied at all."
     },
     "40102": {
       "identifier": "incompatible_credentials",
       "title": "Incompatible credentials",
-      "summary": "The credentials presented were valid but did not match the request — for example the client ID they permit differed from the one in use, or they belonged to a different application than the connection being resumed."
+      "summary": "The credentials presented were valid but did not match the request, for example the client ID they permit differed from the one in use, or they belonged to a different application than the connection being resumed."
     },
     "40103": {
       "identifier": "invalid_use_of_basic_auth_over_non_tls_transport",
@@ -210,7 +210,7 @@
     "40106": {
       "identifier": "no_valid_authentication_method_provided",
       "title": "No valid authentication method provided",
-      "summary": "The Ably SDK was given no usable way to authenticate — no API key, token, or token-request mechanism such as authCallback or authUrl was provided."
+      "summary": "The Ably SDK was given no usable way to authenticate: no API key, token, or token-request mechanism such as authCallback or authUrl was provided."
     },
     "40110": {
       "identifier": "account_disabled",
@@ -250,7 +250,7 @@
     "40121": {
       "identifier": "token_revocation_not_enabled",
       "title": "Token revocation not enabled",
-      "summary": "A token revocation request was rejected because the revocation capability it requires is not enabled — either token revocation for the application, or revocation by channel for the account."
+      "summary": "A token revocation request was rejected because the revocation capability it requires is not enabled, either token revocation for the application or revocation by channel for the account."
     },
     "40125": {
       "identifier": "application_integration_limit_exceeded",
@@ -280,7 +280,7 @@
     "40131": {
       "identifier": "key_revoked",
       "title": "API key revoked",
-      "summary": "A connection or request was rejected because the API key it used has been revoked. A revoked key is permanently invalidated and can no longer authenticate."
+      "summary": "A connection or request was rejected because the API key it used has been revoked by an account admin and can no longer authenticate."
     },
     "40132": {
       "identifier": "key_expired",
@@ -335,7 +335,7 @@
     "40160": {
       "identifier": "capability_denied",
       "title": "Client lacks the required capability",
-      "summary": "The API key or token used by the client isn't assigned the capability required for the operation — for example publishing, subscribing, or reading history on a channel, or listing channels and connections."
+      "summary": "The API key or token used by the client isn't assigned the capability required for the operation, for example publishing, subscribing, or reading history on a channel, or listing channels and connections."
     },
     "40161": {
       "identifier": "identified_client_required",
@@ -360,12 +360,12 @@
     "40165": {
       "identifier": "channel_mode_not_requested_when_attaching",
       "title": "Channel mode not requested when attaching",
-      "summary": "Publishing a message, object, or annotation — or entering presence — was rejected because the client did not request the matching channel mode when it attached. The credentials permit the operation; the mode that enables it was not requested."
+      "summary": "Publishing a message, object, or annotation, or entering presence, was rejected because the client did not request the matching channel mode when it attached. The credentials permit the operation; the mode that enables it was not requested."
     },
     "40166": {
       "identifier": "unidentified_client_cannot_modify_own_messages",
       "title": "Unidentified client cannot modify own messages",
-      "summary": "A message update or delete was rejected because the client is unidentified — it has no clientId — but holds only the \"own\" form of the relevant capability, message-update-own or message-delete-own, which can never apply to a client that has no messages of its own."
+      "summary": "A message update or delete was rejected because the client is unidentified (it has no clientId) but holds only the \"own\" form of the relevant capability, message-update-own or message-delete-own, which can never apply to a client that has no messages of its own."
     },
     "40170": {
       "identifier": "error_from_client_token_callback",
@@ -455,12 +455,12 @@
     "42200": {
       "identifier": "unprocessable_content",
       "title": "Message content could not be processed",
-      "summary": "A message was rejected because a content check — for example validation or moderation — did not accept it, rather than for a syntax or size problem."
+      "summary": "A message was rejected because a content check (for example validation or moderation) did not accept it, rather than for a syntax or size problem."
     },
     "42210": {
       "identifier": "content_rejected",
       "title": "Message content rejected",
-      "summary": "A message was rejected by a content check — such as validation, moderation, or an integration — but the error does not identify which one."
+      "summary": "A message was rejected by a content check (such as validation, moderation, or an integration), but the error does not identify which one."
     },
     "42211": {
       "identifier": "content_rejected_by_before_publish_integration",
@@ -530,7 +530,7 @@
     "42921": {
       "identifier": "rate_limit_exceeded_per_connection_inbound_fatal",
       "title": "Connection terminated for far exceeding the per-connection publish rate",
-      "summary": "The connection was closed because it published far above the per-connection publish rate limit — around 20 times the permitted rate. Breaches below that reject individual messages without closing the connection."
+      "summary": "The connection was closed because it published far above the per-connection publish rate limit, around 20 times the permitted rate. Breaches below that reject individual messages without closing the connection."
     },
     "42922": {
       "identifier": "rate_limit_exceeded_too_many_requests",
@@ -800,7 +800,7 @@
     "80005": {
       "identifier": "connection_no_longer_available",
       "title": "Connection no longer available",
-      "summary": "A request referenced an existing connection, but the server no longer held its state — typically because the connection had been idle and was released after a period without activity. The client is signaled to reconnect and continue on a fresh connection."
+      "summary": "A request referenced an existing connection, but the server no longer held its state, typically because the connection had been idle and was released after a period without activity. The client is signaled to reconnect and continue on a fresh connection."
     },
     "80006": {
       "identifier": "connection_messages_expired",
@@ -915,7 +915,7 @@
     "90002": {
       "identifier": "channel_history_could_not_be_retrieved",
       "title": "Channel history could not be retrieved",
-      "summary": "A request for a channel's message history could not be completed, because the position it asked to read from could not be resolved — either the query was incomplete or the point requested is no longer retained."
+      "summary": "A request for a channel's message history could not be completed, because the position it asked to read from could not be resolved, because either the query was incomplete or the point requested is no longer retained."
     },
     "90003": {
       "identifier": "channel_continuity_not_guaranteed",
@@ -1020,7 +1020,7 @@
     "92001": {
       "identifier": "object_limit_exceeded",
       "title": "LiveObjects limit exceeded",
-      "summary": "A LiveObjects operation was rejected because it would take the channel beyond the maximum number of objects it is allowed to hold. The limit is set by the account."
+      "summary": "A LiveObjects operation was rejected because it exceeded a size limit set by the account: either the channel's total object size, or the maximum size of a single object."
     },
     "92002": {
       "identifier": "operation_on_tombstone_object",
@@ -1240,7 +1240,7 @@
     "103001": {
       "identifier": "push_publish_retries_exhausted",
       "title": "Push notification retry limit reached",
-      "summary": "The push notification was not delivered because the configured retry limit was reached after repeated unsuccessful delivery attempts. The underlying failures are typically transient — provider outages, rate limits, or network errors."
+      "summary": "The push notification was not delivered because the configured retry limit was reached after repeated unsuccessful delivery attempts. The underlying failures are typically transient, such as provider outages, rate limits, or network errors."
     },
     "103002": {
       "identifier": "push_direct_publish_no_recipient",
@@ -1255,22 +1255,22 @@
     "103004": {
       "identifier": "push_notification_rejected_by_provider",
       "title": "Push notification rejected by provider",
-      "summary": "The push notification was not delivered because the provider — APNs, FCM, or WebPush — rejected the request due to a problem with the payload or delivery parameters. Typical causes include an oversized payload, a disallowed topic, or an unsupported field."
+      "summary": "The push notification was not delivered because the provider (APNs, FCM, or WebPush) rejected the request due to a problem with the payload or delivery parameters. Typical causes include an oversized payload, a disallowed topic, or an unsupported field."
     },
     "103005": {
       "identifier": "push_device_token_invalid",
       "title": "Push device token invalid",
-      "summary": "The push notification was not delivered because the provider — APNs, FCM, or WebPush — rejected the device's push token as invalid for the configured application. The token may have been issued under different credentials or for a different application."
+      "summary": "The push notification was not delivered because the provider (APNs, FCM, or WebPush) rejected the device's push token as invalid for the configured application. The token may have been issued under different credentials or for a different application."
     },
     "103006": {
       "identifier": "push_transport_not_configured",
       "title": "Push transport not configured",
-      "summary": "The push notification was not delivered because the device's push notification provider — APNs, FCM, or WebPush — has no credentials configured on the application. No deliveries can be made through that provider until the credentials are present."
+      "summary": "The push notification was not delivered because the device's push notification provider (APNs, FCM, or WebPush) has no credentials configured on the application. No deliveries can be made through that provider until the credentials are present."
     },
     "103007": {
       "identifier": "push_notification_provider_unreachable",
       "title": "Push notification provider unreachable",
-      "summary": "The push notification was not delivered because the provider — APNs, FCM, or WebPush — could not be reached, returned a server error, or sent a response that could not be processed. The condition is usually transient."
+      "summary": "The push notification was not delivered because the provider (APNs, FCM, or WebPush) could not be reached, returned a server error, or sent a response that could not be processed. The condition is usually transient."
     },
     "103008": {
       "identifier": "push_transport_credentials_invalid",
