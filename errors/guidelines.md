@@ -111,6 +111,8 @@ Use this small, consistent set of sections. Use only the ones that apply, and om
 - **Don't inline code samples.** Examples of how to use a feature belong in that feature's documentation, where a customer can find them *before* they hit an error — link there instead. If there is no doc to link to, that is a general documentation gap: raise it (e.g. open an issue) rather than papering over it with a one-off snippet here.
 - **Link out for how-to; keep the page about the error.** The body explains the error and points at the fix; it is not a tutorial. Link to maintained values (limits, durations) rather than restating them, so the page can't drift.
 - **Weave links into the prose.** Link the words that name the thing — "enable [persistence](...)", "[around two minutes](...)" — rather than appending a separate "(see ...)" aside. The sentence should still read naturally if the link markup were stripped out.
+- **Link dashboard actions to the specific page, not the root.** When you point the reader at something to do in the dashboard, link the exact page — e.g. the app's API keys page, `https://ably.com/accounts/any/apps/any/app_keys` — rather than the generic `https://ably.com/dashboard`. The `any` path segments resolve to the reader's currently selected account and app, so the link lands them on the right screen.
+- **Send support links to the support page, not the docs.** Use `https://ably.com/support` for "contact Ably support", rather than routing through a docs page about support. The one exception is the [incident escalation process](https://ably.com/docs/platform/support#escalation), which is documented under docs.
 - **Verify facts against their source; don't cite it.** Check message strings, status codes, and limits against the raising code before writing them — never from memory. Those are how you verify, not what you link: the page links only to customer-facing docs. Confirm those links resolve.
 - **Tight, not exhaustive.** Include only what serves the decision and the fix. A good body is often three or four short paragraphs.
 - **Terminology and tone** follow the same rules as every other field — use the [Dictionary of terms](https://ably.atlassian.net/wiki/spaces/devex/pages/4295262228/Dictionary+of+terms), and keep the voice plain and calm.
@@ -129,7 +131,8 @@ Use the customer-facing terms from the internal [Dictionary of terms](https://ab
 | Connection state recovery | Stream resume | Plain "resume" is fine for resuming a connection — only "stream resume" is disallowed. |
 | Token authentication, Basic authentication | Key authentication | |
 | Inbound / Outbound webhook | Incoming / Outgoing webhook | |
-| Integration | Reactor, Firehose, Integration rule | "Rule" now refers to channel rules (per-namespace settings), a different concept; don't call an integration a rule. |
+| Integration | Reactor, Firehose, Integration rule | "Rule" now refers to a namespace rule (a per-namespace setting), a different concept; don't call an integration a rule. |
+| Namespace, namespace settings | Channel rule(s) | A namespace groups channels sharing a name prefix; its settings (persistence, identified clients, TLS-only, and so on) are configured per namespace. Ably's docs lead with "namespace"; avoid the legacy compound "channel rule". An individual setting may still be called a "rule" where the dashboard names it one (e.g. the "Identified" rule). |
 | Ably error code | Error code | When referring to a code in this documentation, qualify it. |
 
 If you need a term that isn't covered here, check the dictionary before inventing one.
