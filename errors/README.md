@@ -24,6 +24,16 @@ You can add an optional Markdown body beneath the frontmatter for detail-page co
 
 See [`guidelines.md`](./guidelines.md) for the full rules on title, summary, body, tone, and terminology, and run `npm run validate:errors` to check your entry (CI runs both, and fails if `errors.json` is out of date).
 
+## Publishing to the docs site
+
+Changes here don't reach [ably.com/docs](https://ably.com/docs/platform/errors/codes) automatically. The docs site vendors this registry as a git submodule and generates its public error pages from it, so once your change is merged to `main` a follow-up PR against [`ably/docs`](https://github.com/ably/docs) is needed to publish it:
+
+1. Bump the `ably-common` submodule to the commit to publish (usually `main`).
+2. Regenerate the pages: `yarn generate:errors`.
+3. Commit the regenerated `src/pages/docs/platform/errors/codes/` output alongside the submodule bump, and open the docs PR.
+
+CI in `ably/docs` (`check-error-docs`) regenerates and diffs, so a PR whose committed pages are out of sync with the bumped registry fails. See [ably/docs#3496](https://github.com/ably/docs/pull/3496) for a worked example.
+
 ## What's in this directory
 
 - [`codes/`](./codes) — the registry: one `<CODE>.md` per valid code.

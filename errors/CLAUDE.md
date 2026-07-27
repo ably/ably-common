@@ -21,6 +21,10 @@ These are reminders, not substitutes for `guidelines.md`.
 - **Terminology** — use the customer-facing terms from the [Dictionary of terms](https://ably.atlassian.net/wiki/spaces/devex/pages/4295262228/Dictionary+of+terms). Common substitutions: *Region* not site/datacenter; *Ably Pub/Sub JavaScript SDK* not client library; *Integration* not Reactor/Firehose/integration rule ("rule" now means a namespace rule); *namespace* / *namespace settings* not "channel rule"; *Token / Basic authentication* not key authentication; *Connection state recovery* not stream resume.
 - **Tone** — plain, calm, specific. Treat copy as product copy, not log messages. Aim for a single consistent voice across the whole directory.
 
+## Publishing to the docs site
+
+Edits here are not live on [ably.com/docs](https://ably.com/docs/platform/errors/codes) until they are pulled into the docs site, which vendors this registry as a git submodule. After a change merges to `main`, publishing it is a separate PR against [`ably/docs`](https://github.com/ably/docs): bump the `ably-common` submodule (usually to `main`), run `yarn generate:errors`, and commit the regenerated `src/pages/docs/platform/errors/codes/` pages alongside the bump. The `ably/docs` `check-error-docs` CI regenerates and diffs, so out-of-sync pages fail the build. Example: [ably/docs#3496](https://github.com/ably/docs/pull/3496). See [`README.md`](./README.md#publishing-to-the-docs-site) for the full steps.
+
 ## Reviewing a change
 
 1. Read the table view in your head — does the title disambiguate this error from neighbours? Does the summary stand alone?
