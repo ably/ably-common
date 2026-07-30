@@ -642,6 +642,11 @@
       "title": "Edge proxy timed out waiting for platform",
       "summary": "Ably's edge proxy service did not receive a response from the Ably platform behind it within the time allowed, so the request was abandoned. The condition is usually transient."
     },
+    "61002": {
+      "identifier": "device_registration_client_id_mismatch",
+      "title": "Device registered to a different clientId",
+      "summary": "Push activation was rejected because the device already holds a registration belonging to a different clientId. This usually happens when a device is activated again after a different user has signed in."
+    },
     "70000": {
       "identifier": "integration_operation_failed",
       "title": "Integration operation failed",
