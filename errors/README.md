@@ -24,6 +24,19 @@ You can add an optional Markdown body beneath the frontmatter for detail-page co
 
 See [`guidelines.md`](./guidelines.md) for the full rules on title, summary, body, tone, and terminology, and run `npm run validate:errors` to check your entry (CI runs both, and fails if `errors.json` is out of date).
 
+## Generating SDK constants
+
+The registry also drives the error-code constants used by the JavaScript SDKs, so that every SDK refers to a code by the same name and adding a code is a single step: register it here, then use it wherever you're working. `identifier` is the canonical basis for each generated name — `room_is_in_an_invalid_state` becomes `RoomIsInAnInvalidState` — which is why it's a frozen contract rather than something to churn.
+
+```sh
+npm run generate:errorcodes-ts -- --format=type  --out path/to/errorcodes.ts   # union of numeric literals
+npm run generate:errorcodes-ts -- --format=const --out path/to/errorcodes.ts   # one export const per code
+```
+
+Use `--format=type` where you only want compile-time checking (the type erases, so it costs no bundle size) and `--format=const` where you need the values at runtime. Omit `--out` to write to stdout. The output is deterministic and has no dependencies beyond Node's standard library, so a consuming repository can generate from its vendored submodule without running `npm install` inside it.
+
+Generated output is not committed here. Each consuming repository generates it, commits the result into its own `src/`, and has a CI step that regenerates at the pinned submodule commit and fails on a diff — the same arrangement as [publishing to the docs site](#publishing-to-the-docs-site) below. Because the check runs at the *pinned* commit, an SDK can't merge a reference to a code that hasn't been merged here first.
+
 ## Publishing to the docs site
 
 Changes here don't reach [ably.com/docs](https://ably.com/docs/platform/errors/codes) automatically. The docs site vendors this registry as a git submodule and generates its public error pages from it, so once your change is merged to `main` a follow-up PR against [`ably/docs`](https://github.com/ably/docs) is needed to publish it:
@@ -39,6 +52,6 @@ CI in `ably/docs` (`check-error-docs`) regenerates and diffs, so a PR whose comm
 - [`codes/`](./codes) — the registry: one `<CODE>.md` per valid code.
 - [`guidelines.md`](./guidelines.md) — how to write entries: rules on title, summary, body, tone, and terminology.
 - [`CLAUDE.md`](./CLAUDE.md) — guidance for agents adding, editing, or reviewing entries.
-- [`scripts/`](./scripts) — the validator run in CI.
+- [`scripts/`](./scripts) — the validator run in CI, and the generators for `protocol/errors.json` and the SDK TypeScript constants.
 
 `protocol/errors.json` is generated from this registry — a machine-readable map of each code to its `identifier`, `title`, and `summary`. It must not be edited by hand; run `npm run generate:errors` to regenerate it, and CI fails if the committed file is out of date.
