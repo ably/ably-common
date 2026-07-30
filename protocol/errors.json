@@ -367,6 +367,11 @@
       "title": "Unidentified client cannot modify own messages",
       "summary": "A message update or delete was rejected because the client is unidentified (it has no clientId) but holds only the \"own\" form of the relevant capability, message-update-own or message-delete-own, which can never apply to a client that has no messages of its own."
     },
+    "40167": {
+      "identifier": "untrusted_client_type_declaration",
+      "title": "Client type declaration not signed by token",
+      "summary": "A connection or request declared itself as a server, but the token it authenticated with carries no matching client type claim. Only the key holder can make that declaration, so it must be signed into the token."
+    },
     "40170": {
       "identifier": "error_from_client_token_callback",
       "title": "Token callback failed",
