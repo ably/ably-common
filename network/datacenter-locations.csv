@@ -6,3 +6,4 @@ location,region,region_id,label,latitude,longitude
 "Frankfurt, Germany",Europe,eu-central-1-a,Frankfurt - Europe,50.1211909,8.566525
 Sydney,Oceania,ap-southeast-2-a,Sydney — Oceania,-33.8481647,150.7918939
 Singapore,Asia,ap-southeast-1-a,Singapore — Asia,1.3139961,103.7041681
+Melbourne,Oceania,ap-southeast-4-a,Melbourne — Oceania,-37.814,144.9633
