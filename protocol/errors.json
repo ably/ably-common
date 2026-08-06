@@ -1307,6 +1307,11 @@
       "title": "Push transport credentials invalid",
       "summary": "A push notification could not be sent because the credentials configured for the target platform were rejected or had expired, such as an expired APNs certificate."
     },
+    "103009": {
+      "identifier": "push_not_enabled_for_cluster",
+      "title": "Push notifications not enabled for the cluster",
+      "summary": "The push notification was not accepted for delivery because push notifications are not enabled in the cluster handling the request. On a dedicated cluster, push notifications have to be turned on by Ably before any can be sent."
+    },
     "104000": {
       "identifier": "streamed_message_finalize_failed",
       "title": "Streamed message could not be finalized",
