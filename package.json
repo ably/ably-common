@@ -13,6 +13,7 @@
     "validate:errors": "node errors/scripts/validate-errors.js",
     "validate:errors-json": "node scripts/validate-json-schema.js protocol/errors.json",
     "generate:errors": "node errors/scripts/generate-errors-json.js && prettier --write protocol/errors.json",
+    "generate:errorcodes-ts": "node errors/scripts/generate-ts.js",
     "validate:json-schema": "node scripts/validate-json-schema.js",
     "fetch:agent-releases": "node scripts/fetch-agent-releases.js",
     "export:agents": "node scripts/export-agents-csv.js",
