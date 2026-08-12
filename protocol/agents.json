@@ -694,6 +694,14 @@
       "source": "https://github.com/ably/ably-swift",
       "product": "pub-sub",
       "name": "Pub/Sub Swift (iOS, macOS, tvOS, watchOS)"
+    },
+    {
+      "identifier": "vercel-ai-sdk-ui-message",
+      "versioned": true,
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-ai-transport-js",
+      "product": "ai-transport",
+      "name": "Vercel Adapter"
     }
   ],
   "ablyLibMappings": {
