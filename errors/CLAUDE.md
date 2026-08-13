@@ -23,7 +23,7 @@ These are reminders, not substitutes for `guidelines.md`.
 
 ## Publishing to the docs site
 
-Edits here are not live on [ably.com/docs](https://ably.com/docs/platform/errors/codes) until they are pulled into the docs site, which vendors this registry as a git submodule. After a change merges to `main`, publishing it is a separate PR against [`ably/docs`](https://github.com/ably/docs): bump the `ably-common` submodule (usually to `main`), run `yarn generate:errors`, and commit the regenerated `src/pages/docs/platform/errors/codes/` pages alongside the bump. The `ably/docs` `check-error-docs` CI regenerates and diffs, so out-of-sync pages fail the build. Example: [ably/docs#3496](https://github.com/ably/docs/pull/3496). See [`README.md`](./README.md#publishing-to-the-docs-site) for the full steps.
+Edits here are not live on [ably.com/docs](https://ably.com/docs/platform/errors/codes) until they are pulled into the docs site, which is the `apps/docs` app in [`ably/website`](https://github.com/ably/website) and vendors this registry as a git submodule at `apps/docs/ably-common`. After a change merges to `main`, publishing it is a separate PR against `ably/website`: bump the `apps/docs/ably-common` submodule (usually to `main`), run `pnpm generate:errors` from `apps/docs`, and commit the regenerated `apps/docs/src/pages/docs/platform/errors/codes/` pages alongside the bump. The `docs-check-error-docs` CI job regenerates and diffs, so out-of-sync pages fail the build. For an example predating the move out of the now-archived `ably/docs` repo, see [ably/docs#3496](https://github.com/ably/docs/pull/3496). See [`README.md`](./README.md#publishing-to-the-docs-site) for the full steps.
 
 ## Reviewing a change
 

@@ -26,13 +26,13 @@ See [`guidelines.md`](./guidelines.md) for the full rules on title, summary, bod
 
 ## Publishing to the docs site
 
-Changes here don't reach [ably.com/docs](https://ably.com/docs/platform/errors/codes) automatically. The docs site vendors this registry as a git submodule and generates its public error pages from it, so once your change is merged to `main` a follow-up PR against [`ably/docs`](https://github.com/ably/docs) is needed to publish it:
+Changes here don't reach [ably.com/docs](https://ably.com/docs/platform/errors/codes) automatically. The docs site — now the `apps/docs` app in [`ably/website`](https://github.com/ably/website) — vendors this registry as a git submodule at `apps/docs/ably-common` and generates its public error pages from it, so once your change is merged to `main` a follow-up PR against `ably/website` is needed to publish it:
 
-1. Bump the `ably-common` submodule to the commit to publish (usually `main`).
-2. Regenerate the pages: `yarn generate:errors`.
-3. Commit the regenerated `src/pages/docs/platform/errors/codes/` output alongside the submodule bump, and open the docs PR.
+1. Bump the `apps/docs/ably-common` submodule to the commit to publish (usually `main`).
+2. Regenerate the pages from `apps/docs`: `pnpm generate:errors`.
+3. Commit the regenerated `apps/docs/src/pages/docs/platform/errors/codes/` output alongside the submodule bump, and open the website PR.
 
-CI in `ably/docs` (`check-error-docs`) regenerates and diffs, so a PR whose committed pages are out of sync with the bumped registry fails. See [ably/docs#3496](https://github.com/ably/docs/pull/3496) for a worked example.
+CI in `ably/website` (`docs-check-error-docs`) regenerates and diffs, so a PR whose committed pages are out of sync with the bumped registry fails. For a worked example see [ably/docs#3496](https://github.com/ably/docs/pull/3496), from before the docs moved out of the now-archived `ably/docs` repo.
 
 ## What's in this directory
 
