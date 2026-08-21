@@ -1,7 +1,7 @@
 /**
  * Shared parser for the constrained YAML frontmatter used by `codes/<code>.md`.
- * Used by both the validator and the errors.json generator so they can't
- * diverge in how they read a file.
+ * Used by the validator and by both generators, so they cannot diverge in how
+ * they read a file.
  */
 
 /**
@@ -9,11 +9,16 @@
  * closing `---`. Values may contain colons (we split on the first `: ` only)
  * and may be wrapped in double quotes.
  *
- * @param {string} content - The full file contents.
+ * CRLF is normalised first: the git default `core.autocrlf=true` on Windows
+ * checks every file out with CRLF endings, which would otherwise fail the
+ * opening fence check and report the whole registry as malformed.
+ *
+ * @param {string} rawContent - The full file contents.
  * @returns {{ fields: object, hasBody: boolean } | { error: string }} Parsed
  *   frontmatter fields and whether a body follows, or an error description.
  */
-function parseFrontmatter(content) {
+function parseFrontmatter(rawContent) {
+  const content = rawContent.replace(/\r\n/g, '\n');
   if (!content.startsWith('---\n')) {
     return { error: 'missing opening `---` frontmatter fence' };
   }
