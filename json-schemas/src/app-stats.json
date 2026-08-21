@@ -1522,7 +1522,7 @@
         "push.notifications.delivered.apns": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of successfully-delivered Push notifications over the APNS transport."
+          "description": "Total number of successfully-delivered Push notifications over the APNS transport. Counts per-device notifications, so it excludes apnsLiveActivity, which counts Live Activity broadcasts issued rather than per-device deliveries."
         },
         "push.notifications.delivered.apnsLocation": {
           "type": "number",
@@ -1552,7 +1552,7 @@
         "push.notifications.delivered.total": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of successfully-delivered Push notifications over any transport."
+          "description": "Total number of successfully-delivered Push notifications over any transport. Counts per-device notifications, so it excludes apnsLiveActivity, which counts Live Activity broadcasts issued rather than per-device deliveries."
         },
         "push.notifications.refused.retriable.fcm": {
           "type": "number",
@@ -1567,7 +1567,7 @@
         "push.notifications.refused.retriable.apns": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Push notifications that Ably attempted to deliver to APNS but were refused with a retriable error (so which Ably will attempt to retry)."
+          "description": "Total number of Push notifications that Ably attempted to deliver to APNS but were refused with a retriable error (so which Ably will attempt to retry). Counts per-device notifications, so it excludes apnsLiveActivity, which counts Live Activity broadcasts issued rather than per-device deliveries."
         },
         "push.notifications.refused.retriable.apnsLocation": {
           "type": "number",
@@ -1597,7 +1597,7 @@
         "push.notifications.refused.retriable.total": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Push notifications that Ably attempted to deliver but were refused with a retriable error (so which Ably will attempt to retry)."
+          "description": "Total number of Push notifications that Ably attempted to deliver but were refused with a retriable error (so which Ably will attempt to retry). Counts per-device notifications, so it excludes apnsLiveActivity, which counts Live Activity broadcasts issued rather than per-device deliveries."
         },
         "push.notifications.refused.final.fcm": {
           "type": "number",
@@ -1612,7 +1612,7 @@
         "push.notifications.refused.final.apns": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Push notifications that Ably attempted to deliver to APNS but were refused with a non-retriable error."
+          "description": "Total number of Push notifications that Ably attempted to deliver to APNS but were refused with a non-retriable error. Counts per-device notifications, so it excludes apnsLiveActivity, which counts Live Activity broadcasts issued rather than per-device deliveries."
         },
         "push.notifications.refused.final.apnsLocation": {
           "type": "number",
@@ -1642,12 +1642,12 @@
         "push.notifications.refused.final.total": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Push notifications that Ably attempted to deliver but were refused with a non-retriable error."
+          "description": "Total number of Push notifications that Ably attempted to deliver but were refused with a non-retriable error. Counts per-device notifications, so it excludes apnsLiveActivity, which counts Live Activity broadcasts issued rather than per-device deliveries."
         },
         "push.notifications.skipped.apns": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Push notifications that Ably did not attempt to deliver to APNS, for example APNS location push notifications sent over a channel to subscribing devices without location tokens."
+          "description": "Total number of Push notifications that Ably did not attempt to deliver to APNS, for example APNS location push notifications sent over a channel to subscribing devices without location tokens. Counts per-device notifications, so it excludes apnsLiveActivity, which counts Live Activity broadcasts issued rather than per-device deliveries."
         },
         "push.notifications.skipped.apnsLocation": {
           "type": "number",
@@ -1672,7 +1672,7 @@
         "push.notifications.skipped.total": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of Push notifications that Ably did not attempt to deliver, for example APNS location push notifications sent over a channel to subscribing devices without location tokens."
+          "description": "Total number of Push notifications that Ably did not attempt to deliver, for example APNS location push notifications sent over a channel to subscribing devices without location tokens. Counts per-device notifications, so it excludes apnsLiveActivity, which counts Live Activity broadcasts issued rather than per-device deliveries."
         },
         "push.notifications.all.fcm": {
           "type": "number",
@@ -1687,7 +1687,7 @@
         "push.notifications.all.apns": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of attempts (whatever the outcome) to deliver Push notifications over the APNS transport."
+          "description": "Total number of attempts (whatever the outcome) to deliver Push notifications over the APNS transport. Counts per-device notifications, so it excludes apnsLiveActivity, which counts Live Activity broadcasts issued rather than per-device deliveries."
         },
         "push.notifications.all.apnsLocation": {
           "type": "number",
@@ -1717,7 +1717,7 @@
         "push.notifications.all.total": {
           "type": "number",
           "inclusiveMinimum": 0,
-          "description": "Total number of attempts (whatever the outcome) to deliver Push notifications over any transport."
+          "description": "Total number of attempts (whatever the outcome) to deliver Push notifications over any transport. Counts per-device notifications, so it excludes apnsLiveActivity, which counts Live Activity broadcasts issued rather than per-device deliveries."
         },
         "push.directPublishes": {
           "type": "number",
