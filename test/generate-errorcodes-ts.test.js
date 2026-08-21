@@ -4,9 +4,9 @@ const os = require('os');
 const path = require('path');
 const {
   pascalCase, loadEntries, nameEntries, generate,
-} = require('../errors/scripts/generate-ts');
+} = require('../errors/scripts/generate-errorcodes-ts');
 
-const SCRIPT = path.resolve(__dirname, '..', 'errors', 'scripts', 'generate-ts.js');
+const SCRIPT = path.resolve(__dirname, '..', 'errors', 'scripts', 'generate-errorcodes-ts.js');
 
 /**
  * Run the generator as a CLI, the way a consuming repository does.
@@ -34,16 +34,19 @@ const entry = (overrides = {}) => ({
  * Write a throwaway `codes/` directory containing the given entries.
  *
  * @param {Array<object>} entries - Entries to write, one file each.
+ * @param {object} [options] - Options.
+ * @param {string} [options.eol] - The line ending to write with; defaults to LF.
+ * @param {string} [options.dir] - Where to write; defaults to a fresh temp dir.
  * @returns {string} The directory path.
  */
-function writeRegistry(entries) {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ably-codes-'));
+function writeRegistry(entries, options = {}) {
+  const { eol = '\n' } = options;
+  const dir = options.dir || fs.mkdtempSync(path.join(os.tmpdir(), 'ably-codes-'));
   entries.forEach((e) => {
-    const frontmatter = ['code', 'identifier', 'title', 'summary']
+    const fields = ['code', 'identifier', 'title', 'summary']
       .filter((k) => e[k] !== undefined)
-      .map((k) => `${k}: ${e[k]}`)
-      .join('\n');
-    fs.writeFileSync(path.join(dir, `${e.code}.md`), `---\n${frontmatter}\n---\n`);
+      .map((k) => `${k}: ${e[k]}`);
+    fs.writeFileSync(path.join(dir, `${e.code}.md`), ['---', ...fields, '---', ''].join(eol));
   });
   return dir;
 }
@@ -86,6 +89,17 @@ describe('loadEntries', () => {
   it('explains an absent registry rather than surfacing a bare ENOENT', () => {
     const dir = path.join(os.tmpdir(), 'ably-codes-does-not-exist');
     expect(() => loadEntries(dir)).toThrow(/no error registry at .*submodule may be uninitialised/s);
+  });
+
+  it('reads a registry written with CRLF line endings', () => {
+    // A Windows checkout lands every `.md` with CRLF endings, which used to
+    // fail the frontmatter fence check on all of them. See
+    // test/frontmatter.test.js for the parser-level cases.
+    const dir = writeRegistry([entry(), entry({ code: 40001, identifier: 'x' })], { eol: '\r\n' });
+    expect(loadEntries(dir)).toEqual([
+      entry(),
+      entry({ code: 40001, identifier: 'x' }),
+    ]);
   });
 });
 
@@ -173,6 +187,19 @@ describe('generate', () => {
     expect(doc).toContain('*\\/');
     expect(doc.match(/\*\//g)).toHaveLength(1);
   });
+
+  it('wraps a long title, not just a long summary', () => {
+    const title = `An overlong title ${'padding '.repeat(8)}ends here`;
+    const out = generate('const', [entry({ title })]);
+    out.split('\n').forEach((line) => expect(line.length).toBeLessThanOrEqual(80));
+
+    const lines = out.split('\n');
+    const titleLines = lines
+      .slice(lines.indexOf('/**') + 1, lines.indexOf(' *'))
+      .map((l) => l.replace(/^ \* /, ''));
+    expect(titleLines.length).toBeGreaterThan(1);
+    expect(titleLines.join(' ')).toBe(`${title}.`);
+  });
 });
 
 describe('the CLI', () => {
@@ -197,10 +224,31 @@ describe('the CLI', () => {
     expect(result.stdout).toMatch(/^export type ErrorCode =$/m);
   });
 
-  it('reports an unusable registry as a message, not a stack trace', () => {
-    // The format is validated during generation rather than argument parsing,
-    // so this exercises the same path a duplicate identifier would.
+  it('reports an unknown format as a message, not a stack trace', () => {
     expectCleanFailure(run('--format=enum'), /unknown --format "enum"/);
+  });
+
+  it('reports an unusable registry as a message, not a stack trace', () => {
+    // The script resolves the registry relative to itself, so the only way to
+    // reach this from the command line is to stand a copy of it up over a
+    // registry that is genuinely broken.
+    const root = fs.mkdtempSync(path.join(os.tmpdir(), 'ably-gen-'));
+    const scripts = path.join(root, 'errors', 'scripts');
+    const codes = path.join(root, 'errors', 'codes');
+    fs.mkdirSync(scripts, { recursive: true });
+    fs.mkdirSync(codes, { recursive: true });
+    ['generate-errorcodes-ts.js', 'frontmatter.js'].forEach((f) => fs.copyFileSync(
+      path.resolve(__dirname, '..', 'errors', 'scripts', f),
+      path.join(scripts, f),
+    ));
+    writeRegistry([entry({ code: 40000 }), entry({ code: 40001 })], { dir: codes });
+
+    const result = spawnSync(
+      process.execPath,
+      [path.join(scripts, 'generate-errorcodes-ts.js'), '--format=type'],
+      { encoding: 'utf8' },
+    );
+    expectCleanFailure(result, /duplicate identifier "bad_request"/);
   });
 
   it('reports a bad argument as a message, not a stack trace', () => {
@@ -233,5 +281,9 @@ describe('the committed registry', () => {
     expect(out.match(/^export const /gm)).toHaveLength(count);
     expect(out.match(/^ {2}\| typeof /gm)).toHaveLength(count);
     expect(generate('type').match(/^ {2}\| \d+/gm)).toHaveLength(count);
+  });
+
+  it('keeps every emitted line within the doc width', () => {
+    generate('const').split('\n').forEach((line) => expect(line.length).toBeLessThanOrEqual(80));
   });
 });

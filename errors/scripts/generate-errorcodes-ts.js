@@ -36,7 +36,7 @@ const HEADER = [
   '// Regenerate with: npm run generate:errorcodes-ts',
 ];
 
-const USAGE = 'Usage: node errors/scripts/generate-ts.js --format=type|const [--out <path>]';
+const USAGE = 'Usage: node errors/scripts/generate-errorcodes-ts.js --format=type|const [--out <path>]';
 
 /** Width available for JSDoc prose, after the leading ` * `. */
 const DOC_WIDTH = 76;
@@ -184,7 +184,7 @@ function docBlock(entry) {
   const title = escapeDoc(entry.title).replace(/\.$/, '');
   return [
     '/**',
-    ` * ${title}.`,
+    ...wrap(`${title}.`).map((l) => ` * ${l}`),
     ' *',
     ...wrap(escapeDoc(entry.summary)).map((l) => ` * ${l}`),
     ` * @see https://help.ably.io/error/${entry.code}`,
