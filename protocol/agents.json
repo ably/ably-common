@@ -26,6 +26,18 @@
       "name": "Pub/Sub JavaScript"
     },
     {
+      "identifier": "ably-pubsub-device",
+      "versioned": false,
+      "type": "runtime",
+      "name": "Pub/Sub (device side)"
+    },
+    {
+      "identifier": "ably-pubsub-server",
+      "versioned": false,
+      "type": "runtime",
+      "name": "Pub/Sub (server side)"
+    },
+    {
       "identifier": "nodejs",
       "versioned": true,
       "type": "runtime",
