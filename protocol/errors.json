@@ -347,13 +347,8 @@
       "title": "Operation requires Basic authentication",
       "summary": "The operation was refused because it can only be performed with Basic authentication using an API key, but the client authenticated with a token. Token revocation is one such operation, which must use the key that issued the tokens."
     },
-    "40163": {
-      "identifier": "token_revocation_not_enabled_for_api_key",
-      "title": "Token revocation not enabled for API key",
-      "summary": "The operation was refused because the API key used does not have revocable tokens enabled. Revocation applies only to tokens issued by a key with that setting turned on."
-    },
     "40164": {
-      "identifier": "token_revocation_not_enabled_for_api_key_40164",
+      "identifier": "token_revocation_not_enabled_for_api_key",
       "title": "Token revocation not enabled for API key",
       "summary": "The operation was refused because the API key used does not have revocable tokens enabled. Revocation applies only to tokens issued by a key with that setting turned on."
     },
