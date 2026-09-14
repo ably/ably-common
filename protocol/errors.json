@@ -347,6 +347,11 @@
       "title": "Operation requires Basic authentication",
       "summary": "The operation was refused because it can only be performed with Basic authentication using an API key, but the client authenticated with a token. Token revocation is one such operation, which must use the key that issued the tokens."
     },
+    "40163": {
+      "identifier": "tls_connection_required",
+      "title": "Operation requires a TLS connection",
+      "summary": "The channel the operation targets has a channel rule that requires TLS connections, and the connection or request that performed it did not use TLS."
+    },
     "40164": {
       "identifier": "token_revocation_not_enabled_for_api_key",
       "title": "Token revocation not enabled for API key",
