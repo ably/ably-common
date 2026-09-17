@@ -91,6 +91,9 @@
           "type": "string",
           "description": "The ID of the namespace"
         },
+        "mutableMessages": {
+          "type": "boolean"
+        },
         "persisted": {
           "type": "boolean"
         },
@@ -109,18 +112,21 @@
         "exposeTimeserial": {
           "type": "boolean"
         },
-        "populateChannelRegistry": {
-          "type": "boolean"
-        },
         "batchingEnabled": {
           "type": "boolean"
         },
         "batchingInterval": {
           "type": "integer"
         },
+        "batchingConflationKey": {
+          "type": "string"
+        },
         "batchingPolicy": {
           "type": "string",
           "enum": ["simple", "conflating"]
+        },
+        "summaryRollupInterval": {
+          "type": "number"
         }
       }
     }
