@@ -169,8 +169,8 @@
     },
     "40035": {
       "identifier": "integration_message_filter_regex_not_re2_compatible",
-      "title": "Integration message filter regex not RE2-compatible",
-      "summary": "An integration's message filter could not be applied because its regular expression is not compatible with the RE2 syntax. Backreferences and lookaround are not supported."
+      "title": "Integration filter regex not RE2-compatible",
+      "summary": "An integration could not be configured because one of its filters, such as a channel filter or message filter, uses a regular expression that is not RE2-compatible. Backreferences and lookaround are not supported."
     },
     "40099": {
       "identifier": "reserved_for_testing",
