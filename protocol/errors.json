@@ -992,6 +992,11 @@
       "title": "Too many channels",
       "summary": "An operation was rejected because it would exceed the maximum number of channels permitted, either the channels attached to a single connection or those included in a single batch request."
     },
+    "90011": {
+      "identifier": "channel_release_invalid_state",
+      "title": "Channel released while not detached",
+      "summary": "A request to release a channel was rejected because the channel was not in the initialized, detached or failed state, so it could still receive messages from Ably."
+    },
     "90021": {
       "identifier": "rate_limit_exceeded_account_channel_creation",
       "title": "Account-wide channel creation rate exceeded",
