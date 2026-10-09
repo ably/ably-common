@@ -437,6 +437,11 @@
       "title": "Account not permitted in this region",
       "summary": "The request reached a region the account is not permitted to use."
     },
+    "40340": {
+      "identifier": "integration_target_address_not_permitted",
+      "title": "Integration target address not permitted",
+      "summary": "An integration's target resolved to an IP address that Ably does not connect to, such as a private, loopback, or link-local address. Integrations can only target publicly reachable hosts."
+    },
     "40400": {
       "identifier": "not_found",
       "title": "Resource not found",
