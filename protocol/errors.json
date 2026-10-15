@@ -402,6 +402,11 @@
       "title": "APNs token authentication required for push-to-start Live Activities notification",
       "summary": "A live-activity push-to-start notification was not sent because push-to-start requires the app's APNs credentials to use token-based authentication, but the app is not configured that way."
     },
+    "40183": {
+      "identifier": "fcm_service_account_required_for_topics",
+      "title": "FCM service account required for FCM topics",
+      "summary": "An FCM topics request was refused because FCM topics require the app's FCM credentials to be a service account, but the app is configured only with a legacy FCM server key."
+    },
     "40300": {
       "identifier": "forbidden",
       "title": "Forbidden",
@@ -1321,6 +1326,11 @@
       "identifier": "push_recipient_endpoint_invalid",
       "title": "Push recipient endpoint invalid",
       "summary": "The push notification was not delivered because the endpoint in the device's push recipient is not one Ably will send to. A web push endpoint has to be an https address that resolves to a publicly reachable host."
+    },
+    "103011": {
+      "identifier": "push_rate_limited_by_provider",
+      "title": "Push request rate limited by provider",
+      "summary": "A push request was not completed because the push provider rejected it for exceeding a rate limit. FCM, for example, limits changes to topic subscriptions across each Firebase project, so the condition is usually temporary."
     },
     "104000": {
       "identifier": "streamed_message_finalize_failed",
