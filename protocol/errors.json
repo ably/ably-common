@@ -372,6 +372,11 @@
       "title": "Client type declaration not signed by token",
       "summary": "A connection or request declared itself as a server, but the token it authenticated with carries no matching client type claim. Only the key holder can make that declaration, so it must be signed into the token."
     },
+    "40168": {
+      "identifier": "sdk_version_not_mau_compatible",
+      "title": "SDK version not compatible with MAU pricing",
+      "summary": "A connection or request was refused because it came from a version of an Ably SDK that is not compatible with monthly active user (MAU) pricing, which the account uses."
+    },
     "40170": {
       "identifier": "error_from_client_token_callback",
       "title": "Token callback failed",
