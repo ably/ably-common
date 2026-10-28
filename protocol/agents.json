@@ -26,6 +26,26 @@
       "name": "Pub/Sub JavaScript"
     },
     {
+      "identifier": "ably-pubsub-js",
+      "versioned": true,
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-js",
+      "product": "pub-sub",
+      "name": "Pub/Sub JavaScript"
+    },
+    {
+      "identifier": "ably-pubsub-device",
+      "versioned": false,
+      "type": "runtime",
+      "name": "Pub/Sub (device side)"
+    },
+    {
+      "identifier": "ably-pubsub-server",
+      "versioned": false,
+      "type": "runtime",
+      "name": "Pub/Sub (server side)"
+    },
+    {
       "identifier": "nodejs",
       "versioned": true,
       "type": "runtime",
@@ -92,6 +112,14 @@
       ]
     },
     {
+      "identifier": "ably-pubsub-cocoa",
+      "versioned": true,
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-cocoa",
+      "product": "pub-sub",
+      "name": "Pub/Sub Cocoa (iOS, macOS, tvOS, watchOS)"
+    },
+    {
       "identifier": "iOS",
       "versioned": true,
       "type": "os",
@@ -153,6 +181,14 @@
       ]
     },
     {
+      "identifier": "ably-pubsub-java",
+      "versioned": true,
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-java",
+      "product": "pub-sub",
+      "name": "Pub/Sub Java & Android"
+    },
+    {
       "identifier": "jre",
       "versioned": true,
       "type": "runtime",
@@ -208,6 +244,22 @@
       ]
     },
     {
+      "identifier": "ably-pubsub-flutter",
+      "versioned": true,
+      "type": "wrapper",
+      "source": "https://github.com/ably/ably-flutter",
+      "product": "pub-sub",
+      "name": "Pub/Sub Flutter"
+    },
+    {
+      "identifier": "ably-pubsub-dart",
+      "versioned": true,
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-dart",
+      "product": "pub-sub",
+      "name": "Pub/Sub Dart"
+    },
+    {
       "identifier": "dart",
       "versioned": true,
       "type": "runtime",
@@ -252,6 +304,14 @@
       ]
     },
     {
+      "identifier": "ably-pubsub-ruby",
+      "versioned": true,
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-ruby",
+      "product": "pub-sub",
+      "name": "Pub/Sub Ruby"
+    },
+    {
       "identifier": "ruby",
       "versioned": true,
       "type": "runtime",
@@ -294,6 +354,14 @@
           ]
         }
       ]
+    },
+    {
+      "identifier": "ably-pubsub-dotnet",
+      "versioned": true,
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-dotnet",
+      "product": "pub-sub",
+      "name": "Pub/Sub .NET"
     },
     {
       "identifier": "dotnet-framework",
@@ -483,6 +551,14 @@
       ]
     },
     {
+      "identifier": "ably-pubsub-python",
+      "versioned": true,
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-python",
+      "product": "pub-sub",
+      "name": "Pub/Sub Python"
+    },
+    {
       "identifier": "ably-php",
       "versioned": true,
       "type": "sdk",
@@ -500,6 +576,14 @@
           ]
         }
       ]
+    },
+    {
+      "identifier": "ably-pubsub-php",
+      "versioned": true,
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-php",
+      "product": "pub-sub",
+      "name": "Pub/Sub PHP"
     },
     {
       "identifier": "php",
@@ -541,6 +625,14 @@
           ]
         }
       ]
+    },
+    {
+      "identifier": "ably-pubsub-go",
+      "versioned": true,
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-go",
+      "product": "pub-sub",
+      "name": "Pub/Sub Go"
     },
     {
       "identifier": "go",
@@ -694,6 +786,22 @@
       "source": "https://github.com/ably/ably-swift",
       "product": "pub-sub",
       "name": "Pub/Sub Swift (iOS, macOS, tvOS, watchOS)"
+    },
+    {
+      "identifier": "ably-pubsub-swift",
+      "versioned": true,
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-swift",
+      "product": "pub-sub",
+      "name": "Pub/Sub Swift (iOS, macOS, tvOS, watchOS)"
+    },
+    {
+      "identifier": "ably-pubsub-rust",
+      "versioned": true,
+      "type": "sdk",
+      "source": "https://github.com/ably/ably-rust",
+      "product": "pub-sub",
+      "name": "Pub/Sub Rust"
     }
   ],
   "ablyLibMappings": {
