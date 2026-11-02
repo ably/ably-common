@@ -29,7 +29,7 @@
       "identifier": "ably-pubsub-js",
       "versioned": true,
       "type": "sdk",
-      "source": "https://github.com/ably/ably-js",
+      "source": "https://github.com/ably/ably-pubsub-js",
       "product": "pub-sub",
       "name": "Pub/Sub JavaScript"
     },
@@ -115,7 +115,7 @@
       "identifier": "ably-pubsub-cocoa",
       "versioned": true,
       "type": "sdk",
-      "source": "https://github.com/ably/ably-cocoa",
+      "source": "https://github.com/ably/ably-pubsub-cocoa",
       "product": "pub-sub",
       "name": "Pub/Sub Cocoa (iOS, macOS, tvOS, watchOS)"
     },
@@ -184,7 +184,7 @@
       "identifier": "ably-pubsub-java",
       "versioned": true,
       "type": "sdk",
-      "source": "https://github.com/ably/ably-java",
+      "source": "https://github.com/ably/ably-pubsub-java",
       "product": "pub-sub",
       "name": "Pub/Sub Java & Android"
     },
@@ -247,7 +247,7 @@
       "identifier": "ably-pubsub-flutter",
       "versioned": true,
       "type": "wrapper",
-      "source": "https://github.com/ably/ably-flutter",
+      "source": "https://github.com/ably/ably-pubsub-flutter",
       "product": "pub-sub",
       "name": "Pub/Sub Flutter"
     },
@@ -255,7 +255,7 @@
       "identifier": "ably-pubsub-dart",
       "versioned": true,
       "type": "sdk",
-      "source": "https://github.com/ably/ably-dart",
+      "source": "https://github.com/ably/ably-pubsub-dart",
       "product": "pub-sub",
       "name": "Pub/Sub Dart"
     },
@@ -307,7 +307,7 @@
       "identifier": "ably-pubsub-ruby",
       "versioned": true,
       "type": "sdk",
-      "source": "https://github.com/ably/ably-ruby",
+      "source": "https://github.com/ably/ably-pubsub-ruby",
       "product": "pub-sub",
       "name": "Pub/Sub Ruby"
     },
@@ -359,7 +359,7 @@
       "identifier": "ably-pubsub-dotnet",
       "versioned": true,
       "type": "sdk",
-      "source": "https://github.com/ably/ably-dotnet",
+      "source": "https://github.com/ably/ably-pubsub-dotnet",
       "product": "pub-sub",
       "name": "Pub/Sub .NET"
     },
@@ -554,7 +554,7 @@
       "identifier": "ably-pubsub-python",
       "versioned": true,
       "type": "sdk",
-      "source": "https://github.com/ably/ably-python",
+      "source": "https://github.com/ably/ably-pubsub-python",
       "product": "pub-sub",
       "name": "Pub/Sub Python"
     },
@@ -581,7 +581,7 @@
       "identifier": "ably-pubsub-php",
       "versioned": true,
       "type": "sdk",
-      "source": "https://github.com/ably/ably-php",
+      "source": "https://github.com/ably/ably-pubsub-php",
       "product": "pub-sub",
       "name": "Pub/Sub PHP"
     },
@@ -630,7 +630,7 @@
       "identifier": "ably-pubsub-go",
       "versioned": true,
       "type": "sdk",
-      "source": "https://github.com/ably/ably-go",
+      "source": "https://github.com/ably/ably-pubsub-go",
       "product": "pub-sub",
       "name": "Pub/Sub Go"
     },
