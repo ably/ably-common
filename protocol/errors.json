@@ -467,6 +467,11 @@
       "title": "Conflict",
       "summary": "The request conflicted with the current state of the target, so it could not be completed."
     },
+    "40901": {
+      "identifier": "message_sequence_mismatch",
+      "title": "Message sequence mismatch",
+      "summary": "An update, delete or append was rejected because the sequence number it carried was not exactly one more than the message's current sequence number."
+    },
     "41001": {
       "identifier": "push_device_registration_expired",
       "title": "Push device registration expired",
