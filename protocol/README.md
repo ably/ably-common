@@ -10,6 +10,12 @@ See [the `ably/help` repository (internal)](https://github.com/ably/help), the "
 
 If you need help understanding any error codes, or need technical support, please visit the [Ably support desk](https://www.ably.io/support).
 
+## MAU SDK upgrades
+
+[mau-sdk-upgrades.json](mau-sdk-upgrades.json) holds the guidance Ably sends with error [40168](../errors/codes/40168.md) to an SDK that is not compatible with MAU pricing because it predates the separate device and server packages: the message's preamble, the instruction for each such SDK in priority order, and the fallback for an SDK it doesn't recognize. Its [schema](../json-schemas/src/mau-sdk-upgrades.json) describes how a message is selected. SDKs that send only the legacy `X-Ably-Lib` header are matched through `ablyLibMappings` in [agents.json](agents.json), so the file doesn't repeat that mapping.
+
+When you change the file, update [40168.md](../errors/codes/40168.md) to match: it lists every replacement package with its minimum version.
+
 ## Agents
 
 A list of agents announced by Ably client libraries can be found in [agents.json](agents.json).

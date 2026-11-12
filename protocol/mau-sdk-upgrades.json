@@ -1,0 +1,337 @@
+{
+  "$schema": "../json-schemas/src/mau-sdk-upgrades.json",
+  "errorCode": 40168,
+  "preamble": "This version of the Ably SDK is not compatible with your account, which uses MAU pricing.",
+  "fallback": "Upgrade to the latest version that is listed as compatible with MAU pricing. See https://ably.com/docs/sdks",
+  "upgrades": [
+    {
+      "identifiers": ["ably-cli"],
+      "instruction": "Upgrade @ably/cli to 2.0.0+.",
+      "replacements": [
+        {
+          "package": "@ably/cli",
+          "ecosystem": "npm",
+          "minVersion": "2.0.0"
+        }
+      ]
+    },
+    {
+      "identifiers": ["laravel-echo"],
+      "instruction": "Upgrade @ably/laravel-echo to 1.1.0+, which installs @ably/pubsub-device itself, instead of the ably npm package.",
+      "replacements": [
+        {
+          "package": "@ably/laravel-echo",
+          "ecosystem": "npm",
+          "minVersion": "1.1.0"
+        }
+      ]
+    },
+    {
+      "identifiers": ["laravel-broadcaster"],
+      "instruction": "Upgrade ably/laravel-broadcaster to 1.1.0+, which uses ably/pubsub-server instead of ably/ably-php.",
+      "replacements": [
+        {
+          "package": "ably/laravel-broadcaster",
+          "ecosystem": "packagist",
+          "minVersion": "1.1.0"
+        }
+      ]
+    },
+    {
+      "identifiers": ["laravel"],
+      "instruction": "Use ably/laravel-broadcaster 1.1.0+, or ably/pubsub-server 2.0.0+ directly, instead of ably/ably-php-laravel.",
+      "replacements": [
+        {
+          "package": "ably/laravel-broadcaster",
+          "ecosystem": "packagist",
+          "minVersion": "1.1.0"
+        },
+        {
+          "package": "ably/pubsub-server",
+          "ecosystem": "packagist",
+          "minVersion": "2.0.0",
+          "side": "server"
+        }
+      ]
+    },
+    {
+      "identifiers": ["kafka-connect-ably"],
+      "instruction": "Upgrade kafka-connect-ably to 4.2.0+.",
+      "replacements": [
+        {
+          "package": "kafka-connect-ably",
+          "minVersion": "4.2.0"
+        }
+      ]
+    },
+    {
+      "identifiers": ["chat-react", "chat-js"],
+      "instruction": "Upgrade @ably/chat to 2.0.0+ and use it with @ably/pubsub-device 3.0.0+ on end-user devices or @ably/pubsub-server 3.0.0+ on servers, instead of the ably npm package.",
+      "replacements": [
+        {
+          "package": "@ably/chat",
+          "ecosystem": "npm",
+          "minVersion": "2.0.0"
+        },
+        {
+          "package": "@ably/pubsub-device",
+          "ecosystem": "npm",
+          "minVersion": "3.0.0",
+          "side": "device"
+        },
+        {
+          "package": "@ably/pubsub-server",
+          "ecosystem": "npm",
+          "minVersion": "3.0.0",
+          "side": "server"
+        }
+      ]
+    },
+    {
+      "identifiers": ["spaces"],
+      "instruction": "Upgrade @ably/spaces to 0.6.0+ and use it with @ably/pubsub-device 3.0.0+ on end-user devices or @ably/pubsub-server 3.0.0+ on servers, instead of the ably npm package.",
+      "replacements": [
+        {
+          "package": "@ably/spaces",
+          "ecosystem": "npm",
+          "minVersion": "0.6.0"
+        },
+        {
+          "package": "@ably/pubsub-device",
+          "ecosystem": "npm",
+          "minVersion": "3.0.0",
+          "side": "device"
+        },
+        {
+          "package": "@ably/pubsub-server",
+          "ecosystem": "npm",
+          "minVersion": "3.0.0",
+          "side": "server"
+        }
+      ]
+    },
+    {
+      "identifiers": ["ai-transport-js"],
+      "instruction": "Upgrade @ably/ai-transport to 0.11.0+ and use it with @ably/pubsub-device 3.0.0+ on end-user devices or @ably/pubsub-server 3.0.0+ on servers, instead of the ably npm package.",
+      "replacements": [
+        {
+          "package": "@ably/ai-transport",
+          "ecosystem": "npm",
+          "minVersion": "0.11.0"
+        },
+        {
+          "package": "@ably/pubsub-device",
+          "ecosystem": "npm",
+          "minVersion": "3.0.0",
+          "side": "device"
+        },
+        {
+          "package": "@ably/pubsub-server",
+          "ecosystem": "npm",
+          "minVersion": "3.0.0",
+          "side": "server"
+        }
+      ]
+    },
+    {
+      "identifiers": ["chat-kotlin-android", "chat-kotlin-jvm", "chat-kotlin"],
+      "instruction": "Upgrade com.ably.chat:chat to 2.0.0+ and use it with io.ably.pubsub:device 2.0.0+ on end-user devices or io.ably.pubsub:server 2.0.0+ on servers, instead of ably-java or ably-android.",
+      "replacements": [
+        {
+          "package": "com.ably.chat:chat",
+          "ecosystem": "maven",
+          "minVersion": "2.0.0"
+        },
+        {
+          "package": "io.ably.pubsub:device",
+          "ecosystem": "maven",
+          "minVersion": "2.0.0",
+          "side": "device"
+        },
+        {
+          "package": "io.ably.pubsub:server",
+          "ecosystem": "maven",
+          "minVersion": "2.0.0",
+          "side": "server"
+        }
+      ]
+    },
+    {
+      "identifiers": ["chat-swift"],
+      "instruction": "Upgrade ably-chat-swift to 2.0.0+ and use it with the AblyPubSubDevice product of ably-pubsub-cocoa 2.0.0+, instead of ably-cocoa.",
+      "replacements": [
+        {
+          "package": "ably-chat-swift",
+          "ecosystem": "swift",
+          "minVersion": "2.0.0"
+        },
+        {
+          "package": "ably-pubsub-cocoa",
+          "component": "AblyPubSubDevice",
+          "ecosystem": "swift",
+          "minVersion": "2.0.0",
+          "side": "device"
+        }
+      ]
+    },
+    {
+      "identifiers": ["ably-flutter"],
+      "instruction": "Use ably_pubsub_device_flutter 2.0.0+ instead of ably_flutter.",
+      "replacements": [
+        {
+          "package": "ably_pubsub_device_flutter",
+          "ecosystem": "pub",
+          "minVersion": "2.0.0",
+          "side": "device"
+        }
+      ]
+    },
+    {
+      "identifiers": ["ably-ruby-rest"],
+      "instruction": "Use the ably-pubsub-server gem 2.0.0+ instead of the ably-rest gem.",
+      "replacements": [
+        {
+          "package": "ably-pubsub-server",
+          "ecosystem": "rubygems",
+          "minVersion": "2.0.0",
+          "side": "server"
+        }
+      ]
+    },
+    {
+      "identifiers": ["ably-js"],
+      "instruction": "Use @ably/pubsub-device 3.0.0+ on end-user devices or @ably/pubsub-server 3.0.0+ on servers, instead of the ably npm package.",
+      "replacements": [
+        {
+          "package": "@ably/pubsub-device",
+          "ecosystem": "npm",
+          "minVersion": "3.0.0",
+          "side": "device"
+        },
+        {
+          "package": "@ably/pubsub-server",
+          "ecosystem": "npm",
+          "minVersion": "3.0.0",
+          "side": "server"
+        }
+      ]
+    },
+    {
+      "identifiers": ["ably-go"],
+      "instruction": "Use github.com/ably/ably-pubsub-go/v2 v2.0.0+ instead of github.com/ably/ably-go, importing device/pubsub on end-user devices or server/pubsub on servers.",
+      "replacements": [
+        {
+          "package": "github.com/ably/ably-pubsub-go/v2",
+          "component": "device/pubsub",
+          "ecosystem": "go",
+          "minVersion": "v2.0.0",
+          "side": "device"
+        },
+        {
+          "package": "github.com/ably/ably-pubsub-go/v2",
+          "component": "server/pubsub",
+          "ecosystem": "go",
+          "minVersion": "v2.0.0",
+          "side": "server"
+        }
+      ]
+    },
+    {
+      "identifiers": ["ably-cocoa"],
+      "instruction": "Use the AblyPubSubDevice product of ably-pubsub-cocoa 2.0.0+ instead of ably-cocoa.",
+      "replacements": [
+        {
+          "package": "ably-pubsub-cocoa",
+          "component": "AblyPubSubDevice",
+          "ecosystem": "swift",
+          "minVersion": "2.0.0",
+          "side": "device"
+        }
+      ]
+    },
+    {
+      "identifiers": ["ably-java"],
+      "instruction": "Use io.ably.pubsub:device 2.0.0+ on end-user devices or io.ably.pubsub:server 2.0.0+ on servers, instead of ably-java or ably-android.",
+      "replacements": [
+        {
+          "package": "io.ably.pubsub:device",
+          "ecosystem": "maven",
+          "minVersion": "2.0.0",
+          "side": "device"
+        },
+        {
+          "package": "io.ably.pubsub:server",
+          "ecosystem": "maven",
+          "minVersion": "2.0.0",
+          "side": "server"
+        }
+      ]
+    },
+    {
+      "identifiers": ["ably-dotnet"],
+      "instruction": "Use Ably.PubSub.Device 2.0.0+ on end-user devices or Ably.PubSub.Server 2.0.0+ on servers, instead of the ably.io NuGet package.",
+      "replacements": [
+        {
+          "package": "Ably.PubSub.Device",
+          "ecosystem": "nuget",
+          "minVersion": "2.0.0",
+          "side": "device"
+        },
+        {
+          "package": "Ably.PubSub.Server",
+          "ecosystem": "nuget",
+          "minVersion": "2.0.0",
+          "side": "server"
+        }
+      ]
+    },
+    {
+      "identifiers": ["ably-python"],
+      "instruction": "Use ably-pubsub-server 4.0.1+ instead of the ably PyPI package.",
+      "replacements": [
+        {
+          "package": "ably-pubsub-server",
+          "ecosystem": "pypi",
+          "minVersion": "4.0.1",
+          "side": "server"
+        }
+      ]
+    },
+    {
+      "identifiers": ["ably-pubsub-python"],
+      "instruction": "Upgrade ably-pubsub-server to 4.0.1+.",
+      "replacements": [
+        {
+          "package": "ably-pubsub-server",
+          "ecosystem": "pypi",
+          "minVersion": "4.0.1",
+          "side": "server"
+        }
+      ]
+    },
+    {
+      "identifiers": ["ably-ruby"],
+      "instruction": "Use the ably-pubsub-server gem 2.0.0+ instead of the ably gem.",
+      "replacements": [
+        {
+          "package": "ably-pubsub-server",
+          "ecosystem": "rubygems",
+          "minVersion": "2.0.0",
+          "side": "server"
+        }
+      ]
+    },
+    {
+      "identifiers": ["ably-php"],
+      "instruction": "Use ably/pubsub-server 2.0.0+ instead of ably/ably-php.",
+      "replacements": [
+        {
+          "package": "ably/pubsub-server",
+          "ecosystem": "packagist",
+          "minVersion": "2.0.0",
+          "side": "server"
+        }
+      ]
+    }
+  ]
+}
