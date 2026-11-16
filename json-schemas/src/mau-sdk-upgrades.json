@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Ably MAU SDK Upgrades",
+  "description": "The upgrade guidance Ably sends with error 40168 to an SDK that is not compatible with MAU pricing, because it predates the separate device and server packages. The message is the preamble, a space, and the instruction of the first entry of upgrades whose identifiers include an identifier the request carries, or the fallback when none does. A request's identifiers are those in its Ably-Agent header or agent param, plus, for an SDK that sent only the legacy X-Ably-Lib header or lib param, those of the Ably-Agent string that protocol/agents.json ablyLibMappings maps its library name to.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "The JSON Schema reference"
+    },
+    "errorCode": {
+      "type": "integer",
+      "description": "The error code the guidance is sent with.",
+      "enum": [40168]
+    },
+    "preamble": {
+      "type": "string",
+      "description": "The start of every message, completed by a space and an instruction.",
+      "minLength": 1
+    },
+    "fallback": {
+      "type": "string",
+      "description": "The instruction for an SDK that matches no entry of upgrades.",
+      "minLength": 1
+    },
+    "upgrades": {
+      "type": "array",
+      "description": "The instruction for each SDK that predates the device and server packages, in priority order: the first matching entry wins. A wrapper's request also carries the identifier of the SDK it wraps, so wrappers come before the SDKs they wrap.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "identifiers": {
+            "type": "array",
+            "description": "The Ably-Agent identifiers (see protocol/agents.json) the entry applies to.",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "instruction": {
+            "type": "string",
+            "description": "The instruction sent after the preamble, verbatim.",
+            "minLength": 1
+          },
+          "replacements": {
+            "type": "array",
+            "description": "The packages the instruction names and the first version of each that is compatible with MAU pricing. Descriptive only: consumers send the instruction, not a sentence built from these.",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "package": {
+                  "type": "string",
+                  "description": "The package name, as the instruction gives it.",
+                  "minLength": 1
+                },
+                "component": {
+                  "type": "string",
+                  "description": "The part of the package to use, where it isn't the whole package: a Swift package product or a Go package path within the module."
+                },
+                "ecosystem": {
+                  "type": "string",
+                  "description": "The registry the package is published to.",
+                  "enum": [
+                    "npm",
+                    "go",
+                    "swift",
+                    "maven",
+                    "nuget",
+                    "pypi",
+                    "rubygems",
+                    "packagist",
+                    "pub"
+                  ]
+                },
+                "minVersion": {
+                  "type": "string",
+                  "description": "The first compatible version, as the instruction gives it.",
+                  "minLength": 1
+                },
+                "side": {
+                  "type": "string",
+                  "description": "Where the package is used, for a package that is specific to end-user devices or to servers.",
+                  "enum": ["device", "server"]
+                }
+              },
+              "additionalProperties": false,
+              "required": ["package", "minVersion"]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": ["identifiers", "instruction", "replacements"]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": ["errorCode", "preamble", "fallback", "upgrades"]
+}
