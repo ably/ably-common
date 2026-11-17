@@ -172,6 +172,11 @@
       "title": "Integration filter regex not RE2-compatible",
       "summary": "An integration could not be configured because one of its filters, such as a channel filter or message filter, uses a regular expression that is not RE2-compatible. Backreferences and lookaround are not supported."
     },
+    "40036": {
+      "identifier": "client_id_too_long",
+      "title": "Client ID too long",
+      "summary": "A publish was rejected because the client ID of a message, presence message, object message or annotation exceeded the maximum permitted length. The client ID may have been set explicitly or inherited from the connection."
+    },
     "40099": {
       "identifier": "reserved_for_testing",
       "title": "Reserved for testing",
@@ -1121,6 +1126,16 @@
       "identifier": "message_updates_not_enabled",
       "title": "Message annotations, updates, appends, and deletes not enabled",
       "summary": "An operation could not be performed because the channel did not have the 'Message annotations, updates, appends, and deletes' rule enabled."
+    },
+    "93003": {
+      "identifier": "annotation_summary_entry_limit_exceeded",
+      "title": "Annotation summary entry limit reached",
+      "summary": "An annotation was rejected because the message's annotation summary already held the maximum number of distinct combinations of annotation type, name and client ID. Annotations that would not add a new combination are still accepted."
+    },
+    "93004": {
+      "identifier": "annotation_target_message_deleted",
+      "title": "Annotation on a deleted message",
+      "summary": "An annotation was rejected because the message it referenced had been deleted. Annotations that remove an existing annotation from a deleted message are still accepted."
     },
     "101000": {
       "identifier": "space_name_is_empty",
