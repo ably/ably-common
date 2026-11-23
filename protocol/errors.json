@@ -950,7 +950,7 @@
     "80025": {
       "identifier": "connectivity_check_failed",
       "title": "Connectivity check failed",
-      "summary": "The SDK could not reach its internet connectivity check endpoint, so it treated the network as unavailable and did not try Ably's fallback endpoints. It is reported as the cause of a disconnection."
+      "summary": "The SDK's internet connectivity check request failed or returned an unexpected response, so it treated the network as unavailable and did not try Ably's fallback endpoints. It is reported as the cause of a disconnection."
     },
     "80030": {
       "identifier": "client_restriction_not_satisfied",
