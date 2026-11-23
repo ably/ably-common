@@ -947,6 +947,11 @@
       "title": "Outdated Ably SDK version",
       "summary": "The connecting Ably SDK is an old version, and the way it connects to Ably is being retired. Connections from these SDK versions increasingly fail until they can no longer connect."
     },
+    "80025": {
+      "identifier": "connectivity_check_failed",
+      "title": "Connectivity check failed",
+      "summary": "The SDK could not reach its internet connectivity check endpoint, so it treated the network as unavailable and did not try Ably's fallback endpoints. It is reported as the cause of a disconnection."
+    },
     "80030": {
       "identifier": "client_restriction_not_satisfied",
       "title": "Connection failed due to a client restriction",
