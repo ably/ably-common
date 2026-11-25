@@ -1393,9 +1393,9 @@
       "summary": "An AI Transport send was attempted while the session's channel was not in a usable state, neither attached nor attaching, so there was no reliable channel to publish on."
     },
     "104008": {
-      "identifier": "run_response_stream_failed",
-      "title": "Run response stream failed",
-      "summary": "An AI Transport run's response could not be streamed to the channel: the source event stream threw, or an underlying publish failed mid-stream."
+      "identifier": "pipe_failed",
+      "title": "Pipe failed",
+      "summary": "An AI Transport pipe stopped before the end of its source. The source threw, an event could not be encoded, the channel refused a write, or a streamed message could not be repaired."
     },
     "104009": {
       "identifier": "message_decode_failed",
