@@ -172,6 +172,11 @@
       "title": "Integration filter regex not RE2-compatible",
       "summary": "An integration could not be configured because one of its filters, such as a channel filter or message filter, uses a regular expression that is not RE2-compatible. Backreferences and lookaround are not supported."
     },
+    "40036": {
+      "identifier": "stream_closed",
+      "title": "Write to a closed stream",
+      "summary": "A write was refused because the stream or writer it was made to had already been closed, so nothing was published for it. A closed stream or writer accepts no more writes."
+    },
     "40099": {
       "identifier": "reserved_for_testing",
       "title": "Reserved for testing",
