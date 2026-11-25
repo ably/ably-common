@@ -1379,8 +1379,8 @@
     },
     "104005": {
       "identifier": "session_send_failed",
-      "title": "AI Transport write failed",
-      "summary": "An AI Transport write could not be delivered. Either a publish or update to the channel was refused, or, in the Vercel chat transport, the HTTP POST to the agent endpoint failed or returned a non-2xx response."
+      "title": "Write could not be delivered",
+      "summary": "An AI Transport publish or update to the channel was refused, or, in the Vercel chat transport, the HTTP POST to the agent endpoint failed or returned a non-2xx response."
     },
     "104006": {
       "identifier": "session_continuity_not_guaranteed",
