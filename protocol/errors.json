@@ -1378,8 +1378,8 @@
       "summary": "An operation was attempted on an AI Transport session, view, or encoder that has already been closed. Once closed, these cannot send, receive, or be reopened."
     },
     "104005": {
-      "identifier": "session_send_failed",
-      "title": "Write could not be delivered",
+      "identifier": "write_failed",
+      "title": "Write failed",
       "summary": "An AI Transport publish or update to the channel was refused, or, in the Vercel chat transport, the HTTP POST to the agent endpoint failed or returned a non-2xx response."
     },
     "104006": {
@@ -1398,9 +1398,9 @@
       "summary": "An AI Transport run's response could not be streamed to the channel: the source event stream threw, or an underlying publish failed mid-stream."
     },
     "104009": {
-      "identifier": "session_message_processing_failed",
-      "title": "Inbound message processing failed",
-      "summary": "Processing a message that arrived on an AI Transport session's channel threw, so that one message was not folded into session state. The session's subscription survives, and it keeps sending and receiving."
+      "identifier": "message_decode_failed",
+      "title": "Message decode failed",
+      "summary": "An AI Transport codec threw while decoding a message that arrived on the channel. The message is still delivered with no decoded event, and decoding carries on with the messages after it."
     },
     "104010": {
       "identifier": "adopted_run_start_not_observed",
