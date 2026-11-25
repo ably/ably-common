@@ -1355,7 +1355,7 @@
     "104000": {
       "identifier": "streamed_message_finalize_failed",
       "title": "Streamed message could not be finalized",
-      "summary": "Completing or cancelling a streamed message failed. One of its appends was not published, and the follow-up attempt to repair it by re-sending the accumulated content in a single update also failed."
+      "summary": "A streamed message could not be completed on the channel. One of its appends was not published, and the follow-up attempt to repair it by re-sending the accumulated content in a single update also failed."
     },
     "104001": {
       "identifier": "session_subscription_failed",
@@ -1379,8 +1379,8 @@
     },
     "104005": {
       "identifier": "session_send_failed",
-      "title": "Session send failed",
-      "summary": "An AI Transport send or steer could not be delivered. Either publishing it to the channel failed, or, in the Vercel chat transport, the HTTP POST to the agent endpoint failed with a network error or a non-2xx response."
+      "title": "AI Transport write failed",
+      "summary": "An AI Transport write could not be delivered. Either a publish or update to the channel was refused, or, in the Vercel chat transport, the HTTP POST to the agent endpoint failed or returned a non-2xx response."
     },
     "104006": {
       "identifier": "session_continuity_not_guaranteed",
