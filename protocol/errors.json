@@ -1355,7 +1355,7 @@
     "104000": {
       "identifier": "streamed_message_finalize_failed",
       "title": "Streamed message could not be finalized",
-      "summary": "A streamed message could not be completed on the channel. One of its appends was not published, and the follow-up attempt to repair it by re-sending the accumulated content in a single update also failed."
+      "summary": "A streamed message could not be completed on the channel because an append was not published. The SDK then tried to repair the message by re-sending the accumulated content in a single update, but that also failed."
     },
     "104001": {
       "identifier": "session_subscription_failed",
