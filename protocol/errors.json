@@ -1400,7 +1400,7 @@
     "104009": {
       "identifier": "message_decode_failed",
       "title": "Message decode failed",
-      "summary": "An AI Transport codec threw while decoding a message that arrived on the channel. The message is still delivered with no decoded event, and decoding carries on with the messages after it."
+      "summary": "An AI Transport codec threw while decoding a message that arrived on the channel. The message is still delivered without a decoded event, and decoding continues with later messages."
     },
     "104010": {
       "identifier": "adopted_run_start_not_observed",
