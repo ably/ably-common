@@ -114,6 +114,8 @@ Use this small, consistent set of sections. Use only the ones that apply, and om
 - **Link dashboard actions to the specific page, not the root.** When you point the reader at something to do in the dashboard, link the exact page — e.g. the app's API keys page, `https://ably.com/accounts/any/apps/any/app_keys` — rather than the generic `https://ably.com/dashboard`. The `any` path segments resolve to the reader's currently selected account and app, so the link lands them on the right screen.
 - **Send support links to the support page, not the docs.** Use `https://ably.com/support` for "contact Ably support", rather than routing through a docs page about support. The one exception is the [incident escalation process](https://ably.com/docs/platform/support#escalation), which is documented under docs.
 - **Verify facts against their source; don't cite it.** Check message strings, status codes, and limits against the raising code before writing them — never from memory. Those are how you verify, not what you link: the page links only to customer-facing docs. Confirm those links resolve.
+- **Give the action and what it acts on.** "Send the message again", not "send again". The advice must apply however the reader runs their application. Don't assume a framework or UI.
+- **Say what state the error leaves behind.** If something remains, such as a partial message on the channel, say what remains and what other clients see.
 - **Tight, not exhaustive.** Include only what serves the decision and the fix. A good body is often three or four short paragraphs.
 - **Terminology and tone** follow the same rules as every other field — use the [Dictionary of terms](https://ably.atlassian.net/wiki/spaces/devex/pages/4295262228/Dictionary+of+terms), and keep the voice plain and calm.
 
@@ -143,6 +145,8 @@ If you need a term that isn't covered here, check the dictionary before inventin
 - **US spelling.** Per the Ably documentation style guide, use US spelling throughout — every field, including the body (`color`, `behavior`, `canceled`, `recognize`, `unauthorized`).
 - **Consistent voice across errors.** When 15 of these are read end-to-end, they should feel like they were written by one person. Inconsistency across teams is the most common failure mode here.
 - **No em-dashes.** Write plain sentences rather than ones littered with em-dash asides. Split into two sentences, or use a comma, colon, or parentheses where a genuine aside is needed. This applies to every field, including summaries and bodies.
+- **Name who acts.** "Ably rejected the publish", not "the channel refused the publish". Use the passive only to avoid blaming the reader.
+- **Write as you would say it.** Use plain words and vary sentence length. Don't join clauses with semicolons. Cut any sentence that adds no fact or reason, including a hedge such as "a retry may not fix it".
 - **Treat error copy as product copy, not log messages.** It's worth a second pair of eyes — engineers aren't always the best judges of what reads naturally to a user.
 
 ## Reviewing changes

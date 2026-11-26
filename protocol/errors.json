@@ -172,6 +172,11 @@
       "title": "Integration filter regex not RE2-compatible",
       "summary": "An integration could not be configured because one of its filters, such as a channel filter or message filter, uses a regular expression that is not RE2-compatible. Backreferences and lookaround are not supported."
     },
+    "40036": {
+      "identifier": "stream_closed",
+      "title": "Write to a closed stream",
+      "summary": "A write was refused because the stream or writer was already closed, so nothing was published for that write. A closed stream or writer accepts no more writes."
+    },
     "40099": {
       "identifier": "reserved_for_testing",
       "title": "Reserved for testing",
@@ -1350,7 +1355,7 @@
     "104000": {
       "identifier": "streamed_message_finalize_failed",
       "title": "Streamed message could not be finalized",
-      "summary": "Completing or cancelling a streamed message failed. One of its appends was not published, and the follow-up attempt to repair it by re-sending the accumulated content in a single update also failed."
+      "summary": "A streamed message could not be completed on the channel because an append was not published. The SDK then tried to repair the message by re-sending the accumulated content in a single update, but that also failed."
     },
     "104001": {
       "identifier": "session_subscription_failed",
@@ -1373,9 +1378,9 @@
       "summary": "An operation was attempted on an AI Transport session, view, or encoder that has already been closed. Once closed, these cannot send, receive, or be reopened."
     },
     "104005": {
-      "identifier": "session_send_failed",
-      "title": "Session send failed",
-      "summary": "An AI Transport send or steer could not be delivered. Either publishing it to the channel failed, or, in the Vercel chat transport, the HTTP POST to the agent endpoint failed with a network error or a non-2xx response."
+      "identifier": "write_failed",
+      "title": "Write failed",
+      "summary": "Ably rejected a message sent by an AI Transport agent adaptor. In the Vercel chat transport, this error means the HTTP POST to the agent endpoint failed or returned a non-2xx response."
     },
     "104006": {
       "identifier": "session_continuity_not_guaranteed",
@@ -1388,14 +1393,14 @@
       "summary": "An AI Transport send was attempted while the session's channel was not in a usable state, neither attached nor attaching, so there was no reliable channel to publish on."
     },
     "104008": {
-      "identifier": "run_response_stream_failed",
-      "title": "Run response stream failed",
-      "summary": "An AI Transport run's response could not be streamed to the channel: the source event stream threw, or an underlying publish failed mid-stream."
+      "identifier": "pipe_failed",
+      "title": "Pipe failed",
+      "summary": "An AI Transport pipe stopped before reaching the end of its source. The source threw, an event could not be encoded, Ably rejected a write, or a streamed message could not be repaired."
     },
     "104009": {
-      "identifier": "session_message_processing_failed",
-      "title": "Inbound message processing failed",
-      "summary": "Processing a message that arrived on an AI Transport session's channel threw, so that one message was not folded into session state. The session's subscription survives, and it keeps sending and receiving."
+      "identifier": "message_decode_failed",
+      "title": "Message decode failed",
+      "summary": "An AI Transport codec threw while decoding a message that arrived on the channel. The message is still delivered without a decoded event, and decoding continues with later messages."
     },
     "104010": {
       "identifier": "adopted_run_start_not_observed",
