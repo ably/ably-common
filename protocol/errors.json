@@ -175,7 +175,7 @@
     "40036": {
       "identifier": "stream_closed",
       "title": "Write to a closed stream",
-      "summary": "A write was refused because the stream or writer it was made to had already been closed, so nothing was published for it. A closed stream or writer accepts no more writes."
+      "summary": "A write was refused because the stream or writer was already closed, so nothing was published for that write. A closed stream or writer accepts no more writes."
     },
     "40099": {
       "identifier": "reserved_for_testing",
