@@ -1395,7 +1395,7 @@
     "104008": {
       "identifier": "pipe_failed",
       "title": "Pipe failed",
-      "summary": "An AI Transport pipe stopped before the end of its source. The source threw, an event could not be encoded, the channel refused a write, or a streamed message could not be repaired."
+      "summary": "An AI Transport pipe stopped before reaching the end of its source. The source threw, an event could not be encoded, Ably rejected a write, or a streamed message could not be repaired."
     },
     "104009": {
       "identifier": "message_decode_failed",
